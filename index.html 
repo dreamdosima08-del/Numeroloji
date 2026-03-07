@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Numerolojim | Kader Sayısı, Cinsel Uyum & Burç Analizi</title>
+<meta name="description" content="Doğum tarihinizle kader sayınızı, cinsel uyum skorunuzu ve burç-numeroloji sentezinizi anında hesaplayın."/>
+<meta name="keywords" content="numeroloji ile cinsel uyum, doğum tarihine göre burç analizi, kader sayısı, numeroloji aşk uyumu, hayat yolu sayısı"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.numerolojim.com.tr/"/>
+<meta property="og:title" content="Numerolojim | Kader, Aşk & Cinsel Uyum Analizi"/>
+<meta property="og:description" content="Numeroloji ile cinsel uyum skorunu, burç sentezini ve ilişki dinamiklerini keşfet."/>
+<meta property="og:type" content="website"/>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Numerolojim","url":"https://www.numerolojim.com.tr","applicationCategory":"LifestyleApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"},"inLanguage":"tr-TR"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Numeroloji ile cinsel uyum nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Kişinin doğum tarihi ve isminden elde edilen titreşim sayıları karşılaştırılarak libido potansiyeli ve cinsel kimya hesaplanır."}},
+{"@type":"Question","name":"Doğum tarihine göre burç analizi nedir?","acceptedAnswer":{"@type":"Answer","text":"Burç ve numerolojik kader sayısının sentezi, kişinin aşk ve iş enerjisini ortaya koyar."}}
+]}]}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+
+<style>
+/* ============================================================
+   NUMEROLOJIM v3 — Aurora Night
+   Deep navy · electric coral · soft gold · luminous white
+   ============================================================ */
+:root {
+  /* Ana renkler */
+  --bg:        #0D0D1A;
+  --bg2:       #12122A;
+  --bg3:       #1A1A35;
+  --bg-card:   #14142B;
+  --bg-card2:  #1C1C38;
+
+  /* Metin */
+  --text:      #E8E6F0;
+  --text2:     #A09BB8;
+  --text3:     #6B6585;
+
+  /* Vurgu renkleri */
+  --gold:      #D4A843;
+  --gold2:     #F0C878;
+  --gold3:     #FBE9B0;
+  --coral:     #FF6B6B;
+  --coral2:    #FF8E8E;
+  --coral3:    #FFB3B3;
+  --violet:    #8B5CF6;
+  --violet2:   #A78BFA;
+  --teal:      #06B6D4;
+
+  /* Border & glow */
+  --border:    rgba(212,168,67,0.2);
+  --border2:   rgba(212,168,67,0.08);
+  --glow-gold: 0 0 40px rgba(212,168,67,0.15);
+  --glow-coral:0 0 40px rgba(255,107,107,0.15);
+  --glow-v:    0 0 40px rgba(139,92,246,0.15);
+
+  --r: 14px;
+  --ff-display: 'Cinzel', serif;
+  --ff-body:    'Montserrat', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── AURORA BACKGROUND ── */
+.aurora-wrap {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  overflow: hidden;
+}
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.18;
+  animation: auroraFloat var(--dur, 20s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+.a1 { width: 700px; height: 400px; top: -10%; left: -10%; background: radial-gradient(ellipse, #6C3EF5, transparent 70%); --dur:22s; }
+.a2 { width: 500px; height: 500px; top: 20%; right: -15%; background: radial-gradient(ellipse, #FF6B6B, transparent 70%); --dur:18s; --delay:3s; }
+.a3 { width: 600px; height: 300px; bottom: 10%; left: 20%; background: radial-gradient(ellipse, #D4A843, transparent 70%); --dur:25s; --delay:6s; }
+.a4 { width: 400px; height: 400px; top: 50%; right: 30%; background: radial-gradient(ellipse, #06B6D4, transparent 70%); --dur:30s; --delay:2s; opacity:0.1; }
+
+@keyframes auroraFloat {
+  0%   { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(60px,-40px) scale(1.15); }
+  66%  { transform: translate(-30px,50px) scale(0.9); }
+  100% { transform: translate(40px,20px) scale(1.05); }
+}
+
+/* ── PARTICLES ── */
+#particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.pt {
+  position: absolute; border-radius: 50%;
+  background: var(--gold2);
+  animation: ptFloat var(--d,8s) ease-in-out var(--dl,0s) infinite;
+}
+@keyframes ptFloat {
+  0%,100% { transform: translateY(0) scale(1); opacity: var(--op,0.3); }
+  50%      { transform: translateY(-30px) scale(1.4); opacity: 0; }
+}
+
+/* ── LAYOUT ── */
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+
+/* ── HEADER ── */
+header {
+  text-align: center;
+  padding: 64px 20px 48px;
+  position: relative; z-index: 2;
+  border-bottom: 1px solid var(--border2);
+}
+
+.logo-ring {
+  width: 72px; height: 72px;
+  margin: 0 auto 24px;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-ring-inner {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(212,168,67,0.15), rgba(139,92,246,0.15));
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  animation: logoPulse 4s ease-in-out infinite;
+}
+.logo-ring::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1px solid transparent;
+  border-top-color: var(--gold);
+  border-right-color: var(--coral);
+  animation: spin 6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes logoPulse {
+  0%,100% { box-shadow: 0 0 20px rgba(212,168,67,0.2); }
+  50%      { box-shadow: 0 0 40px rgba(212,168,67,0.4), 0 0 60px rgba(255,107,107,0.15); }
+}
+
+header h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(30px, 7vw, 58px);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--gold3) 0%, var(--gold) 40%, var(--coral2) 70%, var(--violet2) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.header-sub {
+  font-family: var(--ff-body);
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--text2);
+}
+.header-tagline {
+  font-family: var(--ff-body);
+  font-size: 16px; font-weight: 300; font-style: italic;
+  color: var(--text2); margin-top: 10px;
+}
+
+/* Güvenlik rozeti */
+.trust-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 20px;
+  background: rgba(6,182,212,0.08);
+  border: 1px solid rgba(6,182,212,0.2);
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; color: var(--teal);
+}
+.trust-badge svg { flex-shrink: 0; }
+
+/* ── SECTION TITLES ── */
+.s-title {
+  font-family: var(--ff-display);
+  font-size: clamp(18px, 3.5vw, 28px);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--gold2), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center; letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.s-sub {
+  text-align: center; font-size: 14px; font-weight: 300;
+  color: var(--text2); max-width: 520px; margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 60px 0 44px;
+}
+.divider::before, .divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border2));
+}
+.divider::after { background: linear-gradient(90deg, var(--border2), transparent); }
+.divider-label {
+  font-family: var(--ff-display); font-size: 10px;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); white-space: nowrap;
+}
+
+/* ── FORM ── */
+.form-section { max-width: 700px; margin: 52px auto 0; }
+
+.form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px 44px;
+  position: relative; overflow: hidden;
+  box-shadow: var(--glow-gold), 0 24px 60px rgba(0,0,0,0.4);
+}
+.form-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--violet), var(--gold), var(--coral));
+}
+.form-card::after {
+  content: '';
+  position: absolute; top: -100px; right: -100px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(139,92,246,0.06), transparent 70%);
+  pointer-events: none;
+}
+
+/* Form grup */
+.fgroup { margin-bottom: 24px; }
+.fgroup label {
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 10px;
+  font-family: var(--ff-body); font-size: 11px;
+  font-weight: 600; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--gold);
+}
+.fgroup label .label-icon { font-size: 14px; }
+
+.fgroup input,
+.fgroup select {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(212,168,67,0.2);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--ff-body);
+  font-size: 15px; font-weight: 400;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+  outline: none;
+  -webkit-appearance: none;
+}
+.fgroup input::placeholder { color: var(--text3); }
+.fgroup input:focus,
+.fgroup select:focus {
+  border-color: var(--gold);
+  background: rgba(212,168,67,0.06);
+  box-shadow: 0 0 0 4px rgba(212,168,67,0.08);
+}
+.fgroup select option { background: var(--bg3); color: var(--text); }
+
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 10px;
+}
+@media (max-width: 480px) { .date-row { grid-template-columns: 1fr; } }
+
+/* CTA BUTTON */
+.btn-main {
+  width: 100%; margin-top: 8px;
+  padding: 20px;
+  background: linear-gradient(135deg, #8B4A0A 0%, var(--gold) 40%, var(--gold2) 70%, var(--coral) 100%);
+  background-size: 200% 200%;
+  border: none; border-radius: 12px;
+  font-family: var(--ff-display);
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #0D0D1A;
+  cursor: pointer;
+  position: relative; overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, background-position 0.5s;
+  box-shadow: 0 8px 32px rgba(212,168,67,0.4), 0 2px 0 rgba(255,255,255,0.1) inset;
+  animation: btnBreath 3s ease-in-out infinite;
+}
+@keyframes btnBreath {
+  0%,100% { box-shadow: 0 8px 32px rgba(212,168,67,0.4); }
+  50%      { box-shadow: 0 8px 48px rgba(212,168,67,0.65), 0 0 80px rgba(255,107,107,0.2); }
+}
+.btn-main::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+.btn-main:hover::before { transform: translateX(100%); }
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(212,168,67,0.6), 0 0 80px rgba(255,107,107,0.3);
+  background-position: right center;
+}
+.btn-main:active { transform: translateY(-1px); }
+
+/* ── LOADER ── */
+#loader { display: none; text-align: center; padding: 56px 20px; }
+#loader.on { display: block; }
+.loader-orb {
+  width: 60px; height: 60px;
+  border-radius: 50%; margin: 0 auto 20px;
+  background: conic-gradient(var(--gold), var(--coral), var(--violet), var(--gold));
+  animation: orbSpin 1.2s linear infinite;
+  position: relative;
+}
+.loader-orb::after {
+  content: '';
+  position: absolute; inset: 4px;
+  border-radius: 50%; background: var(--bg);
+}
+@keyframes orbSpin { to { transform: rotate(360deg); } }
+.loader-text {
+  font-family: var(--ff-display); font-size: 18px;
+  background: linear-gradient(135deg, var(--gold2), var(--coral2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textPulse 1.8s ease-in-out infinite;
+}
+@keyframes textPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+.loader-sub { font-size: 12px; color: var(--text3); margin-top: 6px; letter-spacing: 0.1em; }
+
+/* ── RESULTS ── */
+#results { display: none; margin-top: 52px; }
+#results.on { display: block; animation: fadeUp 0.8s ease both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+
+.result-hero {
+  text-align: center; margin-bottom: 44px;
+  padding: 32px 20px;
+  background: linear-gradient(135deg, rgba(212,168,67,0.05), rgba(139,92,246,0.05));
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+}
+.result-name {
+  font-family: var(--ff-display);
+  font-size: clamp(22px, 5vw, 38px);
+  font-weight: 900; letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--gold3), var(--gold), var(--coral2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.result-sub { font-size: 12px; color: var(--text2); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 6px; }
+
+/* Share buttons */
+.share-row {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  justify-content: center; margin: 0 0 40px;
+}
+.sbtn {
+  padding: 12px 22px; border-radius: 50px;
+  cursor: pointer; font-family: var(--ff-body);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 7px;
+  transition: all 0.25s; border: 1.5px solid;
+}
+.sbtn-gold { background: transparent; border-color: var(--gold); color: var(--gold); }
+.sbtn-gold:hover { background: rgba(212,168,67,0.1); transform: translateY(-2px); }
+.sbtn-coral { background: rgba(255,107,107,0.08); border-color: rgba(255,107,107,0.35); color: var(--coral2); }
+.sbtn-coral:hover { background: rgba(255,107,107,0.15); transform: translateY(-2px); }
+.sbtn-wa { background: rgba(37,211,102,0.07); border-color: rgba(37,211,102,0.25); color: #4ADE80; }
+.sbtn-wa:hover { background: rgba(37,211,102,0.14); transform: translateY(-2px); }
+
+/* ── RESULT CARDS ── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.grid1 { margin-bottom: 16px; }
+@media (max-width: 620px) { .grid2 { grid-template-columns: 1fr; } }
+
+.rcard {
+  background: var(--bg-card);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 28px 26px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  animation: fadeUp 0.6s ease both;
+}
+.rcard:hover {
+  transform: translateY(-4px);
+  border-color: var(--border);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3), var(--glow-gold);
+}
+.rcard::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.3;
+}
+.rcard.coral-accent::after { background: linear-gradient(90deg, transparent, var(--coral), transparent); opacity: 0.4; }
+.rcard.violet-accent::after { background: linear-gradient(90deg, transparent, var(--violet2), transparent); opacity: 0.4; }
+
+.card-eye {
+  font-family: var(--ff-body); font-size: 9px;
+  font-weight: 600; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--text3);
+  margin-bottom: 8px;
+}
+.card-num {
+  font-family: var(--ff-display);
+  font-size: 64px; font-weight: 900; line-height: 1;
+  background: linear-gradient(135deg, var(--gold2), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 4px;
+}
+.card-num.coral { background: linear-gradient(135deg, var(--coral2), var(--coral)); -webkit-background-clip:text; background-clip:text; }
+.card-num.violet { background: linear-gradient(135deg, var(--violet2), var(--violet)); -webkit-background-clip:text; background-clip:text; }
+
+.card-title {
+  font-family: var(--ff-display); font-size: 17px;
+  font-weight: 600; color: var(--text);
+  letter-spacing: 0.03em; margin-bottom: 12px;
+}
+.card-title.coral { color: var(--coral2); }
+.card-title.violet { color: var(--violet2); }
+
+/* Progress bar */
+.pbar { background: rgba(255,255,255,0.06); border-radius: 100px; height: 5px; margin: 10px 0 14px; overflow: hidden; }
+.pbar-fill { height: 100%; border-radius: 100px; transition: width 1.4s cubic-bezier(.4,0,.2,1); width: 0; }
+.pbar-fill.gold   { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+.pbar-fill.coral  { background: linear-gradient(90deg, var(--coral), var(--coral2)); }
+.pbar-fill.violet { background: linear-gradient(90deg, var(--violet), var(--violet2)); }
+.pbar-fill.mixed  { background: linear-gradient(90deg, var(--coral), var(--gold), var(--violet2)); }
+
+.card-body { font-size: 13.5px; color: var(--text2); line-height: 1.75; font-weight: 300; }
+.card-body strong { color: var(--text); font-weight: 500; }
+
+/* Libido grid */
+.libido-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
+@media (max-width: 480px) { .libido-row { grid-template-columns: 1fr; } }
+.lib-item {
+  background: rgba(255,107,107,0.07);
+  border: 1px solid rgba(255,107,107,0.15);
+  border-radius: 10px; padding: 14px 12px; text-align: center;
+}
+.lib-val {
+  font-family: var(--ff-display); font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--coral2), var(--coral));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.lib-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text3); margin-top: 4px; }
+
+/* Score ring */
+.score-wrap { display: flex; align-items: center; gap: 18px; margin: 12px 0; }
+.score-ring {
+  width: 76px; height: 76px; flex-shrink: 0;
+  border-radius: 50%;
+  background: conic-gradient(var(--gold) 0deg, rgba(212,168,67,0.08) 0deg);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  transition: background 1.2s cubic-bezier(.4,0,.2,1);
+}
+.score-ring::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: var(--bg-card); }
+.score-ring-num { font-family: var(--ff-display); font-size: 20px; font-weight: 900; color: var(--gold); position: relative; z-index: 1; }
+.score-ring.coral-r { background: conic-gradient(var(--coral) 0deg, rgba(255,107,107,0.08) 0deg); }
+.score-ring.coral-r .score-ring-num { color: var(--coral2); }
+
+/* Uyum listesi */
+.compat-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.compat-item {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border2); border-radius: 8px;
+  padding: 10px 14px; font-size: 13px; color: var(--text2);
+}
+.compat-n { font-family: var(--ff-display); font-size: 20px; min-width: 28px; text-align: center; }
+.compat-n.g { color: var(--gold2); }
+.compat-n.r { color: var(--coral2); }
+
+/* Zodiac combo */
+.zodiac-combo { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+.z-icon { font-size: 44px; line-height: 1; }
+.z-title { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--gold2); }
+.z-sub { font-size: 11px; color: var(--text2); letter-spacing: 0.1em; margin-top: 3px; }
+
+/* ── BLOG ── */
+.blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 28px; }
+@media (max-width: 780px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .blog-grid { grid-template-columns: 1fr; } }
+
+.bcard {
+  background: var(--bg-card);
+  border: 1px solid var(--border2); border-radius: var(--r);
+  padding: 24px 20px; cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.bcard:hover { transform: translateY(-5px); border-color: var(--border); box-shadow: 0 12px 36px rgba(0,0,0,0.3); }
+.bcat { font-family: var(--ff-body); font-size: 9px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.bcard h3 { font-family: var(--ff-display); font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 8px; }
+.bcard p { font-size: 12.5px; color: var(--text3); line-height: 1.65; }
+.bread { margin-top: 14px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral2); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border2);
+  padding: 40px 20px; text-align: center;
+  font-family: var(--ff-body); font-size: 11px;
+  color: var(--text3); letter-spacing: 0.06em;
+  position: relative; z-index: 2; margin-top: 60px;
+}
+.fnav { display: flex; gap: 24px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+.fnav a { color: var(--gold); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.fnav a:hover { color: var(--gold2); }
+
+/* ── TOOLTIP ── */
+[data-tip] { position: relative; cursor: help; }
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute; bottom: 115%; left: 50%; transform: translateX(-50%);
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text2); font-size: 11px; padding: 6px 12px;
+  border-radius: 6px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s; z-index: 99;
+}
+[data-tip]:hover::after { opacity: 1; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* Stagger */
+.s1{animation-delay:.1s} .s2{animation-delay:.2s} .s3{animation-delay:.3s}
+.s4{animation-delay:.4s} .s5{animation-delay:.5s} .s6{animation-delay:.6s}
+
+@media (max-width: 480px) {
+  .form-card { padding: 28px 18px; }
+  .card-num { font-size: 48px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Aurora & Particles -->
+<div class="aurora-wrap">
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+  <div class="aurora a3"></div>
+  <div class="aurora a4"></div>
+</div>
+<div id="particles"></div>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header>
+  <div class="logo-ring">
+    <div class="logo-ring-inner">✦</div>
+  </div>
+  <h1>Numerolojim</h1>
+  <p class="header-sub">Kader · Aşk · Cinsel Enerji · Burç Sentezi</p>
+  <p class="header-tagline">Sayılar hiç bu kadar samimi konuşmadı</p>
+  <div class="trust-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    Tüm veriler yalnızca cihazınızda işlenir — sunucuya hiçbir bilgi gönderilmez
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     FORM
+═══════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="form-section">
+    <p class="s-title" style="margin-bottom:8px">Evren Haritanı Aç</p>
+    <p class="s-sub">Ad soyad, doğum tarihi ve burcunu gir — kader sayından cinsel enerjine kadar derin bir analiz seni bekliyor.</p>
+
+    <div class="form-card">
+      <div class="fgroup">
+        <label><span class="label-icon">✨</span> Ad Soyad</label>
+        <input type="text" id="fn" placeholder="Örn: Elif Naz Doğan" autocomplete="name"/>
+      </div>
+
+      <div class="fgroup">
+        <label><span class="label-icon">🗓</span> Doğum Tarihi</label>
+        <div class="date-row">
+          <input type="number" id="bd" placeholder="Gün" min="1" max="31"/>
+          <input type="number" id="bm" placeholder="Ay" min="1" max="12"/>
+          <input type="number" id="by" placeholder="Yıl (örn: 1990)" min="1920" max="2010"/>
+        </div>
+      </div>
+
+      <div class="fgroup">
+        <label><span class="label-icon">♈</span> Burç</label>
+        <select id="zodiac">
+          <option value="">— Burcunu seç —</option>
+          <option value="koç">♈ Koç</option>
+          <option value="boğa">♉ Boğa</option>
+          <option value="ikizler">♊ İkizler</option>
+          <option value="yengeç">♋ Yengeç</option>
+          <option value="aslan">♌ Aslan</option>
+          <option value="başak">♍ Başak</option>
+          <option value="terazi">♎ Terazi</option>
+          <option value="akrep">♏ Akrep</option>
+          <option value="yay">♐ Yay</option>
+          <option value="oğlak">♑ Oğlak</option>
+          <option value="kova">♒ Kova</option>
+          <option value="balık">♓ Balık</option>
+        </select>
+      </div>
+
+      <button class="btn-main" onclick="runAnalysis()">
+        ✦ Analizimi Başlat ✦
+      </button>
+    </div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-orb"></div>
+    <div class="loader-text">Evren haritanız çiziliyor…</div>
+    <div class="loader-sub">Sayılar titreşimlerinizi okuyor</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       RESULTS
+  ═══════════════════════════════════════════ -->
+  <div id="results">
+
+    <div class="result-hero">
+      <div class="result-name" id="res-name"></div>
+      <div class="result-sub">Kişisel Numeroloji & Enerji Analizi</div>
+    </div>
+
+    <div class="share-row">
+      <button class="sbtn sbtn-coral" onclick="shareScore()">♥ Cinsel Uyum Skorunu Paylaş</button>
+      <button class="sbtn sbtn-gold" onclick="downloadPDF()">⬇ PDF İndir</button>
+      <button class="sbtn sbtn-wa" onclick="shareWA()">◉ WhatsApp</button>
+    </div>
+
+    <!-- Core sayılar -->
+    <div class="grid2">
+      <div class="rcard s1">
+        <div class="card-eye" data-tip="Doğum tarihinizden hesaplanır">Kader Sayısı · Hayat Yolu</div>
+        <div class="card-num" id="n-kader">—</div>
+        <div class="card-title" id="t-kader">—</div>
+        <div class="pbar"><div class="pbar-fill gold" id="p-kader"></div></div>
+        <div class="card-body" id="d-kader"></div>
+      </div>
+      <div class="rcard s2">
+        <div class="card-eye" data-tip="İsimdeki sesli harflerden">Ruh Güdüsü Sayısı</div>
+        <div class="card-num" id="n-ruh">—</div>
+        <div class="card-title" id="t-ruh">—</div>
+        <div class="pbar"><div class="pbar-fill gold" id="p-ruh"></div></div>
+        <div class="card-body" id="d-ruh"></div>
+      </div>
+      <div class="rcard s3">
+        <div class="card-eye" data-tip="İsimdeki sessiz harflerden">Kişilik Sayısı</div>
+        <div class="card-num violet" id="n-kisilik">—</div>
+        <div class="card-title violet" id="t-kisilik">—</div>
+        <div class="pbar"><div class="pbar-fill violet" id="p-kisilik"></div></div>
+        <div class="card-body" id="d-kisilik"></div>
+      </div>
+      <div class="rcard s4">
+        <div class="card-eye" data-tip="Tüm harf değerlerinden">İfade Sayısı</div>
+        <div class="card-num" id="n-ifade">—</div>
+        <div class="card-title" id="t-ifade">—</div>
+        <div class="pbar"><div class="pbar-fill gold" id="p-ifade"></div></div>
+        <div class="card-body" id="d-ifade"></div>
+      </div>
+    </div>
+
+    <!-- Cinsellik başlık -->
+    <div class="divider"><span class="divider-label">✦ Numeroloji ile Cinsel Uyum Analizi ✦</span></div>
+
+    <!-- Libido full -->
+    <div class="grid1">
+      <div class="rcard coral-accent s1">
+        <div class="card-eye">Libido Potansiyeli & Cinsel Enerji Skoru</div>
+        <div class="libido-row" id="libido-row"></div>
+        <div class="card-body" id="d-libido"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="rcard coral-accent s2">
+        <div class="card-eye">Cinsel Karakter Profili</div>
+        <div class="card-title coral" id="t-cinsel">—</div>
+        <div class="score-wrap">
+          <div class="score-ring coral-r" id="ring-c"><span class="score-ring-num" id="rn-c">—</span></div>
+          <div class="card-body" id="d-cinsel"></div>
+        </div>
+        <div class="pbar"><div class="pbar-fill coral" id="p-cinsel"></div></div>
+      </div>
+      <div class="rcard coral-accent s3">
+        <div class="card-eye">En Uyumlu Olduğun Sayılar</div>
+        <div class="card-title coral">Cinsel Uyum Tablosu</div>
+        <div class="compat-list" id="compat-list"></div>
+      </div>
+    </div>
+
+    <!-- Burç başlık -->
+    <div class="divider"><span class="divider-label">✦ Burç × Numeroloji Sentezi ✦</span></div>
+
+    <div class="grid1">
+      <div class="rcard violet-accent s1">
+        <div class="card-eye">Doğum Tarihine Göre Burç & Kader Analizi</div>
+        <div class="zodiac-combo" id="zodiac-combo"></div>
+        <div class="card-body" id="d-zodiac"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="rcard s2">
+        <div class="card-eye">Aşk Hayatındaki Güç Alanları</div>
+        <div class="card-title" id="t-ask">—</div>
+        <div class="score-wrap">
+          <div class="score-ring" id="ring-a"><span class="score-ring-num" id="rn-a">—</span></div>
+          <div class="card-body" id="d-ask"></div>
+        </div>
+        <div class="pbar"><div class="pbar-fill mixed" id="p-ask"></div></div>
+      </div>
+      <div class="rcard s3">
+        <div class="card-eye">Kariyer & Güç Potansiyeli</div>
+        <div class="card-title" id="t-is">—</div>
+        <div class="score-wrap">
+          <div class="score-ring" id="ring-i"><span class="score-ring-num" id="rn-i">—</span></div>
+          <div class="card-body" id="d-is"></div>
+        </div>
+        <div class="pbar"><div class="pbar-fill gold" id="p-is"></div></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:36px 0">
+      <button class="sbtn sbtn-gold" style="margin:auto" onclick="reset()">↺ Yeni Analiz</button>
+    </div>
+  </div><!-- /#results -->
+
+  <!-- ═══════════════════════════════════════════
+       BLOG
+  ═══════════════════════════════════════════ -->
+  <div class="divider"><span class="divider-label">✦ Numeroloji Akademisi ✦</span></div>
+
+  <p class="s-title">Numeroloji ile Cinsel Uyum & İlişki Rehberi</p>
+  <p class="s-sub">Uzman analizler, derin numeroloji içerikleri ve ilişki şifrelerini çözen yazılar.</p>
+
+  <div class="blog-grid" id="blog-grid"></div>
+
+</div><!-- /.wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="fnav">
+    <a href="#">Hakkımızda</a>
+    <a href="#">Gizlilik Politikası</a>
+    <a href="#">Kullanım Koşulları</a>
+    <a href="#">İletişim</a>
+    <a href="#">Blog</a>
+  </div>
+  <p>© 2026 Numerolojim.com.tr · Tüm hakları saklıdır.</p>
+  <p style="margin-top:6px;font-size:10px;color:var(--text3)">Bu site yalnızca eğlence ve spiritüel keşif amaçlıdır. Profesyonel tavsiye yerine geçmez.</p>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+/* ── HARF DEĞERLERİ (Pisagor) ── */
+const LV={a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:1,k:2,l:3,m:4,n:5,o:6,p:7,q:8,r:9,s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8,ç:3,ğ:7,ı:9,ö:6,ş:1,ü:3};
+const VOWELS=new Set(['a','e','i','ı','o','ö','u','ü']);
+const isVow=c=>VOWELS.has(c.toLowerCase());
+
+function reduce(n,keepM=true){
+  if(keepM&&(n===11||n===22||n===33))return n;
+  if(n<10)return n;
+  return reduce(String(n).split('').reduce((a,d)=>a+parseInt(d),0),keepM);
+}
+function destinyNum(d,m,y){
+  return reduce(`${d}${m}${y}`.split('').reduce((a,c)=>a+parseInt(c),0));
+}
+function nameNum(name,filter='all'){
+  let t=0;
+  for(const c of name.toLowerCase().replace(/\s/g,'')){
+    if(filter==='v'&&!isVow(c))continue;
+    if(filter==='c'&&isVow(c))continue;
+    t+=LV[c]||0;
+  }
+  return reduce(t);
+}
+
+/* ── VERİTABANI ── */
+const DESTINY={
+  1:{title:"Öncü Ruh",body:"Liderlik ve özgünlük doğanızda var. Bağımsızlığınızı inşa etmek ve kendi izinizi bırakmak için geldiniz. Güçlü irade ve karizmanız en büyük silahlarınız."},
+  2:{title:"Barış Elçisi",body:"İşbirliği, sezgi ve denge hayat yolunuzun temasıdır. İlişkilerde arabulucu rolünü doğal olarak üstlenir; empati yeteneğiniz olağanüstüdür."},
+  3:{title:"Yaratıcı İfadeci",body:"Sanatsal ifade, iletişim ve neşe hayat yolunuzun özüdür. Kelimeler ve sanat aracılığıyla kendinizi ifade ettiğinizde en yüksek potansiyelinize ulaşırsınız."},
+  4:{title:"Usta İnşaatçı",body:"Düzen, disiplin ve sağlam temeller sizin için önceliklidir. Kalıcı değerler inşa etmek için geldiniz. Güvenilirliğiniz ve kararlılığınız en büyük güçlerinizdir."},
+  5:{title:"Özgür Ruh",body:"Değişim, macera ve özgürlük hayat yolunuzun anahtarıdır. Deneyimler aracılığıyla büyür; yeni insanlar ve kültürlerle kendinizi zenginleştirirsiniz."},
+  6:{title:"Sevgi Öğretmeni",body:"Sorumluluk, hizmet ve koşulsuz sevgi sizin misyonunuzdur. Aile ve topluluk hayatınızın merkezinde yer alır. Şefkatli bakışınız insanlara huzur verir."},
+  7:{title:"Gizemli Bilge",body:"Derin araştırma, spiritüellik ve içsel bilgelik hayat yolunuzu tanımlar. Evrenin gizemlerini çözmeye yönelirsiniz; analitik zekanız olağanüstüdür."},
+  8:{title:"Güç Odağı",body:"Materyal başarı ve yönetim yeteneği hayat yolunuzun temalarıdır. Refah yaratmak ve sistemi ustalıkla kullanmayı öğrenmek için geldiniz."},
+  9:{title:"Evrensel Sevgi",body:"İnsanlık sevgisi ve idealizm sizin misyonunuzdur. Vermek ve insanlığa katkıda bulunmak için geldiniz. Büyük bir vicdana sahipsiniz."},
+  11:{title:"Işık Taşıyıcı ✦",body:"Master 11, güçlü sezgi ve spiritüel aydınlanma enerjisi taşır. İlham verici bir lider ve ışık taşıyıcısısınız."},
+  22:{title:"Usta İnşaatçı ✦",body:"En güçlü master sayılardan biri olan 22, büyük vizyonları somut gerçeklere dönüştürme gücünü temsil eder."},
+  33:{title:"Usta Öğretmen ✦",body:"Koşulsuz sevgi ve şefkatle insanlığa hizmet etmeyi temsil eder. Derin bir spiritüel sorumluluk taşırsınız."}
+};
+
+const RUH={
+  1:{title:"İçsel Otorite",body:"Bağımsız ve özgün olmaya derin bir arzu var. Lider olmak ve kendi kurallarınızı koymak size güç verir."},
+  2:{title:"Bağlantı Arzusu",body:"Ruhunuz derin ilişkiler özler. Uyum, sevgi ve aidiyet hissi sizin için en temel ihtiyaçlardır."},
+  3:{title:"İfade Özgürlüğü",body:"İfade etmek ve paylaşmak için yanıp tutuşan bir enerji var. Kendinizi ifade edebildiğinizde ruhunuz özgür hisseder."},
+  4:{title:"Güvenlik İhtiyacı",body:"Güvenli ve stabil bir yaşam için güçlü bir arzu var. Sağlam temeller sizin huzurunuzu oluşturur."},
+  5:{title:"Özgürlük Çağrısı",body:"Macera ve özgürlük ruhunuzun en derin arzusudur. Değişim size enerji verir."},
+  6:{title:"Sevgi ve Hizmet",body:"Sevmek ve bakım vermek ruhunuzun özüdür. Anlamlı ilişkiler her şeyin üstündedir."},
+  7:{title:"Bilgelik Arayışı",body:"Derin bir hakikat arayışı var. Spiritüellik ve derin düşünce ruhunuza huzur verir."},
+  8:{title:"Başarı Açlığı",body:"Güç ve maddi başarı arzular. Büyük hedefler size derin tatmin sağlar."},
+  9:{title:"Evrensel Sevgi",body:"İnsanlığa hizmet etmek ruhunuzun en derin çağrısıdır."},
+  11:{title:"Spiritüel Ilham",body:"İlham ve insanlara ışık tutma arzusu ruhunuzu harekete geçirir."},
+  22:{title:"Büyük Vizyon",body:"Büyük çaplı projeler ve kalıcı iz bırakma arzusu ruhunuzu besler."},
+  33:{title:"Koşulsuz Sevgi",body:"İnsanlara şefkatle yaklaşmak ruhunuzun en derin arzusudur."}
+};
+
+const SEX={
+  1:{title:"Ateş Yakıcı",libido:92,intimacy:75,passion:95,body:`<strong>Cinsel enerjiniz:</strong> Dominant, ateşli ve öncü. Yatakta liderliği ele almayı seven, tutkusunu açıkça ortaya koyan bir yapıya sahipsiniz. Rutin ve tekrardan sıkılırsınız.<br><br><strong>Gizli arzunuz:</strong> Tamamen kontrol dışı kalabileceğiniz, kendi kurallarınızı unutturan bir tutkuyu yaşamak.`,compat:[{n:5,l:"◉ %94",t:"Maceracı çiftin tutkusu"},{n:9,l:"◉ %88",t:"Derin bağ + ateş"},{n:3,l:"◉ %82",t:"Spontane kimya"},{n:4,l:"✦ %41",t:"Çatışma yüksek"},{n:7,l:"✦ %38",t:"Duygusal mesafe"}]},
+  2:{title:"Kadife Dokunuş",libido:65,intimacy:97,passion:72,body:`<strong>Cinsel enerjiniz:</strong> Yoğun duygusal bağ kurmadan fiziksel yakınlık size eksik hissettirir. Yatakta şefkatli ve sezgiselsiniz; partnerinizin ihtiyaçlarını ondan önce hissedersiniz.<br><br><strong>Gizli arzunuz:</strong> Tamamen güvende hissederek kendinizi teslim etmek.`,compat:[{n:6,l:"◉ %96",t:"Mükemmel duygusal uyum"},{n:8,l:"◉ %85",t:"Güç + şefkat"},{n:9,l:"◉ %88",t:"Derin spiritüel bağ"},{n:5,l:"✦ %40",t:"Hız farkı"},{n:1,l:"✦ %45",t:"Dominans dengesizliği"}]},
+  3:{title:"Neşeli Ateşleyici",libido:80,intimacy:78,passion:88,body:`<strong>Cinsel enerjiniz:</strong> Oyuncu, spontane ve eğlenceli. Gülüşmeler, sürprizler ve yaratıcılık sizi alevlendirir. Partnerinizi güldürebilmek sizin için ön sevişmenin parçasıdır.<br><br><strong>Gizli arzunuz:</strong> Sizi hem zihinsel hem fiziksel büyüleyebilen biri.`,compat:[{n:1,l:"◉ %90",t:"Enerji patlaması"},{n:5,l:"◉ %93",t:"Macera ikilileri"},{n:9,l:"◉ %82",t:"Derin + neşeli"},{n:4,l:"✦ %38",t:"Ciddiyet çatışır"},{n:7,l:"✦ %42",t:"Mesafe sorunu"}]},
+  4:{title:"Derin Sabırlı",libido:58,intimacy:82,passion:65,body:`<strong>Cinsel enerjiniz:</strong> Aceleyi sevmezsiniz. Yavaş, derin ve anlamlı birleşme idealinizdir. Güven kurulduğunda, o sessiz yoğunluğunuz rakipsizdir.<br><br><strong>Gizli arzunuz:</strong> Güvendiğiniz biriyle sert dış kabuğunuzu tamamen kırabilmek.`,compat:[{n:2,l:"◉ %88",t:"Güven + derinlik"},{n:8,l:"◉ %85",t:"Güç ve istikrar"},{n:6,l:"◉ %87",t:"Huzurlu ama ateşli"},{n:5,l:"✦ %32",t:"Kaos vs düzen"},{n:3,l:"✦ %38",t:"Hız uyumsuzluğu"}]},
+  5:{title:"Sınır Tanımaz",libido:98,intimacy:65,passion:97,body:`<strong>Cinsel enerjiniz:</strong> Değişim, deneyim ve özgürlük vazgeçilmezdir. Sınırları zorlayan, yeni şeyler deneyen ateşli bir yapıya sahipsiniz. Rutin sizi söndürür.<br><br><strong>Gizli arzunuz:</strong> Sizi tamamen meşgul eden, tahmin etmediğiniz bir deneyim.`,compat:[{n:1,l:"◉ %94",t:"İki ateşin dansı"},{n:3,l:"◉ %93",t:"Spontane tutku"},{n:7,l:"◉ %80",t:"Gizemli çekim"},{n:4,l:"✦ %32",t:"Kısıtlama hissi"},{n:6,l:"✦ %45",t:"Farklı ritimler"}]},
+  6:{title:"Besleyici Tutku",libido:70,intimacy:95,passion:78,body:`<strong>Cinsel enerjiniz:</strong> Partnerinizi özel hissettirmek sizin için fiziksel histen önemlidir. Yatakta şefkatli ve bütünsel bir deneyim sunar; ruh ve beden bütünleşmeden tatmin olmazsınız.<br><br><strong>Gizli arzunuz:</strong> Sizi yalnızca bedeniniz için değil tüm varlığınız için isteyen birini bulmak.`,compat:[{n:2,l:"◉ %96",t:"Kusursuz duygusal uyum"},{n:4,l:"◉ %87",t:"Güvenli ve derin"},{n:9,l:"◉ %90",t:"Koşulsuz sevgi"},{n:5,l:"✦ %45",t:"Farklı ritimler"},{n:1,l:"✦ %50",t:"Enerji dengesizliği"}]},
+  7:{title:"Gizemli Yoğunluk",libido:62,intimacy:88,passion:80,body:`<strong>Cinsel enerjiniz:</strong> Zihinsel bağlantı her şeydir. Birinin zekası ve gizemiyle büyülenirsiniz. Açıldığınızda eşinizi hayrete düşürürsünüz.<br><br><strong>Gizli arzunuz:</strong> Sizi söylemeden anlayan, zihinlerinizin birleştiği o nadir insan.`,compat:[{n:5,l:"◉ %80",t:"Gizemli ve meraklı"},{n:9,l:"◉ %92",t:"Derin spiritüel"},{n:11,l:"◉ %95",t:"Mistik rezonans"},{n:1,l:"✦ %38",t:"Sabırsızlık"},{n:3,l:"✦ %42",t:"Yüzeysellik"}]},
+  8:{title:"Güç Odası",libido:88,intimacy:72,passion:90,body:`<strong>Cinsel enerjiniz:</strong> Güç, kontrol ve yoğunluk sizin alanınızdır. Başarılı ve kendine güvenen kişilere çekilirsiniz. Fiziksel yakınlıkta gücünüzü açıkça ortaya koyarsınız.<br><br><strong>Gizli arzunuz:</strong> Tüm güç duvarlarınızı yıkabilen güvenli bir liman bulmak.`,compat:[{n:2,l:"◉ %85",t:"Güç + şefkat"},{n:4,l:"◉ %85",t:"İstikrar ve yoğunluk"},{n:6,l:"◉ %88",t:"Karşılıklı güç"},{n:3,l:"✦ %44",t:"Farklı odaklar"},{n:7,l:"✦ %48",t:"Mesafe çatışabilir"}]},
+  9:{title:"Evrensel Aşık",libido:75,intimacy:94,passion:82,body:`<strong>Cinsel enerjiniz:</strong> Derin, spiritüel ve fedakarca yakınlık ararsınız. Partnerinizi mutlu etmek en büyük tatmin kaynağınızdır. Egoyu bir kenara bırakırsınız.<br><br><strong>Gizli arzunuz:</strong> Kendinizi verdiğinizde aynı derinlikte karşılık veren biri.`,compat:[{n:6,l:"◉ %90",t:"Koşulsuz sevgi"},{n:7,l:"◉ %92",t:"Mistik derinlik"},{n:3,l:"◉ %82",t:"Sevgi + neşe"},{n:1,l:"✦ %42",t:"Ego çatışması"},{n:5,l:"✦ %50",t:"Farklı ritimler"}]},
+  11:{title:"Sezgisel Mistik",libido:72,intimacy:96,passion:88,body:`<strong>Cinsel enerjiniz:</strong> Sezgisel ve empatik. Partnerinizin gizli arzularını söylenmeden hissedersiniz. Bu özellik sizi efsanevi bir partner yapar.<br><br><strong>Gizli arzunuz:</strong> Kendi spiritüel derinliğinizi anlayabilen bir ruh eşi.`,compat:[{n:7,l:"◉ %95",t:"Mistik ikili"},{n:2,l:"◉ %90",t:"Derin sezgisel uyum"},{n:9,l:"◉ %88",t:"Spiritüel bağ"},{n:8,l:"✦ %44",t:"Enerji farkı"},{n:4,l:"✦ %40",t:"Boyut farkı"}]},
+  22:{title:"Efsanevi Partner",libido:84,intimacy:90,passion:92,body:`<strong>Cinsel enerjiniz:</strong> Her şeyi büyük ölçekte yaşarsınız. Sıradan deneyimler sizi tatmin etmez; unutulmaz, dönüştürücü yakınlık ararsınız.<br><br><strong>Gizli arzunuz:</strong> Yalnızca iki kişi olarak değil, evrensel bütünlük hissiyle birleşmek.`,compat:[{n:4,l:"◉ %90",t:"Büyük vizyon"},{n:8,l:"◉ %88",t:"İkili güç"},{n:11,l:"◉ %88",t:"Master titreşim"},{n:5,l:"✦ %46",t:"Odak farkı"},{n:3,l:"✦ %50",t:"Derin vs yüzeysel"}]},
+  33:{title:"Koşulsuz Aşık",libido:68,intimacy:99,passion:80,body:`<strong>Cinsel enerjiniz:</strong> En yüksek titreşimli master sayı — yakınlığı spiritüel bir ibadet gibi yaşarsınız. Koşulsuz sevgi ve tam teslimiyet sizin için cinselliğin özüdür.<br><br><strong>Gizli arzunuz:</strong> Bu kutsal enerjiyi taşıyabilecek birini bulmak.`,compat:[{n:9,l:"◉ %96",t:"Koşulsuz sevginin buluşması"},{n:11,l:"◉ %94",t:"Mistik birleşim"},{n:6,l:"◉ %92",t:"Şefkat ve hizmet"},{n:5,l:"✦ %38",t:"Anlam farkı"},{n:1,l:"✦ %42",t:"Ego engeli"}]}
+};
+
+const ZODIAC={
+  "koç":  {icon:"♈",el:"Ateş",ruler:"Mars",ask:"Fethedici enerji, ani tutkular ve ilk bakışta aşk sizin stilinizdir.",is:"Liderlik ve girişimcilik — başladığınız her projede ateşleyici güçsünüz."},
+  "boğa": {icon:"♉",el:"Toprak",ruler:"Venüs",ask:"Sadakat, duyusal haz ve güven — aşkta uzun vadeli ve derinsiniz.",is:"Sabır ve kararlılığınız sizi mali anlamda güçlü yapıyor."},
+  "ikizler":{icon:"♊",el:"Hava",ruler:"Merkür",ask:"Zihinsel uyarılma olmadan fiziksel yakınlık sizi tatmin etmez.",is:"Çok yönlülük ve iletişim gücünüz sizi vazgeçilmez kılıyor."},
+  "yengeç":{icon:"♋",el:"Su",ruler:"Ay",ask:"Güvenli liman ararsınız — duygusal derinlik önde gelir.",is:"Sezgisel liderlik ve koruyucu içgüdünüz güçlü bir avantaj."},
+  "aslan":{icon:"♌",el:"Ateş",ruler:"Güneş",ask:"Takdir görmek ve ihtişamlı anlar yaratmak vazgeçilmezdir.",is:"Karizmanız ve özgüveniniz doğal bir otorite yaratıyor."},
+  "başak":{icon:"♍",el:"Toprak",ruler:"Merkür",ask:"Detaylara özen, mükemmeliyetçilik ve derin sadakat aşk stilinizdir.",is:"Analitik zekanız ve titizliğiniz her alanda öne çıkarır."},
+  "terazi":{icon:"♎",el:"Hava",ruler:"Venüs",ask:"Denge, estetik ve romantizm — ideal aşkı yaratmak için doğdunuz.",is:"Diplomatik yeteneğiniz ve adalet duygunuz güçlü lider profili çizer."},
+  "akrep":{icon:"♏",el:"Su",ruler:"Plüton",ask:"Yoğun, dönüştürücü ve sınır tanımaz bir tutkuya sahipsiniz.",is:"Stratejik zeka ve kararlılığınız rakipsiz bir güç kaynağı."},
+  "yay":  {icon:"♐",el:"Ateş",ruler:"Jüpiter",ask:"Özgürlük ve macera ruhunuz aşkta da sınır tanımaz.",is:"Vizyon sahibi ve ilham verici liderlik tarzınız güçlü."},
+  "oğlak":{icon:"♑",el:"Toprak",ruler:"Satürn",ask:"Sabırlı, güvenilir ve uzun vadeli bağlara yatırım yaparsınız.",is:"Disiplin ve hırsınız sizi kariyer zirvesine taşır."},
+  "kova": {icon:"♒",el:"Hava",ruler:"Uranüs",ask:"Farklılık ve zihinsel bağlantı sizin için aşkın temelidir.",is:"Yenilikçi vizyonunuz ve bağımsız düşünceniz güçlü bir marka."},
+  "balık":{icon:"♓",el:"Su",ruler:"Neptün",ask:"Duygusal derinlik, şiirsel romantizm ve empati aşk dünyanızı oluşturur.",is:"Sezgisel yaratıcılığınız ve empatin sizi özel bir lider yapıyor."}
+};
+
+const BLOG=[
+  {cat:"Cinsel Enerji",title:"Numeroloji ile Cinsel Uyum: Hangi Sayı Kiminle Uyumludur?",body:"Sayı titreşimleri, iki kişi arasındaki manyetik çekimi şaşırtıcı bir doğrulukla açıklıyor."},
+  {cat:"Burç Analizi",title:"Doğum Tarihine Göre Burç Analizi: Aslan + 1 Kombinasyonu",body:"Aslan burcunun ateşine 1 sayısının öncü enerjisi eklenince nasıl bir güç ortaya çıkar?"},
+  {cat:"Kader Sayısı",title:"Kader Sayınız Aşk Hayatınızı Nasıl Şekillendiriyor?",body:"Pisagor numerolojisinde kader sayısı, ilişkilerde tekrarlayan örüntüleri doğrudan etkiliyor."},
+  {cat:"Libido",title:"Libido Potansiyeli ve Doğum Tarihi: Bilim mi, Mistik mi?",body:"Numerolojik titreşimler ve libido ilişkisini araştıran analizler ilginç veriler ortaya koyuyor."},
+  {cat:"Master Sayılar",title:"11, 22, 33: Usta Sayıların Cinsel Enerjisi",body:"Master sayı taşıyanların ilişki yaşantısı oldukça farklıdır. Getirdiği hediyeler ve zorluklar."},
+  {cat:"Ruh Güdüsü",title:"Ruh Güdüsü Sayısı: Yatakta Gerçekten Ne İstiyorsunuz?",body:"İsminizin sesli harflerinden elde edilen sayı, en derin arzularınızı şifreliyor."}
+];
+
+/* ── YARDIMCI ── */
+function getD(obj,n){return obj[n]||obj[reduce(n,false)]||obj[1];}
+
+function setRing(id,pct,coral=false){
+  const el=document.getElementById(id);if(!el)return;
+  setTimeout(()=>{
+    const deg=Math.round(pct*3.6);
+    const c=coral?'#FF6B6B':'#D4A843';
+    const bg=coral?'rgba(255,107,107,0.08)':'rgba(212,168,67,0.08)';
+    el.style.background=`conic-gradient(${c} ${deg}deg, ${bg} ${deg}deg)`;
+  },300);
+}
+function setPbar(id,v9){
+  const el=document.getElementById(id);if(!el)return;
+  setTimeout(()=>{el.style.width=(Math.min(v9,9)/9*100)+'%';},200);
+}
+
+/* ── ANA HESAPLAMA ── */
+function runAnalysis(){
+  const name=document.getElementById('fn').value.trim();
+  const day=parseInt(document.getElementById('bd').value);
+  const month=parseInt(document.getElementById('bm').value);
+  const year=parseInt(document.getElementById('by').value);
+  const zodiac=document.getElementById('zodiac').value;
+
+  if(!name||name.length<2)return alert('Lütfen geçerli bir ad soyad girin.');
+  if(!day||!month||!year||day<1||day>31||month<1||month>12||year<1920||year>2010)return alert('Lütfen geçerli bir doğum tarihi girin.');
+  if(!zodiac)return alert('Lütfen burcunuzu seçin.');
+
+  document.getElementById('loader').classList.add('on');
+  document.getElementById('results').classList.remove('on');
+
+  setTimeout(()=>{
+    const kader=destinyNum(day,month,year);
+    const ruh=nameNum(name,'v');
+    const kisilik=nameNum(name,'c');
+    const ifade=nameNum(name,'all');
+    const kD=getD(DESTINY,kader),rD=getD(RUH,ruh),kD2=getD(DESTINY,kisilik),iD=getD(DESTINY,ifade);
+    const sD=getD(SEX,kader),zD=ZODIAC[zodiac]||ZODIAC['aslan'];
+
+    document.getElementById('res-name').textContent=name.toUpperCase();
+
+    // Core
+    document.getElementById('n-kader').textContent=kader;
+    document.getElementById('t-kader').textContent=kD.title;
+    document.getElementById('d-kader').innerHTML=kD.body;
+    setPbar('p-kader',kader<=9?kader:9);
+
+    document.getElementById('n-ruh').textContent=ruh;
+    document.getElementById('t-ruh').textContent=rD.title;
+    document.getElementById('d-ruh').innerHTML=rD.body;
+    setPbar('p-ruh',ruh<=9?ruh:9);
+
+    document.getElementById('n-kisilik').textContent=kisilik;
+    document.getElementById('t-kisilik').textContent=kD2.title;
+    document.getElementById('d-kisilik').innerHTML=kD2.body;
+    setPbar('p-kisilik',kisilik<=9?kisilik:9);
+
+    document.getElementById('n-ifade').textContent=ifade;
+    document.getElementById('t-ifade').textContent=iD.title;
+    document.getElementById('d-ifade').innerHTML=iD.body;
+    setPbar('p-ifade',ifade<=9?ifade:9);
+
+    // Libido
+    document.getElementById('libido-row').innerHTML=`
+      <div class="lib-item"><div class="lib-val">${sD.libido}</div><div class="lib-label">Libido Potansiyeli</div></div>
+      <div class="lib-item"><div class="lib-val">${sD.intimacy}</div><div class="lib-label">Duygusal Yakınlık</div></div>
+      <div class="lib-item"><div class="lib-val">${sD.passion}</div><div class="lib-label">Tutku Skoru</div></div>`;
+    document.getElementById('d-libido').innerHTML=sD.body;
+
+    // Cinsel profil
+    document.getElementById('t-cinsel').textContent=sD.title;
+    document.getElementById('rn-c').textContent=sD.libido;
+    document.getElementById('d-cinsel').innerHTML=`Dominant enerjiniz <strong>${sD.title.toLowerCase()}</strong> tipi bir cinsel karaktere işaret ediyor.`;
+    setRing('ring-c',sD.libido,true);
+    setPbar('p-cinsel',Math.round(sD.libido/10));
+
+    // Uyum
+    document.getElementById('compat-list').innerHTML=sD.compat.map(c=>`
+      <div class="compat-item">
+        <span class="compat-n ${c.l.includes('◉')?'g':'r'}">${c.n}</span>
+        <span><strong>${c.l}</strong> — ${c.t}</span>
+      </div>`).join('');
+
+    // Burç
+    document.getElementById('zodiac-combo').innerHTML=`
+      <div class="z-icon">${zD.icon}</div>
+      <div>
+        <div class="z-title">${zodiac.charAt(0).toUpperCase()+zodiac.slice(1)} × ${kader} Kader</div>
+        <div class="z-sub">${zD.el} elementi · ${zD.ruler} yönetimi</div>
+      </div>`;
+    document.getElementById('d-zodiac').innerHTML=`${zodiac.charAt(0).toUpperCase()+zodiac.slice(1)} burcunun ${zD.el} enerjisi, ${kader} kader sayınızın titreşimiyle bütünleşerek hem aşkta hem kariyerde özgün bir güç alanı yaratıyor. Bu kombinasyon, doğuştan gelen içgüdülerinizi daha bilinçli kullanmanız için güçlü bir rehber sunuyor.`;
+
+    // Aşk
+    const askS=((kader+ruh)%9)+1;
+    document.getElementById('t-ask').textContent=`${zodiac.charAt(0).toUpperCase()+zodiac.slice(1)} Burcunda Aşk Enerjisi`;
+    document.getElementById('rn-a').textContent=70+askS*3;
+    document.getElementById('d-ask').innerHTML=zD.ask;
+    setRing('ring-a',70+askS*3);
+    setPbar('p-ask',askS);
+
+    // İş
+    const isS=((kader+kisilik)%9)+1;
+    document.getElementById('t-is').textContent=`${zodiac.charAt(0).toUpperCase()+zodiac.slice(1)} Burcunda Kariyer Enerjisi`;
+    document.getElementById('rn-i').textContent=68+isS*3;
+    document.getElementById('d-is').innerHTML=zD.is;
+    setRing('ring-i',68+isS*3);
+    setPbar('p-is',isS);
+
+    window._r={name,kader,ruh,kisilik,ifade,zodiac,libido:sD.libido,passion:sD.passion,intimacy:sD.intimacy};
+
+    document.getElementById('loader').classList.remove('on');
+    document.getElementById('results').classList.add('on');
+    document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+  },1000);
+}
+
+/* ── BLOG ── */
+document.getElementById('blog-grid').innerHTML=BLOG.map((p,i)=>`
+  <div class="bcard" style="animation:fadeUp 0.6s ease ${i*0.08+0.1}s both">
+    <div class="bcat">${p.cat}</div>
+    <h3>${p.title}</h3>
+    <p>${p.body}</p>
+    <div class="bread">Devamını Oku →</div>
+  </div>`).join('');
+
+/* ── PAYLAŞIM ── */
+function shareScore(){
+  const r=window._r;if(!r)return alert('Önce analiz yapın.');
+  const txt=`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Burç: ${r.zodiac}\nKader: ${r.kader} | Libido: ${r.libido}/100 | Tutku: ${r.passion}/100\nnumerolojim.com.tr`;
+  if(navigator.share)navigator.share({title:'Cinsel Uyum Skorum',text:txt,url:'https://www.numerolojim.com.tr'});
+  else navigator.clipboard.writeText(txt).then(()=>alert('Panoya kopyalandı!'));
+}
+function shareWA(){
+  const r=window._r;if(!r)return;
+  window.open('https://wa.me/?text='+encodeURIComponent(`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Kader: ${r.kader} | Libido: ${r.libido}/100\nnumerolojim.com.tr`),'_blank');
+}
+function downloadPDF(){
+  const r=window._r;if(!r)return;
+  const w=window.open('','_blank');
+  w.document.write(`<html><head><title>Numeroloji - ${r.name}</title>
+  <style>body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:#111}
+  h1{color:#8B6914;border-bottom:2px solid #D4A843;padding-bottom:12px}
+  .row{display:flex;gap:16px;margin:16px 0;flex-wrap:wrap}
+  .box{border:1px solid #D4A843;border-radius:8px;padding:16px;flex:1;min-width:160px}
+  .n{font-size:38px;font-weight:bold;color:#8B6914;line-height:1}
+  .lbl{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:4px}
+  .red{color:#C0392B}footer{margin-top:40px;font-size:10px;color:#aaa;text-align:center}</style></head>
+  <body><h1>✦ Numeroloji Raporum</h1>
+  <p><strong>Ad:</strong> ${r.name} | <strong>Burç:</strong> ${r.zodiac}</p>
+  <div class="row">
+    <div class="box"><div class="lbl">Kader</div><div class="n">${r.kader}</div></div>
+    <div class="box"><div class="lbl">Ruh Güdüsü</div><div class="n">${r.ruh}</div></div>
+    <div class="box"><div class="lbl">Kişilik</div><div class="n">${r.kisilik}</div></div>
+  </div>
+  <div class="row">
+    <div class="box"><div class="lbl">Libido</div><div class="n red">${r.libido}/100</div></div>
+    <div class="box"><div class="lbl">Tutku</div><div class="n red">${r.passion}/100</div></div>
+    <div class="box"><div class="lbl">Yakınlık</div><div class="n red">${r.intimacy}/100</div></div>
+  </div>
+  <footer>www.numerolojim.com.tr · Pisagor Numeroloji Ekolü</footer>
+  </body></html>`);
+  w.document.close();w.print();
+}
+function reset(){
+  document.getElementById('results').classList.remove('on');
+  ['fn','bd','bm','by'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('zodiac').value='';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── PARTİKELLER ── */
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<50;i++){
+    const p=document.createElement('div');p.className='pt';
+    const sz=Math.random()*2+1;
+    p.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${5+Math.random()*8}s;--dl:${Math.random()*8}s;--op:${0.1+Math.random()*0.35}`;
+    c.appendChild(p);
+  }
+})();
+
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.activeElement.tagName==='INPUT')runAnalysis();});
+</script>
+</body>
+</html>
