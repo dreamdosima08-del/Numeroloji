@@ -522,14 +522,43 @@ header h1 {
 .bcard {
   background: var(--bg-card);
   border: 1px solid var(--border2); border-radius: var(--r);
-  padding: 24px 20px; cursor: pointer;
+  overflow: hidden; cursor: pointer;
   transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .bcard:hover { transform: translateY(-5px); border-color: var(--border); box-shadow: 0 12px 36px rgba(0,0,0,0.3); }
+.bcard-cover {
+  width: 100%; aspect-ratio: 16/9;
+  object-fit: cover; display: block;
+  border-bottom: 1px solid var(--border2);
+}
+.bcard-cover.cover-featured {
+  aspect-ratio: 16/7;
+}
+.bcard-body { padding: 22px 20px; }
 .bcat { font-family: var(--ff-body); font-size: 9px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
 .bcard h3 { font-family: var(--ff-display); font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.45; margin-bottom: 8px; }
 .bcard p { font-size: 12.5px; color: var(--text3); line-height: 1.65; }
 .bread { margin-top: 14px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral2); }
+
+/* Featured blog (ilk kart — tam genişlik) */
+.blog-featured {
+  margin-bottom: 16px;
+}
+.blog-featured .bcard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.blog-featured .bcard-cover {
+  aspect-ratio: unset; height: 100%; min-height: 220px;
+  border-bottom: none; border-right: 1px solid var(--border2);
+}
+.blog-featured .bcard-body { padding: 32px 28px; display: flex; flex-direction: column; justify-content: center; }
+.blog-featured .bcard h3 { font-size: 20px; }
+@media (max-width: 620px) {
+  .blog-featured .bcard { grid-template-columns: 1fr; }
+  .blog-featured .bcard-cover { height: 180px; border-right: none; border-bottom: 1px solid var(--border2); }
+}
 
 /* ── FOOTER ── */
 footer {
@@ -856,6 +885,7 @@ footer {
   <p class="s-title">Numeroloji ile Cinsel Uyum & İlişki Rehberi</p>
   <p class="s-sub">Uzman analizler, derin numeroloji içerikleri ve ilişki şifrelerini çözen yazılar.</p>
 
+  <div class="blog-featured" id="blog-featured"></div>
   <div class="blog-grid" id="blog-grid"></div>
 
 </div><!-- /.wrap -->
@@ -973,6 +1003,28 @@ const ZODIAC={
 };
 
 const BLOG=[
+  {
+    cat:"Başlangıç Rehberi",
+    title:"Numerolojiye Giriş: Sayıların Sessiz Dili",
+    preview:"Binlerce yıldır filozoflar ve bilgeler sayıların evrenin temel dili olduğuna inanmıştır. Numeroloji bu inancın üzerine kurulu kadim bir bilgelik sistemidir.",
+    meta:"Numeroloji Akademisi · 4 dk okuma",
+    cover:"https://i.ibb.co/Nvm8wck/1773419436654.png",
+    content:`
+      <p>Sayılar yalnızca matematik değildir. Binlerce yıldır filozoflar, mistikler ve bilgeler sayıların evrenin temel dili olduğuna inanmıştır. <strong>Numeroloji</strong> de tam olarak bu inancın üzerine kurulu kadim bir bilgelik sistemidir.</p>
+      <p>Temeli MÖ 6. yüzyılda yaşamış Yunan matematikçi ve filozof <strong>Pisagor</strong>'a dayanan numeroloji, her sayının kendine özgü bir titreşim ve enerji taşıdığını ileri sürer. Bu titreşimler; kişilik özelliklerini, yaşam amacını ve ilişki dinamiklerini şekillendiren görünmez güçlerdir.</p>
+      <h3>Peki Numeroloji Nasıl Çalışır?</h3>
+      <p>Doğum tarihiniz ve isminiz, numerolojide birer şifre gibi işlenir. Bu şifreler tek basamaklı sayılara indirgenerek yorumlanır. Örneğin 15 Mart 1990 doğumluysanız; 1+5+0+3+1+9+9+0 = 28, 2+8 = 10, 1+0 = <strong>1</strong>. Kader sayınız 1'dir. Bu sayı liderlik, öncülük ve bağımsızlık enerjisini taşır.</p>
+      <h3>Numerolojide Temel Sayılar</h3>
+      <p><strong>Kader Sayısı —</strong> yaşam amacınızı ve ruhunuzun bu dünyaya neden geldiğini gösterir.</p>
+      <p><strong>Ruh Güdüsü Sayısı —</strong> en derin arzularınızı ve motivasyonlarınızı ortaya koyar.</p>
+      <p><strong>Kişilik Sayısı —</strong> dış dünyaya yansıttığınız imajı temsil eder.</p>
+      <p><strong>İfade Sayısı —</strong> doğal yeteneklerinizi ve potansiyelinizi açıklar.</p>
+      <div class="highlight">✦ Özel not: 11, 22 ve 33 sayıları "master sayılar" olarak adlandırılır ve indirgenmez. Bu sayıları taşıyanlar çok daha yoğun bir enerji alanına sahiptir.</div>
+      <h3>Numeroloji Bir Kader midir?</h3>
+      <p>Hayır. Numeroloji bir kader kehaneti değil, bir pusuladır. Size "böyle olacaksın" demez; "bu enerjileri taşıyorsun, bunları bilinçli kullanırsan neler başarabilirsin?" diye sorar.</p>
+      <p>Sayılar sizi tanımlamaz — sadece tanımanıza yardımcı olur. Ve bazen en derin gerçekler, en sade sayılarda saklıdır.</p>
+    `
+  },
   {
     cat:"Cinsel Enerji",
     title:"Numeroloji ile Cinsel Uyum: Hangi Sayı Kiminle Uyumludur?",
@@ -1190,6 +1242,8 @@ function runAnalysis(){
 }
 
 /* ── BLOG ── */
+const COVER_IMG = "https://i.ibb.co/Nvm8wck/1773419436654.png";
+
 function openBlogModal(i) {
   const p = BLOG[i];
   document.getElementById('modal-cat').textContent = p.cat;
@@ -1208,12 +1262,28 @@ function closeModal(e) {
 }
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeBlogModal(); });
 
-document.getElementById('blog-grid').innerHTML=BLOG.map((p,i)=>`
-  <div class="bcard" style="animation:fadeUp 0.6s ease ${i*0.08+0.1}s both" onclick="openBlogModal(${i})">
-    <div class="bcat">${p.cat}</div>
-    <h3>${p.title}</h3>
-    <p>${p.preview}</p>
-    <div class="bread">Devamını Oku →</div>
+// İlk kart: featured (tam genişlik + kapak görsel)
+const featured = BLOG[0];
+document.getElementById('blog-featured').innerHTML = `
+  <div class="bcard" onclick="openBlogModal(0)" style="animation:fadeUp 0.5s ease 0.1s both">
+    <img class="bcard-cover" src="${COVER_IMG}" alt="${featured.title}" loading="lazy"/>
+    <div class="bcard-body">
+      <div class="bcat">${featured.cat}</div>
+      <h3>${featured.title}</h3>
+      <p>${featured.preview}</p>
+      <div class="bread">Devamını Oku →</div>
+    </div>
+  </div>`;
+
+// Kalan kartlar: 2x2 grid (kapak yok)
+document.getElementById('blog-grid').innerHTML = BLOG.slice(1).map((p,i)=>`
+  <div class="bcard" style="animation:fadeUp 0.6s ease ${(i+1)*0.08+0.1}s both" onclick="openBlogModal(${i+1})">
+    <div class="bcard-body">
+      <div class="bcat">${p.cat}</div>
+      <h3>${p.title}</h3>
+      <p>${p.preview}</p>
+      <div class="bread">Devamını Oku →</div>
+    </div>
   </div>`).join('');
 
 /* ── PAYLAŞIM ── */
