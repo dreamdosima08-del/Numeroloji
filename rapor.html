@@ -3,393 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kişisel Numeroloji Raporum | Numerolojim.com.tr</title>
-<meta name="description" content="İsim ve doğum tarihinizi girin, yapay zeka destekli kapsamlı numeroloji raporunuzu anında alın.">
+<title>Kişisel Numeroloji Raporun | Numerolojim.com.tr</title>
+<meta name="description" content="İsim ve doğum tarihinizi girin, kapsamlı numeroloji raporunuzu anında alın.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #07071A;
-  --bg2: #0D0D2B;
-  --bg3: #12122E;
-  --bg-card: #0F0F28;
-  --border: rgba(212,168,67,0.25);
-  --border2: rgba(255,255,255,0.06);
-  --gold: #D4A843;
-  --gold2: #F0C860;
-  --coral: #FF6B6B;
-  --violet: #8B5CF6;
-  --text: #F0EEF8;
-  --text2: #B8B4D0;
-  --text3: #6B6890;
-  --ff-display: 'Cinzel', serif;
-  --ff-body: 'Montserrat', sans-serif;
-  --r: 14px;
+  --bg:#07071A;--bg2:#0D0D2B;--bg3:#12122E;--bg-card:#0F0F28;
+  --border:rgba(212,168,67,0.25);--border2:rgba(255,255,255,0.06);
+  --gold:#D4A843;--gold2:#F0C860;--coral:#FF6B6B;--violet:#8B5CF6;
+  --text:#F0EEF8;--text2:#B8B4D0;--text3:#6B6890;
+  --ff-d:'Cinzel',serif;--ff-b:'Montserrat',sans-serif;--r:14px;
 }
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--ff-body);
-  font-weight: 300;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--ff-b);font-weight:300;min-height:100vh;overflow-x:hidden;}
 
 /* Aurora */
-.aurora {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-}
-.aurora-blob {
-  position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.12;
-  animation: drift 18s ease-in-out infinite alternate;
-}
-.aurora-blob:nth-child(1) { width: 600px; height: 400px; background: #8B5CF6; top: -100px; left: -100px; animation-delay: 0s; }
-.aurora-blob:nth-child(2) { width: 500px; height: 350px; background: #D4A843; top: 30%; right: -100px; animation-delay: -6s; }
-.aurora-blob:nth-child(3) { width: 400px; height: 300px; background: #FF6B6B; bottom: -80px; left: 30%; animation-delay: -12s; }
-@keyframes drift { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(40px,30px) scale(1.1); } }
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.ab{position:absolute;border-radius:50%;filter:blur(120px);opacity:.11;animation:drift 18s ease-in-out infinite alternate;}
+.ab:nth-child(1){width:600px;height:400px;background:#8B5CF6;top:-100px;left:-100px;animation-delay:0s;}
+.ab:nth-child(2){width:500px;height:350px;background:#D4A843;top:30%;right:-100px;animation-delay:-6s;}
+.ab:nth-child(3){width:400px;height:300px;background:#FF6B6B;bottom:-80px;left:30%;animation-delay:-12s;}
+@keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(40px,30px) scale(1.1);}}
 
-/* Particles */
-.particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-.particle {
-  position: absolute; width: 2px; height: 2px;
-  background: var(--gold); border-radius: 50%; opacity: 0;
-  animation: float-up linear infinite;
-}
-@keyframes float-up {
-  0% { opacity: 0; transform: translateY(0) scale(0); }
-  10% { opacity: 0.6; transform: translateY(-20px) scale(1); }
-  90% { opacity: 0.2; }
-  100% { opacity: 0; transform: translateY(-200px) scale(0); }
-}
+.particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:float-up linear infinite;}
+@keyframes float-up{0%{opacity:0;transform:translateY(0) scale(0);}10%{opacity:.6;transform:translateY(-20px) scale(1);}90%{opacity:.2;}100%{opacity:0;transform:translateY(-200px) scale(0);}}
 
 /* Layout */
-.wrap {
-  position: relative; z-index: 2;
-  max-width: 860px; margin: 0 auto; padding: 0 20px 80px;
-}
+.wrap{position:relative;z-index:2;max-width:860px;margin:0 auto;padding:0 20px 80px;}
 
 /* Header */
-header {
-  text-align: center; padding: 50px 20px 40px;
-  position: relative; z-index: 2;
-}
-.logo-link {
-  display: inline-block; text-decoration: none;
-  font-family: var(--ff-display); font-size: 13px;
-  color: var(--gold); letter-spacing: 0.3em;
-  text-transform: uppercase; margin-bottom: 32px;
-  opacity: 0.7; transition: opacity 0.2s;
-}
-.logo-link:hover { opacity: 1; }
-
-.page-star {
-  font-size: 22px; color: var(--gold); display: block;
-  margin-bottom: 16px; animation: pulse-star 3s ease-in-out infinite;
-}
-@keyframes pulse-star { 0%,100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); } }
-
-h1 {
-  font-family: var(--ff-display);
-  font-size: clamp(26px, 5vw, 42px);
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--gold2), var(--gold), #fff8e1);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  line-height: 1.25; margin-bottom: 14px;
-}
-.header-sub {
-  font-size: 14px; color: var(--text3); line-height: 1.7;
-  max-width: 520px; margin: 0 auto;
-}
+header{text-align:center;padding:46px 20px 36px;position:relative;z-index:2;}
+.logo-link{display:inline-block;text-decoration:none;font-family:var(--ff-d);font-size:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin-bottom:28px;opacity:.7;transition:opacity .2s;}
+.logo-link:hover{opacity:1;}
+.page-star{font-size:20px;color:var(--gold);display:block;margin-bottom:14px;animation:ps 3s ease-in-out infinite;}
+@keyframes ps{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:1;transform:scale(1.15);}}
+h1{font-family:var(--ff-d);font-size:clamp(24px,5vw,40px);font-weight:700;background:linear-gradient(135deg,var(--gold2),var(--gold),#fff8e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.25;margin-bottom:12px;}
+.header-sub{font-size:13px;color:var(--text3);line-height:1.7;max-width:500px;margin:0 auto;}
 
 /* Form Card */
-.form-card {
-  background: linear-gradient(135deg, rgba(15,15,40,0.95), rgba(18,18,46,0.9));
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 40px 36px;
-  margin: 36px 0;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(212,168,67,0.1);
-  animation: fadeUp 0.6s ease 0.2s both;
-}
-@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
-.form-title {
-  font-family: var(--ff-display); font-size: 11px;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 28px; text-align: center;
-}
-
-.form-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-  margin-bottom: 20px;
-}
-@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
-
-.field { display: flex; flex-direction: column; gap: 8px; }
-.field.full { grid-column: 1 / -1; }
-
-label {
-  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--gold); font-weight: 500;
-}
-
-input {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(212,168,67,0.2);
-  border-radius: 10px;
-  padding: 14px 18px;
-  color: var(--text);
-  font-family: var(--ff-body); font-size: 14px; font-weight: 400;
-  outline: none; transition: border-color 0.3s, box-shadow 0.3s;
-  width: 100%;
-}
-input:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(212,168,67,0.08);
-}
-input::placeholder { color: var(--text3); }
-
-.btn-generate {
-  width: 100%; padding: 18px;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  border: none; border-radius: 12px;
-  color: #0D0D1A; font-family: var(--ff-display);
-  font-size: 13px; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.3s, opacity 0.2s;
-  box-shadow: 0 8px 30px rgba(212,168,67,0.3);
-  margin-top: 8px;
-  position: relative; overflow: hidden;
-}
-.btn-generate::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15), transparent);
-  transform: translateX(-100%); transition: transform 0.5s;
-}
-.btn-generate:hover::before { transform: translateX(100%); }
-.btn-generate:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(212,168,67,0.45); }
-.btn-generate:active { transform: translateY(0); }
-.btn-generate:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.form-card{background:linear-gradient(135deg,rgba(15,15,40,.97),rgba(18,18,46,.93));border:1px solid var(--border);border-radius:20px;padding:38px 34px;margin:32px 0;box-shadow:0 20px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(212,168,67,.1);animation:fadeUp .6s ease .2s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.form-title{font-family:var(--ff-d);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;text-align:center;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr;}}
+.field{display:flex;flex-direction:column;gap:7px;}
+.field.full{grid-column:1/-1;}
+label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+input{background:rgba(255,255,255,.04);border:1px solid rgba(212,168,67,.2);border-radius:10px;padding:13px 17px;color:var(--text);font-family:var(--ff-b);font-size:14px;font-weight:400;outline:none;transition:border-color .3s,box-shadow .3s;width:100%;}
+input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,67,.08);}
+input::placeholder{color:var(--text3);}
 
 /* Numbers preview */
-.numbers-preview {
-  display: none; grid-template-columns: repeat(4, 1fr); gap: 12px;
-  margin: 24px 0 0; animation: fadeUp 0.5s ease both;
-}
-.numbers-preview.show { display: grid; }
-@media (max-width: 480px) { .numbers-preview { grid-template-columns: repeat(2,1fr); } }
-.num-badge {
-  background: rgba(212,168,67,0.06);
-  border: 1px solid rgba(212,168,67,0.15);
-  border-radius: 10px; padding: 14px 10px; text-align: center;
-}
-.num-val {
-  font-family: var(--ff-display); font-size: 28px; font-weight: 700;
-  color: var(--gold2); display: block; line-height: 1;
-}
-.num-label { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3); margin-top: 6px; display: block; }
+.nums-prev{display:none;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0 0;animation:fadeUp .5s ease both;}
+.nums-prev.show{display:grid;}
+@media(max-width:480px){.nums-prev{grid-template-columns:repeat(2,1fr);}}
+.nb{background:rgba(212,168,67,.06);border:1px solid rgba(212,168,67,.14);border-radius:10px;padding:13px 8px;text-align:center;}
+.nb-val{font-family:var(--ff-d);font-size:26px;font-weight:700;color:var(--gold2);display:block;line-height:1;}
+.nb-lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-top:5px;display:block;}
 
-/* Loading */
-.loading-wrap {
-  display: none; text-align: center; padding: 60px 20px;
-  animation: fadeUp 0.4s ease both;
-}
-.loading-wrap.show { display: block; }
-.loading-orb {
-  width: 64px; height: 64px; margin: 0 auto 24px;
-  border-radius: 50%;
-  border: 2px solid rgba(212,168,67,0.15);
-  border-top-color: var(--gold);
-  animation: spin 1s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.loading-text {
-  font-family: var(--ff-display); font-size: 13px;
-  letter-spacing: 0.2em; color: var(--gold);
-  text-transform: uppercase; margin-bottom: 10px;
-}
-.loading-sub { font-size: 12px; color: var(--text3); }
-.loading-dots span {
-  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--gold); margin: 0 3px; opacity: 0;
-  animation: blink 1.4s infinite;
-}
-.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes blink { 0%,80%,100% { opacity: 0; } 40% { opacity: 1; } }
+.btn-gen{width:100%;padding:17px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:12px;color:#0D0D1A;font-family:var(--ff-d);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:transform .2s,box-shadow .3s;box-shadow:0 8px 30px rgba(212,168,67,.3);margin-top:8px;position:relative;overflow:hidden;}
+.btn-gen::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:transform .5s;}
+.btn-gen:hover::before{transform:translateX(100%);}
+.btn-gen:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,168,67,.45);}
+
+.err-box{display:none;background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.25);border-radius:10px;padding:14px 18px;font-size:13px;color:#FF9B9B;margin-top:14px;animation:fadeUp .3s ease both;}
+.err-box.show{display:block;}
 
 /* Report */
-.report-wrap {
-  display: none; animation: fadeUp 0.6s ease both;
-}
-.report-wrap.show { display: block; }
+.report-wrap{display:none;animation:fadeUp .6s ease both;}
+.report-wrap.show{display:block;}
 
-.report-header {
-  text-align: center; padding: 40px 20px 32px;
-  border-bottom: 1px solid var(--border2);
-  margin-bottom: 32px;
-}
-.report-name {
-  font-family: var(--ff-display); font-size: 28px; font-weight: 700;
-  background: linear-gradient(135deg, var(--gold2), var(--gold));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  margin-bottom: 6px;
-}
-.report-date { font-size: 12px; color: var(--text3); letter-spacing: 0.1em; }
+.report-header{text-align:center;padding:36px 20px 28px;border-bottom:1px solid var(--border2);margin-bottom:28px;}
+.rname{font-family:var(--ff-d);font-size:clamp(22px,4vw,34px);font-weight:700;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
+.rdate{font-size:11px;color:var(--text3);letter-spacing:.1em;}
 
-.report-numbers {
-  display: grid; grid-template-columns: repeat(4,1fr); gap: 12px;
-  margin-bottom: 40px;
-}
-@media (max-width: 560px) { .report-numbers { grid-template-columns: repeat(2,1fr); } }
-.rnum-card {
-  background: var(--bg-card); border: 1px solid var(--border2);
-  border-radius: 12px; padding: 18px 14px; text-align: center;
-  transition: border-color 0.3s;
-}
-.rnum-card:hover { border-color: var(--border); }
-.rnum-val {
-  font-family: var(--ff-display); font-size: 36px; font-weight: 900;
-  background: linear-gradient(135deg, var(--gold2), var(--gold));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  display: block; line-height: 1;
-}
-.rnum-name { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text3); margin-top: 8px; display: block; }
-.rnum-title { font-size: 11px; color: var(--text2); margin-top: 5px; display: block; }
+.report-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:36px;}
+@media(max-width:560px){.report-nums{grid-template-columns:repeat(2,1fr);}}
+.rnum{background:var(--bg-card);border:1px solid var(--border2);border-radius:12px;padding:18px 12px;text-align:center;transition:border-color .3s;}
+.rnum:hover{border-color:var(--border);}
+.rnum-val{font-family:var(--ff-d);font-size:34px;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;line-height:1;}
+.rnum-name{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-top:7px;display:block;}
+.rnum-title{font-size:11px;color:var(--text2);margin-top:4px;display:block;}
 
 /* Report content */
-.report-content {
-  background: linear-gradient(135deg, rgba(15,15,40,0.97), rgba(18,18,46,0.95));
-  border: 1px solid var(--border2);
-  border-radius: 20px; padding: 40px 36px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-@media (max-width: 560px) { .report-content { padding: 28px 20px; } }
+.report-content{background:linear-gradient(135deg,rgba(15,15,40,.97),rgba(18,18,46,.95));border:1px solid var(--border2);border-radius:20px;padding:40px 36px;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+@media(max-width:560px){.report-content{padding:26px 18px;}}
 
-/* Markdown-like styling for AI output */
-.report-content h2 {
-  font-family: var(--ff-display); font-size: 16px; font-weight: 700;
-  color: var(--gold2); letter-spacing: 0.1em; text-transform: uppercase;
-  margin: 36px 0 16px; padding-bottom: 10px;
-  border-bottom: 1px solid rgba(212,168,67,0.15);
-  display: flex; align-items: center; gap: 10px;
-}
-.report-content h2:first-child { margin-top: 0; }
-.report-content h3 {
-  font-family: var(--ff-display); font-size: 13px; font-weight: 600;
-  color: var(--text); letter-spacing: 0.08em;
-  margin: 22px 0 10px;
-}
-.report-content p {
-  font-size: 13.5px; color: var(--text2); line-height: 1.85;
-  margin-bottom: 14px; font-weight: 300;
-}
-.report-content strong { color: var(--text); font-weight: 600; }
-.report-content em { color: var(--gold); font-style: italic; }
-.report-content ul, .report-content ol {
-  padding-left: 20px; margin-bottom: 16px;
-}
-.report-content li {
-  font-size: 13.5px; color: var(--text2); line-height: 1.75;
-  margin-bottom: 6px; font-weight: 300;
-}
-.report-content ul li::marker { color: var(--gold); }
-.report-content ol li::marker { color: var(--gold); font-weight: 600; }
+.section{margin-bottom:40px;animation:fadeUp .5s ease both;}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid rgba(212,168,67,.12);}
+.sec-num{font-family:var(--ff-d);font-size:10px;font-weight:700;color:var(--gold);background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.2);border-radius:6px;padding:4px 9px;letter-spacing:.1em;}
+.sec-title{font-family:var(--ff-d);font-size:15px;font-weight:700;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;}
 
-.highlight-box {
-  background: rgba(212,168,67,0.06);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 10px 10px 0;
-  padding: 16px 20px; margin: 20px 0;
-  font-size: 13px; color: var(--text2); line-height: 1.75;
-}
-.highlight-box strong { color: var(--gold2); }
+.section p{font-size:13.5px;color:var(--text2);line-height:1.85;margin-bottom:14px;font-weight:300;}
+.section strong{color:var(--text);font-weight:600;}
+.section em{color:var(--gold);font-style:italic;}
+.section h3{font-family:var(--ff-d);font-size:12px;font-weight:600;color:var(--text);letter-spacing:.1em;text-transform:uppercase;margin:22px 0 10px;padding-left:12px;border-left:2px solid var(--gold);}
+.section ul{padding-left:20px;margin-bottom:16px;}
+.section li{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:7px;font-weight:300;}
+.section ul li::marker{color:var(--gold);}
 
-.section-divider {
-  height: 1px; background: var(--border2);
-  margin: 32px 0;
-}
+.hl{background:rgba(212,168,67,.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0;font-size:13px;color:var(--text2);line-height:1.8;}
+.hl strong{color:var(--gold2);}
 
-/* CTA bottom */
-.cta-box {
-  margin-top: 40px;
-  background: linear-gradient(135deg, rgba(212,168,67,0.08), rgba(139,92,246,0.06));
-  border: 1px solid var(--border);
-  border-radius: 16px; padding: 32px 28px; text-align: center;
-}
-.cta-box h3 {
-  font-family: var(--ff-display); font-size: 18px; font-weight: 700;
-  color: var(--gold2); margin-bottom: 10px;
-}
-.cta-box p { font-size: 13px; color: var(--text3); margin-bottom: 20px; }
-.cta-btn {
-  display: inline-block; padding: 14px 32px;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #0D0D1A; font-family: var(--ff-display);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; border-radius: 10px;
-  text-decoration: none; transition: transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 6px 24px rgba(212,168,67,0.3);
-}
-.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(212,168,67,0.45); }
+.compat-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:12.5px;}
+.compat-table th{background:rgba(212,168,67,.08);color:var(--gold);font-family:var(--ff-d);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;text-align:left;border-bottom:1px solid rgba(212,168,67,.15);}
+.compat-table td{padding:9px 14px;color:var(--text2);border-bottom:1px solid var(--border2);}
+.compat-table tr:last-child td{border-bottom:none;}
+.dot-g{color:#4ade80;}
+.dot-y{color:#facc15;}
+.dot-r{color:#f87171;}
 
-/* Error */
-.error-box {
-  display: none; background: rgba(255,107,107,0.08);
-  border: 1px solid rgba(255,107,107,0.25);
-  border-radius: 12px; padding: 16px 20px;
-  font-size: 13px; color: #FF9B9B; margin-top: 16px;
-  animation: fadeUp 0.3s ease both;
-}
-.error-box.show { display: block; }
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.tag{background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.15);border-radius:20px;padding:5px 14px;font-size:11px;color:var(--gold);letter-spacing:.08em;}
+.tag.violet{background:rgba(139,92,246,.07);border-color:rgba(139,92,246,.2);color:#C4B0F0;}
+.tag.coral{background:rgba(255,107,107,.07);border-color:rgba(255,107,107,.2);color:#FFA0A0;}
 
-/* New report btn */
-.btn-new {
-  display: block; width: fit-content; margin: 24px auto 0;
-  padding: 12px 28px;
-  background: transparent; border: 1px solid var(--border);
-  border-radius: 10px; color: var(--gold);
-  font-family: var(--ff-display); font-size: 10px;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  cursor: pointer; transition: all 0.2s;
-}
-.btn-new:hover { background: rgba(212,168,67,0.06); border-color: var(--gold); }
+.monthly{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0;}
+@media(max-width:480px){.monthly{grid-template-columns:1fr;}}
+.month-card{background:rgba(255,255,255,.03);border:1px solid var(--border2);border-radius:10px;padding:14px 12px;}
+.month-name{font-family:var(--ff-d);font-size:10px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;}
+.month-text{font-size:12px;color:var(--text3);line-height:1.6;}
 
-/* Streaming cursor */
-.cursor {
-  display: inline-block; width: 2px; height: 14px;
-  background: var(--gold); margin-left: 2px;
-  animation: blink-cursor 0.8s infinite;
-  vertical-align: middle;
-}
-@keyframes blink-cursor { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+/* CTA */
+.cta-box{margin-top:40px;background:linear-gradient(135deg,rgba(212,168,67,.08),rgba(139,92,246,.06));border:1px solid var(--border);border-radius:16px;padding:32px 28px;text-align:center;}
+.cta-box h3{font-family:var(--ff-d);font-size:18px;font-weight:700;color:var(--gold2);margin-bottom:10px;}
+.cta-box p{font-size:13px;color:var(--text3);margin-bottom:20px;}
+.cta-btn{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0D0D1A;font-family:var(--ff-d);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:10px;text-decoration:none;transition:transform .2s,box-shadow .3s;box-shadow:0 6px 24px rgba(212,168,67,.3);}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(212,168,67,.45);}
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: rgba(212,168,67,0.3); border-radius: 3px; }
+.btn-new{display:block;width:fit-content;margin:24px auto 0;padding:12px 28px;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--gold);font-family:var(--ff-d);font-size:10px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+.btn-new:hover{background:rgba(212,168,67,.06);}
+
+.calc-box{background:rgba(255,255,255,.03);border:1px solid var(--border2);border-radius:12px;padding:20px 22px;margin:16px 0;font-family:monospace;font-size:13px;color:var(--text2);line-height:2;}
+.calc-box span{color:var(--gold);font-weight:600;}
 </style>
 </head>
 <body>
 
-<div class="aurora">
-  <div class="aurora-blob"></div>
-  <div class="aurora-blob"></div>
-  <div class="aurora-blob"></div>
-</div>
-
+<div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
 <div class="particles" id="particles"></div>
 
 <header>
-  <a href="/" class="logo-link">✦ Numerolojim.com.tr</a>
+  <a href="index.html" class="logo-link">✦ Numerolojim.com.tr</a>
   <span class="page-star">✦</span>
   <h1>Kişisel Numeroloji Raporun</h1>
-  <p class="header-sub">İsim ve doğum tarihini gir — yapay zeka destekli, 3000+ kelimelik kişisel raporunu saniyeler içinde al.</p>
+  <p class="header-sub">İsim ve doğum tarihini gir — sayıların sana anlattığı hikayeyi keşfet.</p>
 </header>
 
 <div class="wrap">
@@ -397,93 +158,58 @@ input::placeholder { color: var(--text3); }
   <!-- FORM -->
   <div class="form-card" id="formSection">
     <div class="form-title">✦ Bilgilerini Gir ✦</div>
-
     <div class="form-grid">
       <div class="field full">
         <label>Ad Soyad</label>
-        <input type="text" id="inputName" placeholder="Örn: Ayşe Kaya" autocomplete="off"/>
+        <input type="text" id="iName" placeholder="Örn: Ayşe Kaya" autocomplete="off"/>
       </div>
       <div class="field">
         <label>Doğum Günü</label>
-        <input type="number" id="inputDay" placeholder="15" min="1" max="31"/>
+        <input type="number" id="iDay" placeholder="15" min="1" max="31"/>
       </div>
       <div class="field">
         <label>Doğum Ayı</label>
-        <input type="number" id="inputMonth" placeholder="03" min="1" max="12"/>
+        <input type="number" id="iMonth" placeholder="03" min="1" max="12"/>
       </div>
       <div class="field full">
         <label>Doğum Yılı</label>
-        <input type="number" id="inputYear" placeholder="1990" min="1900" max="2010"/>
+        <input type="number" id="iYear" placeholder="1990" min="1900" max="2010"/>
       </div>
     </div>
-
-    <!-- Numbers preview -->
-    <div class="numbers-preview" id="numbersPreview">
-      <div class="num-badge">
-        <span class="num-val" id="prev-kader">—</span>
-        <span class="num-label">Kader</span>
-      </div>
-      <div class="num-badge">
-        <span class="num-val" id="prev-ruh">—</span>
-        <span class="num-label">Ruh Güdüsü</span>
-      </div>
-      <div class="num-badge">
-        <span class="num-val" id="prev-kisilik">—</span>
-        <span class="num-label">Kişilik</span>
-      </div>
-      <div class="num-badge">
-        <span class="num-val" id="prev-ifade">—</span>
-        <span class="num-label">İfade</span>
-      </div>
+    <div class="nums-prev" id="numsPreview">
+      <div class="nb"><span class="nb-val" id="pv-k">—</span><span class="nb-lbl">Kader</span></div>
+      <div class="nb"><span class="nb-val" id="pv-r">—</span><span class="nb-lbl">Ruh Güdüsü</span></div>
+      <div class="nb"><span class="nb-val" id="pv-ki">—</span><span class="nb-lbl">Kişilik</span></div>
+      <div class="nb"><span class="nb-val" id="pv-i">—</span><span class="nb-lbl">İfade</span></div>
     </div>
-
-    <div class="error-box" id="errorBox"></div>
-
-    <button class="btn-generate" id="btnGenerate" onclick="generateReport()">
-      ✦ Raporumu Oluştur
-    </button>
-  </div>
-
-  <!-- LOADING -->
-  <div class="loading-wrap" id="loadingSection">
-    <div class="loading-orb"></div>
-    <div class="loading-text">Raporun Hazırlanıyor</div>
-    <div class="loading-sub">Sayıların enerjisi analiz ediliyor<span class="loading-dots"><span></span><span></span><span></span></span></div>
+    <div class="err-box" id="errBox"></div>
+    <button class="btn-gen" onclick="generate()">✦ Raporumu Oluştur</button>
   </div>
 
   <!-- REPORT -->
   <div class="report-wrap" id="reportSection">
     <div class="report-header">
-      <div class="report-name" id="reportName"></div>
-      <div class="report-date" id="reportDate"></div>
+      <div class="rname" id="rName"></div>
+      <div class="rdate" id="rDate"></div>
     </div>
-
-    <div class="report-numbers" id="reportNumbers"></div>
-
+    <div class="report-nums" id="reportNums"></div>
     <div class="report-content" id="reportContent"></div>
-
     <div class="cta-box">
       <h3>✦ Daha Derin Keşfet</h3>
-      <p>Ücretsiz kader, ruh güdüsü, kişilik ve uyum analizlerin seni bekliyor.</p>
-      <a href="/" class="cta-btn">Ana Sayfaya Dön →</a>
+      <p>Ücretsiz interaktif analiz — kader, ruh güdüsü, kişilik, cinsel uyum ve burç sentezi seni bekliyor.</p>
+      <a href="index.html" class="cta-btn">Tam Analizi Aç →</a>
     </div>
-
     <button class="btn-new" onclick="resetForm()">← Yeni Rapor Oluştur</button>
   </div>
 
 </div>
 
 <script>
-/* ── PARTICLES ── */
-const pc = document.getElementById('particles');
-for(let i=0;i<35;i++){
-  const p=document.createElement('div');
-  p.className='particle';
-  p.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${8+Math.random()*16}s;animation-delay:${Math.random()*10}s;width:${Math.random()<0.3?3:2}px;height:${Math.random()<0.3?3:2}px;opacity:0`;
-  pc.appendChild(p);
-}
+/* Particles */
+const pc=document.getElementById('particles');
+for(let i=0;i<35;i++){const p=document.createElement('div');p.className='particle';p.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${8+Math.random()*16}s;animation-delay:${Math.random()*10}s;`;pc.appendChild(p);}
 
-/* ── NUMEROLOJI HESAPLAMA ── */
+/* Numeroloji */
 const LV={a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:1,k:2,l:3,m:4,n:5,o:6,p:7,q:8,r:9,s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8,ç:3,ğ:7,ı:9,ö:6,ş:1,ü:3};
 const VOWELS=new Set(['a','e','i','ı','o','ö','u','ü']);
 const isVow=c=>VOWELS.has(c);
@@ -493,11 +219,10 @@ function reduce(n,keepM=true){
   if(n<10)return n;
   return reduce(String(n).split('').reduce((a,d)=>a+parseInt(d),0),keepM);
 }
-
 function calcKader(d,m,y){
-  return reduce(String(d+m+y).split('').reduce((a,c)=>a+(isNaN(parseInt(c))?0:parseInt(c)),0));
+  const digits=`${d}${m}${y}`.split('').map(Number);
+  return reduce(digits.reduce((a,b)=>a+b,0));
 }
-
 function calcName(name,filter='all'){
   let t=0;
   for(const c of name.toLowerCase().replace(/\s/g,'')){
@@ -507,225 +232,407 @@ function calcName(name,filter='all'){
   }
   return reduce(t);
 }
+function kaderSteps(d,m,y){
+  const digits=`${d}${m}${y}`.split('').map(Number);
+  const sum=digits.reduce((a,b)=>a+b,0);
+  const result=reduce(sum);
+  return {digits,sum,result};
+}
 
 const TITLES={1:"Öncü Ruh",2:"Barış Elçisi",3:"Yaratıcı Ruh",4:"Usta İnşaatçı",5:"Özgür Ruh",6:"Sevgi Öğretmeni",7:"Gizemli Bilge",8:"Güç Odağı",9:"Evrensel Ruh",11:"Işık Taşıyıcısı ✦",22:"Usta Mimar ✦",33:"Usta Öğretmen ✦"};
 
-/* ── LIVE PREVIEW ── */
+/* Live preview */
 function updatePreview(){
-  const name=document.getElementById('inputName').value.trim();
-  const d=parseInt(document.getElementById('inputDay').value)||0;
-  const m=parseInt(document.getElementById('inputMonth').value)||0;
-  const y=parseInt(document.getElementById('inputYear').value)||0;
+  const name=document.getElementById('iName').value.trim();
+  const d=parseInt(document.getElementById('iDay').value)||0;
+  const m=parseInt(document.getElementById('iMonth').value)||0;
+  const y=parseInt(document.getElementById('iYear').value)||0;
   if(!name||!d||!m||!y||y<1900)return;
-  const kader=calcKader(d,m,y);
-  const ruh=calcName(name,'v');
-  const kisilik=calcName(name,'c');
-  const ifade=calcName(name,'all');
-  document.getElementById('prev-kader').textContent=kader;
-  document.getElementById('prev-ruh').textContent=ruh;
-  document.getElementById('prev-kisilik').textContent=kisilik;
-  document.getElementById('prev-ifade').textContent=ifade;
-  document.getElementById('numbersPreview').classList.add('show');
+  document.getElementById('pv-k').textContent=calcKader(d,m,y);
+  document.getElementById('pv-r').textContent=calcName(name,'v');
+  document.getElementById('pv-ki').textContent=calcName(name,'c');
+  document.getElementById('pv-i').textContent=calcName(name,'all');
+  document.getElementById('numsPreview').classList.add('show');
 }
+['iName','iDay','iMonth','iYear'].forEach(id=>document.getElementById(id).addEventListener('input',updatePreview));
 
-['inputName','inputDay','inputMonth','inputYear'].forEach(id=>{
-  document.getElementById(id).addEventListener('input',updatePreview);
-});
+/* ═══════════════════════════════════════
+   VERİTABANI — 9 Sayı × 7 Bölüm
+═══════════════════════════════════════ */
+const DB = {
 
-/* ── REPORT GENERATION ── */
-async function generateReport(){
-  const name=document.getElementById('inputName').value.trim();
-  const d=parseInt(document.getElementById('inputDay').value);
-  const m=parseInt(document.getElementById('inputMonth').value);
-  const y=parseInt(document.getElementById('inputYear').value);
+  // ── KADER SAYISI İÇERİKLERİ ──
+  kader: {
+    1: {
+      kisilik: `<p><strong>{AD}</strong>, kader sayısı <strong>1</strong> olan bireyler bu dünyaya lider, öncü ve bağımsız bir ruhla gelirler. Pisagor'un sisteminde 1 sayısı her şeyin başlangıcıdır — sıfırdan bir şey yaratma, yol açma ve ilk adımı atma enerjisini taşır.</p>
+      <p>Sen doğal bir lidersin. Bunu zorlamana gerek yok — insanlar senin etrafında otomatik olarak toplanır çünkü kararlarına güven verirsin. Bir projede, bir grupta, bir aile ortamında bile farkında olmadan yönlendirici rolü üstlenirsin.</p>
+      <div class="hl"><strong>Sherlock Holmes metaforu:</strong> Tıpkı o büyük dedektif gibi, sen de detayları görür, bağlantıları kurarsın — ama bazen başkalarını bu sürecin dışında bırakırsın. En güçlü liderler hem karar verenler hem de ekibini götürebilenledir.</div>
+      <h3>Güçlü Yönlerin</h3>
+      <ul><li>Hızlı karar verme yeteneği — tereddüt seni durdurmaz</li><li>Özgünlük — başkasının yolunu değil, kendi izini açarsın</li><li>Karizma — söylemeden bile otorite hissettirirsin</li><li>Bağımsız düşünce — kalabalık fikriyle değil, kendi analiziyle hareket edersin</li><li>Yaratıcı çözümler — alışılmadık yolları görürsün</li></ul>
+      <h3>Dikkat Etmen Gerekenler</h3>
+      <ul><li>İnatçılık: "Haklıyım" refleksi bazen seni dinlemekten alıkoyar</li><li>Yalnızlaşma: Her şeyi tek başına çözme eğilimi bağlarını zayıflatabilir</li><li>Sabırsızlık: Hızlı düşünen bir zihne yavaş süreçler işkence gibi gelir</li></ul>
+      <h3>5 Pratik İpucu</h3>
+      <ul><li>Haftada bir kez sana "hayır" diyen biriyle vakit geç — büyümen için gerekli</li><li>Projelerini başlatmak kadar bitirmeye de önem ver</li><li>Ekibine güven — liderlik kontrol etmek değil, yetki vermektir</li><li>Dinleme egzersizi: Birisi seninle konuşurken cevabı hazırlamadan dinle</li><li>Yalnızlık zamanı ayır ama izolasyona dikkat et</li></ul>`,
 
-  const errBox=document.getElementById('errorBox');
-  errBox.classList.remove('show');
+      ask: `<p>Ruh güdüsünle şekillenen aşk anlayışında, <strong>{AD}</strong>, önce zihinsel bir bağ ararsın. İlişkide de lider olmak istersin — bu güçlü bir özellik ama zaman zaman dengeyi zorlar.</p>
+      <div class="hl"><strong>İdeal partner profili:</strong> Seni hem seven hem de karşısında durabilen, özgürlüğüne saygı gösteren ve seni entelektüel olarak zorlayan biri.</div>
+      <table class="compat-table"><thead><tr><th>Sayı</th><th>Uyum</th><th>Notlar</th></tr></thead><tbody>
+      <tr><td>1</td><td><span class="dot-y">●</span> Orta</td><td>İki lider — güçlü ama çatışmalı olabilir</td></tr>
+      <tr><td>2</td><td><span class="dot-g">●</span> Çok İyi</td><td>Barışçıl 2 seni dengeler</td></tr>
+      <tr><td>3</td><td><span class="dot-g">●</span> İyi</td><td>Yaratıcı enerji uyumu</td></tr>
+      <tr><td>4</td><td><span class="dot-y">●</span> Orta</td><td>4'ün katılığı sürtüşme yaratır</td></tr>
+      <tr><td>5</td><td><span class="dot-g">●</span> Çok İyi</td><td>Özgür ruh seni heyecanlandırır</td></tr>
+      <tr><td>6</td><td><span class="dot-g">●</span> İyi</td><td>Şefkat seni yumuşatır</td></tr>
+      <tr><td>7</td><td><span class="dot-y">●</span> Orta</td><td>İkisi de bağımsız — mesafe oluşabilir</td></tr>
+      <tr><td>8</td><td><span class="dot-g">●</span> Çok İyi</td><td>İki güç odağı — muhteşem ya da yıkıcı</td></tr>
+      <tr><td>9</td><td><span class="dot-g">●</span> İyi</td><td>9'un evrensel sevgisi seni açar</td></tr>
+      </tbody></table>`,
 
-  if(!name||name.length<2){
-    errBox.textContent='Lütfen geçerli bir ad soyad girin.';
-    errBox.classList.add('show'); return;
-  }
-  if(!d||d<1||d>31||!m||m<1||m>12||!y||y<1900||y>2010){
-    errBox.textContent='Lütfen geçerli bir doğum tarihi girin.';
-    errBox.classList.add('show'); return;
-  }
+      kariyer: `<p><strong>{AD}</strong>, kader sayısı 1 olanlar için kariyer yolculuğu bağımsızlık ve liderlik üzerine kurulu olmalıdır. Başkasının direktiflerini uygulamak yerine kendi vizyonunu hayata geçirdiğinde gerçek potansiyeline ulaşırsın.</p>
+      <h3>En Uygun Kariyer Alanları</h3>
+      <ul><li>Girişimcilik ve kendi işini kurma</li><li>Yöneticilik ve liderlik pozisyonları</li><li>Bağımsız danışmanlık</li><li>Yaratıcı direktörlük</li><li>Spor, performans alanları (birey sporları)</li><li>Politika ve kamu liderliği</li></ul>
+      <div class="hl"><strong>2026 Finans Tahmini:</strong> Bu yıl 1 sayıları için yeni gelir kapıları açılıyor. Özellikle Nisan-Haziran dönemi yatırım ve girişim kararları için güçlü bir dönem. Risk almaktan çekinme — ama planını sağlam yap.</div>`,
 
-  const kader=calcKader(d,m,y);
-  const ruh=calcName(name,'v');
-  const kisilik=calcName(name,'c');
-  const ifade=calcName(name,'all');
+      saglik: `<p><strong>{AD}</strong>, 1 sayısı yüksek enerji ve hız taşır — bu bazen vücudun sinyallerini görmezden gelmene yol açar. Baş ağrıları, yüksek tansiyon ve sinir sistemi yorgunluğuna dikkat et.</p>
+      <h3>Öneriler</h3>
+      <ul><li><strong>Egzersiz:</strong> Yüzme, koşu, bisiklet — bireysel ve tempolu sporlar sana göre</li><li><strong>Beslenme:</strong> Kırmızı gıdalar (domates, kırmızı biber) — 1 sayısının rengi kırmızıdır</li><li><strong>Meditasyon:</strong> Günde 10 dakika nefes meditasyonu — zihinsel yavaşlama için kritik</li><li><strong>Şanslı taş:</strong> Kırmızı akik — güç ve netlik verir</li><li><strong>Şanslı renk:</strong> Kırmızı, altın sarısı</li></ul>`,
 
-  // Hesap adımları
-  const digits=`${d}${m}${y}`.split('').map(Number);
-  const digitSum=digits.reduce((a,b)=>a+b,0);
-  const kaderStep=`${digits.join('+')} = ${digitSum}${digitSum>9?` → ${kader}`:''}`;
+      tahmin2026: `<p><strong>{AD}</strong> için 2026 kişisel yılın 1 enerjisiyle çakışıyor — bu nadir ve güçlü bir senkronizasyon. Yeni başlangıçlar, fırsatlar ve dönüşümler için mükemmel bir yıl.</p>
+      <div class="monthly">
+        <div class="month-card"><div class="month-name">Nisan</div><div class="month-text">Yeni projeleri başlatmak için ideal. Enerji yüksek.</div></div>
+        <div class="month-card"><div class="month-name">Mayıs</div><div class="month-text">Finansal kararlar için dikkatli ol. İki kez düşün.</div></div>
+        <div class="month-card"><div class="month-name">Haziran</div><div class="month-text">İlişkilerde dürüstlük zamanı. Konuşulmayanı konuş.</div></div>
+        <div class="month-card"><div class="month-name">Temmuz</div><div class="month-text">Dinlenme ayı. Enerjiyi zorla değil, yönlendir.</div></div>
+        <div class="month-card"><div class="month-name">Ağustos</div><div class="month-text">Kariyer fırsatı kapıda. Hazır ol.</div></div>
+        <div class="month-card"><div class="month-name">Eylül</div><div class="month-text">Güçlü ay. Alınan kararlar kalıcı sonuç verir.</div></div>
+        <div class="month-card"><div class="month-name">Ekim</div><div class="month-text">Aile ve kişisel ilişkilere odaklan.</div></div>
+        <div class="month-card"><div class="month-name">Kasım</div><div class="month-text">İçe dönük dönem. Planlar yap, henüz uygulama.</div></div>
+        <div class="month-card"><div class="month-name">Aralık</div><div class="month-text">Yılı güçlü kapat. Minnettarlık pratiği yap.</div></div>
+      </div>
+      <div class="tags"><span class="tag">Şanslı Sayılar: 1, 10, 19</span><span class="tag">Şanslı Gün: Pazar</span><span class="tag">Şanslı Renk: Kırmızı</span><span class="tag">Şanslı Taş: Kırmızı Akik</span></div>`,
 
-  // Show loading
-  document.getElementById('formSection').style.display='none';
-  document.getElementById('loadingSection').classList.add('show');
+      gelisim: `<p>Kader sayısı 1 olan <strong>{AD}</strong> için spiritüel büyüme, ego ile öz arasındaki dengeyi bulmaktan geçer. En güçlü liderler, aynı zamanda en derin içgözlem sahipleridir.</p>
+      <h3>Günlük Afirmasyonlar</h3>
+      <ul><li>"Ben hem güçlü hem de esnek olabilirim."</li><li>"Başkalarına güvenmek zayıflık değil, akıllılıktır."</li><li>"Kendi yolumu açarken başkalarının yolunu da aydınlatırım."</li></ul>
+      <h3>Haftalık Ritüel</h3>
+      <ul><li>Her Pazar sabahı 5 dakika: Haftanın niyetini sesli söyle</li><li>Gün sonunda: "Bugün kimin için orada oldum?" diye sor kendine</li><li>Ay'ın ilk günü: Yeni bir şey dene — küçük de olsa</li></ul>
+      <div class="hl"><strong>Numerolojim.com.tr'de</strong> kader sayın 1 için tam interaktif analiz, cinsel uyum ve burç sentezini ücretsiz keşfet.</div>`
+    },
 
-  const prompt=`Sen uzman bir numerologsun. Aşağıdaki kişi için Türkçe, kapsamlı ve derin bir numeroloji raporu yaz.
+    2: {
+      kisilik: `<p><strong>{AD}</strong>, kader sayısı <strong>2</strong> olan bireyler bu dünyaya birleştirici, dengeleyici ve köprü kurucu bir misyonla gelirler. Pisagor'un sisteminde 2 sayısı zıtlıkların uyumunu, işbirliğini ve ilişkilerin derinliğini temsil eder.</p>
+      <p>Sen bir oda okuyucususun. Ortama girdiğinde havanın nasıl olduğunu anında hissedersin. Birinin söylemediği şeyi bile sezgisel olarak anlarsın. Bu olağanüstü bir hediyedir — ama aynı zamanda seni duygusal olarak yorabilir.</p>
+      <div class="hl"><strong>Nelson Mandela metaforu:</strong> En büyük liderler güçleriyle değil, birleştirme yetenekleriyle tarihe geçmiştir. 2 enerjisi tam da budur — birleştirme, onarma, köprü olma.</div>
+      <h3>Güçlü Yönlerin</h3>
+      <ul><li>Derin empati — başkasının hislerini kendi bedeninde hissedersin</li><li>Sezgi — olayları öngörme kapasiten gelişmiştir</li><li>Diplomasi — çatışmaları yatıştırır, ortak zemin bulursun</li><li>Sadakat — sevdiklerine sonuna kadar bağlısın</li><li>Sabır — en zor süreçlerde bile soğukkanlılığını korursun</li></ul>
+      <h3>Dikkat Etmen Gerekenler</h3>
+      <ul><li>Kendini feda etmek: Başkalarının ihtiyaçlarını önce koymak seni tüketir</li><li>Onay arayışı: İçindeki sesi dinlemek yerine başkasını onayını beklemek</li><li>Kararsızlık: Çok fazla perspektif görmek karar vermeyi zorlaştırır</li></ul>
+      <h3>5 Pratik İpucu</h3>
+      <ul><li>Her gün bir şeye "hayır" de — küçük de olsa</li><li>Hislerini günlüğe yaz — içini dışarı çıkar</li><li>Yalnız kalma ritüeli oluştur — şarj olmak için gerekli</li><li>Sezgine güven — genellikle haklısın</li><li>Güzellik ara — müzik, sanat, doğa 2 sayısını besler</li></ul>`,
 
-Kişi Bilgileri:
-- Ad Soyad: ${name}
-- Doğum Tarihi: ${d}.${m}.${y}
-- Kader Sayısı: ${kader} (Hesaplama: ${kaderStep})
-- Ruh Güdüsü Sayısı: ${ruh}
-- Kişilik Sayısı: ${kisilik}
-- İfade Sayısı: ${ifade}
+      ask: `<p><strong>{AD}</strong> için aşk, hayatın en derin anlamlarından biridir. İlişkide yüzeyselliğe tahammül edemezsin — derin bağ, gerçek dürüstlük ve karşılıklı anlayış ararsın.</p>
+      <div class="hl"><strong>İdeal partner profili:</strong> Duygusal zekası yüksek, seni gerçekten dinleyen, güvenli bir alan yaratan ve özgürlüğüne saygı gösteren biri.</div>
+      <table class="compat-table"><thead><tr><th>Sayı</th><th>Uyum</th><th>Notlar</th></tr></thead><tbody>
+      <tr><td>1</td><td><span class="dot-g">●</span> İyi</td><td>1'in gücü 2'yi dengeler</td></tr>
+      <tr><td>2</td><td><span class="dot-g">●</span> Çok İyi</td><td>Derin anlayış, ruhsal uyum</td></tr>
+      <tr><td>3</td><td><span class="dot-y">●</span> Orta</td><td>3'ün neşesi güzel ama dağınıklığı zorlayabilir</td></tr>
+      <tr><td>4</td><td><span class="dot-g">●</span> İyi</td><td>4'ün güvenilirliği 2'ye huzur verir</td></tr>
+      <tr><td>5</td><td><span class="dot-r">●</span> Zor</td><td>5'in özgürlük ihtiyacı 2'yi güvensiz hissettirir</td></tr>
+      <tr><td>6</td><td><span class="dot-g">●</span> Çok İyi</td><td>En uyumlu çiftlerden biri</td></tr>
+      <tr><td>7</td><td><span class="dot-y">●</span> Orta</td><td>7'nin mesafesi 2'yi zorlayabilir</td></tr>
+      <tr><td>8</td><td><span class="dot-y">●</span> Orta</td><td>8'in yoğunluğu dengelenebilir</td></tr>
+      <tr><td>9</td><td><span class="dot-g">●</span> Çok İyi</td><td>Koşulsuz sevgi uyumu</td></tr>
+      </tbody></table>`,
 
-Raporu aşağıdaki 7 bölümde yaz. Her bölüm en az 400 kelime olsun. Toplam rapor 3000+ kelime olsun.
+      kariyer: `<p><strong>{AD}</strong>, 2 sayısının enerjisi ekip çalışması, destek rolleri ve insan odaklı mesleklerde parlar. Rekabetçi ve sert ortamlar seni yorar — işbirliğine dayalı ortamlar seni besler.</p>
+      <h3>En Uygun Kariyer Alanları</h3>
+      <ul><li>Psikoloji, terapi ve danışmanlık</li><li>Eğitim ve öğretmenlik</li><li>Sağlık sektörü (hemşirelik, diyetisyenlik)</li><li>İnsan kaynakları</li><li>Diplomat ve arabuluculuk</li><li>Sanat ve müzik</li></ul>
+      <div class="hl"><strong>2026 Finans Tahmini:</strong> 2 sayıları için bu yıl ortaklıklar ve işbirlikleri finansal fırsatlar getirecek. Yalnız değil, birlikte çalıştığında daha güçlüsün.</div>`,
 
-ÖNEMLI FORMAT KURALLARI:
-- Her ana bölüm başlığını ## ile başlat (örn: ## 1. Giriş ve Temel Hesaplamalar)
-- Alt başlıkları ### ile yaz
-- Önemli kelimeleri **kalın** yap
-- İtalik için *italik* kullan
-- Listeler için - kullan
-- Özel kutular için > kullan (highlight box)
-- Akıcı, ikna edici, sıcak bir dil kullan
-- Metaforlar ve gerçek hayat örnekleri ekle
+      saglik: `<p><strong>{AD}</strong>, 2 sayısı duygusal hassasiyeti yüksek bir enerji taşır. Bu duyarlılık sindirim sistemi, böbrekler ve hormonal dengeyi etkileyebilir. Stresi yönetmek en öncelikli sağlık konun.</p>
+      <h3>Öneriler</h3>
+      <ul><li><strong>Egzersiz:</strong> Yoga, yüzme, dans — akışkan ve ritmik hareketler</li><li><strong>Beslenme:</strong> Mavi-mor gıdalar (böğürtlen, patlıcan) — 2 sayısının rengi pastel mavi</li><li><strong>Meditasyon:</strong> Sevgi-şefkat meditasyonu (Metta) — günde 15 dakika</li><li><strong>Şanslı taş:</strong> Ay taşı — sezgiyi güçlendirir, duyguları dengeler</li><li><strong>Şanslı renk:</strong> Pastel mavi, gümüş</li></ul>`,
 
-BÖLÜMLER:
+      tahmin2026: `<p><strong>{AD}</strong> için 2026, ilişkiler ve duygusal dönüşümün yılı. Uzun süredir içinde taşıdığın bir his ya da ilişki bu yıl netlik kazanacak.</p>
+      <div class="monthly">
+        <div class="month-card"><div class="month-name">Nisan</div><div class="month-text">İlişkilerde önemli konuşmalar. Açık ol.</div></div>
+        <div class="month-card"><div class="month-name">Mayıs</div><div class="month-text">Kariyer fırsatı — ortaklık teklifi gelebilir.</div></div>
+        <div class="month-card"><div class="month-name">Haziran</div><div class="month-text">Duygusal yoğunluk. Kendine alan ver.</div></div>
+        <div class="month-card"><div class="month-name">Temmuz</div><div class="month-text">Huzur ayı. Doğayla vakit geç.</div></div>
+        <div class="month-card"><div class="month-name">Ağustos</div><div class="month-text">Yeni bir bağlantı ya da ilişki derinleşmesi.</div></div>
+        <div class="month-card"><div class="month-name">Eylül</div><div class="month-text">Sınır koyma zamanı. Hayır demek güç.</div></div>
+        <div class="month-card"><div class="month-name">Ekim</div><div class="month-text">Yaratıcı bir proje başlatmak için ideal.</div></div>
+        <div class="month-card"><div class="month-name">Kasım</div><div class="month-text">Finansal dikkat gerekiyor.</div></div>
+        <div class="month-card"><div class="month-name">Aralık</div><div class="month-text">Yılı sevdiklerinle kapat. Şükran pratikleri yap.</div></div>
+      </div>
+      <div class="tags"><span class="tag">Şanslı Sayılar: 2, 11, 20</span><span class="tag">Şanslı Gün: Pazartesi</span><span class="tag">Şanslı Renk: Gümüş</span><span class="tag">Şanslı Taş: Ay Taşı</span></div>`,
 
-## 1. Giriş ve Temel Hesaplamalar
-Kişinin sayılarını (${kader}, ${ruh}, ${kisilik}, ${ifade}) adım adım hesapla ve genel anlamlarını anlat. Pisagor'dan bahset. Formülleri göster.
+      gelisim: `<p>Kader sayısı 2 olan <strong>{AD}</strong> için spiritüel yolculuk, içindeki sesi yabancı seslerden ayırt etmekten geçer. Başkasının beklentilerini değil, kendi hakikatini yaşamak senin büyümen.</p>
+      <h3>Günlük Afirmasyonlar</h3>
+      <ul><li>"Kendi ihtiyaçlarıma öncelik vermek bencillik değil, sağlıktır."</li><li>"Sezgime güveniyorum — içim biliyor."</li><li>"Sınırlarım sevgimin bir parçasıdır."</li></ul>
+      <h3>Haftalık Ritüel</h3>
+      <ul><li>Her gece yatmadan: O gün seni iyi hissettiren 3 şeyi yaz</li><li>Dolunay gecesi: Bırakmak istediğin şeyi kağıda yaz, yak (ya da yırt)</li><li>Her sabah: "Bugün kendime nasıl iyi bakabilirim?" diye sor</li></ul>`
+    },
 
-## 2. Kişilik ve Karakter Analizi
-Kader sayısı ${kader}'e göre derin kişilik analizi. Güçlü yönler, zayıf yönler, kariyer ve ilişkilere etkisi. 5 pratik ipucu ver. Gerçek hayat metaforları kullan.
+    3: {
+      kisilik: `<p><strong>{AD}</strong>, kader sayısı <strong>3</strong> olan bireyler bu dünyaya ifade, neşe ve ilham yaratmak için gelirler. Pisagor numerolojisinde 3 sayısı üçgenin enerjisini taşır — üçgen, geometrinin en stabil ve dinamik şeklidir.</p>
+      <p>Sen bir odaya girdiğinde hava değişir. Kelimeler, sesler, renkler — her şey senin elinde anlam kazanır. İnsanlar sana "sen olmasan ne sıkıcı olurdu" der. Bu rastlantı değil — senin enerjinin doğal etkisidir.</p>
+      <div class="hl"><strong>Mozart metaforu:</strong> Hayatını bir senfoni gibi yaşarsın — her an farklı bir nota, her gün farklı bir melodi. Ama en büyük eserler, sadece doğaçlama değil, disiplinle de yaratılır.</div>
+      <h3>Güçlü Yönlerin</h3>
+      <ul><li>Yaratıcı ifade — sanat, yazı, konuşma alanlarında doğal yetenek</li><li>Karizmatik varlık — seni hatırlarlar</li><li>İyimserlik — karanlık anlarda bile ışık bulursun</li><li>Sosyal zeka — insanlarla bağ kurmak sana kolay gelir</li><li>Büyüleyicilik — çekimini fark etmesen de etrafın hep dolu</li></ul>
+      <h3>Dikkat Etmen Gerekenler</h3>
+      <ul><li>Dağınıklık: Onlarca fikir, hangisini bitireceksin?</li><li>Yüzeysellik: Derinleşmek yerine genişleme eğilimi</li><li>Duygusal tutarsızlık: Yüksek iniş çıkışlar</li></ul>
+      <h3>5 Pratik İpucu</h3>
+      <ul><li>Bir projeyi bitirmeden yenisine başlama kuralı koy</li><li>Yaratıcı enerjini düzenli bir kanala yönelt (blog, müzik, resim)</li><li>Duygularını sanat yoluyla ifade et</li><li>Sosyal medyayı bilinçli kullan — dikkat dağıtıcı olabilir</li><li>Meditasyonla zihnini yavaşlat</li></ul>`,
 
-## 3. Aşk ve İlişki Uyumluluğu
-Ruh güdüsü sayısı ${ruh}'e göre ideal partner profili. 1-9 arası uyum analizi (hangi sayılarla uyumlu, hangileriyle zor). Aşkta güçlü ve zayıf yönler. Pratik tavsiyeler.
+      ask: `<p><strong>{AD}</strong> için aşk neşeli, tutkulu ve sürekli taze bir macera olmalıdır. Rutine hapsolan ilişkiler seni soldurur — sürpriz, spontane anlar ve derin bağ bir arada olmalı.</p>
+      <div class="hl"><strong>İdeal partner profili:</strong> Seni hem güldüren hem de büyüten, yaratıcılığını destekleyen, özgürlüğüne alan açan biri.</div>
+      <table class="compat-table"><thead><tr><th>Sayı</th><th>Uyum</th><th>Notlar</th></tr></thead><tbody>
+      <tr><td>1</td><td><span class="dot-g">●</span> İyi</td><td>1'in liderliği 3'ü dengeler</td></tr>
+      <tr><td>2</td><td><span class="dot-y">●</span> Orta</td><td>2'nin hassasiyeti 3'ü zorlayabilir</td></tr>
+      <tr><td>3</td><td><span class="dot-g">●</span> Çok İyi</td><td>Çift yaratıcılık — eğlenceli ama dağınık</td></tr>
+      <tr><td>4</td><td><span class="dot-r">●</span> Zor</td><td>4'ün katılığı 3'ü boğar</td></tr>
+      <tr><td>5</td><td><span class="dot-g">●</span> Çok İyi</td><td>Özgürlük ve macera — mükemmel uyum</td></tr>
+      <tr><td>6</td><td><span class="dot-g">●</span> İyi</td><td>6'nın şefkati 3'ü besler</td></tr>
+      <tr><td>7</td><td><span class="dot-y">●</span> Orta</td><td>7'nin derinliği ilginç ama mesafeli</td></tr>
+      <tr><td>8</td><td><span class="dot-y">●</span> Orta</td><td>8'in ciddiyeti 3'ü sınırlayabilir</td></tr>
+      <tr><td>9</td><td><span class="dot-g">●</span> Çok İyi</td><td>Evrensel enerji uyumu</td></tr>
+      </tbody></table>`,
 
-## 4. Kariyer ve Finansal Potansiyel
-Kader sayısı ${kader} için en uygun meslekler, başarı alanları. 2026 yılı finansal tahmini. Para ve bolluk enerjisi. Kariyer tavsiyeleri.
+      kariyer: `<p><strong>{AD}</strong>, 3 sayısının yaratıcı ve ifade edici enerjisi sanat, iletişim ve sosyal alanlarda parlar. Masa başı rutin işler seni tüketir — dinamik, yaratıcı ortamlar seni besler.</p>
+      <h3>En Uygun Kariyer Alanları</h3>
+      <ul><li>Sanat, müzik, tasarım</li><li>Yazarlık, içerik üretimi, gazetecilik</li><li>Oyunculuk, sahne sanatları</li><li>Sosyal medya ve influencer</li><li>Reklamcılık ve pazarlama</li><li>Eğitim (yaratıcı yöntemlerle)</li></ul>
+      <div class="hl"><strong>2026 Finans Tahmini:</strong> Yaratıcı projeler bu yıl beklenmedik gelir getirebilir. Yan gelirlere açık ol — hobini paraya çevirebileceğin bir kapı aralanıyor.</div>`,
 
-## 5. Sağlık ve Wellness Önerileri
-Sayıya göre dikkat edilmesi gereken sağlık alanları. Beslenme, egzersiz, meditasyon önerileri. Şanslı renkler ve taşlar.
+      saglik: `<p><strong>{AD}</strong>, 3 sayısı yüksek sinirsel enerji taşır. Boğaz, akciğer ve sinir sistemi dikkat gerektiren alanlardır. Aşırı konuşma ve sosyalleşme sonrası yorgunluk hissedebilirsin.</p>
+      <h3>Öneriler</h3>
+      <ul><li><strong>Egzersiz:</strong> Dans, zumba, grup sporları — sosyal ve ritmik</li><li><strong>Beslenme:</strong> Sarı ve turuncu gıdalar (mango, zerdeçal) — 3'ün rengi sarı</li><li><strong>Meditasyon:</strong> Ses meditasyonu ya da mantra — ses 3 sayısını güçlendirir</li><li><strong>Şanslı taş:</strong> Sitrin — neşe, yaratıcılık ve bolluk taşı</li><li><strong>Şanslı renk:</strong> Sarı, turuncu</li></ul>`,
 
-## 6. 2026 Yılı Kişisel Tahmini
-Mart 2026 itibarıyla aylık enerji dağılımı (Nisan-Aralık 2026). Şanslı aylar, dikkatli olunması gereken dönemler. Kişisel yıl sayısı hesapla ve yorumla.
+      tahmin2026: `<p><strong>{AD}</strong> için 2026, yaratıcı patlamanın yılı. İçinde biriktirdiğin fikirler artık dışarı çıkmak istiyor — bu yıl onlara alan aç.</p>
+      <div class="monthly">
+        <div class="month-card"><div class="month-name">Nisan</div><div class="month-text">Yaratıcı proje başlatmak için mükemmel zaman.</div></div>
+        <div class="month-card"><div class="month-name">Mayıs</div><div class="month-text">Sosyal bağlar güçleniyor. Ağını genişlet.</div></div>
+        <div class="month-card"><div class="month-name">Haziran</div><div class="month-text">Duygusal iniş çıkışlara dikkat.</div></div>
+        <div class="month-card"><div class="month-name">Temmuz</div><div class="month-text">Tatil ve dinlenme — enerjiyi yenile.</div></div>
+        <div class="month-card"><div class="month-name">Ağustos</div><div class="month-text">İş teklifleri gelebilir. Seç, hepsini alma.</div></div>
+        <div class="month-card"><div class="month-name">Eylül</div><div class="month-text">Aşk hayatında heyecan verici gelişmeler.</div></div>
+        <div class="month-card"><div class="month-name">Ekim</div><div class="month-text">Finansal planlama zamanı.</div></div>
+        <div class="month-card"><div class="month-name">Kasım</div><div class="month-text">İçe çekilme — bir eser tamamla.</div></div>
+        <div class="month-card"><div class="month-name">Aralık</div><div class="month-text">Kutlama zamanı — hak ettin.</div></div>
+      </div>
+      <div class="tags"><span class="tag">Şanslı Sayılar: 3, 12, 21</span><span class="tag">Şanslı Gün: Çarşamba</span><span class="tag">Şanslı Renk: Sarı</span><span class="tag">Şanslı Taş: Sitrin</span></div>`,
 
-## 7. Gelişim ve Spiritüel Tavsiyeler
-Sayıyı dengeleme yöntemleri, günlük afirmasyonlar, meditasyon önerileri. Numerolojinin günlük hayata entegrasyonu. Güçlendirici ritüeller.`;
-
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 4000,
-        stream: true,
-        messages: [{ role: "user", content: prompt }]
-      })
-    });
-
-    // Hide loading, show report
-    document.getElementById('loadingSection').classList.remove('show');
-    document.getElementById('loadingSection').style.display='none';
-
-    // Populate header
-    document.getElementById('reportName').textContent=name;
-    document.getElementById('reportDate').textContent=`${d}.${m}.${y} · Rapor tarihi: Mart 2026`;
-
-    // Numbers
-    const nums=[
-      {val:kader,name:'Kader Sayısı',title:TITLES[kader]||''},
-      {val:ruh,name:'Ruh Güdüsü',title:TITLES[ruh]||''},
-      {val:kisilik,name:'Kişilik Sayısı',title:TITLES[kisilik]||''},
-      {val:ifade,name:'İfade Sayısı',title:TITLES[ifade]||''}
-    ];
-    document.getElementById('reportNumbers').innerHTML=nums.map(n=>`
-      <div class="rnum-card">
-        <span class="rnum-val">${n.val}</span>
-        <span class="rnum-name">${n.name}</span>
-        <span class="rnum-title">${n.title}</span>
-      </div>`).join('');
-
-    document.getElementById('reportSection').classList.add('show');
-
-    // Stream content
-    const contentEl=document.getElementById('reportContent');
-    contentEl.innerHTML='<span class="cursor"></span>';
-
-    const reader=response.body.getReader();
-    const decoder=new TextDecoder();
-    let fullText='';
-
-    while(true){
-      const {done,value}=await reader.read();
-      if(done)break;
-      const chunk=decoder.decode(value);
-      const lines=chunk.split('\n');
-      for(const line of lines){
-        if(line.startsWith('data: ')){
-          const data=line.slice(6).trim();
-          if(data==='[DONE]')break;
-          try{
-            const json=JSON.parse(data);
-            if(json.type==='content_block_delta'&&json.delta?.text){
-              fullText+=json.delta.text;
-              contentEl.innerHTML=markdownToHtml(fullText)+'<span class="cursor"></span>';
-              contentEl.scrollIntoView({behavior:'smooth',block:'end'});
-            }
-          }catch(e){}
-        }
-      }
+      gelisim: `<p>Kader sayısı 3 olan <strong>{AD}</strong> için spiritüel büyüme, yaratıcı enerjini odaklamaktan geçer. Dağılmak kolay — derinleşmek cesaret ister.</p>
+      <h3>Günlük Afirmasyonlar</h3>
+      <ul><li>"Yaratıcılığım dünyayı güzelleştirir."</li><li>"Odaklanabilirim — zihinim güçlüdür."</li><li>"Başladığım şeyleri tamamlama gücüne sahibim."</li></ul>
+      <h3>Haftalık Ritüel</h3>
+      <ul><li>Her sabah: 5 dakika serbest yazı (aklına ne gelirse yaz)</li><li>Haftada bir: Yeni bir şey yarat — küçük de olsa</li><li>Akşam: Güzel bir müzik, mum ışığı, minnettarlık</li></ul>`
     }
-
-    // Final render without cursor
-    contentEl.innerHTML=markdownToHtml(fullText);
-    window.scrollTo({top:0,behavior:'smooth'});
-
-  } catch(err){
-    document.getElementById('loadingSection').classList.remove('show');
-    document.getElementById('loadingSection').style.display='none';
-    document.getElementById('formSection').style.display='block';
-    const errBox=document.getElementById('errorBox');
-    errBox.textContent='Bir hata oluştu. Lütfen tekrar deneyin.';
-    errBox.classList.add('show');
-    console.error(err);
   }
+};
+
+// 4-9 için otomatik şablon üret
+const GENERIC = {
+  4: {title:"Usta İnşaatçı", kariyer:["Mühendislik ve teknik alanlar","Mimarlık","Muhasebe ve finans","Proje yönetimi","Hukuk","Ordu ve kamu hizmetleri"], uyum:{1:"İyi",2:"İyi",3:"Zor",4:"Çok İyi",5:"Zor",6:"İyi",7:"Çok İyi",8:"Orta",9:"Orta"}, renk:"Yeşil", tas:"Zümrüt", gun:"Cumartesi", lucky:"4, 13, 22", guc:["Disiplin ve kararlılık","Güvenilirlik — söz verdiğinde tutarsın","Sabır — uzun soluklu işlerde başarırsın","Pratik zeka","Sistemli ve düzenli düşünce"], zayif:["Katılık — değişime direnç","Duygularını ifade etmekte zorlanmak","Aşırı çalışmak","Mükemmeliyetçilik tuzağı"], karakter:"disiplinli ve güvenilir bir mimar gibisin — temelleri sağlam atarsın, kalıcı eserler bırakırsın.", afirm:["Değişim beni güçlendirir, yıkmaz.","Duygularımı ifade etmek beni zayıflatmaz, güçlendirir.","Sağlam temeller attım — şimdi büyüme zamanı."]},
+  5: {title:"Özgür Ruh", kariyer:["Seyahat ve turizm","Gazetecilik ve medya","Satış ve pazarlama","Girişimcilik","Spor ve performans","Sosyal medya"], uyum:{1:"Çok İyi",2:"Zor",3:"Çok İyi",4:"Zor",5:"Orta",6:"Orta",7:"İyi",8:"İyi",9:"İyi"}, renk:"Turuncu", tas:"Kehribar", gun:"Perşembe", lucky:"5, 14, 23", guc:["Adaptasyon — her ortama uyum sağlarsın","Cesaret — risk almaktan çekinmezsin","Karizmatik enerji","Merak — her şeyi öğrenmek istersin","Özgürlük — bağımlılıklardan kaçınırsın"], zayif:["Bağlanma zorluğu","Sorumsuzluk riski","Sabırsızlık","Aşırı dürtüsellik"], karakter:"bir kâşif gibisin — haritalanmamış topraklarda yürürsün, sınırları zorlarsın.", afirm:["Özgürlüğümü sorumlulukla dengeleyebilirim.","Derinleşmek de bir macera.","Seçtiklerimde kalıcı olabilirim."]},
+  6: {title:"Sevgi Öğretmeni", kariyer:["Sağlık sektörü","Öğretmenlik","Sosyal hizmetler","Koçluk ve danışmanlık","Ev dekorasyonu ve tasarım","Çocuk gelişimi"], uyum:{1:"İyi",2:"Çok İyi",3:"İyi",4:"İyi",5:"Orta",6:"Çok İyi",7:"Orta",8:"Orta",9:"Çok İyi"}, renk:"Turkuaz", tas:"Akuamarin", gun:"Cuma", lucky:"6, 15, 24", guc:["Koşulsuz sevgi kapasitesi","Koruyuculuk — sevdiklerine kalkan olursun","Sorumluluk — üstlendiğin işi bırakmazsın","Şifa enerjisi","Güzellik duygusu"], zayif:["Aşırı fedakârlık","Sınır koyamamak","Kontrolcülük riski","Eleştiriye aşırı duyarlılık"], karakter:"bir bahçıvan gibisin — her şeyi büyütür, besler ve korursun. Ama bazen kendi bahçeni sulamayı unutursun.", afirm:["Kendime de şefkat göstermek hakkımdır.","Hayır demek sevgimi azaltmaz.","Sınırlarım beni değil, ilişkilerimi korur."]},
+  7: {title:"Gizemli Bilge", kariyer:["Araştırma ve bilim","Felsefe ve akademi","Psikoloji ve psikiyatri","Spiritüellik ve öğreticilik","Yazarlık","Teknoloji ve veri analizi"], uyum:{1:"Orta",2:"Orta",3:"Orta",4:"Çok İyi",5:"İyi",6:"Orta",7:"Çok İyi",8:"İyi",9:"İyi"}, renk:"Mor", tas:"Ametist", gun:"Pazartesi", lucky:"7, 16, 25", guc:["Analitik derinlik","Sezgi — doğruyu hissedersin","Özgünlük — kalabalığın peşinden gitmezsin","Spiritüel farkındalık","Araştırma tutkusu"], zayif:["İzolasyon eğilimi","Güvensizlik","Aşırı analiz — felç edici olabilir","Duygusal mesafe"], karakter:"bir fener gibisin — karanlıkta ışık saçarsın ama bazen o ışığı paylaşmaktan çekinirsin.", afirm:["Anlaşılmak için önce kendimi açmam gerekiyor.","Yalnızlık ile izolasyon farklı şeylerdir.","Bilgeliğimi paylaştıkça büyür."]},
+  8: {title:"Güç Odağı", kariyer:["Girişimcilik","Finans ve bankacılık","Yöneticilik","Hukuk","Emlak","Politik liderlik"], uyum:{1:"Çok İyi",2:"Orta",3:"Orta",4:"İyi",5:"İyi",6:"Orta",7:"İyi",8:"Çok İyi",9:"İyi"}, renk:"Altın", tas:"Pirit (Altın Taş)", gun:"Cumartesi", lucky:"8, 17, 26", guc:["Stratejik zeka","Karizma ve otorite","Azim — pes etmezsin","Büyük resmi görme","Liderlik içgüdüsü"], zayif:["Kontrolcülük","Güç hırsı","İş-özel hayat dengesi kuramama","Duygusal sertlik"], karakter:"bir dağ gibisin — sarsılmazsın, korkutmazsın, sadece durursun. Ama dağların da içinde volkan olabilir.", afirm:["Gücümü sevgiyle kullanabilirim.","Kontrol etmeden de güçlü kalabilirim.","Başarı için tükenmek zorunda değilim."]},
+  9: {title:"Evrensel Ruh", kariyer:["Sanat ve edebiyat","Aktivizm ve sivil toplum","Uluslararası ilişkiler","Spiritüellik ve öğreticilik","Sağlık ve şifa","Çevre ve insani yardım"], uyum:{1:"İyi",2:"Çok İyi",3:"Çok İyi",4:"Orta",5:"İyi",6:"Çok İyi",7:"İyi",8:"İyi",9:"Orta"}, renk:"Altın-Mor", tas:"Labradorit", gun:"Pazar", lucky:"9, 18, 27", guc:["Evrensel empati","Dönüştürücü enerji","Şefaat gücü","Vizyoner bakış","Fedakârlık kapasitesi"], zayif:["Kendini feda etmek","Herkesi kurtarma isteği","İdealizm tuzağı","Sınır koyamamak"], karakter:"bir okyanus gibisin — sonsuz, derin ve her şeyi kucaklayan. Ama okyanusun da sınırları vardır — kıyıları.", afirm:["Önce kendimi doldurmadan başkalarına veremem.","Herkes benim kurtarmamı beklemiyor.","Evrensel sevgi benden başlar."]}
+};
+
+function buildGenericReport(n, name) {
+  const g = GENERIC[n];
+  if (!g) return '';
+  const uyumRows = Object.entries(g.uyum).map(([s,u])=>{
+    const dot = u==='Çok İyi'?'dot-g':u==='Zor'?'dot-r':'dot-y';
+    return `<tr><td>${s}</td><td><span class="${dot}">●</span> ${u}</td><td>${u==='Çok İyi'?'Derin uyum mümkün':u==='Zor'?'Çaba gerektiriyor':'Dengeli yaklaşımla güzel olabilir'}</td></tr>`;
+  }).join('');
+
+  return `
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Giriş ve Temel Hesaplamalar</span></div>
+    <p>Kader sayın <strong>${n}</strong> — <em>${g.title}</em>. Bu sayı, doğum tarihinin tüm rakamlarının Pisagor yöntemiyle indirgenmesiyle elde edilir.</p>
+    <div class="hl"><strong>Pisagor'dan ilham:</strong> "Sayı her şeyin özüdür." MÖ 570'te doğan bu büyük matematikçi ve mistik, evrenin sayısal bir dilde yazıldığına inanıyordu. Senin sayın ${n} — ve bu rastlantı değil.</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Kişilik ve Karakter Analizi</span></div>
+    <p><strong>${name}</strong>, sen bir ${g.karakter}</p>
+    <h3>Güçlü Yönlerin</h3>
+    <ul>${g.guc.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h3>Dikkat Etmen Gerekenler</h3>
+    <ul>${g.zayif.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <h3>5 Pratik İpucu</h3>
+    <ul>
+      <li>Her sabah niyetini belirle — "Bugün nasıl bir enerji taşımak istiyorum?"</li>
+      <li>Güçlü yönlerini farkında olarak kullan, körü körüne değil</li>
+      <li>Zayıf yönlerin için destek al — bu cesaret işaretidir</li>
+      <li>Haftalık bir "kendine bak" ritüeli oluştur</li>
+      <li>Sayın ${n}'in enerjisini taşıyan insanlarla vakit geç</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Aşk ve İlişki Uyumluluğu</span></div>
+    <p><strong>${name}</strong> için aşk, sayının taşıdığı enerjiyle derinden şekillenir. İdeal partnerin seni hem anlayan hem de büyüten biridir.</p>
+    <table class="compat-table"><thead><tr><th>Sayı</th><th>Uyum</th><th>Notlar</th></tr></thead><tbody>${uyumRows}</tbody></table>
+    <div class="hl"><strong>Aşkta tavsiye:</strong> En güçlü ilişkiler sayı uyumundan değil, iki insanın birbirini seçme kararlılığından doğar. Uyum başlangıç noktasıdır, son nokta değil.</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Kariyer ve Finansal Potansiyel</span></div>
+    <p><strong>${name}</strong>, ${n} enerjisi şu kariyer alanlarında parlar:</p>
+    <ul>${g.kariyer.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <div class="hl"><strong>2026 Finans Tahmini:</strong> Bu yıl ${n} sayıları için fırsatlar kapıda. Korkudan değil, vizyondan hareket et. Finansal kararlarını net bir niyetle al.</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Sağlık ve Wellness Önerileri</span></div>
+    <p><strong>${name}</strong>, bedenin enerjinle senkronize. Şanslı rengin <strong>${g.renk}</strong>, şanslı taşın <strong>${g.tas}</strong>.</p>
+    <ul>
+      <li><strong>Egzersiz:</strong> Haftada en az 3 gün tempolu yürüyüş ya da tercih ettiğin spor</li>
+      <li><strong>Meditasyon:</strong> Günde 10-15 dakika nefes odaklı meditasyon</li>
+      <li><strong>Beslenme:</strong> İşlenmemiş, doğal gıdalar — sayın doğallığı sever</li>
+      <li><strong>Şanslı taş:</strong> ${g.tas} — enerjini dengeler ve güçlendirir</li>
+      <li><strong>Şanslı renk:</strong> ${g.renk} — bu rengi yaşamına ekle</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">2026 Yılı Kişisel Tahmini</span></div>
+    <p><strong>${name}</strong> için 2026 enerjisi güçlü bir dönüşüm taşıyor. Aylık dağılım:</p>
+    <div class="monthly">
+      <div class="month-card"><div class="month-name">Nisan</div><div class="month-text">Yeni başlangıçlar için uygun. Harekete geç.</div></div>
+      <div class="month-card"><div class="month-name">Mayıs</div><div class="month-text">İlişkilere odaklan. Konuşulmayanı konuş.</div></div>
+      <div class="month-card"><div class="month-name">Haziran</div><div class="month-text">Kariyer fırsatı. Gözlerini aç.</div></div>
+      <div class="month-card"><div class="month-name">Temmuz</div><div class="month-text">Dinlenme ve şarj dönemi.</div></div>
+      <div class="month-card"><div class="month-name">Ağustos</div><div class="month-text">Güçlü enerji. Büyük kararlar için ideal.</div></div>
+      <div class="month-card"><div class="month-name">Eylül</div><div class="month-text">Finansal dikkat gerekiyor.</div></div>
+      <div class="month-card"><div class="month-name">Ekim</div><div class="month-text">Sosyal bağlar güçleniyor.</div></div>
+      <div class="month-card"><div class="month-name">Kasım</div><div class="month-text">İçe dönme ve planlama zamanı.</div></div>
+      <div class="month-card"><div class="month-name">Aralık</div><div class="month-text">Yılı şükranla kapat.</div></div>
+    </div>
+    <div class="tags"><span class="tag">Şanslı Sayılar: ${g.lucky}</span><span class="tag">Şanslı Gün: ${g.gun}</span><span class="tag">Şanslı Renk: ${g.renk}</span><span class="tag">Şanslı Taş: ${g.tas}</span></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-head"><span class="sec-num">07</span><span class="sec-title">Gelişim ve Spiritüel Tavsiyeler</span></div>
+    <p><strong>${name}</strong>, sayın ${n}'in enerjisini tam olarak yaşamak için içsel büyüme kaçınılmaz.</p>
+    <h3>Günlük Afirmasyonlar</h3>
+    <ul>${g.afirm.map(x=>`<li>"${x}"</li>`).join('')}</ul>
+    <h3>Haftalık Ritüel</h3>
+    <ul>
+      <li>Her sabah: Niyetini yüksek sesle söyle</li>
+      <li>Akşam: O gün için 3 şükran yaz</li>
+      <li>Haftada bir: Şanslı taşın ${g.tas}'ı tut, derin nefes al</li>
+      <li>Ay'ın ilk günü: Kendi sayın ${n} için özel bir niyet belirle</li>
+    </ul>
+    <div class="hl"><strong>Numeroloji günlük hayatta:</strong> Telefonunun arkasına sayın ${n}'i yaz. Önemli kararlardan önce 3 derin nefes al ve sayını düşün. Bu basit ama güçlü bir bağlantı ritüelidir.</div>
+  </div>`;
 }
 
-/* ── MARKDOWN → HTML ── */
-function markdownToHtml(md){
-  let html=md
-    .replace(/^## (.+)$/gm,'<h2>✦ $1</h2>')
-    .replace(/^### (.+)$/gm,'<h3>$1</h3>')
-    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g,'<em>$1</em>')
-    .replace(/^> (.+)$/gm,'<div class="highlight-box">$1</div>')
-    .replace(/^- (.+)$/gm,'<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g,'<ul>$&</ul>')
-    .replace(/^(\d+)\. (.+)$/gm,'<li>$2</li>')
-    .replace(/\n\n/g,'</p><p>')
-    .replace(/^(?!<[hul]|<\/[ul]|<div|<\/div)(.+)$/gm,'<p>$1</p>');
+/* ═══════════════════════════════════════
+   RAPOR OLUŞTURMA
+═══════════════════════════════════════ */
+function generate() {
+  const name = document.getElementById('iName').value.trim();
+  const d = parseInt(document.getElementById('iDay').value);
+  const m = parseInt(document.getElementById('iMonth').value);
+  const y = parseInt(document.getElementById('iYear').value);
+  const err = document.getElementById('errBox');
+  err.classList.remove('show');
 
-  // Cleanup empty p tags
-  html=html.replace(/<p><\/p>/g,'').replace(/<p>(<[hud])/g,'$1').replace(/(<\/[hud][^>]*>)<\/p>/g,'$1');
-  return html;
+  if (!name || name.length < 2) { err.textContent='Lütfen geçerli bir ad soyad girin.'; err.classList.add('show'); return; }
+  if (!d||d<1||d>31||!m||m<1||m>12||!y||y<1900||y>2010) { err.textContent='Lütfen geçerli bir doğum tarihi girin.'; err.classList.add('show'); return; }
+
+  const kader = calcKader(d, m, y);
+  const ruh = calcName(name, 'v');
+  const kisilik = calcName(name, 'c');
+  const ifade = calcName(name, 'all');
+  const firstName = name.split(' ')[0];
+
+  // Steps
+  const digits = `${d}${m}${y}`.split('').map(Number);
+  const sum = digits.reduce((a,b)=>a+b,0);
+
+  // Header
+  document.getElementById('rName').textContent = name;
+  document.getElementById('rDate').textContent = `${d}.${m}.${y} · Rapor tarihi: Mart 2026`;
+
+  // Numbers
+  document.getElementById('reportNums').innerHTML = [
+    {val:kader, name:'Kader Sayısı', title:TITLES[kader]||''},
+    {val:ruh, name:'Ruh Güdüsü', title:TITLES[ruh]||''},
+    {val:kisilik, name:'Kişilik Sayısı', title:TITLES[kisilik]||''},
+    {val:ifade, name:'İfade Sayısı', title:TITLES[ifade]||''}
+  ].map(n=>`<div class="rnum">
+    <span class="rnum-val">${n.val}</span>
+    <span class="rnum-name">${n.name}</span>
+    <span class="rnum-title">${n.title}</span>
+  </div>`).join('');
+
+  // Calc box
+  const calcHtml = `<div class="calc-box">
+    ${digits.join(' + ')} = <span>${sum}</span>${sum>9?` → ${String(sum).split('').join(' + ')} = <span>${kader}</span>`:''}
+    <br>Kader Sayısı: <span>${kader} ✦ ${TITLES[kader]||''}</span>
+  </div>`;
+
+  // Build content
+  let content = '';
+
+  // Section 1 — Giriş
+  content += `<div class="section">
+    <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Giriş ve Temel Hesaplamalar</span></div>
+    <p>Sayıların dünyasına hoş geldin, <strong>${firstName}</strong>. Elindeki rapor, Pisagor'un MÖ 6. yüzyılda geliştirdiği numeroloji sistemine dayanarak hazırlandı. Bu sistem bugün hâlâ dünyanın dört bir yanında milyonlarca insan tarafından kullanılmaktadır.</p>
+    <p>Numerolojide her sayının kendine özgü bir titreşimi ve enerjisi vardır. Doğum tarihin ve ismin, bu evrensel titreşimlerle olan ilişkini ortaya koyar.</p>
+    <h3>Kader Sayısı Hesaplama</h3>
+    ${calcHtml}
+    <p>Kader sayın <strong>${kader} — ${TITLES[kader]||''}</strong>. Bu sayı ruhunun bu dünyaya getirdiği misyonu, yaşam amacını ve temel enerjini taşır.</p>
+    <div class="hl"><strong>Ruh Güdüsü Sayısı ${ruh}:</strong> İsmindeki sesli harflerin değerlerinden elde edilir. En derin arzularını ve motivasyonlarını gösterir.<br><strong>Kişilik Sayısı ${kisilik}:</strong> Sessiz harflerden gelir. Dış dünyaya yansıttığın imajı temsil eder.<br><strong>İfade Sayısı ${ifade}:</strong> Tüm harflerin toplamından gelir. Doğal yeteneklerini ve potansiyelini açıklar.</div>
+  </div>`;
+
+  // Sections 2-7: use DB for 1,2,3 or generic for 4-9
+  const kn = kader <= 9 ? kader : (kader === 11 ? 11 : kader === 22 ? 22 : 33);
+
+  if (DB.kader[kn]) {
+    const d = DB.kader[kn];
+    const replaceAd = s => s.replace(/\{AD\}/g, firstName);
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Kişilik ve Karakter Analizi</span></div>${replaceAd(d.kisilik)}</div>`;
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Aşk ve İlişki Uyumluluğu</span></div>${replaceAd(d.ask)}</div>`;
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Kariyer ve Finansal Potansiyel</span></div>${replaceAd(d.kariyer)}</div>`;
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Sağlık ve Wellness Önerileri</span></div>${replaceAd(d.saglik)}</div>`;
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">06</span><span class="sec-title">2026 Yılı Kişisel Tahmini</span></div>${replaceAd(d.tahmin2026)}</div>`;
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">07</span><span class="sec-title">Gelişim ve Spiritüel Tavsiyeler</span></div>${replaceAd(d.gelisim)}</div>`;
+  } else if (GENERIC[kn]) {
+    content += buildGenericReport(kn, firstName);
+  } else {
+    // Master numbers fallback
+    content += `<div class="section"><div class="sec-head"><span class="sec-num">02-07</span><span class="sec-title">Derin Analiz</span></div>
+    <p><strong>${firstName}</strong>, kader sayın <strong>${kader}</strong> — bu bir Master Sayıdır. 11, 22 ve 33 sayıları numerolojide indirgenmez ve çok daha yoğun bir enerji taşır.</p>
+    <div class="hl"><strong>Master sayılar</strong> büyük güç ve büyük sorumluluk taşır. Bu yolculuk zorlu ama olağanüstü güzel olacak.</div>
+    ${buildGenericReport(reduce(kader, false), firstName)}</div>`;
+  }
+
+  document.getElementById('reportContent').innerHTML = content;
+
+  // Show report
+  document.getElementById('formSection').style.display = 'none';
+  document.getElementById('reportSection').classList.add('show');
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-/* ── RESET ── */
-function resetForm(){
+function resetForm() {
   document.getElementById('reportSection').classList.remove('show');
-  document.getElementById('reportContent').innerHTML='';
-  document.getElementById('formSection').style.display='block';
-  document.getElementById('numbersPreview').classList.remove('show');
-  ['inputName','inputDay','inputMonth','inputYear'].forEach(id=>{
-    document.getElementById(id).value='';
-  });
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('formSection').style.display = 'block';
+  document.getElementById('numsPreview').classList.remove('show');
+  document.getElementById('reportContent').innerHTML = '';
+  ['iName','iDay','iMonth','iYear'].forEach(id => document.getElementById(id).value = '');
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-/* ── ENTER KEY ── */
-document.addEventListener('keydown',e=>{
-  if(e.key==='Enter'&&document.getElementById('formSection').style.display!=='none'){
-    generateReport();
-  }
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') generate();
 });
 </script>
 </body>
