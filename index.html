@@ -514,6 +514,164 @@ header h1 {
 .z-title { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--gold2); }
 .z-sub { font-size: 11px; color: var(--text2); letter-spacing: 0.1em; margin-top: 3px; }
 
+
+/* ══════════════════════════════════════════
+   GÜNLÜK KART — Otomatik Tarih Hesaplama
+══════════════════════════════════════════ */
+const DAILY_DATA = {
+  1: {
+    title: "Öncü Ruh",
+    subtitle: "Bugün liderlik ve yeni başlangıçlar enerjisi hüküm sürüyor.",
+    message: "Bugün ilk adımı atmak için mükemmel bir gün. Ertelediğin o kararı bugün ver — evren seni destekliyor. Kendi yolunu kendin aç.",
+    tags: ["Başlat", "Karar ver", "Öncü ol"],
+    color: "#FF6B6B",
+    insta_tip: "Bugün bir şey başlat ve paylaş — 1 enerjisi harekete geçirir."
+  },
+  2: {
+    title: "Barış Elçisi",
+    subtitle: "Bugün uyum, diyalog ve köprü kurma enerjisi var.",
+    message: "Bugün konuşulmayan bir şeyi konuş. Kırık bir ilişkiyi onar. Dinlemek için kulak ver — bugün kelimeler değil, sessizlik konuşuyor.",
+    tags: ["Dinle", "Bağ kur", "Affet"],
+    color: "#93C5FD",
+    insta_tip: "Bugün birine teşekkür et — 2 enerjisi minnettarlıkla güçlenir."
+  },
+  3: {
+    title: "Yaratıcı Ruh",
+    subtitle: "Bugün yaratıcılık, ifade ve neşe enerjisi taşıyor.",
+    message: "Bugün içindeki sanatçıya izin ver. Yaz, çiz, müzik yap, dans et — ne olursa olsun. Kendini ifade ettiğinde dünya biraz daha güzelleşir.",
+    tags: ["Yarat", "İfade et", "Neşelen"],
+    color: "#FCD34D",
+    insta_tip: "Bugün bir şey yarat ve paylaş — 3 enerjisi görünür olmayı sever."
+  },
+  4: {
+    title: "Usta İnşaatçı",
+    subtitle: "Bugün disiplin, düzen ve sağlam temeller enerjisi var.",
+    message: "Bugün planlama günü. Kafandaki o projeyi kağıda dök, adımları belirle, harekete geç. Kalıcı şeyler sabırla inşa edilir.",
+    tags: ["Planla", "İnşa et", "Disiplinli ol"],
+    color: "#6EE7B7",
+    insta_tip: "Bugün tamamladığın bir şeyi paylaş — 4 enerjisi somut ilerlemeyi kutlar."
+  },
+  5: {
+    title: "Özgür Ruh",
+    subtitle: "Bugün değişim, macera ve özgürlük enerjisi hüküm sürüyor.",
+    message: "Bugün rutinden çık. Farklı bir yol dene, tanımadığın biriyle konuş, alışılmadık bir şey ye. Küçük değişimler büyük dönüşümlerin habercisidir.",
+    tags: ["Değiş", "Keşfet", "Özgür ol"],
+    color: "#FB923C",
+    insta_tip: "Bugün sürpriz bir şey yap ve paylaş — 5 enerjisi spontaneleri sever."
+  },
+  6: {
+    title: "Sevgi Öğretmeni",
+    subtitle: "Bugün sevgi, şefkat ve koruma enerjisi taşıyor.",
+    message: "Bugün sevdiklerine zaman ayır. Bir telefon aç, sarıl, 'seni seviyorum' de. Ve en önemlisi — bugün kendine de sevgiyle bak.",
+    tags: ["Sev", "Koru", "Şefkat göster"],
+    color: "#F9A8D4",
+    insta_tip: "Bugün sevdiğin birine bir mesaj at — 6 enerjisi bağları güçlendirir."
+  },
+  7: {
+    title: "Gizemli Bilge",
+    subtitle: "Bugün içe dönme, araştırma ve sezgi enerjisi var.",
+    message: "Bugün sessizliğe çekil. Bir kitap aç, meditasyon yap, doğada yürü. Cevaplar gürültüde değil, sessizlikte gelir. Sezgine güven.",
+    tags: ["Dinlen", "Araştır", "Sezgiyi dinle"],
+    color: "#A78BFA",
+    insta_tip: "Bugün düşündürücü bir soru sor takipçilerine — 7 enerjisi derinliği sever."
+  },
+  8: {
+    title: "Güç Odağı",
+    subtitle: "Bugün güç, başarı ve bolluk enerjisi hüküm sürüyor.",
+    message: "Bugün büyük kararlar için güçlü bir enerji var. İş görüşmesi, yatırım, önemli bir adım — bugün harekete geç. Evren bolluk enerjisi gönderiyor.",
+    tags: ["Güçlen", "Kazan", "Liderlik et"],
+    color: "#D4A843",
+    insta_tip: "Bugün bir başarını paylaş — 8 enerjisi görünür olmayı ve ilham vermeyi destekler."
+  },
+  9: {
+    title: "Evrensel Ruh",
+    subtitle: "Bugün tamamlanma, bırakma ve yeni başlangıç enerjisi var.",
+    message: "Bugün bir döngü kapanıyor. Bırakmak istediğini bırak — ilişki, alışkanlık, düşünce. Kapanan her kapı yeni bir başlangıca açılıyor. Affet, şükret, tamamla.",
+    tags: ["Tamamla", "Bırak", "Affet"],
+    color: "#818CF8",
+    insta_tip: "Bugün bir şeyi bıraktığını paylaş — 9 enerjisi dönüşümü kutlar."
+  },
+  11: {
+    title: "Işık Taşıyıcısı ✦",
+    subtitle: "Bugün master 11 enerjisi — sezgi ve ilham zirvede.",
+    message: "Bugün sezgin inanılmaz güçlü. İçinden gelen sese kulak ver — mantık değil, his rehber olsun. Bu nadir ve güçlü bir enerji günü.",
+    tags: ["Sezgi", "İlham al", "Işık taşı"],
+    color: "#F0C860",
+    insta_tip: "Bugün sezgisel bir içerik paylaş — 11 enerjisi ilham ve ışık taşır."
+  },
+  22: {
+    title: "Usta Mimar ✦",
+    subtitle: "Bugün master 22 enerjisi — büyük vizyonlar için güçlü gün.",
+    message: "Bugün büyük düşün. Küçük adımlar değil, büyük resim. Vizyonunu netleştir, planını kur. Master 22 enerjisi kalıcı eserler için gelir.",
+    tags: ["Büyük düşün", "Vizyon kur", "İnşa et"],
+    color: "#34D399",
+    insta_tip: "Bugün büyük bir hedefini paylaş — 22 enerjisi manifestasyonu güçlendirir."
+  }
+};
+
+const MONTHS_TR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+const DAYS_TR = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+
+function calcDailyNum(d, m, y) {
+  const digits = `${d}${m}${y}`.split('').map(Number);
+  const sum = digits.reduce((a,b)=>a+b,0);
+  const r1 = (n, keep=true) => {
+    if(keep&&(n===11||n===22||n===33))return n;
+    if(n<10)return n;
+    return r1(String(n).split('').reduce((a,d)=>a+parseInt(d),0),keep);
+  };
+  return { num: r1(sum), sum, digits };
+}
+
+function buildDailyCard() {
+  const now = new Date();
+  const d = now.getDate();
+  const m = now.getMonth() + 1;
+  const y = now.getFullYear();
+  const { num, sum, digits } = calcDailyNum(d, m, y);
+  const data = DAILY_DATA[num] || DAILY_DATA[9];
+
+  const dateStr = `${d} ${MONTHS_TR[m-1]} ${y}`;
+  const dayStr = DAYS_TR[now.getDay()];
+
+  // Hesaplama string
+  let calcStr = digits.join('+') + ' = ' + sum;
+  if(sum !== num) {
+    const d2 = String(sum).split('').map(Number);
+    calcStr += ' → ' + d2.join('+') + ' = <span>' + num + '</span>';
+  } else {
+    calcStr = calcStr.replace(String(sum), '<span>'+sum+'</span>');
+  }
+
+  const tagsHtml = data.tags.map(t=>`<span class="daily-tag">${t}</span>`).join('');
+
+  document.getElementById('dailyCard').innerHTML = `
+    <div class="daily-card">
+      <div class="daily-top">
+        <span class="daily-badge">✦ Bugünün Kartı</span>
+        <span class="daily-date">${dayStr}, ${dateStr}</span>
+      </div>
+      <div class="daily-main">
+        <div class="daily-num" style="background:linear-gradient(135deg,${data.color},${data.color}99);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${num}</div>
+        <div class="daily-info">
+          <div class="daily-title">${data.title}</div>
+          <div class="daily-subtitle">${data.subtitle}</div>
+        </div>
+      </div>
+      <div class="daily-message">"${data.message}"</div>
+      <div class="daily-tags">${tagsHtml}</div>
+      <div class="daily-actions">
+        <a href="https://www.instagram.com/numerolojim/" target="_blank" class="daily-btn primary">📸 Instagram'da Takip Et</a>
+        <a href="rapor.html" class="daily-btn secondary">✦ Kişisel Raporun</a>
+      </div>
+      <div class="daily-calc">
+        Bugünün hesabı: ${calcStr} &nbsp;·&nbsp; <em style="color:var(--text3)">${data.insta_tip}</em>
+      </div>
+    </div>`;
+}
+
+buildDailyCard();
+
 /* ── BLOG ── */
 .blog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 28px; }
 @media (max-width: 780px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
@@ -540,6 +698,101 @@ header h1 {
 .bcard p { font-size: 12.5px; color: var(--text3); line-height: 1.65; }
 .bread { margin-top: 14px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--coral2); }
 
+
+/* ── GÜNLÜK KART ── */
+.daily-card {
+  background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(212,168,67,0.06));
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: var(--r);
+  padding: 28px 26px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.daily-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(139,92,246,0.12), transparent 60%);
+  pointer-events: none;
+}
+.daily-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 18px; flex-wrap: wrap; gap: 10px;
+}
+.daily-badge {
+  font-family: var(--ff-display); font-size: 9px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--violet); background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 20px; padding: 5px 14px;
+}
+.daily-date {
+  font-size: 11px; color: var(--text3); letter-spacing: 0.08em;
+}
+.daily-main {
+  display: flex; align-items: center; gap: 20px; margin-bottom: 18px;
+}
+.daily-num {
+  font-family: var(--ff-display);
+  font-size: 64px; font-weight: 900; line-height: 1;
+  background: linear-gradient(135deg, #C4B0F0, var(--violet));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; flex-shrink: 0;
+}
+.daily-info { flex: 1; }
+.daily-title {
+  font-family: var(--ff-display); font-size: 18px; font-weight: 700;
+  color: var(--text); margin-bottom: 6px; line-height: 1.3;
+}
+.daily-subtitle { font-size: 12px; color: var(--text3); line-height: 1.6; }
+.daily-message {
+  font-size: 13.5px; color: var(--text2); line-height: 1.85;
+  margin-bottom: 16px; font-style: italic;
+  border-left: 2px solid rgba(139,92,246,0.4);
+  padding-left: 14px;
+}
+.daily-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
+}
+.daily-tag {
+  font-size: 10px; letter-spacing: 0.1em;
+  color: #C4B0F0; background: rgba(139,92,246,0.08);
+  border: 1px solid rgba(139,92,246,0.15);
+  border-radius: 16px; padding: 4px 12px;
+}
+.daily-actions {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.daily-btn {
+  flex: 1; min-width: 140px; padding: 11px 16px;
+  border-radius: 10px; font-family: var(--ff-display);
+  font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all 0.2s; text-decoration: none;
+  text-align: center; display: block;
+}
+.daily-btn.primary {
+  background: linear-gradient(135deg, var(--violet), #6D28D9);
+  color: #fff; border: none;
+  box-shadow: 0 6px 20px rgba(139,92,246,0.3);
+}
+.daily-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(139,92,246,0.45); }
+.daily-btn.secondary {
+  background: transparent; color: var(--gold);
+  border: 1px solid rgba(212,168,67,0.25);
+}
+.daily-btn.secondary:hover { background: rgba(212,168,67,0.06); border-color: var(--gold); }
+.daily-calc {
+  font-size: 11px; color: var(--text3); letter-spacing: 0.05em;
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--border2);
+  font-family: monospace;
+}
+.daily-calc span { color: var(--violet); font-weight: 600; }
+@media (max-width: 480px) {
+  .daily-num { font-size: 48px; }
+  .daily-title { font-size: 15px; }
+}
 /* Featured blog (ilk kart — tam genişlik) */
 .blog-featured {
   margin-bottom: 16px;
@@ -884,6 +1137,12 @@ footer {
   <!-- ═══════════════════════════════════════════
        BLOG
   ═══════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════
+       GÜNLÜK KART
+  ═══════════════════════════════════════════ -->
+  <div class="divider"><span class="divider-label">✦ Bugünün Enerjisi ✦</span></div>
+  <div id="dailyCard"></div>
+
   <div class="divider"><span class="divider-label">✦ Numeroloji Akademisi ✦</span></div>
 
   <p class="s-title">Numeroloji ile Cinsel Uyum & İlişki Rehberi</p>
@@ -1244,6 +1503,164 @@ function runAnalysis(){
     document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
   },1000);
 }
+
+
+/* ══════════════════════════════════════════
+   GÜNLÜK KART — Otomatik Tarih Hesaplama
+══════════════════════════════════════════ */
+const DAILY_DATA = {
+  1: {
+    title: "Öncü Ruh",
+    subtitle: "Bugün liderlik ve yeni başlangıçlar enerjisi hüküm sürüyor.",
+    message: "Bugün ilk adımı atmak için mükemmel bir gün. Ertelediğin o kararı bugün ver — evren seni destekliyor. Kendi yolunu kendin aç.",
+    tags: ["Başlat", "Karar ver", "Öncü ol"],
+    color: "#FF6B6B",
+    insta_tip: "Bugün bir şey başlat ve paylaş — 1 enerjisi harekete geçirir."
+  },
+  2: {
+    title: "Barış Elçisi",
+    subtitle: "Bugün uyum, diyalog ve köprü kurma enerjisi var.",
+    message: "Bugün konuşulmayan bir şeyi konuş. Kırık bir ilişkiyi onar. Dinlemek için kulak ver — bugün kelimeler değil, sessizlik konuşuyor.",
+    tags: ["Dinle", "Bağ kur", "Affet"],
+    color: "#93C5FD",
+    insta_tip: "Bugün birine teşekkür et — 2 enerjisi minnettarlıkla güçlenir."
+  },
+  3: {
+    title: "Yaratıcı Ruh",
+    subtitle: "Bugün yaratıcılık, ifade ve neşe enerjisi taşıyor.",
+    message: "Bugün içindeki sanatçıya izin ver. Yaz, çiz, müzik yap, dans et — ne olursa olsun. Kendini ifade ettiğinde dünya biraz daha güzelleşir.",
+    tags: ["Yarat", "İfade et", "Neşelen"],
+    color: "#FCD34D",
+    insta_tip: "Bugün bir şey yarat ve paylaş — 3 enerjisi görünür olmayı sever."
+  },
+  4: {
+    title: "Usta İnşaatçı",
+    subtitle: "Bugün disiplin, düzen ve sağlam temeller enerjisi var.",
+    message: "Bugün planlama günü. Kafandaki o projeyi kağıda dök, adımları belirle, harekete geç. Kalıcı şeyler sabırla inşa edilir.",
+    tags: ["Planla", "İnşa et", "Disiplinli ol"],
+    color: "#6EE7B7",
+    insta_tip: "Bugün tamamladığın bir şeyi paylaş — 4 enerjisi somut ilerlemeyi kutlar."
+  },
+  5: {
+    title: "Özgür Ruh",
+    subtitle: "Bugün değişim, macera ve özgürlük enerjisi hüküm sürüyor.",
+    message: "Bugün rutinden çık. Farklı bir yol dene, tanımadığın biriyle konuş, alışılmadık bir şey ye. Küçük değişimler büyük dönüşümlerin habercisidir.",
+    tags: ["Değiş", "Keşfet", "Özgür ol"],
+    color: "#FB923C",
+    insta_tip: "Bugün sürpriz bir şey yap ve paylaş — 5 enerjisi spontaneleri sever."
+  },
+  6: {
+    title: "Sevgi Öğretmeni",
+    subtitle: "Bugün sevgi, şefkat ve koruma enerjisi taşıyor.",
+    message: "Bugün sevdiklerine zaman ayır. Bir telefon aç, sarıl, 'seni seviyorum' de. Ve en önemlisi — bugün kendine de sevgiyle bak.",
+    tags: ["Sev", "Koru", "Şefkat göster"],
+    color: "#F9A8D4",
+    insta_tip: "Bugün sevdiğin birine bir mesaj at — 6 enerjisi bağları güçlendirir."
+  },
+  7: {
+    title: "Gizemli Bilge",
+    subtitle: "Bugün içe dönme, araştırma ve sezgi enerjisi var.",
+    message: "Bugün sessizliğe çekil. Bir kitap aç, meditasyon yap, doğada yürü. Cevaplar gürültüde değil, sessizlikte gelir. Sezgine güven.",
+    tags: ["Dinlen", "Araştır", "Sezgiyi dinle"],
+    color: "#A78BFA",
+    insta_tip: "Bugün düşündürücü bir soru sor takipçilerine — 7 enerjisi derinliği sever."
+  },
+  8: {
+    title: "Güç Odağı",
+    subtitle: "Bugün güç, başarı ve bolluk enerjisi hüküm sürüyor.",
+    message: "Bugün büyük kararlar için güçlü bir enerji var. İş görüşmesi, yatırım, önemli bir adım — bugün harekete geç. Evren bolluk enerjisi gönderiyor.",
+    tags: ["Güçlen", "Kazan", "Liderlik et"],
+    color: "#D4A843",
+    insta_tip: "Bugün bir başarını paylaş — 8 enerjisi görünür olmayı ve ilham vermeyi destekler."
+  },
+  9: {
+    title: "Evrensel Ruh",
+    subtitle: "Bugün tamamlanma, bırakma ve yeni başlangıç enerjisi var.",
+    message: "Bugün bir döngü kapanıyor. Bırakmak istediğini bırak — ilişki, alışkanlık, düşünce. Kapanan her kapı yeni bir başlangıca açılıyor. Affet, şükret, tamamla.",
+    tags: ["Tamamla", "Bırak", "Affet"],
+    color: "#818CF8",
+    insta_tip: "Bugün bir şeyi bıraktığını paylaş — 9 enerjisi dönüşümü kutlar."
+  },
+  11: {
+    title: "Işık Taşıyıcısı ✦",
+    subtitle: "Bugün master 11 enerjisi — sezgi ve ilham zirvede.",
+    message: "Bugün sezgin inanılmaz güçlü. İçinden gelen sese kulak ver — mantık değil, his rehber olsun. Bu nadir ve güçlü bir enerji günü.",
+    tags: ["Sezgi", "İlham al", "Işık taşı"],
+    color: "#F0C860",
+    insta_tip: "Bugün sezgisel bir içerik paylaş — 11 enerjisi ilham ve ışık taşır."
+  },
+  22: {
+    title: "Usta Mimar ✦",
+    subtitle: "Bugün master 22 enerjisi — büyük vizyonlar için güçlü gün.",
+    message: "Bugün büyük düşün. Küçük adımlar değil, büyük resim. Vizyonunu netleştir, planını kur. Master 22 enerjisi kalıcı eserler için gelir.",
+    tags: ["Büyük düşün", "Vizyon kur", "İnşa et"],
+    color: "#34D399",
+    insta_tip: "Bugün büyük bir hedefini paylaş — 22 enerjisi manifestasyonu güçlendirir."
+  }
+};
+
+const MONTHS_TR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+const DAYS_TR = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+
+function calcDailyNum(d, m, y) {
+  const digits = `${d}${m}${y}`.split('').map(Number);
+  const sum = digits.reduce((a,b)=>a+b,0);
+  const r1 = (n, keep=true) => {
+    if(keep&&(n===11||n===22||n===33))return n;
+    if(n<10)return n;
+    return r1(String(n).split('').reduce((a,d)=>a+parseInt(d),0),keep);
+  };
+  return { num: r1(sum), sum, digits };
+}
+
+function buildDailyCard() {
+  const now = new Date();
+  const d = now.getDate();
+  const m = now.getMonth() + 1;
+  const y = now.getFullYear();
+  const { num, sum, digits } = calcDailyNum(d, m, y);
+  const data = DAILY_DATA[num] || DAILY_DATA[9];
+
+  const dateStr = `${d} ${MONTHS_TR[m-1]} ${y}`;
+  const dayStr = DAYS_TR[now.getDay()];
+
+  // Hesaplama string
+  let calcStr = digits.join('+') + ' = ' + sum;
+  if(sum !== num) {
+    const d2 = String(sum).split('').map(Number);
+    calcStr += ' → ' + d2.join('+') + ' = <span>' + num + '</span>';
+  } else {
+    calcStr = calcStr.replace(String(sum), '<span>'+sum+'</span>');
+  }
+
+  const tagsHtml = data.tags.map(t=>`<span class="daily-tag">${t}</span>`).join('');
+
+  document.getElementById('dailyCard').innerHTML = `
+    <div class="daily-card">
+      <div class="daily-top">
+        <span class="daily-badge">✦ Bugünün Kartı</span>
+        <span class="daily-date">${dayStr}, ${dateStr}</span>
+      </div>
+      <div class="daily-main">
+        <div class="daily-num" style="background:linear-gradient(135deg,${data.color},${data.color}99);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${num}</div>
+        <div class="daily-info">
+          <div class="daily-title">${data.title}</div>
+          <div class="daily-subtitle">${data.subtitle}</div>
+        </div>
+      </div>
+      <div class="daily-message">"${data.message}"</div>
+      <div class="daily-tags">${tagsHtml}</div>
+      <div class="daily-actions">
+        <a href="https://www.instagram.com/numerolojim/" target="_blank" class="daily-btn primary">📸 Instagram'da Takip Et</a>
+        <a href="rapor.html" class="daily-btn secondary">✦ Kişisel Raporun</a>
+      </div>
+      <div class="daily-calc">
+        Bugünün hesabı: ${calcStr} &nbsp;·&nbsp; <em style="color:var(--text3)">${data.insta_tip}</em>
+      </div>
+    </div>`;
+}
+
+buildDailyCard();
 
 /* ── BLOG ── */
 const COVER_IMG = "https://i.ibb.co/Nvm8wck/1773419436654.png";
