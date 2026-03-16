@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Numerolojim | Kader Sayısı, Cinsel Uyum & Burç Analizi</title>
-<meta name="description" content="Doğum tarihinizle kader sayınızı, cinsel uyum skorunuzu ve burç-numeroloji sentezinizi anında hesaplayın."/>
-<meta name="keywords" content="numeroloji ile cinsel uyum, doğum tarihine göre burç analizi, kader sayısı, numeroloji aşk uyumu, hayat yolu sayısı"/>
+<title>Numerolojim | Kozmik Veri Analisti — Hayat Blueprint, Kader & Cinsel Uyum</title>
+<meta name="description" content="7 katmanlı Kozmik Veri Analizi ile hayat blueprint'ini keşfet. Pisagor, Keldani ve Mısır Numerolojisi — kader yolu, ruh dürtüsü, karmik harita ve zamanlama mühendisliği."/>
+<meta name="keywords" content="kozmik veri analisti, hayat blueprint, numeroloji analizi, kader sayısı, karmik harita, numeroloji ile cinsel uyum, hayat yolu sayısı, zamanlama mühendisliği"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://www.numerolojim.com.tr/"/>
 <meta property="og:title" content="Numerolojim | Kader, Aşk & Cinsel Uyum Analizi"/>
@@ -29,6 +29,15 @@
   gtag('js', new Date());
   gtag('config', 'G-WR0943XX1B');
 </script>
+
+<!-- PWA & Mobile Native -->
+<meta name="theme-color" content="#0D0D1A"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Numerolojim"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<link rel="manifest" href="manifest.json"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230D0D1A'/><text y='.9em' font-size='80' x='50%' text-anchor='middle'>✦</text></svg>"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
@@ -929,9 +938,345 @@ footer {
   .form-card { padding: 28px 18px; }
   .card-num { font-size: 48px; }
 }
+
+/* ══════════════════════════════════════════
+   SPLASH SCREEN
+══════════════════════════════════════════ */
+#splash {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #0D0D1A;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  transition: opacity .6s ease, visibility .6s;
+}
+#splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.splash-ring {
+  width: 80px; height: 80px;
+  position: relative; margin-bottom: 28px;
+}
+.splash-ring::before, .splash-ring::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: 50%; border: 1.5px solid transparent;
+}
+.splash-ring::before { border-top-color: #D4A843; border-right-color: #FF6B6B; animation: spin 1.5s linear infinite; }
+.splash-ring::after { border-bottom-color: #8B5CF6; border-left-color: #06B6D4; animation: spin 2.5s linear infinite reverse; inset: 10px; }
+.splash-center { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+
+.splash-title {
+  font-family: 'Cinzel', serif; font-size: 22px; font-weight: 900;
+  letter-spacing: .08em;
+  background: linear-gradient(135deg, #FBE9B0, #D4A843, #FF8E8E, #A78BFA);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 8px;
+}
+.splash-sub {
+  font-family: 'Montserrat', sans-serif; font-size: 10px;
+  letter-spacing: .25em; text-transform: uppercase; color: #6B6585;
+}
+.splash-bar {
+  width: 120px; height: 2px;
+  background: rgba(255,255,255,.06);
+  border-radius: 2px; margin-top: 28px; overflow: hidden;
+}
+.splash-bar-fill {
+  height: 100%; width: 0; border-radius: 2px;
+  background: linear-gradient(90deg, #D4A843, #FF6B6B, #8B5CF6);
+  animation: splashLoad 1.8s ease forwards;
+}
+@keyframes splashLoad { 0%{width:0} 100%{width:100%} }
+
+/* ══════════════════════════════════════════
+   OFFLINE BANNER
+══════════════════════════════════════════ */
+#offlineBanner {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 8000;
+  background: rgba(192,57,43,.95); backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  text-align: center; font-family: 'Montserrat', sans-serif;
+  font-size: 13px; color: #FFD0CC; font-weight: 500;
+  border-top: 1px solid rgba(255,107,107,.4);
+}
+#offlineBanner.show { display: block; animation: slideUp .3s ease; }
+@keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+
+/* ══════════════════════════════════════════
+   BİLDİRİM BUTONU
+══════════════════════════════════════════ */
+#notifBtn {
+  display: none;
+  position: fixed; bottom: 24px; right: 20px; z-index: 7000;
+  background: linear-gradient(135deg, rgba(139,92,246,.9), rgba(212,168,67,.8));
+  border: none; border-radius: 50px;
+  padding: 13px 20px;
+  color: #fff; font-family: 'Cinzel', serif;
+  font-size: 10px; font-weight: 700; letter-spacing: .15em;
+  cursor: pointer; box-shadow: 0 8px 24px rgba(139,92,246,.4);
+  transition: all .3s; display: flex; align-items: center; gap: 8px;
+  animation: notifPulse 3s ease-in-out infinite;
+}
+#notifBtn.hidden { display: none !important; }
+@keyframes notifPulse { 0%,100%{box-shadow:0 8px 24px rgba(139,92,246,.4)} 50%{box-shadow:0 8px 36px rgba(139,92,246,.7),0 0 60px rgba(212,168,67,.2)} }
+#notifBtn:hover { transform: translateY(-3px); }
+
+/* ══════════════════════════════════════════
+   OFFLINE CACHED RESULT
+══════════════════════════════════════════ */
+.offline-cache-card {
+  background: rgba(212,168,67,.06);
+  border: 1px solid rgba(212,168,67,.2);
+  border-radius: 14px; padding: 20px;
+  margin-bottom: 14px; text-align: center;
+}
+.offline-cache-label {
+  font-size: 10px; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.offline-cache-name {
+  font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700;
+  color: var(--text); margin-bottom: 4px;
+}
+.offline-cache-sub { font-size: 12px; color: var(--text3); }
+.kva-section {
+  max-width: 820px; margin: 0 auto;
+  padding: 0 0 20px;
+}
+.kva-hero-badge {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-bottom: 28px;
+}
+.kva-badge-pill {
+  font-size: 9px; font-weight: 600; letter-spacing: .25em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 50px; border: 1px solid;
+}
+.kva-badge-pill.gold { color: var(--gold); border-color: rgba(212,168,67,.3); background: rgba(212,168,67,.06); }
+.kva-badge-pill.coral { color: var(--coral2); border-color: rgba(255,107,107,.3); background: rgba(255,107,107,.06); }
+.kva-badge-pill.violet { color: var(--violet2); border-color: rgba(139,92,246,.3); background: rgba(139,92,246,.06); }
+.kva-badge-pill.teal { color: var(--teal); border-color: rgba(6,182,212,.3); background: rgba(6,182,212,.06); }
+
+.kva-input-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  position: relative; overflow: hidden;
+  box-shadow: var(--glow-gold), 0 24px 60px rgba(0,0,0,.4);
+  margin-bottom: 16px;
+}
+.kva-input-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--violet), var(--gold), var(--coral), var(--teal));
+}
+.kva-card-label {
+  font-family: var(--ff-display); font-size: 9px;
+  letter-spacing: .28em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 22px; display: flex; align-items: center; gap: 10px;
+}
+.kva-card-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+.kva-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media (max-width: 520px) { .kva-field-row { grid-template-columns: 1fr; } }
+
+.kva-field { display: flex; flex-direction: column; gap: 7px; }
+.kva-field label {
+  font-size: 10px; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: 6px;
+}
+.kva-field input {
+  background: rgba(255,255,255,.04);
+  border: 1.5px solid rgba(212,168,67,.2);
+  border-radius: 10px; padding: 14px 18px;
+  color: var(--text); font-family: var(--ff-body);
+  font-size: 15px; font-weight: 400;
+  outline: none; transition: border-color .3s, box-shadow .3s, background .3s;
+  -webkit-appearance: none;
+}
+.kva-field input:focus { border-color: var(--gold); background: rgba(212,168,67,.06); box-shadow: 0 0 0 4px rgba(212,168,67,.08); }
+.kva-field input::placeholder { color: var(--text3); font-style: italic; }
+.kva-field input[type="date"] { color-scheme: dark; }
+.kva-field-hint { font-size: 11px; color: var(--text3); font-style: italic; }
+
+.kva-btn {
+  width: 100%; margin-top: 8px; padding: 20px;
+  background: linear-gradient(135deg, #8B4A0A 0%, var(--gold) 40%, var(--gold2) 70%, var(--coral) 100%);
+  background-size: 200% 200%;
+  border: none; border-radius: 12px;
+  font-family: var(--ff-display); font-size: 13px; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: #0D0D1A;
+  cursor: pointer; position: relative; overflow: hidden;
+  transition: transform .25s, box-shadow .25s, background-position .5s;
+  box-shadow: 0 8px 32px rgba(212,168,67,.4), 0 2px 0 rgba(255,255,255,.1) inset;
+  animation: btnBreath 3s ease-in-out infinite;
+}
+.kva-btn::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+  transform: translateX(-100%); transition: transform .6s;
+}
+.kva-btn:hover::before { transform: translateX(100%); }
+.kva-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(212,168,67,.6), 0 0 80px rgba(255,107,107,.3); background-position: right center; }
+.kva-btn:active { transform: translateY(-1px); }
+
+/* Loading */
+.kva-loading { display: none; text-align: center; padding: 50px 20px; }
+.kva-loading.show { display: block; }
+
+/* Results */
+.kva-results { display: none; animation: fadeUp .6s ease both; }
+.kva-results.show { display: block; }
+
+/* Cosmic Hero */
+.kva-cosmic-hero {
+  background: linear-gradient(135deg, rgba(212,168,67,.08), rgba(139,92,246,.06), rgba(255,107,107,.06));
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 32px 24px; margin-bottom: 14px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.kva-cosmic-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--coral), transparent); }
+.kva-cosmic-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--violet), transparent); }
+
+.kva-hz-badge {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--teal);
+  border: 1px solid rgba(6,182,212,.3); padding: 5px 16px;
+  border-radius: 50px; margin-bottom: 18px; background: rgba(6,182,212,.06);
+}
+.kva-three-words {
+  font-family: var(--ff-display); font-size: clamp(13px,3.5vw,18px);
+  font-weight: 700; letter-spacing: .08em;
+  background: linear-gradient(135deg, var(--gold3), var(--gold), var(--coral2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 22px; line-height: 1.8;
+}
+.kva-numbers-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin-bottom: 20px; }
+.kva-num-item { text-align: center; min-width: 60px; }
+.kva-num-big { font-family: var(--ff-display); font-size: 2rem; font-weight: 900; line-height: 1; margin-bottom: 5px; }
+.kva-num-big.gold { background: linear-gradient(135deg, var(--gold3), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.kva-num-big.big3 { font-size: 2.8rem; }
+.kva-num-big.coral { background: linear-gradient(135deg, var(--coral2), var(--coral)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.kva-num-big.violet { background: linear-gradient(135deg, var(--violet2), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.kva-num-big.teal { background: linear-gradient(135deg, #67E8F9, var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.kva-num-big.red { background: linear-gradient(135deg, #FC8181, #E53E3E); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.kva-num-label { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--text3); }
+.kva-cycle-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.kva-cycle-pill { font-size: 11px; font-weight: 500; letter-spacing: .08em; padding: 5px 13px; border-radius: 50px; border: 1px solid; }
+.kva-cycle-pill.py { color: var(--gold2); border-color: rgba(212,168,67,.3); background: rgba(212,168,67,.08); }
+.kva-cycle-pill.pm { color: var(--coral2); border-color: rgba(255,107,107,.3); background: rgba(255,107,107,.08); }
+.kva-cycle-pill.pd { color: var(--violet2); border-color: rgba(139,92,246,.3); background: rgba(139,92,246,.08); }
+
+/* Accordion */
+.kva-section-card { background: var(--bg-card); border: 1px solid var(--border2); border-radius: var(--r); margin-bottom: 10px; overflow: hidden; transition: border-color .3s; }
+.kva-section-card:hover { border-color: var(--border3); }
+.kva-sec-header { display: flex; align-items: center; gap: 14px; padding: 18px 20px; cursor: pointer; user-select: none; }
+.kva-sec-num { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--ff-display); font-size: 1.05rem; font-weight: 700; flex-shrink: 0; border: 1px solid; }
+.kva-sec-num.gold { color: var(--gold2); border-color: rgba(212,168,67,.4); background: rgba(212,168,67,.08); }
+.kva-sec-num.coral { color: var(--coral2); border-color: rgba(255,107,107,.4); background: rgba(255,107,107,.08); }
+.kva-sec-num.violet { color: var(--violet2); border-color: rgba(139,92,246,.4); background: rgba(139,92,246,.08); }
+.kva-sec-num.teal { color: var(--teal); border-color: rgba(6,182,212,.4); background: rgba(6,182,212,.08); }
+.kva-sec-info { flex: 1; }
+.kva-sec-info h3 { font-family: var(--ff-display); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.kva-sec-info span { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); }
+.kva-chevron { color: var(--text3); font-size: 18px; transition: transform .35s; flex-shrink: 0; }
+.kva-section-card.open .kva-chevron { transform: rotate(180deg); color: var(--gold); }
+.kva-sec-body { display: none; padding: 0 20px 20px; padding-top: 4px; }
+.kva-section-card.open .kva-sec-body { display: block; }
+.kva-sec-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin-bottom: 16px; }
+.kva-sec-text { font-size: 14px; font-weight: 400; line-height: 1.85; color: var(--text2); }
+.kva-sec-text strong { color: var(--gold2); font-weight: 600; }
+
+/* Warning */
+.kva-warning {
+  background: rgba(192,57,43,.07); border: 1px solid rgba(255,107,107,.3);
+  border-radius: var(--r); padding: 22px 20px; margin-bottom: 10px;
+  position: relative; overflow: hidden;
+}
+.kva-warning::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--coral), transparent); }
+.kva-warn-label { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--coral2); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.kva-warn-dot { width: 6px; height: 6px; background: var(--coral); border-radius: 50%; animation: warnPulse 2s ease-in-out infinite; flex-shrink: 0; }
+@keyframes warnPulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+.kva-warning p { font-size: 14px; color: #F0A0A0; line-height: 1.8; font-weight: 400; }
+
+/* Affirmations */
+.kva-aff-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px; background: rgba(139,92,246,.04); border: 1px solid rgba(139,92,246,.1); border-radius: 10px; margin-bottom: 10px; }
+.kva-aff-num { font-family: var(--ff-display); font-size: 11px; font-weight: 700; color: var(--violet2); flex-shrink: 0; width: 24px; margin-top: 1px; }
+.kva-aff-text { font-size: 14px; color: var(--text); line-height: 1.75; font-weight: 400; }
+
+/* Prescription */
+.kva-rx-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 14px; }
+.kva-rx-item { background: rgba(212,168,67,.04); border: 1px solid rgba(212,168,67,.12); border-radius: 10px; padding: 16px 10px; text-align: center; }
+.kva-rx-icon { font-size: 1.5rem; margin-bottom: 7px; }
+.kva-rx-label { font-size: 9px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
+.kva-rx-value { font-family: var(--ff-display); font-size: 13px; font-weight: 600; color: var(--gold2); }
+
+/* Dates */
+.kva-date-item { display: flex; align-items: flex-start; gap: 14px; background: rgba(212,168,67,.04); border: 1px solid rgba(212,168,67,.1); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+.kva-date-num { font-family: var(--ff-display); font-size: 10px; font-weight: 700; color: var(--gold); width: 22px; flex-shrink: 0; margin-top: 2px; }
+.kva-date-val { font-family: var(--ff-display); font-size: 13px; font-weight: 700; color: var(--gold2); margin-bottom: 4px; }
+.kva-date-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+/* Digital sig */
+.kva-dig-row { display: flex; gap: 10px; margin-bottom: 12px; }
+.kva-dig-row input { flex: 1; background: rgba(255,255,255,.04); border: 1.5px solid rgba(212,168,67,.2); border-radius: 10px; padding: 12px 16px; color: var(--text); font-family: var(--ff-body); font-size: 14px; outline: none; transition: border-color .3s; }
+.kva-dig-row input:focus { border-color: var(--gold); }
+.kva-dig-row input::placeholder { color: var(--text3); font-style: italic; }
+.kva-btn-sm { padding: 12px 18px; background: rgba(212,168,67,.1); border: 1px solid rgba(212,168,67,.3); border-radius: 10px; color: var(--gold2); font-family: var(--ff-body); font-size: 11px; font-weight: 600; letter-spacing: .1em; cursor: pointer; transition: all .3s; white-space: nowrap; }
+.kva-btn-sm:hover { background: rgba(212,168,67,.2); }
+.kva-dig-result { display: none; background: var(--bg2); border-radius: 10px; padding: 16px; border: 1px solid var(--border2); }
+.kva-dig-result.show { display: block; }
+.kva-dig-top { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.kva-dig-number { font-family: var(--ff-display); font-size: 2rem; font-weight: 900; background: linear-gradient(135deg,var(--gold3),var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.kva-harmony-bar { flex: 1; }
+.kva-harmony-label { font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
+.kva-harmony-track { height: 4px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden; }
+.kva-harmony-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+
+/* Name change */
+.kva-nc-result { display: none; background: var(--bg2); border-radius: 10px; padding: 16px; border: 1px solid var(--border2); margin-top: 14px; }
+.kva-nc-result.show { display: block; }
+.kva-nc-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.kva-nc-box { background: var(--bg-card2); border-radius: 8px; padding: 14px; text-align: center; border: 1px solid; }
+.kva-nc-box.cur { border-color: rgba(212,168,67,.2); }
+.kva-nc-box.nw { border-color: rgba(139,92,246,.3); }
+.kva-nc-box-label { font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }
+.kva-nc-box-num { font-family: var(--ff-display); font-size: 1.8rem; font-weight: 900; margin-bottom: 4px; }
+.kva-nc-box.cur .kva-nc-box-num { color: var(--gold2); }
+.kva-nc-box.nw .kva-nc-box-num { color: var(--violet2); }
+.kva-nc-box-name { font-size: 11px; color: var(--text2); }
+.kva-nc-verdict { font-size: 13px; color: var(--text); line-height: 1.75; font-weight: 400; }
+
+/* Reset */
+.kva-btn-reset { width: 100%; padding: 14px; background: transparent; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; color: var(--text3); font-family: var(--ff-body); font-size: 13px; cursor: pointer; transition: all .3s; margin-top: 8px; }
+.kva-btn-reset:hover { border-color: rgba(255,255,255,.15); color: var(--text2); }
+
+/* Card wrapper reuse */
+.kva-card { background: var(--bg-card); border: 1px solid var(--border2); border-radius: var(--r); padding: 24px 20px; margin-bottom: 10px; position: relative; overflow: hidden; }
+.kva-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); opacity: .4; }
+.kva-card-lbl { font-family: var(--ff-display); font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+.kva-card-lbl::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg,var(--border),transparent); }
 </style>
 </head>
 <body>
+
+<!-- SPLASH SCREEN -->
+<div id="splash">
+  <div class="splash-ring">
+    <div class="splash-center">✦</div>
+  </div>
+  <div class="splash-title">Numerolojim</div>
+  <div class="splash-sub">Kozmik Veri Analisti</div>
+  <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+</div>
+
+<!-- OFFLİNE BANNER -->
+<div id="offlineBanner">
+  📡 İnternet bağlantısı yok — son analiz önbellekten yükleniyor.
+</div>
+
+<!-- BİLDİRİM BUTONU -->
+<button id="notifBtn" onclick="requestNotifPermission()">
+  🔔 Günlük Enerji Bildirimi Al
+</button>
 
 <!-- Aurora & Particles -->
 <div class="aurora-wrap">
@@ -962,7 +1307,58 @@ footer {
 </header>
 
 <!-- ═══════════════════════════════════════════
-     FORM
+     KOZMIK VERİ ANALİSTİ — Hero Section
+═══════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="kva-section">
+
+    <div style="text-align:center;padding:44px 0 28px">
+      <div style="font-family:var(--ff-display);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--text2);margin-bottom:12px">✦ Yeni Özellik</div>
+      <h2 style="font-family:var(--ff-display);font-size:clamp(22px,5vw,38px);font-weight:900;background:linear-gradient(135deg,var(--gold3) 0%,var(--gold) 35%,var(--coral2) 65%,var(--violet2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:10px">Kozmik Veri Analisti</h2>
+      <p style="font-size:14px;color:var(--text2);max-width:560px;margin:0 auto 20px;line-height:1.75">Hayat Blueprint'ini keşfet — Pisagor, Keldani ve Mısır Numerolojisi ile 7 katmanlı derin analiz. Kader yolun, karmik haritан ve zamanlama mühendisliğin seni bekliyor.</p>
+      <div class="kva-hero-badge">
+        <span class="kva-badge-pill gold">7 Katman</span>
+        <span class="kva-badge-pill coral">Karmik Harita</span>
+        <span class="kva-badge-pill violet">Zamanlama</span>
+        <span class="kva-badge-pill teal">Dijital İmza</span>
+      </div>
+    </div>
+
+    <!-- Input Card -->
+    <div class="kva-input-card" id="kvaInputCard">
+      <div class="kva-card-label">⬡ Kozmik Veri Girişi</div>
+      <div class="kva-field-row">
+        <div class="kva-field">
+          <label><span>✨</span> Tam İsim</label>
+          <input type="text" id="kvaName" placeholder="Doğum sertifikasındaki isim" autocomplete="off"/>
+          <div class="kva-field-hint">Nüfus cüzdanındaki tam isminiz</div>
+        </div>
+        <div class="kva-field">
+          <label><span>🗓</span> Doğum Tarihi</label>
+          <input type="date" id="kvaBirthDate"/>
+          <div class="kva-field-hint">Tam doğum tarihiniz</div>
+        </div>
+      </div>
+      <button class="kva-btn" onclick="kvaStartAnalysis()">✦ Hayat Blueprint'ini Aç ✦</button>
+    </div>
+
+    <!-- Loading -->
+    <div class="kva-loading" id="kvaLoading">
+      <div class="loader-orb"></div>
+      <div class="loader-text">Kozmik frekanslar hesaplanıyor…</div>
+      <div class="loader-sub" id="kvaLoadSub">7 katman analiz ediliyor — Pisagor · Keldani · Mısır</div>
+    </div>
+
+    <!-- Results -->
+    <div class="kva-results" id="kvaResults"></div>
+
+  </div>
+
+  <div class="divider"><span class="divider-label">✦ Numeroloji & Evren Analizi ✦</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FORM (Mevcut)
 ═══════════════════════════════════════════ -->
 <div class="wrap">
   <div class="form-section">
@@ -1752,7 +2148,253 @@ function reset(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* ── PARTİKELLER ── */
+/* ══════════════════════════════════════════
+   KOZMIK VERİ ANALİSTİ — Engine
+══════════════════════════════════════════ */
+const KVA_PYT = {A:1,B:2,C:3,D:4,E:5,F:6,G:7,H:8,I:9,J:1,K:2,L:3,M:4,N:5,O:6,P:7,Q:8,R:9,S:1,T:2,U:3,V:4,W:5,X:6,Y:7,Z:8};
+const KVA_VOWELS = new Set(['A','E','I','O','U']);
+
+function kvaNorm(name){
+  return name.toUpperCase()
+    .replace(/Ç/g,'C').replace(/Ğ/g,'G').replace(/İ/g,'I')
+    .replace(/Ö/g,'O').replace(/Ş/g,'S').replace(/Ü/g,'U')
+    .replace(/[^A-Z]/g,'');
+}
+function kvaReduce(n,master=true){
+  if(master&&(n===11||n===22||n===33))return n;
+  if(n<=9)return n;
+  return kvaReduce(String(n).split('').reduce((a,b)=>a+Number(b),0),master);
+}
+function kvaLifePath(dateStr){
+  const[y,m,d]=dateStr.split('-').map(Number);
+  return kvaReduce([...String(d),...String(m),...String(y)].reduce((a,b)=>a+Number(b),0));
+}
+function kvaNameNums(name){
+  const c=kvaNorm(name); let v=0,con=0;
+  for(const ch of c){const val=KVA_PYT[ch]||0;KVA_VOWELS.has(ch)?v+=val:con+=val;}
+  return{soul:kvaReduce(v),personality:kvaReduce(con),expression:kvaReduce(v+con)};
+}
+function kvaMissing(name){
+  const c=kvaNorm(name);const p=new Set();
+  for(const ch of c)if(KVA_PYT[ch])p.add(KVA_PYT[ch]);
+  return[1,2,3,4,5,6,7,8,9].filter(n=>!p.has(n));
+}
+function kvaPY(dateStr){const[,m,d]=dateStr.split('-').map(Number);return kvaReduce([...String(d),...String(m),...String(new Date().getFullYear())].reduce((a,b)=>a+Number(b),0));}
+function kvaPM(dateStr){return kvaReduce(kvaPY(dateStr)+new Date().getMonth()+1);}
+function kvaPD(dateStr){return kvaReduce(kvaPM(dateStr)+new Date().getDate());}
+function kvaPinnacles(dateStr){
+  const[y,m,d]=dateStr.split('-').map(Number);
+  const lp=kvaLifePath(dateStr);
+  const rm=kvaReduce(m),rd=kvaReduce(d),ry=kvaReduce([...String(y)].reduce((a,b)=>a+Number(b),0));
+  const p1=kvaReduce(rm+rd),p2=kvaReduce(rd+ry),p3=kvaReduce(p1+p2),p4=kvaReduce(rm+ry);
+  const a1=36-lp;
+  return[{n:p1,r:`0–${a1}`},{n:p2,r:`${a1+1}–${a1+9}`},{n:p3,r:`${a1+10}–${a1+18}`},{n:p4,r:`${a1+19}+`}];
+}
+
+async function kvaGetAnalysis(name,birthDate,nums){
+  const{lp,soul,personality,expression,missing,py,pm,pd,pinnacles}=nums;
+  const prompt=`Sen "Kozmik Veri Analisti"sin. Pisagor, Keldani ve Mısır Numerolojisi uzmanısın. Jungiyen Psikoloji ve Kuantum Olasılıkları bilginle derin "Hayat Blueprint" analizi yap.
+
+İsim: ${name} | Doğum: ${birthDate}
+Kader Yolu: ${lp} | Ruh Dürtüsü: ${soul} | Kişilik: ${personality} | İfade: ${expression}
+Karmik Eksik: ${missing.length>0?missing.join(','):'Yok'} | KY: ${py} KA: ${pm} KG: ${pd}
+Zirveler: ${pinnacles.map((p,i)=>`${i+1}.Zirve=${p.n}(${p.r}yaş)`).join(' | ')}
+
+KURALLAR: Asla genelleme yapma. "frekans","rezonans","arketip","titreşim" kullan. Her analiz kozmik DNA haritası gibi hissettirsin. Türkçe yaz.
+
+Sadece JSON döndür:
+{"kozmikOzet":"3 güçlü kelime, · ile ayrılmış","lifePath":"${lp} için 4-5 cümle derin teknik analiz","soulUrge":"${soul} için 3-4 cümle, en derin arzu","personality":"${personality} için 3-4 cümle","expression":"${expression} için 3-4 cümle","karmic":"Karmik eksikler için 3-4 cümle spesifik","timing":"Yıl ${py} Ay ${pm} Gün ${pd} çakışması, bugün için spesifik yönlendirme","pinnacles":"4 zirve döneminin derin dökümü","kritikUyari":"Bu ay kesinlikle yapmaması gereken TEK şey, gerekçeli","renk":"tek kelime","tas":"tek kelime","frekans":"örn 528 Hz","frekansAcik":"neden bu frekans, tek cümle","aff1":"Ben ile başlayan 1. olumlama","aff2":"2. olumlama","aff3":"3. olumlama","tarih1":"GG.AA.YYYY","tarih1acik":"matematiksel gerekçe","tarih2":"GG.AA.YYYY","tarih2acik":"gerekçe","tarih3":"GG.AA.YYYY","tarih3acik":"gerekçe"}`;
+
+  const resp=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
+  const data=await resp.json();
+  const text=data.content.map(i=>i.text||"").join("");
+  return JSON.parse(text.replace(/```json|```/g,"").trim());
+}
+
+function kvaAnalyzeDigital(username,lp){
+  const c=username.toUpperCase().replace(/[0-9]/g,d=>({0:'O',1:'I',2:'B',3:'E',4:'A',5:'S',6:'G',7:'T',8:'B',9:'P'}[d]||'')).replace(/[^A-Z]/g,'');
+  if(!c)return null;
+  let sum=0;for(const ch of c)sum+=KVA_PYT[ch]||0;
+  const num=kvaReduce(sum);
+  const harmony=Math.round((9-Math.abs(num-lp%9))/9*100);
+  const interps={1:"Liderlik arketipi — otorite ve öncülük frekansı.",2:"Diplomatik rezonans — işbirliği enerjisi baskın.",3:"Yaratıcı ifade frekansı — viral potansiyel yüksek.",4:"Güven vibrasyonu — istikrarlı marka inşası.",5:"Özgürlük frekansı — geniş kitlelere ulaşma gücü.",6:"Bakım rezonansı — topluluk bağlılığı güçlü.",7:"Mistik analitik frekans — derin otorite inşası.",8:"Güç ve bolluk vibrasyonu — başarı çekimi.",9:"Evrensel hizmet enerjisi — geniş rezonans.",11:"Master sezgisel liderlik frekansı.",22:"Master inşaatçı vibrasyonu."};
+  return{num,harmony,interp:interps[num]||"Güçlü dijital frekans.",hColor:harmony>=70?'var(--teal)':harmony>=50?'var(--gold)':'var(--coral)'};
+}
+
+function kvaNameChange(curName,newName){
+  const cur=kvaNameNums(curName);const nw=kvaNameNums(newName);
+  const expInterp={1:"Liderlik frekansı güçleniyor.",2:"Diplomasi enerjisi artıyor.",3:"Yaratıcı ifade açılıyor.",4:"Güvenilirlik pekişiyor.",5:"Özgürlük enerjisi yükseliyor.",6:"Sevgi titreşimi derinleşiyor.",7:"Spiritüel güç artıyor.",8:"Bolluk çekimi güçleniyor.",9:"Evrensel hizmet yükseliyor.",11:"Master ışık enerjisi.",22:"Master mimar frekansı."};
+  return{cur,nw,verdict:expInterp[nw.expression]||"Yeni frekans devreye giriyor."};
+}
+
+async function kvaStartAnalysis(){
+  const name=document.getElementById('kvaName').value.trim();
+  const birthDate=document.getElementById('kvaBirthDate').value;
+  if(!name||!birthDate){alert('Lütfen tam isminizi ve doğum tarihinizi girin.');return;}
+  document.getElementById('kvaInputCard').style.display='none';
+  document.getElementById('kvaLoading').classList.add('show');
+  try{
+    const lp=kvaLifePath(birthDate);
+    const{soul,personality,expression}=kvaNameNums(name);
+    const missing=kvaMissing(name);
+    const py=kvaPY(birthDate),pm=kvaPM(birthDate),pd=kvaPD(birthDate);
+    const pinnacles=kvaPinnacles(birthDate);
+    const nums={lp,soul,personality,expression,missing,py,pm,pd,pinnacles};
+    const ai=await kvaGetAnalysis(name,birthDate,nums);
+    kvaRenderResults(name,nums,ai);
+  }catch(e){
+    console.error(e);
+    document.getElementById('kvaLoading').classList.remove('show');
+    document.getElementById('kvaInputCard').style.display='block';
+    alert('Analiz sırasında hata oluştu. Lütfen tekrar deneyin.');
+  }
+}
+
+function kvaRenderResults(name,nums,ai){
+  document.getElementById('kvaLoading').classList.remove('show');
+  const{lp,soul,personality,expression,missing,py,pm,pd}=nums;
+  const fn=name.split(' ')[0];
+
+  document.getElementById('kvaResults').innerHTML=`
+    <div class="kva-cosmic-hero">
+      <div class="kva-hz-badge">⬡ Kozmik Frekans Raporu — ${fn}</div>
+      <div class="kva-three-words">${ai.kozmikOzet}</div>
+      <div class="kva-numbers-row">
+        <div class="kva-num-item"><div class="kva-num-big gold big3">${lp}</div><div class="kva-num-label">Kader Yolu</div></div>
+        <div class="kva-num-item"><div class="kva-num-big coral">${soul}</div><div class="kva-num-label">Ruh Dürtüsü</div></div>
+        <div class="kva-num-item"><div class="kva-num-big violet">${personality}</div><div class="kva-num-label">Kişilik Maskesi</div></div>
+        <div class="kva-num-item"><div class="kva-num-big teal">${expression}</div><div class="kva-num-label">İfade Numarası</div></div>
+        <div class="kva-num-item"><div class="kva-num-big red">${missing.length>0?missing.join('·'):'∅'}</div><div class="kva-num-label">Karmik Eksik</div></div>
+      </div>
+      <div class="kva-cycle-row">
+        <span class="kva-cycle-pill py">Kişisel Yıl: ${py}</span>
+        <span class="kva-cycle-pill pm">Kişisel Ay: ${pm}</span>
+        <span class="kva-cycle-pill pd">Kişisel Gün: ${pd}</span>
+      </div>
+    </div>
+
+    ${[
+      {n:lp,c:'gold',t:'Kader Yolu',s:'Life Path — Ana Rotanız',b:ai.lifePath},
+      {n:soul,c:'coral',t:'Ruh Dürtüsü',s:'Soul Urge — En Derin Arzu',b:ai.soulUrge},
+      {n:personality,c:'violet',t:'Kişilik Maskesi',s:'Personality — Dünyanın Gördüğü Yüz',b:ai.personality},
+      {n:expression,c:'teal',t:'İfade Numarası',s:'Expression — Doğuştan Yetenek Seti',b:ai.expression},
+      {n:missing.length>0?missing[0]:'∅',c:'coral',t:'Karmik Borçlar',s:'Eksik Frekanslar — Bu Hayattaki Zorluklar',b:ai.karmic},
+      {n:`${py}·${pm}·${pd}`,c:'gold',t:'Zamanlama Mühendisliği',s:'Kişisel Döngüler — Şimdiki Frekans',b:ai.timing},
+      {n:'✦',c:'violet',t:'Zirve Dönemleri',s:'Pinnacles — Hayatın 4 Ana Evresi',b:ai.pinnacles},
+    ].map(s=>`
+      <div class="kva-section-card" onclick="kvaToggle(this)">
+        <div class="kva-sec-header">
+          <div class="kva-sec-num ${s.c}">${s.n}</div>
+          <div class="kva-sec-info"><h3>${s.t}</h3><span>${s.s}</span></div>
+          <div class="kva-chevron">⌄</div>
+        </div>
+        <div class="kva-sec-body"><div class="kva-sec-divider"></div><p class="kva-sec-text">${s.b}</p></div>
+      </div>`).join('')}
+
+    <div class="kva-warning">
+      <div class="kva-warn-label"><span class="kva-warn-dot"></span>Kritik Uyarı — Bu Ay Kesinlikle Yapma</div>
+      <p>${ai.kritikUyari}</p>
+    </div>
+
+    <div class="kva-card">
+      <div class="kva-card-lbl">✦ Kuantum Olumlama Motoru</div>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:14px">Karmik eksik frekansına özel 3 kodlanmış cümle — her sabah 3 kez tekrarla.</p>
+      ${[ai.aff1,ai.aff2,ai.aff3].map((a,i)=>`<div class="kva-aff-item"><div class="kva-aff-num">0${i+1}</div><div class="kva-aff-text">${a}</div></div>`).join('')}
+    </div>
+
+    <div class="kva-card">
+      <div class="kva-card-lbl">✦ Sayısal Reçete</div>
+      <div class="kva-rx-grid">
+        <div class="kva-rx-item"><div class="kva-rx-icon">🎨</div><div class="kva-rx-label">Frekans Rengi</div><div class="kva-rx-value">${ai.renk}</div></div>
+        <div class="kva-rx-item"><div class="kva-rx-icon">💎</div><div class="kva-rx-label">Kristal</div><div class="kva-rx-value">${ai.tas}</div></div>
+        <div class="kva-rx-item"><div class="kva-rx-icon">🔊</div><div class="kva-rx-label">Solfej</div><div class="kva-rx-value">${ai.frekans}</div></div>
+      </div>
+      <div style="margin-top:12px;padding:12px 14px;background:rgba(6,182,212,.05);border:1px solid rgba(6,182,212,.1);border-radius:8px">
+        <p style="font-size:13px;color:var(--text2)">${ai.frekansAcik}</p>
+      </div>
+    </div>
+
+    <div class="kva-card">
+      <div class="kva-card-lbl">✦ Zamanlama Mühendisliği — 3 İdeal Tarih</div>
+      ${[{d:ai.tarih1,a:ai.tarih1acik},{d:ai.tarih2,a:ai.tarih2acik},{d:ai.tarih3,a:ai.tarih3acik}].map((t,i)=>`
+        <div class="kva-date-item">
+          <div class="kva-date-num">0${i+1}</div>
+          <div><div class="kva-date-val">${t.d}</div><div class="kva-date-desc">${t.a}</div></div>
+        </div>`).join('')}
+    </div>
+
+    <div class="kva-card">
+      <div class="kva-card-lbl">✦ Dijital İmza Analizi</div>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:14px">Sosyal medya kullanıcı adın ne kadar güçlü frekans taşıyor?</p>
+      <div class="kva-dig-row">
+        <input type="text" id="kvaDigInput" placeholder="@kullanici_adin veya e-posta" autocomplete="off"/>
+        <button class="kva-btn-sm" onclick="kvaRunDigital(${lp})">Analiz Et</button>
+      </div>
+      <div class="kva-dig-result" id="kvaDigResult"></div>
+    </div>
+
+    <div class="kva-card">
+      <div class="kva-card-lbl">✦ İsim Değişim Simülatörü</div>
+      <p style="font-size:13px;color:var(--text2);margin-bottom:14px">Evlenirsen ya da mahlas kullanırsan frekansın nasıl dönüşür?</p>
+      <div class="kva-field" style="margin-bottom:12px">
+        <label style="font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">Yeni / Mahlas İsim</label>
+        <input type="text" id="kvaNewName" placeholder="Yeni tam isminiz" autocomplete="off" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(212,168,67,.2);border-radius:10px;padding:12px 16px;color:var(--text);font-family:var(--ff-body);font-size:14px;outline:none;width:100%;transition:border-color .3s" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(212,168,67,.2)'"/>
+      </div>
+      <button class="kva-btn-sm" onclick="kvaRunNC('${name.replace(/'/g,"\\'")}')">Frekans Değişimini Simüle Et</button>
+      <div class="kva-nc-result" id="kvaNcResult"></div>
+    </div>
+
+    <button class="kva-btn-reset" onclick="kvaReset()">↩ Yeni Blueprint Analizi</button>
+  `;
+  document.getElementById('kvaResults').classList.add('show');
+  document.getElementById('kvaResults').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function kvaToggle(el){el.classList.toggle('open');}
+
+function kvaRunDigital(lp){
+  const input=document.getElementById('kvaDigInput').value.trim();if(!input)return;
+  const r=kvaAnalyzeDigital(input,lp);if(!r)return;
+  const el=document.getElementById('kvaDigResult');
+  el.innerHTML=`
+    <div class="kva-dig-top">
+      <div class="kva-dig-number">${r.num}</div>
+      <div class="kva-harmony-bar">
+        <div class="kva-harmony-label">LP Uyumu</div>
+        <div class="kva-harmony-track"><div class="kva-harmony-fill" style="width:${r.harmony}%;background:${r.hColor}"></div></div>
+        <div style="font-size:11px;font-weight:600;color:${r.hColor};margin-top:4px">%${r.harmony}</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:8px">${r.interp}</p>
+    <p style="font-size:13px;color:var(--text)">${r.harmony>=70?'Bu dijital imza kader frekansınla güçlü rezonans taşıyor.':'Frekans uyumunu artırmak için kullanıcı adında Kader Sayın olan '+lp+' titreşimini taşıyan harfler ekle.'}</p>`;
+  el.classList.add('show');
+}
+
+function kvaRunNC(curName){
+  const newName=document.getElementById('kvaNewName').value.trim();if(!newName)return;
+  const r=kvaNameChange(curName,newName);
+  const el=document.getElementById('kvaNcResult');
+  el.innerHTML=`
+    <div class="kva-nc-compare">
+      <div class="kva-nc-box cur"><div class="kva-nc-box-label">Mevcut Frekans</div><div class="kva-nc-box-num">${r.cur.expression}</div><div class="kva-nc-box-name">${curName.split(' ')[0]}</div></div>
+      <div class="kva-nc-box nw"><div class="kva-nc-box-label">Yeni Frekans</div><div class="kva-nc-box-num">${r.nw.expression}</div><div class="kva-nc-box-name">${newName.split(' ')[0]}</div></div>
+    </div>
+    <p class="kva-nc-verdict">${r.cur.expression===r.nw.expression?'Her iki isim aynı İfade frekansını taşıyor — temel titreşim sabit kalıyor.':r.verdict+' Ruh Dürtüsü '+r.cur.soul+' → '+r.nw.soul+', Kişilik Maskesi '+r.cur.personality+' → '+r.nw.personality+' olarak dönüşüyor.'}</p>`;
+  el.classList.add('show');
+}
+
+function kvaReset(){
+  document.getElementById('kvaResults').classList.remove('show');
+  document.getElementById('kvaResults').innerHTML='';
+  document.getElementById('kvaInputCard').style.display='block';
+  document.getElementById('kvaName').value='';
+  document.getElementById('kvaBirthDate').value='';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ══════════════════════════════════════════
+   PARTİKELLER
+══════════════════════════════════════════ */
 (function(){
   const c=document.getElementById('particles');
   for(let i=0;i<50;i++){
@@ -1764,6 +2406,183 @@ function reset(){
 })();
 
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.activeElement.tagName==='INPUT')runAnalysis();});
+
+/* ══════════════════════════════════════════
+   SPLASH SCREEN
+══════════════════════════════════════════ */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('hide');
+  }, 2000);
+});
+
+/* ══════════════════════════════════════════
+   OFFLİNE MOD
+══════════════════════════════════════════ */
+function updateOnlineStatus() {
+  const banner = document.getElementById('offlineBanner');
+  if (!navigator.onLine) {
+    banner.classList.add('show');
+    loadCachedAnalysis();
+  } else {
+    banner.classList.remove('show');
+  }
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus();
+
+// Analiz sonucunu kaydet
+function saveAnalysisToCache(name, birthDate, resultHTML) {
+  try {
+    localStorage.setItem('kva_last_name', name);
+    localStorage.setItem('kva_last_date', birthDate);
+    localStorage.setItem('kva_last_result', resultHTML);
+    localStorage.setItem('kva_last_time', new Date().toLocaleDateString('tr-TR'));
+  } catch(e) {}
+}
+
+// Önbellekten yükle
+function loadCachedAnalysis() {
+  try {
+    const name = localStorage.getItem('kva_last_name');
+    const savedTime = localStorage.getItem('kva_last_time');
+    const resultHTML = localStorage.getItem('kva_last_result');
+    if (!name || !resultHTML) return;
+
+    document.getElementById('kvaInputCard').style.display = 'none';
+    const resultsEl = document.getElementById('kvaResults');
+    resultsEl.innerHTML = `
+      <div class="offline-cache-card">
+        <div class="offline-cache-label">📦 Önbellek — ${savedTime}</div>
+        <div class="offline-cache-name">${name}</div>
+        <div class="offline-cache-sub">İnternet bağlantısı geldiğinde yeni analiz yapabilirsin.</div>
+      </div>
+      ${resultHTML}
+    `;
+    resultsEl.classList.add('show');
+  } catch(e) {}
+}
+
+// Orijinal kvaRenderResults'u wrap et — cache'e kaydet
+const _origRender = kvaRenderResults;
+kvaRenderResults = function(name, nums, ai) {
+  _origRender(name, nums, ai);
+  // Sonuçları cache'e kaydet
+  setTimeout(() => {
+    const html = document.getElementById('kvaResults').innerHTML;
+    saveAnalysisToCache(name, nums.birthDate || '', html);
+    // Bildirim butonunu göster
+    showNotifButton();
+  }, 500);
+};
+
+/* ══════════════════════════════════════════
+   PUSH BİLDİRİMLER
+══════════════════════════════════════════ */
+function showNotifButton() {
+  if ('Notification' in window && Notification.permission !== 'granted') {
+    const btn = document.getElementById('notifBtn');
+    btn.classList.remove('hidden');
+    // 30 saniye sonra otomatik gizle
+    setTimeout(() => btn.classList.add('hidden'), 30000);
+  }
+}
+
+async function requestNotifPermission() {
+  if (!('Notification' in window)) {
+    alert('Tarayıcınız bildirim desteklemiyor. Chrome veya Firefox kullanın.');
+    return;
+  }
+  const permission = await Notification.requestPermission();
+  const btn = document.getElementById('notifBtn');
+  if (permission === 'granted') {
+    btn.classList.add('hidden');
+    scheduleLocalNotifications();
+    // Hemen bir karşılama bildirimi gönder
+    showLocalNotification(
+      '✦ Numerolojim Bildirimleri Açık!',
+      'Her sabah 09:00\'da günlük enerji sayını öğreneceksin. 🌟'
+    );
+  } else {
+    btn.classList.add('hidden');
+  }
+}
+
+function showLocalNotification(title, body) {
+  if (Notification.permission === 'granted') {
+    new Notification(title, {
+      body,
+      icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230D0D1A" rx="20"/><text y=".85em" font-size="70" x="50%" text-anchor="middle">✦</text></svg>',
+      badge: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">✦</text></svg>'
+    });
+  }
+}
+
+function scheduleLocalNotifications() {
+  // Günlük enerji sayısını hesapla ve bildirim zamanla
+  const now = new Date();
+  const d = now.getDate(), m = now.getMonth()+1, y = now.getFullYear();
+  const digits = `${d}${m}${y}`.split('').map(Number);
+  const sum = digits.reduce((a,b)=>a+b,0);
+  const r = n => { if(n===11||n===22)return n; if(n<10)return n; return r(String(n).split('').reduce((a,b)=>a+Number(b),0)); };
+  const todayNum = r(sum);
+  const msgs = {1:"Yeni başlangıçlar için mükemmel enerji!",2:"Bugün bağ kur, dinle, uyum sağla.",3:"Yaratıcı ifade için güçlü gün!",4:"Düzen ve disiplin — inşa et.",5:"Değişim ve macera enerjisi!",6:"Sevgi ve şefkat günü.",7:"İçe dön, araştır, sezgiyi dinle.",8:"Güç ve bolluk enerjisi — hamle yap!",9:"Tamamla, bırak, affet.",11:"Master sezgi — içinden gelen sesi dinle.",22:"Büyük vizyon günü — büyük düşün."};
+  const msg = msgs[todayNum] || msgs[9];
+  // Yarın sabah 09:00 için tahmini gecikme
+  const tomorrow9am = new Date(now);
+  tomorrow9am.setDate(tomorrow9am.getDate()+1);
+  tomorrow9am.setHours(9,0,0,0);
+  const delay = tomorrow9am.getTime() - now.getTime();
+  setTimeout(() => {
+    showLocalNotification(`✦ Bugünün Enerjisi: ${todayNum}`, msg);
+    scheduleLocalNotifications(); // Tekrar planla
+  }, Math.min(delay, 2147483647));
+  // localStorage'a kaydet
+  try { localStorage.setItem('notif_scheduled', 'true'); } catch(e) {}
+}
+
+// Sayfa yüklendiğinde bildirim daha önce verilmişse yeniden planla
+(function initNotif() {
+  try {
+    if (Notification.permission === 'granted' && localStorage.getItem('notif_scheduled')) {
+      scheduleLocalNotifications();
+    }
+  } catch(e) {}
+})();
+
+/* ══════════════════════════════════════════
+   SERVICE WORKER — Offline Cache
+══════════════════════════════════════════ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Inline SW — temel sayfa önbellekleme
+    const swCode = `
+const CACHE = 'numerolojim-v1';
+const ASSETS = ['/','${location.pathname}'];
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).catch(()=>{}));
+  self.skipWaiting();
+});
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
+  self.clients.claim();
+});
+self.addEventListener('fetch', e => {
+  if(e.request.method!=='GET')return;
+  e.respondWith(
+    fetch(e.request).then(r=>{
+      const clone=r.clone();
+      caches.open(CACHE).then(c=>c.put(e.request,clone));
+      return r;
+    }).catch(()=>caches.match(e.request))
+  );
+});`;
+    const blob = new Blob([swCode], {type:'application/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(()=>{});
+  });
+}
 </script>
 </body>
 </html>
