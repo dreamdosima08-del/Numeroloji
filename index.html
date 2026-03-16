@@ -1329,14 +1329,18 @@ footer {
       <div class="kva-card-label">⬡ Kozmik Veri Girişi</div>
       <div class="kva-field-row">
         <div class="kva-field">
-          <label><span>✨</span> Tam İsim</label>
-          <input type="text" id="kvaName" placeholder="Doğum sertifikasındaki isim" autocomplete="off"/>
-          <div class="kva-field-hint">Nüfus cüzdanındaki tam isminiz</div>
+          <label><span>✨</span> Ad Soyad</label>
+          <input type="text" id="kvaName" placeholder="Örn: Ayşe Nur Kaya" autocomplete="off"/>
+          <div class="kva-field-hint">⚠ Ad ve soyad yazın — ikisi de hesaba katılır</div>
         </div>
         <div class="kva-field">
           <label><span>🗓</span> Doğum Tarihi</label>
-          <input type="date" id="kvaBirthDate"/>
-          <div class="kva-field-hint">Tam doğum tarihiniz</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:8px">
+            <input type="number" id="kvaGun" placeholder="Gün" min="1" max="31" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(212,168,67,.2);border-radius:10px;padding:14px 10px;color:var(--text);font-family:var(--ff-body);font-size:15px;outline:none;transition:border-color .3s;text-align:center;-webkit-appearance:none" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(212,168,67,.2)'"/>
+            <input type="number" id="kvaAy" placeholder="Ay" min="1" max="12" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(212,168,67,.2);border-radius:10px;padding:14px 10px;color:var(--text);font-family:var(--ff-body);font-size:15px;outline:none;transition:border-color .3s;text-align:center;-webkit-appearance:none" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(212,168,67,.2)'"/>
+            <input type="number" id="kvaYil" placeholder="Yıl" min="1920" max="2010" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(212,168,67,.2);border-radius:10px;padding:14px 10px;color:var(--text);font-family:var(--ff-body);font-size:15px;outline:none;transition:border-color .3s;text-align:center;-webkit-appearance:none" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='rgba(212,168,67,.2)'"/>
+          </div>
+          <div class="kva-field-hint">Örn: 15 · 3 · 1990</div>
         </div>
       </div>
       <button class="kva-btn" onclick="kvaStartAnalysis()">✦ Hayat Blueprint'ini Aç ✦</button>
@@ -2205,7 +2209,7 @@ KURALLAR: Asla genelleme yapma. "frekans","rezonans","arketip","titreşim" kulla
 Sadece JSON döndür:
 {"kozmikOzet":"3 güçlü kelime, · ile ayrılmış","lifePath":"${lp} için 4-5 cümle derin teknik analiz","soulUrge":"${soul} için 3-4 cümle, en derin arzu","personality":"${personality} için 3-4 cümle","expression":"${expression} için 3-4 cümle","karmic":"Karmik eksikler için 3-4 cümle spesifik","timing":"Yıl ${py} Ay ${pm} Gün ${pd} çakışması, bugün için spesifik yönlendirme","pinnacles":"4 zirve döneminin derin dökümü","kritikUyari":"Bu ay kesinlikle yapmaması gereken TEK şey, gerekçeli","renk":"tek kelime","tas":"tek kelime","frekans":"örn 528 Hz","frekansAcik":"neden bu frekans, tek cümle","aff1":"Ben ile başlayan 1. olumlama","aff2":"2. olumlama","aff3":"3. olumlama","tarih1":"GG.AA.YYYY","tarih1acik":"matematiksel gerekçe","tarih2":"GG.AA.YYYY","tarih2acik":"gerekçe","tarih3":"GG.AA.YYYY","tarih3acik":"gerekçe"}`;
 
-  const resp=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
+  const resp=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":"ANTHROPIC_API_KEY","anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
   const data=await resp.json();
   const text=data.content.map(i=>i.text||"").join("");
   return JSON.parse(text.replace(/```json|```/g,"").trim());
@@ -2229,8 +2233,16 @@ function kvaNameChange(curName,newName){
 
 async function kvaStartAnalysis(){
   const name=document.getElementById('kvaName').value.trim();
-  const birthDate=document.getElementById('kvaBirthDate').value;
-  if(!name||!birthDate){alert('Lütfen tam isminizi ve doğum tarihinizi girin.');return;}
+  const gun=document.getElementById('kvaGun').value.trim();
+  const ay=document.getElementById('kvaAy').value.trim();
+  const yil=document.getElementById('kvaYil').value.trim();
+
+  if(!name||!gun||!ay||!yil){alert('Lütfen ad soyad ve doğum tarihinizi eksiksiz girin.');return;}
+  if(name.trim().split(' ').length<2){alert('Lütfen hem adınızı hem soyadınızı yazın.\nÖrn: Ayşe Nur Kaya');return;}
+
+  // YYYY-MM-DD formatına çevir
+  const birthDate=`${yil.padStart(4,'0')}-${ay.padStart(2,'0')}-${gun.padStart(2,'0')}`;
+
   document.getElementById('kvaInputCard').style.display='none';
   document.getElementById('kvaLoading').classList.add('show');
   try{
@@ -2239,7 +2251,7 @@ async function kvaStartAnalysis(){
     const missing=kvaMissing(name);
     const py=kvaPY(birthDate),pm=kvaPM(birthDate),pd=kvaPD(birthDate);
     const pinnacles=kvaPinnacles(birthDate);
-    const nums={lp,soul,personality,expression,missing,py,pm,pd,pinnacles};
+    const nums={lp,soul,personality,expression,missing,py,pm,pd,pinnacles,birthDate};
     const ai=await kvaGetAnalysis(name,birthDate,nums);
     kvaRenderResults(name,nums,ai);
   }catch(e){
@@ -2388,7 +2400,9 @@ function kvaReset(){
   document.getElementById('kvaResults').innerHTML='';
   document.getElementById('kvaInputCard').style.display='block';
   document.getElementById('kvaName').value='';
-  document.getElementById('kvaBirthDate').value='';
+  document.getElementById('kvaGun').value='';
+  document.getElementById('kvaAy').value='';
+  document.getElementById('kvaYil').value='';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
