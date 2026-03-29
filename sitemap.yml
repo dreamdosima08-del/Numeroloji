@@ -1,0 +1,57 @@
+name: Sitemap Güncelle
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'  # Her gece yarısı otomatik çalışır
+  workflow_dispatch:       # Elle de çalıştırılabilir
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repoyu çek
+        uses: actions/checkout@v3
+
+      - name: Bugünün tarihini al
+        id: date
+        run: echo "TODAY=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Sitemap oluştur
+        run: |
+          cat > sitemap.xml << EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+            <url>
+              <loc>https://www.numerolojim.com.tr/</loc>
+              <lastmod>${{ steps.date.outputs.TODAY }}</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+
+            <url>
+              <loc>https://www.numerolojim.com.tr/rapor.html</loc>
+              <lastmod>${{ steps.date.outputs.TODAY }}</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.9</priority>
+            </url>
+
+          </urlset>
+          EOF
+
+      - name: Değişiklikleri kaydet
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add sitemap.xml
+          git diff --staged --quiet || git commit -m "🗺️ Sitemap güncellendi: ${{ steps.date.outputs.TODAY }}"
+
+      - name: GitHub'a gönder
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
