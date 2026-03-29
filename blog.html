@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Numeroloji Akademisi | Numerolojim.com.tr</title>
+<meta name="description" content="Numeroloji, cinsellik, aşk uyumu ve kader sayıları hakkında derinlemesine yazılar. Numerolojim.com.tr Akademisi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#07071A;--bg2:#0D0D2B;--bg3:#12122E;--bg-card:#0F0F28;
+  --border:rgba(212,168,67,0.25);--border2:rgba(255,255,255,0.06);
+  --gold:#D4A843;--gold2:#F0C860;--coral:#FF6B6B;--violet:#8B5CF6;
+  --text:#F0EEF8;--text2:#B8B4D0;--text3:#6B6890;
+  --ff-d:'Cinzel',serif;--ff-b:'Montserrat',sans-serif;--r:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--ff-b);font-weight:300;min-height:100vh;overflow-x:hidden;}
+
+/* Aurora */
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.ab{position:absolute;border-radius:50%;filter:blur(120px);opacity:.10;animation:drift 18s ease-in-out infinite alternate;}
+.ab:nth-child(1){width:600px;height:400px;background:#8B5CF6;top:-100px;left:-100px;}
+.ab:nth-child(2){width:500px;height:350px;background:#D4A843;top:30%;right:-100px;animation-delay:-6s;}
+.ab:nth-child(3){width:400px;height:300px;background:#FF6B6B;bottom:-80px;left:30%;animation-delay:-12s;}
+@keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(40px,30px) scale(1.1);}}
+
+.particles{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:float-up linear infinite;}
+@keyframes float-up{0%{opacity:0;transform:translateY(0) scale(0);}10%{opacity:.6;}90%{opacity:.2;}100%{opacity:0;transform:translateY(-200px) scale(0);}}
+
+/* Layout */
+.wrap{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 20px 80px;}
+
+/* Header */
+header{text-align:center;padding:46px 20px 36px;position:relative;z-index:2;}
+.logo-link{display:inline-block;text-decoration:none;font-family:var(--ff-d);font-size:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin-bottom:28px;opacity:.7;transition:opacity .2s;}
+.logo-link:hover{opacity:1;}
+.page-star{font-size:20px;color:var(--gold);display:block;margin-bottom:14px;animation:ps 3s ease-in-out infinite;}
+@keyframes ps{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:1;transform:scale(1.15);}}
+h1{font-family:var(--ff-d);font-size:clamp(24px,5vw,38px);font-weight:700;background:linear-gradient(135deg,var(--gold2),var(--gold),#fff8e1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.25;margin-bottom:12px;}
+.header-sub{font-size:13px;color:var(--text3);line-height:1.7;max-width:500px;margin:0 auto 32px;}
+
+/* Filter tabs */
+.filter-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:36px;}
+.ftab{padding:7px 18px;border-radius:20px;font-family:var(--ff-b);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:1px solid var(--border2);background:transparent;color:var(--text3);transition:all .2s;}
+.ftab:hover{border-color:var(--border);color:var(--text2);}
+.ftab.active{background:rgba(212,168,67,.1);border-color:var(--gold);color:var(--gold);}
+
+/* Blog grid */
+.blog-featured{margin-bottom:20px;animation:fadeUp .5s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+.blog-featured .bcard{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--bg-card);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;cursor:pointer;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+.blog-featured .bcard:hover{transform:translateY(-4px);border-color:var(--border);box-shadow:0 12px 36px rgba(0,0,0,.3);}
+.blog-featured .bcard-cover{width:100%;height:100%;min-height:220px;object-fit:cover;border-right:1px solid var(--border2);}
+.blog-featured .bcard-body{padding:32px 28px;display:flex;flex-direction:column;justify-content:center;}
+.blog-featured .bcard h3{font-size:20px;}
+@media(max-width:620px){
+  .blog-featured .bcard{grid-template-columns:1fr;}
+  .blog-featured .bcard-cover{height:200px;border-right:none;border-bottom:1px solid var(--border2);}
+}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:780px){.blog-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.blog-grid{grid-template-columns:1fr;}}
+
+.bcard{background:var(--bg-card);border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;animation:fadeUp .5s ease both;}
+.bcard:hover{transform:translateY(-5px);border-color:var(--border);box-shadow:0 12px 36px rgba(0,0,0,.3);}
+.bcard-cover{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-bottom:1px solid var(--border2);}
+.bcard-body{padding:20px 18px;}
+.bcat{font-family:var(--ff-b);font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.bcard h3{font-family:var(--ff-d);font-size:14px;font-weight:600;color:var(--text);line-height:1.45;margin-bottom:8px;}
+.bcard p{font-size:12px;color:var(--text3);line-height:1.65;}
+.bread{margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);}
+
+/* Empty state */
+.empty{text-align:center;padding:60px 20px;color:var(--text3);font-size:13px;}
+
+/* Modal */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(7,7,20,.92);backdrop-filter:blur(8px);display:flex;align-items:flex-start;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-box{background:linear-gradient(135deg,#0D0D28,#12122E);border:1px solid var(--border);border-radius:20px;max-width:720px;width:100%;margin:auto;padding:0 0 40px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.6);}
+.modal-cover{width:100%;aspect-ratio:16/7;object-fit:cover;border-radius:20px 20px 0 0;display:block;}
+.modal-inner{padding:32px 36px 0;}
+@media(max-width:560px){.modal-inner{padding:24px 20px 0;}}
+.modal-close{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.5);border:1px solid var(--border2);color:var(--text3);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10;}
+.modal-close:hover{color:var(--text);border-color:var(--border);}
+.modal-cat{font-family:var(--ff-b);font-size:10px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.modal-title{font-family:var(--ff-d);font-size:clamp(18px,3vw,26px);font-weight:700;color:var(--text);line-height:1.3;margin-bottom:10px;}
+.modal-meta{font-size:11px;color:var(--text3);margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border2);}
+.modal-content h3{font-family:var(--ff-d);font-size:13px;font-weight:600;color:var(--text);letter-spacing:.08em;text-transform:uppercase;margin:24px 0 10px;padding-left:12px;border-left:2px solid var(--gold);}
+.modal-content p{font-size:13.5px;color:var(--text2);line-height:1.85;margin-bottom:14px;font-weight:300;}
+.modal-content strong{color:var(--text);font-weight:600;}
+.modal-content em{color:var(--gold);font-style:italic;}
+.modal-content .highlight{background:rgba(212,168,67,.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0;font-size:13px;color:var(--text2);line-height:1.8;}
+
+/* Back button */
+.back-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--ff-d);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.7;transition:opacity .2s;margin-bottom:28px;}
+.back-btn:hover{opacity:1;}
+
+/* CTA */
+.blog-cta{background:linear-gradient(135deg,rgba(212,168,67,.08),rgba(139,92,246,.06));border:1px solid var(--border);border-radius:16px;padding:28px 24px;text-align:center;margin-top:40px;}
+.blog-cta h3{font-family:var(--ff-d);font-size:16px;color:var(--gold2);margin-bottom:8px;}
+.blog-cta p{font-size:12px;color:var(--text3);margin-bottom:16px;}
+.cta-btn{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0D0D1A;font-family:var(--ff-d);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:10px;text-decoration:none;transition:transform .2s,box-shadow .3s;box-shadow:0 6px 24px rgba(212,168,67,.3);}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(212,168,67,.45);}
+
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:rgba(212,168,67,.3);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
+<div class="particles" id="particles"></div>
+
+<header>
+  <a href="index.html" class="logo-link">✦ Numerolojim.com.tr</a>
+  <span class="page-star">✦</span>
+  <h1>Numeroloji Akademisi</h1>
+  <p class="header-sub">Sayılar, aşk, cinsellik ve kader üzerine derinlemesine yazılar.</p>
+
+  <div class="filter-tabs" id="filterTabs">
+    <button class="ftab active" onclick="filterPosts('all')">Tümü</button>
+    <button class="ftab" onclick="filterPosts('Başlangıç Rehberi')">Başlangıç</button>
+    <button class="ftab" onclick="filterPosts('Cinsellik & Enerji')">Cinsellik</button>
+    <button class="ftab" onclick="filterPosts('Cinsel Enerji')">Cinsel Enerji</button>
+    <button class="ftab" onclick="filterPosts('Kader Sayısı')">Kader</button>
+    <button class="ftab" onclick="filterPosts('Master Sayılar')">Master Sayılar</button>
+    <button class="ftab" onclick="filterPosts('Ruh Güdüsü')">Ruh Güdüsü</button>
+    <button class="ftab" onclick="filterPosts('Libido')">Libido</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="blog-featured" id="blogFeatured"></div>
+  <div class="blog-grid" id="blogGrid"></div>
+  <div class="empty" id="blogEmpty" style="display:none">Bu kategoride henüz yazı yok.</div>
+
+  <div class="blog-cta">
+    <h3>✦ Kişisel Analizini Yap</h3>
+    <p>Ücretsiz kader, ruh güdüsü, kişilik ve uyum analizi seni bekliyor.</p>
+    <a href="index.html" class="cta-btn">Analizi Başlat →</a>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="blogModal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeBlogModal()">✕</button>
+    <div id="modalCoverWrap"></div>
+    <div class="modal-inner">
+      <div class="modal-cat" id="modal-cat"></div>
+      <div class="modal-title" id="modal-title"></div>
+      <div class="modal-meta" id="modal-meta"></div>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Particles */
+const pc=document.getElementById('particles');
+for(let i=0;i<30;i++){const p=document.createElement('div');p.className='particle';p.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${8+Math.random()*16}s;animation-delay:${Math.random()*10}s;`;pc.appendChild(p);}
+
+const BLOG=[
+  {
+    cat:"Başlangıç Rehberi",
+    title:"Numerolojiye Giriş: Sayıların Sessiz Dili",
+    preview:"Binlerce yıldır filozoflar ve bilgeler sayıların evrenin temel dili olduğuna inanmıştır. Numeroloji bu inancın üzerine kurulu kadim bir bilgelik sistemidir.",
+    meta:"Numeroloji Akademisi · 4 dk okuma",
+    cover:"https://i.ibb.co/Nvm8wck/1773419436654.png",
+    content:`
+      <p>Sayılar yalnızca matematik değildir. Binlerce yıldır filozoflar, mistikler ve bilgeler sayıların evrenin temel dili olduğuna inanmıştır. <strong>Numeroloji</strong> de tam olarak bu inancın üzerine kurulu kadim bir bilgelik sistemidir.</p>
+      <p>Temeli MÖ 6. yüzyılda yaşamış Yunan matematikçi ve filozof <strong>Pisagor</strong>'a dayanan numeroloji, her sayının kendine özgü bir titreşim ve enerji taşıdığını ileri sürer. Bu titreşimler; kişilik özelliklerini, yaşam amacını ve ilişki dinamiklerini şekillendiren görünmez güçlerdir.</p>
+      <h3>Peki Numeroloji Nasıl Çalışır?</h3>
+      <p>Doğum tarihiniz ve isminiz, numerolojide birer şifre gibi işlenir. Bu şifreler tek basamaklı sayılara indirgenerek yorumlanır. Örneğin 15 Mart 1990 doğumluysanız; 1+5+0+3+1+9+9+0 = 28, 2+8 = 10, 1+0 = <strong>1</strong>. Kader sayınız 1'dir. Bu sayı liderlik, öncülük ve bağımsızlık enerjisini taşır.</p>
+      <h3>Numerolojide Temel Sayılar</h3>
+      <p><strong>Kader Sayısı —</strong> yaşam amacınızı ve ruhunuzun bu dünyaya neden geldiğini gösterir.</p>
+      <p><strong>Ruh Güdüsü Sayısı —</strong> en derin arzularınızı ve motivasyonlarınızı ortaya koyar.</p>
+      <p><strong>Kişilik Sayısı —</strong> dış dünyaya yansıttığınız imajı temsil eder.</p>
+      <p><strong>İfade Sayısı —</strong> doğal yeteneklerinizi ve potansiyelinizi açıklar.</p>
+      <div class="highlight">✦ Özel not: 11, 22 ve 33 sayıları "master sayılar" olarak adlandırılır ve indirgenmez. Bu sayıları taşıyanlar çok daha yoğun bir enerji alanına sahiptir.</div>
+      <h3>Numeroloji Bir Kader midir?</h3>
+      <p>Hayır. Numeroloji bir kader kehaneti değil, bir pusuladır. Size "böyle olacaksın" demez; "bu enerjileri taşıyorsun, bunları bilinçli kullanırsan neler başarabilirsin?" diye sorar.</p>
+      <p>Sayılar sizi tanımlamaz — sadece tanımanıza yardımcı olur. Ve bazen en derin gerçekler, en sade sayılarda saklıdır.</p>
+    `
+  },
+  {
+    cat:"Cinsellik & Enerji",
+    title:"Numeroloji ve Cinsellik: Doğum Tarihin Yatakta Nasıl Biri Olduğunu Söylüyor",
+    preview:"Bazı sayılar ateşli ve spontane, bazıları yavaş yanar ama söndürülmez. Doğum tarihin cinsel enerjini ve partner uyumunu şifreliyor.",
+    meta:"Numeroloji Akademisi · 8 dk okuma",
+    cover:"https://i.ibb.co/5XSD8Vtv/MG-20260329-124025.png",
+    content:`
+      <p>Numeroloji yalnızca kariyer seçimi ya da yaşam amacı için değildir. Pisagor'un binlerce yıl önce keşfettiği sayı titreşimleri, ilişkilerin en mahrem boyutunu da şekillendiriyor: <strong>cinsellik ve arzular.</strong></p>
+      <p>Her sayının kendine özgü bir cinsel enerjisi, bir ritmi ve bir bağlanma biçimi vardır. Kimi sayılar ateşli ve dürtüsel, kimi yavaş ve derin, kimi ise zihinsel bağ olmadan hiç başlamaz bile.</p>
+      <div class="highlight">✦ Önemli not: Bu içerik spiritüel ve sembolik bir perspektif sunar. Numeroloji cinselliği belirlemez — yalnızca eğilimleri ve enerjileri yansıtır.</div>
+      <h3>1 Sayısı — Ateşli Öncü</h3>
+      <p>Kader sayısı 1 olanlar cinsellikte de liderdir. Spontane ve tutkulu bir enerji taşırlar. Rutine tahammülleri yoktur. <strong>En büyük ihtiyaçları: özgürlük ve kontrol.</strong> En uyumlu: 3, 5, 9.</p>
+      <h3>2 Sayısı — Derin Hisseden</h3>
+      <p>Güven olmadan beden yoktur bu sayı için. Yavaş yanarlar ama bir kez tutuştu mu söndürmek imkânsız. <strong>En büyük ihtiyaçları: güven ve gerçek bağ.</strong> En uyumlu: 6, 9.</p>
+      <h3>3 Sayısı — Yaratıcı Ateş</h3>
+      <p>Cinsellikte yaratıcı ve eğlencelidir. Sürprizlere bayılır, rutin onu soldurur. <strong>En büyük ihtiyaçları: eğlence ve taze enerji.</strong> En uyumlu: 1, 5, 9.</p>
+      <h3>4 Sayısı — Güvenli Liman</h3>
+      <p>Gerçekten tanıdığı ve güvendiği biriyle açılır. Sabırlı ve özenlidir. <strong>En büyük ihtiyaçları: güven ve istikrar.</strong> En uyumlu: 2, 7, 8.</p>
+      <h3>5 Sayısı — Sınır Tanımaz</h3>
+      <p>Numerolojinin en yüksek fiziksel enerjisi. Macera ve yenilik zorunluluktur. <strong>En büyük ihtiyaçları: özgürlük ve çeşitlilik.</strong> En uyumlu: 1, 3, 7.</p>
+      <h3>6 Sayısı — Koşulsuz Veren</h3>
+      <p>Sevgi ve cinsellik iç içedir. Partner memnuniyeti her şeydir. <strong>En büyük ihtiyaçları: karşılık ve minnettarlık.</strong> En uyumlu: 2, 9, 3.</p>
+      <h3>7 Sayısı — Zihin Önce Tutuşur</h3>
+      <p>Entelektüel bağ olmadan bedensel yakınlık yüzeysel kalır. <strong>En büyük ihtiyaçları: zihinsel uyum.</strong> En uyumlu: 4, 9.</p>
+      <h3>8 Sayısı — Yoğun ve Sahiplenici</h3>
+      <p>Eşit güçte bir partner ister. Tutkusu derin, bağlılığı güçlüdür. <strong>En büyük ihtiyaçları: eşit güç.</strong> En uyumlu: 1, 4, 6.</p>
+      <h3>9 Sayısı — Koşulsuz Aşık</h3>
+      <p>Cinselliği neredeyse spiritüel bir deneyim olarak yaşar. <strong>En büyük ihtiyaçları: tam karşılık ve derin bağ.</strong> En uyumlu: 3, 6, 2.</p>
+      <div class="highlight">✦ Master Sayılar (11, 22, 33): 11 sezgisel ve spiritüel, 22 dönüştürücü ve kalıcı, 33 ise koşulsuz ve evrensel bir cinsel enerji taşır.</div>
+      <h3>Partner Uyumu Nasıl Anlaşılır?</h3>
+      <p>Partnerinizle uyumunuzu merak ediyorsanız her ikinizin kader sayısını hesaplayın. Daha detaylı analiz için <strong>numerolojim.com.tr</strong>'deki ücretsiz analiz aracını kullanabilirsiniz.</p>
+    `
+  },
+  {
+    cat:"Cinsel Enerji",
+    title:"Numeroloji ile Cinsel Uyum: Hangi Sayı Kiminle Uyumludur?",
+    preview:"Her sayının bir cinsel uyum profili var. En tutkulu çiftler, en zorlu kombinasyonlar ve sürpriz uyumlar.",
+    meta:"Numeroloji Akademisi · 5 dk okuma",
+    content:`
+      <p>Numerolojik uyum yalnızca karakterler arasındaki uyumu değil, cinsel enerji uyumunu da kapsar. Bazı sayı kombinasyonları doğal bir çekim yaratırken, bazıları sürtüşme üretir.</p>
+      <h3>En Tutkulu Kombinasyonlar</h3>
+      <p><strong>1 + 5:</strong> İki özgür ruh — spontane, ateşli, sınır tanımaz. <strong>3 + 9:</strong> Yaratıcılık ve evrensel sevgi — birbirini ilham veren bir enerji. <strong>2 + 6:</strong> Derin duygusal bağ ve koşulsuz şefkat.</p>
+      <h3>Zorlu Ama Öğretici Kombinasyonlar</h3>
+      <p><strong>1 + 4:</strong> Liderlik çatışması — her ikisi de kontrolü ister. <strong>5 + 2:</strong> Özgürlük ile güvenlik ihtiyacı çatışır. <strong>7 + 8:</strong> Mesafe ile yoğunluk arasında gerilim.</p>
+      <div class="highlight">✦ Unutma: Sayılar rehberdir, kader değil. En zorlu kombinasyonlar bile bilinçli çabayla güçlü ilişkilere dönüşebilir.</div>
+    `
+  },
+  {
+    cat:"Kader Sayısı",
+    title:"Kader Sayınız Aşk Hayatınızı Nasıl Şekillendiriyor?",
+    preview:"Pisagor numerolojisinde kader sayısı, ilişkilerde tekrarlayan örüntüleri doğrudan etkiliyor.",
+    meta:"Numeroloji Akademisi · 6 dk okuma",
+    content:`
+      <p>Aşk hayatınızda sürekli tekrarlayan örüntüler fark ettiniz mi? Aynı tip insanlara mı çekiliyorsunuz? <strong>Kader sayınız bu örüntülerin şifresini taşıyor olabilir.</strong></p>
+      <h3>Kader Sayısı Nedir?</h3>
+      <p>Doğum tarihinizin tüm rakamlarının tek basamağa indirgenmesiyle bulunan bu sayı, ruhunuzun bu yaşama getirdiği ana dersi ve misyonu temsil eder.</p>
+      <h3>Sayıya Göre Aşk Örüntüleri</h3>
+      <p><strong>1 kader sayısı:</strong> Bağımsızlık ile yakınlık arasında gidip gelme eğilimi. <strong>2 kader sayısı:</strong> Kendini feda etme riski yüksek — sınır koymayı öğrenmek temel dersiniz. <strong>7 kader sayısı:</strong> Derin zihinsel bağlantı olmadan ilişki yüzeysel kalır.</p>
+      <div class="highlight">🌙 Kader sayınız 9 ise: Koşulsuz sevgi verme eğilimindesinizdir. Bu büyük bir güçtür — ama karşılıksız ilişkilere dikkat edin.</div>
+      <h3>Bilinçli Aşk için Ne Yapmalı?</h3>
+      <p>Sayınızın size gösterdiği güçlü ve zayıf yanları bilmek, ilişkilerde daha bilinçli tercihler yapmanızı sağlar. Bu bir kader değil; bir pusuladır.</p>
+    `
+  },
+  {
+    cat:"Libido",
+    title:"Libido Potansiyeli ve Doğum Tarihi: Bilim mi, Mistik mi?",
+    preview:"Numerolojik titreşimler ve libido ilişkisini araştıran analizler ilginç veriler ortaya koyuyor.",
+    meta:"Numeroloji Akademisi · 5 dk okuma",
+    content:`
+      <p>Cinsel enerji ve doğum tarihi arasında bir bağlantı var mı? Bu soru, hem spiritüel geleneklerde hem de modern psikolojide ilgi çekici tartışmalara konu oluyor.</p>
+      <h3>Numerolojik Perspektif</h3>
+      <p><strong>5 sayısı</strong> en yüksek fiziksel enerji ve cinsel vitaliteyle ilişkilendirilir. <strong>8 sayısı</strong> ise yoğun, güç odaklı bir cinsel enerji taşır.</p>
+      <h3>Düşük Libido ile İlişkilendirilen Sayılar</h3>
+      <p><strong>7 sayısı</strong> zihinsel alanlara daha fazla enerji yönlendirir. <strong>4 sayısı</strong> ise güven ortamı oluşmadan kapılarını açmaz.</p>
+      <div class="highlight">🔬 Not: Numeroloji biyolojik faktörlerin yerine geçmez. Sayılar yalnızca sembolik bir çerçeve sunar.</div>
+    `
+  },
+  {
+    cat:"Master Sayılar",
+    title:"11, 22, 33: Usta Sayıların Cinsel Enerjisi",
+    preview:"Master sayı taşıyanların ilişki yaşantısı oldukça farklıdır. Getirdiği hediyeler ve zorluklar.",
+    meta:"Numeroloji Akademisi · 7 dk okuma",
+    content:`
+      <p>Numerolojide <strong>11, 22 ve 33 sayıları "master sayılar"</strong> olarak adlandırılır. Bu sayıları taşıyan kişilerin ilişki ve cinsellik deneyimi, sıradan sayılardan belirgin biçimde ayrışır.</p>
+      <h3>Master 11 — Sezgisel Mistik</h3>
+      <p>Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin duyarlılık sizi yorabilir. <strong>Sınır koymak</strong> hayati önem taşır.</p>
+      <h3>Master 22 — Büyük Kurucu</h3>
+      <p>Sıradan, rutin bir ilişki bu enerjiyi tatmin etmez. <strong>Dönüştürücü ve kalıcı bir bağ</strong> kurmak ister.</p>
+      <h3>Master 33 — Koşulsuz Aşık</h3>
+      <p>Cinselliği bir ibadet gibi yaşar. <strong>Koşulsuz sevgi ve tam teslimiyet</strong> en derin arzusudur.</p>
+      <div class="highlight">✦ Master sayı taşıyor musunuz? Bu bir ayrıcalık olduğu kadar büyük bir sorumluluktur.</div>
+    `
+  },
+  {
+    cat:"Ruh Güdüsü",
+    title:"Ruh Güdüsü Sayısı: Yatakta Gerçekten Ne İstiyorsunuz?",
+    preview:"İsminizin sesli harflerinden elde edilen sayı, en derin arzularınızı şifreliyor.",
+    meta:"Numeroloji Akademisi · 5 dk okuma",
+    content:`
+      <p>Kader sayınız "ne için geldiniz?" sorusunu yanıtlarken, <strong>ruh güdüsü sayınız</strong> çok daha içsel bir soruyu yanıtlar: <em>Gerçekte ne istiyorsunuz?</em></p>
+      <h3>Ruh Güdüsü Nasıl Hesaplanır?</h3>
+      <p>İsminizin yalnızca sesli harfleri (A, E, I, İ, O, Ö, U, Ü) numerolojik değerlere çevrilir ve toplamı tek basamağa indirgenir.</p>
+      <h3>Cinsellik ve Ruh Güdüsü Bağlantısı</h3>
+      <p><strong>Ruh güdüsü 1:</strong> Lider olmak ister — yatakta da. <strong>Ruh güdüsü 2:</strong> Derin duygusal bağ olmadan fiziksel yakınlık boş hissettiriyor. <strong>Ruh güdüsü 5:</strong> Çeşitlilik ve sürpriz — rutin bu ruhu söndürür. <strong>Ruh güdüsü 7:</strong> Zihinsel bağlantı en güçlü ön sevişmedir.</p>
+      <div class="highlight">🌟 Partnerinizin ruh güdüsü sayısını öğrenmek, onun gerçek arzularına bir pencere açar.</div>
+    `
+  }
+];
+
+let currentFilter = 'all';
+
+function renderPosts(filter) {
+  const filtered = filter === 'all' ? BLOG : BLOG.filter(p => p.cat === filter);
+  const featured = document.getElementById('blogFeatured');
+  const grid = document.getElementById('blogGrid');
+  const empty = document.getElementById('blogEmpty');
+
+  if(filtered.length === 0) {
+    featured.innerHTML = '';
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  // Featured — ilk kart
+  const fp = filtered[0];
+  const fi = BLOG.indexOf(fp);
+  featured.innerHTML = `
+    <div class="bcard" onclick="openModal(${fi})" style="animation-delay:.05s">
+      ${fp.cover ? `<img class="bcard-cover" src="${fp.cover}" alt="${fp.title}" loading="lazy"/>` : ''}
+      <div class="bcard-body">
+        <div class="bcat">${fp.cat}</div>
+        <h3>${fp.title}</h3>
+        <p>${fp.preview}</p>
+        <div class="bread">Devamını Oku →</div>
+      </div>
+    </div>`;
+
+  // Featured'ı tek kart için özel stil
+  if(!fp.cover) {
+    featured.querySelector('.bcard').style.cssText = 'padding:28px 24px;';
+  }
+
+  // Grid — geri kalanlar
+  grid.innerHTML = filtered.slice(1).map((p, i) => {
+    const idx = BLOG.indexOf(p);
+    return `<div class="bcard" onclick="openModal(${idx})" style="animation-delay:${(i+1)*0.07}s">
+      ${p.cover ? `<img class="bcard-cover" src="${p.cover}" alt="${p.title}" loading="lazy"/>` : ''}
+      <div class="bcard-body">
+        <div class="bcat">${p.cat}</div>
+        <h3>${p.title}</h3>
+        <p>${p.preview}</p>
+        <div class="bread">Devamını Oku →</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterPosts(cat) {
+  currentFilter = cat;
+  document.querySelectorAll('.ftab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  renderPosts(cat);
+}
+
+function openModal(i) {
+  const p = BLOG[i];
+  document.getElementById('modal-cat').textContent = p.cat;
+  document.getElementById('modal-title').textContent = p.title;
+  document.getElementById('modal-meta').textContent = p.meta;
+  document.getElementById('modal-content').innerHTML = p.content;
+  document.getElementById('modalCoverWrap').innerHTML = p.cover
+    ? `<img class="modal-cover" src="${p.cover}" alt="${p.title}"/>`
+    : '';
+  document.getElementById('blogModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBlogModal() {
+  document.getElementById('blogModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModal(e) {
+  if(e.target === document.getElementById('blogModal')) closeBlogModal();
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeBlogModal(); });
+
+renderPosts('all');
+</script>
+</body>
+</html>
