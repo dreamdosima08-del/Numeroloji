@@ -635,10 +635,172 @@ function generate() {
   document.getElementById('formSection').style.display = 'none';
   document.getElementById('reportSection').classList.add('show');
   window.scrollTo({top: 0, behavior: 'smooth'});
+
+  // Çakra analizi
+  setTimeout(() => renderChakra(name), 400);
+}
+
+
+/* ══════════════════════════════════════════
+   ÇAKRA VERİTABANI
+══════════════════════════════════════════ */
+const CHAKRALAR = [
+  {
+    id: 1, isim: 'Kök Çakra', ingilizce: 'Muladhara',
+    renk: '#EF4444', emoji: '🔴',
+    konum: 'Omurga tabanı',
+    acik: 'Güvende hissedersin, kararlısın, hayata sağlam basarsın.',
+    bloklu: 'Güvensizlik, korku, mali endişeler seni yorar.',
+    asiri: 'İnatçılık, maddeciliğe takılma, değişime kapanma.',
+    tas: 'Kırmızı Akik', mantra: 'LAM', renk_adi: 'Kırmızı',
+    sayilar: [1, 4]
+  },
+  {
+    id: 2, isim: 'Sakral Çakra', ingilizce: 'Svadhisthana',
+    renk: '#F97316', emoji: '🟠',
+    konum: 'Karın altı',
+    acik: 'Yaratıcısın, duygularını özgürce yaşarsın, ilişkilerin derin.',
+    bloklu: 'Yaratıcı blokaj, duygusal donukluk, bağlanma güçlüğü.',
+    asiri: 'Aşırı duygusallık, bağımlılık eğilimi, sınır koyamama.',
+    tas: 'Kehribar', mantra: 'VAM', renk_adi: 'Turuncu',
+    sayilar: [2, 6]
+  },
+  {
+    id: 3, isim: 'Solar Pleksus', ingilizce: 'Manipura',
+    renk: '#EAB308', emoji: '🟡',
+    konum: 'Göbek üstü',
+    acik: 'Özgüvenin yüksek, kendi gücünün farkındasın, lidersin.',
+    bloklu: 'Düşük özgüven, başkalarına bağımlılık, kararsızlık.',
+    asiri: 'Kontrol ihtiyacı, ego çatışmaları, agresiflik.',
+    tas: 'Sitrin', mantra: 'RAM', renk_adi: 'Sarı',
+    sayilar: [3, 8]
+  },
+  {
+    id: 4, isim: 'Kalp Çakrası', ingilizce: 'Anahata',
+    renk: '#22C55E', emoji: '💚',
+    konum: 'Göğüs merkezi',
+    acik: 'Koşulsuz sevgi verirsin, bağışlayıcısın, empatik.',
+    bloklu: 'Bağlanma korkusu, içe kapanma, geçmişe takılma.',
+    asiri: 'Fedakârlık sınırı aşıyor, başkaları için kendini tüketiyor.',
+    tas: 'Yeşil Kuvars', mantra: 'YAM', renk_adi: 'Yeşil',
+    sayilar: [4, 6, 9]
+  },
+  {
+    id: 5, isim: 'Boğaz Çakrası', ingilizce: 'Vishuddha',
+    renk: '#3B82F6', emoji: '🔵',
+    konum: 'Boğaz',
+    acik: 'Kendini açıkça ifade edersin, iletişimin güçlü, yaratıcısın.',
+    bloklu: 'Söylemek istediklerini söyleyemiyorsun, sesini kaybediyorsun.',
+    asiri: 'Çok konuşmak, başkalarını dinlememek, dedikodu.',
+    tas: 'Akuamarin', mantra: 'HAM', renk_adi: 'Mavi',
+    sayilar: [5]
+  },
+  {
+    id: 6, isim: 'Üçüncü Göz', ingilizce: 'Ajna',
+    renk: '#8B5CF6', emoji: '🟣',
+    konum: 'Alın merkezi',
+    acik: 'Sezgin güçlü, içgörün keskin, görünmeyeni görürsün.',
+    bloklu: 'Sezgine güvenemiyorsun, kafan karışık, odaklanamıyorsun.',
+    asiri: 'Aşırı analiz, gerçeklikten kopma, paranoya.',
+    tas: 'Ametist', mantra: 'OM', renk_adi: 'Mor',
+    sayilar: [7]
+  },
+  {
+    id: 7, isim: 'Taç Çakrası', ingilizce: 'Sahasrara',
+    renk: '#A78BFA', emoji: '⚪',
+    konum: 'Kafa tepesi',
+    acik: 'Evrene bağlısın, anlam arıyorsun ve buluyorsun, huzurlusun.',
+    bloklu: 'Anlamsızlık hissi, spiritüel bağlantı kopukluğu.',
+    asiri: 'Günlük hayattan kopma, bedensel ihtiyaçları ihmal etme.',
+    tas: 'Şeffaf Kuvars', mantra: 'AH', renk_adi: 'Mor-Beyaz',
+    sayilar: [8, 9]
+  }
+];
+
+const LV_CHAKRA = {
+  a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:1,k:2,l:3,m:4,n:5,o:6,
+  p:7,q:8,r:9,s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8,
+  ç:3,ğ:7,ı:9,ö:6,ş:1,ü:3
+};
+
+function calcChakra(isim) {
+  const harfler = isim.toLowerCase().replace(/\s/g,'').split('');
+  const sayilar = harfler.map(h => LV_CHAKRA[h] || 0).filter(n => n > 0);
+  
+  // Her çakra için skor hesapla
+  const skorlar = {};
+  CHAKRALAR.forEach(c => { skorlar[c.id] = 0; });
+  
+  sayilar.forEach(sayi => {
+    CHAKRALAR.forEach(chakra => {
+      if(chakra.sayilar.includes(sayi)) {
+        skorlar[chakra.id]++;
+      }
+    });
+  });
+  
+  return { skorlar, sayilar, harfler };
+}
+
+function renderChakra(isim) {
+  const { skorlar, sayilar } = calcChakra(isim);
+  const maxSkor = Math.max(...Object.values(skorlar), 1);
+  const toplamHarf = sayilar.length || 1;
+  
+  let dominantChakra = null;
+  let maxVal = 0;
+  let blokluChakra = null;
+  let minVal = Infinity;
+  
+  Object.entries(skorlar).forEach(([id, skor]) => {
+    if(skor > maxVal) { maxVal = skor; dominantChakra = parseInt(id); }
+    if(skor < minVal) { minVal = skor; blokluChakra = parseInt(id); }
+  });
+
+  const gridEl = document.getElementById('chakraGrid');
+  gridEl.innerHTML = CHAKRALAR.map(chakra => {
+    const skor = skorlar[chakra.id];
+    const yuzde = Math.round((skor / Math.max(maxSkor, 1)) * 100);
+    const seviye = yuzde >= 60 ? 'asiri' : yuzde >= 25 ? 'acik' : 'bloklu';
+    const seviyeMetin = seviye === 'asiri' ? '⚡ Aşırı Aktif' : seviye === 'acik' ? '✓ Açık & Dengeli' : '○ Desteklenmeli';
+    const mesaj = seviye === 'asiri' ? chakra.asiri : seviye === 'acik' ? chakra.acik : chakra.bloklu;
+    
+    return `<div class="chakra-item">
+      <div class="chakra-icon" style="background:${chakra.renk}22;color:${chakra.renk}">
+        <span>${chakra.emoji}</span>
+      </div>
+      <div class="chakra-info">
+        <div class="chakra-name" style="color:${chakra.renk}">${chakra.isim} · ${chakra.ingilizce}</div>
+        <div class="chakra-desc">${mesaj}</div>
+        <div class="chakra-bar-wrap">
+          <div class="chakra-bar" style="width:${Math.max(yuzde,8)}%;background:${chakra.renk}"></div>
+        </div>
+        <div class="chakra-status ${seviye}">${seviyeMetin}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Özet
+  const dc = CHAKRALAR.find(c => c.id === dominantChakra);
+  const bc = CHAKRALAR.find(c => c.id === blokluChakra);
+  
+  document.getElementById('chakraSummary').innerHTML = `
+    <h3>✦ Çakra Özeti</h3>
+    <p>İsmindeki harflerin enerjisi en çok <strong style="color:${dc?.renk}">${dc?.isim}</strong> üzerinde yoğunlaşıyor. Bu enerjinin bilincinde olmak ve onu dengelemek ruhsal gelişimini hızlandırır.</p>
+    <p style="margin-top:10px">Desteklenmesi gereken alan: <strong style="color:${bc?.renk}">${bc?.isim}</strong>. Bu çakraya yönelik meditasyon ve taş çalışması faydalı olabilir.</p>
+    <div class="chakra-stone">
+      <span>🔮 Önerilen Taş: ${dc?.tas}</span>
+      <span>🎵 Mantra: ${dc?.mantra}</span>
+      <span>🎨 Renk: ${dc?.renk_adi}</span>
+    </div>`;
+
+  document.getElementById('chakraWrap').style.display = 'block';
+  document.getElementById('chakraWrap').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 function resetForm() {
   document.getElementById('reportSection').classList.remove('show');
+  document.getElementById('chakraWrap').style.display = 'none';
   document.getElementById('formSection').style.display = 'block';
   document.getElementById('numsPreview').classList.remove('show');
   document.getElementById('reportContent').innerHTML = '';
