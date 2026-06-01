@@ -734,14 +734,151 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   .box{border:1px solid #D4A843;border-radius:8px;padding:16px;flex:1;min-width:160px}
   .n{font-size:38px;font-weight:bold;color:#8B6914;line-height:1}
   .lbl{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:4px}
-  .red{color:#C0392B}footer{margin-top:40px;font-size:10px;color:#aaa;text-align:center}</style>
+  .red{color:#C0392B}footer{margin-top:40px;font-size:10px;color:#aaa;text-align:center}
+/* ── GÜNLÜK KART PREMIUM ── */
+.daily-wrap {
+  max-width: 680px; margin: 0 auto 8px;
+}
+.daily-card {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(10,8,30,0.97), rgba(18,12,40,0.95));
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 24px;
+  padding: 0;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 60px rgba(139,92,246,0.06), inset 0 1px 0 rgba(212,168,67,0.1);
+}
+.daily-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--coral), var(--violet), transparent);
+  opacity: 0.8;
+}
+.daily-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(139,92,246,0.08), transparent 60%),
+              radial-gradient(ellipse at bottom left, rgba(212,168,67,0.05), transparent 60%);
+  pointer-events: none;
+}
+
+/* Üst bilgi şeridi */
+.daily-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.daily-badge {
+  font-family: var(--ff-display); font-size: 9px;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); background: rgba(212,168,67,0.08);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 20px; padding: 5px 14px;
+}
+.daily-date-info { text-align: right; }
+.daily-day { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
+.daily-full-date { font-family: var(--ff-display); font-size: 10px; color: var(--gold); opacity: 0.7; margin-top: 2px; }
+
+/* Ana içerik */
+.daily-body { padding: 28px 32px; position: relative; z-index: 1; }
+
+/* Sayı + başlık */
+.daily-hero { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
+.daily-num-wrap {
+  flex-shrink: 0; width: 96px; height: 96px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.daily-num-wrap::before {
+  content: '';
+  position: absolute; inset: -3px; border-radius: 50%;
+  background: conic-gradient(var(--gold), var(--coral), var(--violet), var(--gold));
+  animation: rotateRing 4s linear infinite;
+  z-index: -1;
+}
+.daily-num-wrap::after {
+  content: '';
+  position: absolute; inset: 2px; border-radius: 50%;
+  background: rgba(10,8,30,0.97); z-index: 0;
+}
+@keyframes rotateRing { to { transform: rotate(360deg); } }
+.daily-num {
+  font-family: var(--ff-display); font-size: 48px; font-weight: 900;
+  line-height: 1; position: relative; z-index: 1;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.daily-text-wrap { flex: 1; }
+.daily-energy-label {
+  font-family: var(--ff-display); font-size: 9px; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 6px;
+}
+.daily-title {
+  font-family: var(--ff-display); font-size: 22px; font-weight: 700;
+  color: var(--text); line-height: 1.2; margin-bottom: 6px;
+}
+.daily-subtitle { font-size: 12px; color: var(--text3); line-height: 1.6; }
+
+/* Mesaj */
+.daily-message {
+  font-size: 14px; color: var(--text2); line-height: 1.85;
+  font-style: italic; padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid rgba(212,168,67,0.4);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 20px;
+}
+
+/* Etiketler */
+.daily-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.daily-tag {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text2);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 5px 14px;
+  transition: all 0.2s;
+}
+
+/* Alt bar */
+.daily-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.2);
+}
+.daily-calc {
+  font-size: 11px; color: var(--text3); font-family: monospace;
+  letter-spacing: 0.05em;
+}
+.daily-btn {
+  padding: 10px 20px; border-radius: 10px;
+  font-family: var(--ff-display); font-size: 10px;
+  font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all 0.2s; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.daily-btn.primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #0D0D1A; border: none;
+  box-shadow: 0 4px 16px rgba(212,168,67,0.3);
+}
+.daily-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.45); }
+
+@media (max-width: 560px) {
+  .daily-hero { gap: 16px; }
+  .daily-num-wrap { width: 72px; height: 72px; }
+  .daily-num { font-size: 36px; }
+  .daily-title { font-size: 18px; }
+  .daily-body { padding: 20px 18px; }
+  .daily-header, .daily-footer { padding: 14px 18px; }
+}
+
+</style>
 </head>
 <body>
 
 <div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
 <div id="particles"></div>
-
-<div class="update-band" style="text-align:center;font-size:11px;color:#6B6890;padding:8px;background:rgba(212,168,67,0.04);border-bottom:1px solid rgba(255,255,255,0.06);letter-spacing:0.08em;">Son güncelleme: 17.05.2026</div>
 
 <!-- HEADER -->
 <header>
@@ -1166,7 +1303,146 @@ function downloadPDF(){
 .aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
 .ab{position:absolute;border-radius:50%;filter:blur(140px);opacity:.18;animation:drift 18s ease-in-out infinite alternate;}
 @keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,40px) scale(1.15);}}
-body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#1a1a1a;}.title{font-size:24px;font-weight:bold;}.row{display:flex;gap:20px;margin:20px 0;}.box{flex:1;border:1px solid #ddd;padding:16px;border-radius:8px;text-align:center;}.lbl{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.1em;}.n{font-size:36px;font-weight:bold;color:#8B4A0A;}footer{margin-top:40px;font-size:10px;color:#aaa;text-align:center}</style>
+body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#1a1a1a;}.title{font-size:24px;font-weight:bold;}.row{display:flex;gap:20px;margin:20px 0;}.box{flex:1;border:1px solid #ddd;padding:16px;border-radius:8px;text-align:center;}.lbl{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.1em;}.n{font-size:36px;font-weight:bold;color:#8B4A0A;}footer{margin-top:40px;font-size:10px;color:#aaa;text-align:center}
+/* ── GÜNLÜK KART PREMIUM ── */
+.daily-wrap {
+  max-width: 680px; margin: 0 auto 8px;
+}
+.daily-card {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, rgba(10,8,30,0.97), rgba(18,12,40,0.95));
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 24px;
+  padding: 0;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 60px rgba(139,92,246,0.06), inset 0 1px 0 rgba(212,168,67,0.1);
+}
+.daily-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--coral), var(--violet), transparent);
+  opacity: 0.8;
+}
+.daily-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(139,92,246,0.08), transparent 60%),
+              radial-gradient(ellipse at bottom left, rgba(212,168,67,0.05), transparent 60%);
+  pointer-events: none;
+}
+
+/* Üst bilgi şeridi */
+.daily-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.daily-badge {
+  font-family: var(--ff-display); font-size: 9px;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); background: rgba(212,168,67,0.08);
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 20px; padding: 5px 14px;
+}
+.daily-date-info { text-align: right; }
+.daily-day { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
+.daily-full-date { font-family: var(--ff-display); font-size: 10px; color: var(--gold); opacity: 0.7; margin-top: 2px; }
+
+/* Ana içerik */
+.daily-body { padding: 28px 32px; position: relative; z-index: 1; }
+
+/* Sayı + başlık */
+.daily-hero { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
+.daily-num-wrap {
+  flex-shrink: 0; width: 96px; height: 96px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.daily-num-wrap::before {
+  content: '';
+  position: absolute; inset: -3px; border-radius: 50%;
+  background: conic-gradient(var(--gold), var(--coral), var(--violet), var(--gold));
+  animation: rotateRing 4s linear infinite;
+  z-index: -1;
+}
+.daily-num-wrap::after {
+  content: '';
+  position: absolute; inset: 2px; border-radius: 50%;
+  background: rgba(10,8,30,0.97); z-index: 0;
+}
+@keyframes rotateRing { to { transform: rotate(360deg); } }
+.daily-num {
+  font-family: var(--ff-display); font-size: 48px; font-weight: 900;
+  line-height: 1; position: relative; z-index: 1;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.daily-text-wrap { flex: 1; }
+.daily-energy-label {
+  font-family: var(--ff-display); font-size: 9px; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 6px;
+}
+.daily-title {
+  font-family: var(--ff-display); font-size: 22px; font-weight: 700;
+  color: var(--text); line-height: 1.2; margin-bottom: 6px;
+}
+.daily-subtitle { font-size: 12px; color: var(--text3); line-height: 1.6; }
+
+/* Mesaj */
+.daily-message {
+  font-size: 14px; color: var(--text2); line-height: 1.85;
+  font-style: italic; padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid rgba(212,168,67,0.4);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 20px;
+}
+
+/* Etiketler */
+.daily-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.daily-tag {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text2);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 5px 14px;
+  transition: all 0.2s;
+}
+
+/* Alt bar */
+.daily-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.2);
+}
+.daily-calc {
+  font-size: 11px; color: var(--text3); font-family: monospace;
+  letter-spacing: 0.05em;
+}
+.daily-btn {
+  padding: 10px 20px; border-radius: 10px;
+  font-family: var(--ff-display); font-size: 10px;
+  font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all 0.2s; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.daily-btn.primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #0D0D1A; border: none;
+  box-shadow: 0 4px 16px rgba(212,168,67,0.3);
+}
+.daily-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.45); }
+
+@media (max-width: 560px) {
+  .daily-hero { gap: 16px; }
+  .daily-num-wrap { width: 72px; height: 72px; }
+  .daily-num { font-size: 36px; }
+  .daily-title { font-size: 18px; }
+  .daily-body { padding: 20px 18px; }
+  .daily-header, .daily-footer { padding: 14px 18px; }
+}
+
+</style>
   </head><body>
   <div class="title">${r.fn} — Numeroloji Raporu</div>
   <div class="row">
@@ -1226,25 +1502,34 @@ function buildDailyCard(){
   else{calcStr=calcStr.replace(String(sum),'<span style="color:#A78BFA;font-weight:600">'+sum+'</span>');}
   const tagsHtml=data.tags.map(t=>`<span class="daily-tag">${t}</span>`).join('');
   document.getElementById('dailyCard').innerHTML=`
-    <div class="daily-card">
-      <div class="daily-top">
-        <span class="daily-badge">✦ Bugünün Kartı</span>
-        <span class="daily-date">${dayStr}, ${dateStr}</span>
-      </div>
-      <div class="daily-main">
-        <div class="daily-num" style="background:linear-gradient(135deg,${data.color},${data.color}99);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${num}</div>
-        <div class="daily-info">
-          <div class="daily-title">${data.title}</div>
-          <div class="daily-subtitle">${data.subtitle}</div>
+    <div class="daily-wrap">
+      <div class="daily-card">
+        <div class="daily-header">
+          <span class="daily-badge">✦ Bugünün Enerjisi</span>
+          <div class="daily-date-info">
+            <div class="daily-day">${dayStr}</div>
+            <div class="daily-full-date">${dateStr}</div>
+          </div>
+        </div>
+        <div class="daily-body">
+          <div class="daily-hero">
+            <div class="daily-num-wrap" style="background:${data.color}18;">
+              <div class="daily-num" style="background:linear-gradient(135deg,${data.color},${data.color}cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${num}</div>
+            </div>
+            <div class="daily-text-wrap">
+              <div class="daily-energy-label">✦ Günün Enerjisi</div>
+              <div class="daily-title">${data.title}</div>
+              <div class="daily-subtitle">${data.subtitle}</div>
+            </div>
+          </div>
+          <div class="daily-message">${data.message}</div>
+          <div class="daily-tags">${tagsHtml}</div>
+        </div>
+        <div class="daily-footer">
+          <div class="daily-calc">${calcStr}</div>
+          <a href="rapor.html" class="daily-btn primary">✦ Raporun →</a>
         </div>
       </div>
-      <div class="daily-message">"${data.message}"</div>
-      <div class="daily-tags">${tagsHtml}</div>
-      <div class="daily-actions">
-        <a href="rapor.html" class="daily-btn primary">✦ Detaylı Raporun</a>
-        <a href="rapor.html" class="daily-btn secondary">✦ Kişisel Raporun</a>
-      </div>
-      <div class="daily-calc">Bugünün hesabı: ${calcStr}</div>
     </div>`;
 }
 
