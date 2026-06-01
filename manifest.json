@@ -1,28 +1,112 @@
 {
-  "name": "Numerolojim — Kozmik Veri Analisti",
+  "name": "Numerolojim - Kader Sayısı Analizi",
   "short_name": "Numerolojim",
-  "description": "7 katmanlı numeroloji analizi — kader yolu, karmik harita ve zamanlama mühendisliği.",
+  "description": "Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve çakra analizinizi ücretsiz öğrenin.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0D0D1A",
-  "theme_color": "#0D0D1A",
+  "background_color": "#07071A",
+  "theme_color": "#D4A843",
   "orientation": "portrait",
   "lang": "tr",
+  "scope": "/",
+  "categories": [
+    "lifestyle",
+    "education"
+  ],
   "icons": [
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%230D0D1A' rx='80'/><text y='380' font-size='340' x='256' text-anchor='middle' fill='%23D4A843'>✦</text></svg>",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' fill='%230D0D1A' rx='30'/><text y='145' font-size='130' x='96' text-anchor='middle' fill='%23D4A843'>✦</text></svg>",
-      "sizes": "192x192",
-      "type": "image/svg+xml"
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["lifestyle", "utilities"],
-  "screenshots": [],
-  "related_applications": [],
-  "prefer_related_applications": false
+  "screenshots": [
+    {
+      "src": "/screenshots/screen1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/screen2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kader Sayısı Hesapla",
+      "short_name": "Hesapla",
+      "description": "Hızlıca kader sayını öğren",
+      "url": "/?shortcut=kader",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Günlük Enerji",
+      "short_name": "Bugün",
+      "description": "Bugünün numeroloji enerjisi",
+      "url": "/?shortcut=gunluk",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Kişisel Rapor",
+      "short_name": "Rapor",
+      "description": "Detaylı numeroloji raporun",
+      "url": "/rapor.html",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }
