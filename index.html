@@ -873,6 +873,48 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   .daily-header, .daily-footer { padding: 14px 18px; }
 }
 
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  background: linear-gradient(135deg, rgba(10,8,30,0.98), rgba(15,12,40,0.98));
+  border-top: 1px solid rgba(212,168,67,0.2);
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.cookie-banner.show { transform: translateY(0); }
+.cookie-text {
+  font-size: 12px; color: var(--text3); line-height: 1.6; flex: 1; min-width: 200px;
+}
+.cookie-text a { color: var(--gold); text-decoration: none; }
+.cookie-text a:hover { text-decoration: underline; }
+.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 9px 20px; border-radius: 8px; font-family: var(--ff-display);
+  font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; cursor: pointer; border: none; transition: all 0.2s;
+}
+.cookie-btn.accept {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #0D0D1A;
+}
+.cookie-btn.accept:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(212,168,67,0.4); }
+.cookie-btn.decline {
+  background: transparent; color: var(--text3);
+  border: 1px solid var(--border2);
+}
+.cookie-btn.decline:hover { border-color: var(--border); color: var(--text2); }
+@media(max-width:480px) {
+  .cookie-banner { flex-direction: column; align-items: flex-start; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
+}
+
 </style>
 </head>
 <body>
@@ -1442,6 +1484,48 @@ body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#1a1a1a;}.
   .daily-header, .daily-footer { padding: 14px 18px; }
 }
 
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  background: linear-gradient(135deg, rgba(10,8,30,0.98), rgba(15,12,40,0.98));
+  border-top: 1px solid rgba(212,168,67,0.2);
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.cookie-banner.show { transform: translateY(0); }
+.cookie-text {
+  font-size: 12px; color: var(--text3); line-height: 1.6; flex: 1; min-width: 200px;
+}
+.cookie-text a { color: var(--gold); text-decoration: none; }
+.cookie-text a:hover { text-decoration: underline; }
+.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-btn {
+  padding: 9px 20px; border-radius: 8px; font-family: var(--ff-display);
+  font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; cursor: pointer; border: none; transition: all 0.2s;
+}
+.cookie-btn.accept {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #0D0D1A;
+}
+.cookie-btn.accept:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(212,168,67,0.4); }
+.cookie-btn.decline {
+  background: transparent; color: var(--text3);
+  border: 1px solid var(--border2);
+}
+.cookie-btn.decline:hover { border-color: var(--border); color: var(--text2); }
+@media(max-width:480px) {
+  .cookie-banner { flex-direction: column; align-items: flex-start; }
+  .cookie-btns { width: 100%; }
+  .cookie-btn { flex: 1; text-align: center; }
+}
+
 </style>
   </head><body>
   <div class="title">${r.fn} — Numeroloji Raporu</div>
@@ -1451,7 +1535,21 @@ body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#1a1a1a;}.
     <div class="box"><div class="lbl">Kişilik</div><div class="n">${r.kisilik}</div></div>
   </div>
   <footer>www.numerolojim.com.tr · Pisagor Numeroloji Ekolü</footer>
-  </body></html>`);
+  
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">
+    🍪 Bu site deneyiminizi iyileştirmek için çerezler kullanır. 
+    Siteyi kullanmaya devam ederek çerez politikamızı kabul etmiş sayılırsınız.
+    <a href="privacy.html">Gizlilik Politikası →</a>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-btn decline" onclick="declineCookies()">Reddet</button>
+    <button class="cookie-btn accept" onclick="acceptCookies()">Kabul Et</button>
+  </div>
+</div>
+
+</body></html>`);
   w.document.close();w.print();
 }
 
@@ -1537,6 +1635,25 @@ buildDailyCard();
 </script>
 
 <script>
+
+/* ── COOKIE BANNER ── */
+function initCookieBanner() {
+  if(!localStorage.getItem('cookie_consent')) {
+    setTimeout(() => {
+      document.getElementById('cookieBanner').classList.add('show');
+    }, 1500);
+  }
+}
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+function declineCookies() {
+  localStorage.setItem('cookie_consent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+initCookieBanner();
+
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
     navigator.serviceWorker.register('/sw.js')
@@ -1545,5 +1662,19 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">
+    🍪 Bu site deneyiminizi iyileştirmek için çerezler kullanır. 
+    Siteyi kullanmaya devam ederek çerez politikamızı kabul etmiş sayılırsınız.
+    <a href="privacy.html">Gizlilik Politikası →</a>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-btn decline" onclick="declineCookies()">Reddet</button>
+    <button class="cookie-btn accept" onclick="acceptCookies()">Kabul Et</button>
+  </div>
+</div>
+
 </body>
 </html>
