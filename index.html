@@ -915,6 +915,165 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   .cookie-btn { flex: 1; text-align: center; }
 }
 
+
+/* ══════════════════════════════════════
+   GÜNLÜK KART — PREMIUM
+══════════════════════════════════════ */
+.daily-outer { max-width: 680px; margin: 0 auto 8px; }
+
+.daily-card {
+  position: relative; overflow: hidden;
+  background: linear-gradient(160deg, rgba(12,8,32,0.98) 0%, rgba(20,14,46,0.97) 100%);
+  border: 1px solid rgba(212,168,67,0.18);
+  border-radius: 24px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03), inset 0 1px 0 rgba(212,168,67,0.08);
+}
+/* Üst gradient şerit */
+.daily-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #D4A843 30%, #FF6B6B 60%, #8B5CF6 80%, transparent 100%);
+  opacity: 0.9; z-index: 2;
+}
+/* İç glow */
+.daily-card::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 80% 0%, rgba(139,92,246,0.07) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 100%, rgba(212,168,67,0.05) 0%, transparent 60%);
+}
+
+/* Üst bar */
+.dc-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 26px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position: relative; z-index: 1;
+}
+.dc-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 9px; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: #D4A843;
+  background: rgba(212,168,67,0.07);
+  border: 1px solid rgba(212,168,67,0.18);
+  border-radius: 20px; padding: 5px 14px;
+}
+.dc-date { text-align: right; }
+.dc-day { font-size: 10px; color: #6B6890; letter-spacing: 0.1em; margin-bottom: 2px; }
+.dc-full { font-family: 'Cinzel', serif; font-size: 10px; color: #D4A843; opacity: 0.6; }
+
+/* Gövde */
+.dc-body {
+  padding: 24px 28px 20px;
+  position: relative; z-index: 1;
+}
+
+/* Sayı + başlık */
+.dc-hero { display: flex; align-items: center; gap: 22px; margin-bottom: 18px; }
+
+.dc-num-ring {
+  flex-shrink: 0;
+  width: 90px; height: 90px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.dc-num-ring::before {
+  content: '';
+  position: absolute; inset: -2px; border-radius: 50%;
+  background: conic-gradient(#D4A843 0deg, #FF6B6B 120deg, #8B5CF6 240deg, #D4A843 360deg);
+  animation: spin-ring 6s linear infinite;
+}
+.dc-num-ring::after {
+  content: '';
+  position: absolute; inset: 3px; border-radius: 50%;
+  background: rgba(12,8,32,0.97);
+}
+@keyframes spin-ring { to { transform: rotate(360deg); } }
+
+.dc-num {
+  font-family: 'Cinzel', serif;
+  font-size: 44px; font-weight: 900; line-height: 1;
+  position: relative; z-index: 1;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.dc-info { flex: 1; }
+.dc-energy-lbl {
+  font-family: 'Cinzel', serif;
+  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: #D4A843; opacity: 0.6; margin-bottom: 7px;
+}
+.dc-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px; font-weight: 700;
+  color: #F0EEF8; line-height: 1.2; margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.dc-subtitle {
+  font-size: 12px; color: #6B6890; line-height: 1.6;
+  font-family: 'Montserrat', sans-serif; font-weight: 300;
+}
+
+/* Mesaj */
+.dc-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13.5px; color: #B8B4D0;
+  line-height: 1.85; font-style: italic; font-weight: 300;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.025);
+  border-left: 2px solid rgba(212,168,67,0.35);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 18px;
+}
+
+/* Etiketler */
+.dc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
+.dc-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #B8B4D0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px; padding: 5px 13px;
+}
+
+/* Alt bar */
+.dc-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 26px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.15);
+  position: relative; z-index: 1;
+  gap: 12px; flex-wrap: wrap;
+}
+.dc-calc {
+  font-family: monospace; font-size: 11px;
+  color: #6B6890; letter-spacing: 0.05em;
+  flex: 1;
+}
+.dc-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 20px; border-radius: 10px;
+  font-family: 'Cinzel', serif; font-size: 10px;
+  font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none; border: none;
+  background: linear-gradient(135deg, #D4A843, #F0C860);
+  color: #0D0D1A;
+  box-shadow: 0 4px 16px rgba(212,168,67,0.25);
+}
+.dc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.4); }
+
+@media(max-width:560px) {
+  .dc-hero { gap: 14px; }
+  .dc-num-ring { width: 70px; height: 70px; }
+  .dc-num { font-size: 34px; }
+  .dc-title { font-size: 18px; }
+  .dc-body { padding: 18px 16px 16px; }
+  .dc-header, .dc-footer { padding: 13px 16px; }
+}
+
 </style>
 </head>
 <body>
@@ -1598,37 +1757,37 @@ function buildDailyCard(){
   let calcStr=digits.join('+')+' = '+sum;
   if(sum!==num){const d2=String(sum).split('').map(Number);calcStr+=' → '+d2.join('+')+' = <span style="color:#A78BFA;font-weight:600">'+num+'</span>';}
   else{calcStr=calcStr.replace(String(sum),'<span style="color:#A78BFA;font-weight:600">'+sum+'</span>');}
-  const tagsHtml=data.tags.map(t=>`<span class="daily-tag">${t}</span>`).join('');
+  const tagsHtml=data.tags.map(t=>`<span class="dc-tag">${t}</span>`).join('');
   document.getElementById('dailyCard').innerHTML=`
-    <div class="daily-wrap">
-      <div class="daily-card">
-        <div class="daily-header">
-          <span class="daily-badge">✦ Bugünün Enerjisi</span>
-          <div class="daily-date-info">
-            <div class="daily-day">${dayStr}</div>
-            <div class="daily-full-date">${dateStr}</div>
-          </div>
-        </div>
-        <div class="daily-body">
-          <div class="daily-hero">
-            <div class="daily-num-wrap" style="background:${data.color}18;">
-              <div class="daily-num" style="background:linear-gradient(135deg,${data.color},${data.color}cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${num}</div>
-            </div>
-            <div class="daily-text-wrap">
-              <div class="daily-energy-label">✦ Günün Enerjisi</div>
-              <div class="daily-title">${data.title}</div>
-              <div class="daily-subtitle">${data.subtitle}</div>
-            </div>
-          </div>
-          <div class="daily-message">${data.message}</div>
-          <div class="daily-tags">${tagsHtml}</div>
-        </div>
-        <div class="daily-footer">
-          <div class="daily-calc">${calcStr}</div>
-          <a href="rapor.html" class="daily-btn primary">✦ Raporun →</a>
+  <div class="daily-outer">
+    <div class="daily-card">
+      <div class="dc-header">
+        <span class="dc-badge">✦ Bugünün Enerjisi</span>
+        <div class="dc-date">
+          <div class="dc-day">${dayStr}</div>
+          <div class="dc-full">${dateStr}</div>
         </div>
       </div>
-    </div>`;
+      <div class="dc-body">
+        <div class="dc-hero">
+          <div class="dc-num-ring" style="background:${data.color}15;">
+            <div class="dc-num" style="background:linear-gradient(135deg,${data.color},${data.color}bb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${num}</div>
+          </div>
+          <div class="dc-info">
+            <div class="dc-energy-lbl">✦ Günün Sayısı</div>
+            <div class="dc-title">${data.title}</div>
+            <div class="dc-subtitle">${data.subtitle}</div>
+          </div>
+        </div>
+        <div class="dc-message">${data.message}</div>
+        <div class="dc-tags">${tagsHtml}</div>
+      </div>
+      <div class="dc-footer">
+        <div class="dc-calc">${calcStr}</div>
+        <a href="rapor.html" class="dc-btn">✦ Raporun →</a>
+      </div>
+    </div>
+  </div>`;
 }
 
 buildDailyCard();
