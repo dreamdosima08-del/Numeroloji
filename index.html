@@ -874,48 +874,6 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
 }
 
 
-/* ── COOKIE BANNER ── */
-.cookie-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: linear-gradient(135deg, rgba(10,8,30,0.98), rgba(15,12,40,0.98));
-  border-top: 1px solid rgba(212,168,67,0.2);
-  padding: 16px 20px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; flex-wrap: wrap;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-.cookie-banner.show { transform: translateY(0); }
-.cookie-text {
-  font-size: 12px; color: var(--text3); line-height: 1.6; flex: 1; min-width: 200px;
-}
-.cookie-text a { color: var(--gold); text-decoration: none; }
-.cookie-text a:hover { text-decoration: underline; }
-.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
-.cookie-btn {
-  padding: 9px 20px; border-radius: 8px; font-family: var(--ff-display);
-  font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
-  text-transform: uppercase; cursor: pointer; border: none; transition: all 0.2s;
-}
-.cookie-btn.accept {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #0D0D1A;
-}
-.cookie-btn.accept:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(212,168,67,0.4); }
-.cookie-btn.decline {
-  background: transparent; color: var(--text3);
-  border: 1px solid var(--border2);
-}
-.cookie-btn.decline:hover { border-color: var(--border); color: var(--text2); }
-@media(max-width:480px) {
-  .cookie-banner { flex-direction: column; align-items: flex-start; }
-  .cookie-btns { width: 100%; }
-  .cookie-btn { flex: 1; text-align: center; }
-}
-
-
 /* ══════════════════════════════════════
    GÜNLÜK KART — PREMIUM
 ══════════════════════════════════════ */
@@ -1073,6 +1031,9 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   .dc-body { padding: 18px 16px 16px; }
   .dc-header, .dc-footer { padding: 13px 16px; }
 }
+
+
+
 
 </style>
 </head>
@@ -1644,47 +1605,14 @@ body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#1a1a1a;}.
 }
 
 
-/* ── COOKIE BANNER ── */
-.cookie-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: linear-gradient(135deg, rgba(10,8,30,0.98), rgba(15,12,40,0.98));
-  border-top: 1px solid rgba(212,168,67,0.2);
-  padding: 16px 20px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; flex-wrap: wrap;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-}
-.cookie-banner.show { transform: translateY(0); }
-.cookie-text {
-  font-size: 12px; color: var(--text3); line-height: 1.6; flex: 1; min-width: 200px;
-}
-.cookie-text a { color: var(--gold); text-decoration: none; }
-.cookie-text a:hover { text-decoration: underline; }
-.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
-.cookie-btn {
-  padding: 9px 20px; border-radius: 8px; font-family: var(--ff-display);
-  font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
-  text-transform: uppercase; cursor: pointer; border: none; transition: all 0.2s;
-}
-.cookie-btn.accept {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #0D0D1A;
-}
-.cookie-btn.accept:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(212,168,67,0.4); }
-.cookie-btn.decline {
-  background: transparent; color: var(--text3);
-  border: 1px solid var(--border2);
-}
-.cookie-btn.decline:hover { border-color: var(--border); color: var(--text2); }
-@media(max-width:480px) {
-  .cookie-banner { flex-direction: column; align-items: flex-start; }
-  .cookie-btns { width: 100%; }
-  .cookie-btn { flex: 1; text-align: center; }
-}
-
+/* ── COOKIE ── */
+.ckb{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,8,30,0.97);border-top:1px solid rgba(212,168,67,0.2);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;transform:translateY(110%);transition:transform 0.4s ease;backdrop-filter:blur(10px);}
+.ckb.on{transform:translateY(0);}
+.ckb-txt{font-size:12px;color:#6B6890;flex:1;}
+.ckb-txt a{color:#D4A843;text-decoration:none;}
+.ckb-btns{display:flex;gap:8px;}
+.ckb-ok{padding:8px 18px;background:linear-gradient(135deg,#D4A843,#F0C860);color:#0D0D1A;border:none;border-radius:8px;font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:0.15em;cursor:pointer;}
+.ckb-no{padding:8px 14px;background:transparent;color:#6B6890;border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:11px;cursor:pointer;}
 </style>
   </head><body>
   <div class="title">${r.fn} — Numeroloji Raporu</div>
@@ -1695,19 +1623,42 @@ body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#1a1a1a;}.
   </div>
   <footer>www.numerolojim.com.tr · Pisagor Numeroloji Ekolü</footer>
   
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-text">
-    🍪 Bu site deneyiminizi iyileştirmek için çerezler kullanır. 
-    Siteyi kullanmaya devam ederek çerez politikamızı kabul etmiş sayılırsınız.
-    <a href="privacy.html">Gizlilik Politikası →</a>
-  </div>
-  <div class="cookie-btns">
-    <button class="cookie-btn decline" onclick="declineCookies()">Reddet</button>
-    <button class="cookie-btn accept" onclick="acceptCookies()">Kabul Et</button>
+
+<script>
+(function(){
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){
+      var b=document.getElementById('cookieBanner');
+      if(b) b.classList.add('show');
+    },1200);
+  }
+})();
+function acceptCookies(){
+  localStorage.setItem('cookie_consent','accepted');
+  var b=document.getElementById('cookieBanner');
+  if(b){ b.style.transition='transform 0.3s ease'; b.style.transform='translateY(100%)'; }
+}
+function declineCookies(){
+  localStorage.setItem('cookie_consent','declined');
+  var b=document.getElementById('cookieBanner');
+  if(b){ b.style.transition='transform 0.3s ease'; b.style.transform='translateY(100%)'; }
+}
+</script>
+
+
+<!-- COOKIE -->
+<div class="ckb" id="ckb">
+  <div class="ckb-txt">🍪 Bu site çerezler kullanır. <a href="privacy.html">Gizlilik Politikası</a></div>
+  <div class="ckb-btns">
+    <button class="ckb-no" onclick="ckNo()">Reddet</button>
+    <button class="ckb-ok" onclick="ckOk()">✦ Kabul Et</button>
   </div>
 </div>
-
+<script>
+!function(){if(!localStorage.getItem('ck')){setTimeout(function(){var e=document.getElementById('ckb');e&&e.classList.add('on');},1200);}}();
+function ckOk(){localStorage.setItem('ck','1');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)');}
+function ckNo(){localStorage.setItem('ck','0');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)');}
+</script>
 </body></html>`);
   w.document.close();w.print();
 }
@@ -1795,23 +1746,6 @@ buildDailyCard();
 
 <script>
 
-/* ── COOKIE BANNER ── */
-function initCookieBanner() {
-  if(!localStorage.getItem('cookie_consent')) {
-    setTimeout(() => {
-      document.getElementById('cookieBanner').classList.add('show');
-    }, 1500);
-  }
-}
-function acceptCookies() {
-  localStorage.setItem('cookie_consent', 'accepted');
-  document.getElementById('cookieBanner').classList.remove('show');
-}
-function declineCookies() {
-  localStorage.setItem('cookie_consent', 'declined');
-  document.getElementById('cookieBanner').classList.remove('show');
-}
-initCookieBanner();
 
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
@@ -1822,18 +1756,29 @@ if('serviceWorker' in navigator){
 }
 </script>
 
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-text">
-    🍪 Bu site deneyiminizi iyileştirmek için çerezler kullanır. 
-    Siteyi kullanmaya devam ederek çerez politikamızı kabul etmiş sayılırsınız.
-    <a href="privacy.html">Gizlilik Politikası →</a>
-  </div>
-  <div class="cookie-btns">
-    <button class="cookie-btn decline" onclick="declineCookies()">Reddet</button>
-    <button class="cookie-btn accept" onclick="acceptCookies()">Kabul Et</button>
-  </div>
-</div>
+
+<script>
+(function(){
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){
+      var b=document.getElementById('cookieBanner');
+      if(b) b.classList.add('show');
+    },1200);
+  }
+})();
+function acceptCookies(){
+  localStorage.setItem('cookie_consent','accepted');
+  var b=document.getElementById('cookieBanner');
+  if(b){ b.style.transition='transform 0.3s ease'; b.style.transform='translateY(100%)'; }
+}
+function declineCookies(){
+  localStorage.setItem('cookie_consent','declined');
+  var b=document.getElementById('cookieBanner');
+  if(b){ b.style.transition='transform 0.3s ease'; b.style.transform='translateY(100%)'; }
+}
+</script>
+
+
 
 </body>
 </html>
