@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#D4A843">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Numeroloji Blog 2026 | Aşk, Cinsellik & Kader Yazıları</title>
 <meta name="keywords" content="numeroloji blog, numeroloji yazıları, kader sayısı, cinsellik numeroloji, aşk uyumu, master sayılar, harf analizi, numeroloji 2026">
@@ -210,13 +211,13 @@ const BLOG=[
     `
   },
   {
-    cat:"Cinsellik & Enerji",
-    title:"Numeroloji ve Cinsellik: Doğum Tarihin Yatakta Nasıl Biri Olduğunu Söylüyor",
-    preview:"Bazı sayılar ateşli ve spontane, bazıları yavaş yanar ama söndürülmez. Doğum tarihin cinsel enerjini ve partner uyumunu şifreliyor.",
+    cat:"Aşk & Enerji",
+    title:"Numeroloji ve Aşk Enerjisi: Doğum Tarihin İlişkide Nasıl Biri Olduğunu Söylüyor",
+    preview:"Bazı sayılar ateşli ve spontane, bazıları yavaş yanar ama söndürülmez. Doğum tarihin aşk enerjini ve partner uyumunu şifreliyor.",
     meta:"Numeroloji Akademisi · 8 dk okuma",
     cover:"https://i.ibb.co/5XSD8Vtv/MG-20260329-124025.png",
     content:`
-      <p>Numeroloji yalnızca kariyer seçimi ya da yaşam amacı için değildir. Pisagor'un binlerce yıl önce keşfettiği sayı titreşimleri, ilişkilerin en mahrem boyutunu da şekillendiriyor: <strong>cinsellik ve arzular.</strong></p>
+      <p>Numeroloji yalnızca kariyer seçimi ya da yaşam amacı için değildir. Pisagor'un binlerce yıl önce keşfettiği sayı titreşimleri, ilişkilerin en derin boyutunu da şekillendiriyor: <strong>aşk enerjisi ve bağlanma biçimleri.</strong></p>
       <p>Her sayının kendine özgü bir cinsel enerjisi, bir ritmi ve bir bağlanma biçimi vardır. Kimi sayılar ateşli ve dürtüsel, kimi yavaş ve derin, kimi ise zihinsel bağ olmadan hiç başlamaz bile.</p>
       <div class="highlight">✦ Önemli not: Bu içerik spiritüel ve sembolik bir perspektif sunar. Numeroloji cinselliği belirlemez — yalnızca eğilimleri ve enerjileri yansıtır.</div>
       <h3>1 Sayısı — Ateşli Öncü</h3>
@@ -243,9 +244,9 @@ const BLOG=[
     `
   },
   {
-    cat:"Cinsel Enerji",
-    title:"Numeroloji ile Cinsel Uyum: Hangi Sayı Kiminle Uyumludur?",
-    preview:"Her sayının bir cinsel uyum profili var. En tutkulu çiftler, en zorlu kombinasyonlar ve sürpriz uyumlar.",
+    cat:"Aşk Enerjisi",
+    title:"Numeroloji ile Aşk Uyumu: Hangi Sayı Kiminle Uyumludur?",
+    preview:"Her sayının bir aşk uyum profili var. En tutkulu çiftler, en zorlu kombinasyonlar ve sürpriz uyumlar.",
     meta:"Numeroloji Akademisi · 5 dk okuma",
     content:`
       <p>Numerolojik uyum yalnızca karakterler arasındaki uyumu değil, cinsel enerji uyumunu da kapsar. Bazı sayı kombinasyonları doğal bir çekim yaratırken, bazıları sürtüşme üretir.</p>
@@ -273,8 +274,8 @@ const BLOG=[
     `
   },
   {
-    cat:"Libido",
-    title:"Libido Potansiyeli ve Doğum Tarihi: Bilim mi, Mistik mi?",
+    cat:"Tutku Enerjisi",
+    title:"Tutku Enerjisi ve Doğum Tarihi: Sayılar Ne Söylüyor?",
     preview:"Numerolojik titreşimler ve libido ilişkisini araştıran analizler ilginç veriler ortaya koyuyor.",
     meta:"Numeroloji Akademisi · 5 dk okuma",
     content:`
@@ -288,7 +289,7 @@ const BLOG=[
   },
   {
     cat:"Master Sayılar",
-    title:"11, 22, 33: Usta Sayıların Cinsel Enerjisi",
+    title:"11, 22, 33: Master Sayıların Aşk ve Tutku Enerjisi",
     preview:"Master sayı taşıyanların ilişki yaşantısı oldukça farklıdır. Getirdiği hediyeler ve zorluklar.",
     meta:"Numeroloji Akademisi · 7 dk okuma",
     content:`
@@ -304,7 +305,7 @@ const BLOG=[
   },
   {
     cat:"Ruh Güdüsü",
-    title:"Ruh Güdüsü Sayısı: Yatakta Gerçekten Ne İstiyorsunuz?",
+    title:"Ruh Güdüsü Sayısı: İlişkide Gerçekten Ne İstiyorsunuz?",
     preview:"İsminizin sesli harflerinden elde edilen sayı, en derin arzularınızı şifreliyor.",
     meta:"Numeroloji Akademisi · 5 dk okuma",
     content:`
@@ -400,6 +401,16 @@ function closeModal(e) {
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeBlogModal(); });
 
 renderPosts('all');
+</script>
+
+<script>
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('SW kayıtlı:', reg.scope))
+      .catch(err => console.log('SW hatası:', err));
+  });
+}
 </script>
 </body>
 </html>

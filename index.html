@@ -2,11 +2,11 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="theme-color" content="#D4A843">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#D4A843">
 <title>Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla</title>
-<meta name="description" content="Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve cinsel uyum skorunuzu ücretsiz hesaplayın. Pisagor numerolojisi ile 2026 enerjinizi keşfedin.">
-<meta name="keywords" content="numeroloji, kader sayısı, numeroloji hesaplama, doğum tarihi analizi, cinsel uyum, ruh güdüsü sayısı, kişilik sayısı, pisagor numeroloji, 2026 numeroloji, ücretsiz numeroloji">
+<meta name="description" content="Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve aşk uyum skorunuzu ücretsiz hesaplayın. Pisagor numerolojisi ile 2026 enerjinizi keşfedin.">
+<meta name="keywords" content="numeroloji, kader sayısı, numeroloji hesaplama, doğum tarihi analizi, aşk uyumu, ruh güdüsü sayısı, kişilik sayısı, pisagor numeroloji, 2026 numeroloji, ücretsiz numeroloji">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.numerolojim.com.tr/">
 <meta property="og:title" content="Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <link rel="manifest" href="/manifest.json">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve cinsel uyum hesaplama."}
+{"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu hesaplama."}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
@@ -457,7 +457,7 @@ header h1 {
 .card-body { font-size: 13.5px; color: var(--text2); line-height: 1.75; font-weight: 300; }
 .card-body strong { color: var(--text); font-weight: 500; }
 
-/* Libido grid */
+/* Tutku grid */
 .libido-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
 @media (max-width: 480px) { .libido-row { grid-template-columns: 1fr; } }
 .lib-item {
@@ -711,13 +711,13 @@ document.getElementById('blog-grid').innerHTML = BLOG.slice(1).map((p,i)=>`
 /* ── PAYLAŞIM ── */
 function shareScore(){
   const r=window._r;if(!r)return alert('Önce analiz yapın.');
-  const txt=`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Burç: ${r.zodiac}\nKader: ${r.kader} | Libido: ${r.libido}/100 | Tutku: ${r.passion}/100\nnumerolojim.com.tr`;
-  if(navigator.share)navigator.share({title:'Cinsel Uyum Skorum',text:txt,url:'https://www.numerolojim.com.tr'});
+  const txt=`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Burç: ${r.zodiac}\nKader: ${r.kader} | Tutku: ${r.tutku}/100 | Tutku: ${r.passion}/100\nnumerolojim.com.tr`;
+  if(navigator.share)navigator.share({title:'Aşk Uyum Analizim',text:txt,url:'https://www.numerolojim.com.tr'});
   else navigator.clipboard.writeText(txt).then(()=>alert('Panoya kopyalandı!'));
 }
 function shareWA(){
   const r=window._r;if(!r)return;
-  window.open('https://wa.me/?text='+encodeURIComponent(`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Kader: ${r.kader} | Libido: ${r.libido}/100\nnumerolojim.com.tr`),'_blank');
+  window.open('https://wa.me/?text='+encodeURIComponent(`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Kader: ${r.kader} | Tutku: ${r.tutku}/100\nnumerolojim.com.tr`),'_blank');
 }
 function downloadPDF(){
   const r=window._r;if(!r)return;
@@ -1042,9 +1042,8 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
 <div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
 <div id="particles"></div>
 
-<!-- HEADER -->
 <header>
-  <div class="logo" style="font-size:clamp(28px,6vw,52px);background:linear-gradient(135deg,#F0C860,#D4A843,#FF6B6B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:none;filter:drop-shadow(0 0 20px rgba(212,168,67,0.4));">✦ NUMEROLOJİM</div>
+  <div class="logo" style="font-size:clamp(28px,6vw,52px);background:linear-gradient(135deg,#F0C860,#D4A843,#FF6B6B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(212,168,67,0.4));">✦ NUMEROLOJİM</div>
   <div class="logo-sub">sayıların gizemi</div>
 </header>
 
@@ -1055,12 +1054,10 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   <div class="form-card">
     <div class="fc-label">✦ Kişisel Numeroloji Analizin ✦</div>
     <div class="fc-sub">Doğum tarihin ve ismin sana ne anlatıyor?</div>
-
     <div class="fgroup">
       <label><span class="label-icon">✦</span> Ad Soyad</label>
       <input type="text" id="fn" placeholder="Örn: Ayşe Kaya" autocomplete="off"/>
     </div>
-
     <div class="fgroup">
       <label><span class="label-icon">◈</span> Doğum Tarihi</label>
       <div class="date-row">
@@ -1069,7 +1066,6 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
         <input type="number" id="by" placeholder="Yıl" min="1900" max="2010"/>
       </div>
     </div>
-
     <div class="fgroup">
       <label><span class="label-icon">☽</span> Burç (İsteğe Bağlı)</label>
       <select id="zodiac">
@@ -1088,11 +1084,9 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
         <option value="balik">♓ Balık</option>
       </select>
     </div>
-
     <button class="btn-main" onclick="runAnalysis()">✦ Analizimi Başlat ✦</button>
-
-    <a href="rapor.html" style="display:block;margin-top:14px;text-align:center;padding:14px 20px;background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(212,168,67,0.08));border:1px solid rgba(139,92,246,0.3);border-radius:12px;color:#C4B0F0;font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:0.12em;text-decoration:none;transition:all 0.3s;">
-      ✦ AI Destekli Kişisel Rapor Al (3000+ Kelime) →
+    <a href="rapor.html" style="display:block;margin-top:14px;text-align:center;padding:14px 20px;background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(212,168,67,0.08));border:1px solid rgba(139,92,246,0.3);border-radius:12px;color:#C4B0F0;font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:0.12em;text-decoration:none;">
+      ✦ AI Destekli Kişisel Rapor Al →
     </a>
   </div>
 </div>
@@ -1106,19 +1100,16 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
 
 <!-- RESULTS -->
 <div id="results">
-
   <div class="result-hero">
     <div class="result-name" id="res-name"></div>
     <div class="result-sub">Kişisel Numeroloji & Enerji Analizi</div>
   </div>
-
   <div class="share-row">
     <button class="sbtn sbtn-gold" onclick="shareResult()">✦ Paylaş</button>
     <button class="sbtn sbtn-coral" onclick="downloadPDF()">⬇ PDF İndir</button>
     <button class="sbtn sbtn-wa" onclick="shareWA()">WhatsApp</button>
   </div>
 
-  <!-- Temel sayılar -->
   <div class="grid2">
     <div class="rcard s1">
       <div class="card-eye">Kader Sayısı</div>
@@ -1153,12 +1144,11 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
     </div>
   </div>
 
-  <!-- Cinsel Uyum -->
-  <div class="divider"><span class="divider-label">✦ Numeroloji ile Cinsel Uyum Analizi ✦</span></div>
+  <div class="divider"><span class="divider-label">✦ Numeroloji ile Aşk & Uyum Analizi ✦</span></div>
 
   <div class="grid1">
     <div class="rcard coral-accent s1">
-      <div class="card-eye">Libido Potansiyeli & Cinsel Enerji Skoru</div>
+      <div class="card-eye">Tutku Potansiyeli & Enerji Skoru</div>
       <div class="libido-row" id="libido-row"></div>
       <div class="card-body" id="d-libido"></div>
     </div>
@@ -1166,7 +1156,7 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
 
   <div class="grid2">
     <div class="rcard coral-accent s2">
-      <div class="card-eye">Cinsel Karakter Profili</div>
+      <div class="card-eye">Aşk Karakteri Profili</div>
       <div class="card-title coral" id="t-cinsel">—</div>
       <div class="score-wrap">
         <div class="score-ring coral-r" id="ring-c"><span class="score-ring-num" id="rn-c">—</span></div>
@@ -1181,7 +1171,6 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
     </div>
   </div>
 
-  <!-- Burç × Numeroloji -->
   <div class="divider"><span class="divider-label">✦ Burç × Numeroloji Sentezi ✦</span></div>
 
   <div class="grid1">
@@ -1211,8 +1200,7 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   </div>
 
   <button class="sbtn sbtn-gold" onclick="reset()" style="display:block;margin:32px auto 0;padding:14px 32px;">← Yeni Analiz</button>
-
-</div><!-- /results -->
+</div>
 
 <!-- GÜNLÜK KART -->
 <div class="divider"><span class="divider-label">✦ Bugünün Enerjisi ✦</span></div>
@@ -1220,55 +1208,53 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
 
 <!-- BLOG & HARF -->
 <div class="divider"><span class="divider-label">✦ Numeroloji Akademisi ✦</span></div>
-
-<p style="text-align:center;font-size:13px;color:#6B6890;margin-bottom:20px;">Sayılar, aşk, cinsellik ve kader üzerine derinlemesine yazılar.</p>
-
+<p style="text-align:center;font-size:13px;color:#6B6890;margin-bottom:20px;">Sayılar, aşk, kader ve enerji üzerine derinlemesine yazılar.</p>
 <div style="text-align:center;margin-bottom:24px;">
   <a href="blog.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:linear-gradient(135deg,rgba(212,168,67,0.1),rgba(139,92,246,0.08));border:1px solid rgba(212,168,67,0.3);border-radius:14px;color:#D4A843;font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">
     ✦ Tüm Blog Yazılarını Oku →
   </a>
 </div>
 
-<!-- HARF SERİSİ -->
 <p style="text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4A843;opacity:0.7;margin-bottom:14px;">✦ Harf Enerjisi Serisi ✦</p>
 <p style="text-align:center;font-size:12px;color:#6B6890;margin-bottom:18px;">İsmindeki harflerin numerolojik anlamını keşfet</p>
 <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:48px;">
-  <a href="harf-a.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#D4A843;">A</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-b.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(147,197,253,0.07);border:1px solid rgba(147,197,253,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#93C5FD;">B</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
-  <a href="harf-c.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">C</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-c2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">Ç</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-d.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">D</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
-  <a href="harf-e.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FB923C;">E</span><span style="font-size:9px;color:#6B6890;">= 5</span></a>
-  <a href="harf-f.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,168,212,0.07);border:1px solid rgba(249,168,212,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F9A8D4;">F</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
-  <a href="harf-g.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">G</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-g2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#7C3AED;">Ğ</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-h.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(240,200,96,0.07);border:1px solid rgba(240,200,96,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F0C860;">H</span><span style="font-size:9px;color:#6B6890;">= 8</span></a>
-  <a href="harf-i.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#818CF8;">I/İ</span><span style="font-size:9px;color:#6B6890;">= 9</span></a>
-  <a href="harf-j.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#EF4444;">J</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-k.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(147,197,253,0.07);border:1px solid rgba(147,197,253,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#93C5FD;">K</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
-  <a href="harf-l.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">L</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-m.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">M</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
-  <a href="harf-n.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FB923C;">N</span><span style="font-size:9px;color:#6B6890;">= 5</span></a>
-  <a href="harf-o.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,168,212,0.07);border:1px solid rgba(249,168,212,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F9A8D4;">O</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
-  <a href="harf-o2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(253,164,175,0.07);border:1px solid rgba(253,164,175,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FDA4AF;">Ö</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
-  <a href="harf-p.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">P</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-r.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#818CF8;">R</span><span style="font-size:9px;color:#6B6890;">= 9</span></a>
-  <a href="harf-s.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#EF4444;">S</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-s2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F97316;">Ş</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-t.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#60A5FA;">T</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
-  <a href="harf-u.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">U</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-u2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">Ü</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-v.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">V</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
-  <a href="harf-y.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">Y</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-z.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#D4A843;">Z</span><span style="font-size:9px;color:#6B6890;">= 8</span></a>
+  <a href="harf-a.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#D4A843;">A</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
+  <a href="harf-b.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(147,197,253,0.07);border:1px solid rgba(147,197,253,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#93C5FD;">B</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
+  <a href="harf-c.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">C</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
+  <a href="harf-c2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">Ç</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
+  <a href="harf-d.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">D</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
+  <a href="harf-e.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FB923C;">E</span><span style="font-size:9px;color:#6B6890;">= 5</span></a>
+  <a href="harf-f.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,168,212,0.07);border:1px solid rgba(249,168,212,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F9A8D4;">F</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
+  <a href="harf-g.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">G</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
+  <a href="harf-g2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#7C3AED;">Ğ</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
+  <a href="harf-h.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(240,200,96,0.07);border:1px solid rgba(240,200,96,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F0C860;">H</span><span style="font-size:9px;color:#6B6890;">= 8</span></a>
+  <a href="harf-i.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#818CF8;">I/İ</span><span style="font-size:9px;color:#6B6890;">= 9</span></a>
+  <a href="harf-j.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#EF4444;">J</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
+  <a href="harf-k.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(147,197,253,0.07);border:1px solid rgba(147,197,253,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#93C5FD;">K</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
+  <a href="harf-l.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">L</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
+  <a href="harf-m.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">M</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
+  <a href="harf-n.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FB923C;">N</span><span style="font-size:9px;color:#6B6890;">= 5</span></a>
+  <a href="harf-o.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,168,212,0.07);border:1px solid rgba(249,168,212,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F9A8D4;">O</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
+  <a href="harf-o2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(253,164,175,0.07);border:1px solid rgba(253,164,175,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FDA4AF;">Ö</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
+  <a href="harf-p.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">P</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
+  <a href="harf-r.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#818CF8;">R</span><span style="font-size:9px;color:#6B6890;">= 9</span></a>
+  <a href="harf-s.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#EF4444;">S</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
+  <a href="harf-s2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F97316;">Ş</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
+  <a href="harf-t.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#60A5FA;">T</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
+  <a href="harf-u.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">U</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
+  <a href="harf-u2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">Ü</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
+  <a href="harf-v.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">V</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
+  <a href="harf-y.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">Y</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
+  <a href="harf-z.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#D4A843;">Z</span><span style="font-size:9px;color:#6B6890;">= 8</span></a>
 </div>
+
+<footer style="text-align:center;padding:20px;font-size:11px;color:#6B6890;border-top:1px solid rgba(255,255,255,0.05);">
+  <p>© 2026 Numerolojim.com.tr · <a href="privacy.html" style="color:#6B6890;">Gizlilik Politikası</a> · <a href="numeroloji-nedir.html" style="color:#6B6890;">Numeroloji Nedir?</a></p>
+</footer>
 
 </main>
 
 <script>
-/* ══════════════════════════════════════
-   NUMEROLOJİ HESAPLAMA MOTORU
-══════════════════════════════════════ */
 const LV={a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:1,k:2,l:3,m:4,n:5,o:6,p:7,q:8,r:9,s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8,ç:3,ğ:7,ı:9,ö:6,ş:1,ü:3};
 const VOWELS=new Set(['a','e','i','ı','o','ö','u','ü']);
 const isVow=c=>VOWELS.has(c);
@@ -1311,7 +1297,7 @@ const DESCS={
   33:{k:"Master 33: Usta Öğretmen. Koşulsuz sevgi ve evrensel şifa enerjisi.",r:"En derin arzun: şifa vermek, öğretmek ve dönüştürmek.",kisilik:"Dış dünyaya yansıttığın imaj: şifa verici, öğretici, sevgi dolu.",i:"İfaden şifalayıcı — kelimelerinde iyileştirici bir güç var."}
 };
 
-const LIBIDO={1:{score:78,tutku:82,yakinlik:71,profil:"Lider & Özgür",desc:"Cinsellikte de lidersin. Spontane, tutkulu ve bağımsız bir enerji taşırsın. Rutin seni söndürür."},2:{score:72,tutku:68,yakinlik:85,profil:"Derin & Hassas",desc:"Güven olmadan açılmazsın. Yavaş yanar ama bir kez tutuştu mu söndürmek imkânsız."},3:{score:85,tutku:88,yakinlik:79,profil:"Yaratıcı & Ateşli",desc:"Sürprizlere bayılırsın, rutin söndürür. Oyuncu, yaratıcı ve eğlenceli bir enerji."},4:{score:65,tutku:62,yakinlik:78,profil:"Güvenli & Derin",desc:"Güven kurulmadan açılmazsın. Ama kurulduğunda — son derece sadık ve derin."},5:{score:92,tutku:95,yakinlik:74,profil:"Sınır Tanımaz",desc:"En yüksek fiziksel enerji. Çeşitlilik ve macera zorunluluk. Özgürlük her şeyden önce."},6:{score:76,tutku:72,yakinlik:88,profil:"Koşulsuz Veren",desc:"Vermek almaktan önce gelir. Partner memnuniyeti her şey. Şefkatli ve besleyici."},7:{score:68,tutku:65,yakinlik:80,profil:"Zihin Önce Tutuşur",desc:"Entelektüel bağ olmadan bedensel yakınlık boş kalır. Gizemli ve derinlikli."},8:{score:88,tutku:91,yakinlik:77,profil:"Yoğun & Sahiplenici",desc:"Güçlü, yoğun ve sahiplenici. Eşit güçte partner ister. Tutkusu sonsuz."},9:{score:80,tutku:78,yakinlik:90,profil:"Koşulsuz Aşık",desc:"Cinselliği spiritüel deneyim gibi yaşar. Tam teslimiyet ve koşulsuz sevgi."},11:{score:83,tutku:80,yakinlik:88,profil:"Sezgisel Mistik",desc:"Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin ve spiritüel bir enerji."},22:{score:86,tutku:84,yakinlik:82,profil:"Dönüştürücü",desc:"Sıradan bir ilişki tatmin etmez. Dönüştürücü ve kalıcı bir bağ arar."},33:{score:79,tutku:76,yakinlik:92,profil:"Koşulsuz Sevgi",desc:"Cinselliği ibadet gibi yaşar. Koşulsuz sevgi ve tam teslimiyet."}};
+const TUTKU_DATA={1:{score:78,tutku:82,yakinlik:71,profil:"Lider & Özgür",desc:"İlişkide de lidersin. Spontane, tutkulu ve bağımsız bir enerji taşırsın."},2:{score:72,tutku:68,yakinlik:85,profil:"Derin & Hassas",desc:"Güven olmadan açılmazsın. Yavaş yanar ama bir kez tutuştu mu söndürmek imkânsız."},3:{score:85,tutku:88,yakinlik:79,profil:"Yaratıcı & Ateşli",desc:"Sürprizlere bayılırsın, rutin söndürür. Oyuncu, yaratıcı ve eğlenceli bir enerji."},4:{score:65,tutku:62,yakinlik:78,profil:"Güvenli & Derin",desc:"Güven kurulmadan açılmazsın. Ama kurulduğunda — son derece sadık ve derin."},5:{score:92,tutku:95,yakinlik:74,profil:"Sınır Tanımaz",desc:"En yüksek fiziksel enerji. Çeşitlilik ve macera zorunluluk. Özgürlük her şeyden önce."},6:{score:76,tutku:72,yakinlik:88,profil:"Koşulsuz Veren",desc:"Vermek almaktan önce gelir. Partner memnuniyeti her şey. Şefkatli ve besleyici."},7:{score:68,tutku:65,yakinlik:80,profil:"Zihin Önce Tutuşur",desc:"Entelektüel bağ olmadan duygusal yakınlık boş kalır. Gizemli ve derinlikli."},8:{score:88,tutku:91,yakinlik:77,profil:"Yoğun & Sahiplenici",desc:"Güçlü, yoğun ve sahiplenici. Eşit güçte partner ister. Tutkusu sonsuz."},9:{score:80,tutku:78,yakinlik:90,profil:"Koşulsuz Aşık",desc:"İlişkiyi spiritüel deneyim gibi yaşar. Tam teslimiyet ve koşulsuz sevgi."},11:{score:83,tutku:80,yakinlik:88,profil:"Sezgisel Mistik",desc:"Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin ve spiritüel bir enerji."},22:{score:86,tutku:84,yakinlik:82,profil:"Dönüştürücü",desc:"Sıradan bir ilişki tatmin etmez. Dönüştürücü ve kalıcı bir bağ arar."},33:{score:79,tutku:76,yakinlik:92,profil:"Koşulsuz Sevgi",desc:"İlişkiyi ibadet gibi yaşar. Koşulsuz sevgi ve tam teslimiyet."}};
 
 const COMPAT={1:[{n:1,t:"Orta",c:"İki lider — çatışmalı ama dinamik"},{n:2,t:"İyi",c:"2'nin dengesi seni yumuşatır"},{n:3,t:"İyi",c:"Yaratıcı uyum"},{n:5,t:"Çok İyi",c:"Özgürlük uyumu"},{n:9,t:"İyi",c:"Evrensel sevgi seni açar"}],2:[{n:2,t:"Çok İyi",c:"Derin anlayış"},{n:6,t:"Çok İyi",c:"Şefkat uyumu"},{n:9,t:"Çok İyi",c:"Koşulsuz sevgi"},{n:4,t:"İyi",c:"Güvenilirlik uyumu"},{n:5,t:"Zor",c:"Özgürlük ihtiyacı zorlayabilir"}],3:[{n:1,t:"İyi",c:"Dinamik enerji"},{n:3,t:"Çok İyi",c:"Çift yaratıcılık"},{n:5,t:"Çok İyi",c:"Özgürlük & macera"},{n:9,t:"Çok İyi",c:"Evrensel uyum"},{n:4,t:"Zor",c:"Katılık yaratıcılığı boğar"}],4:[{n:2,t:"İyi",c:"Duygusal denge"},{n:4,t:"Çok İyi",c:"Güçlü istikrar"},{n:7,t:"Çok İyi",c:"Derin uyum"},{n:8,t:"İyi",c:"Karşılıklı güç"},{n:5,t:"Zor",c:"Değişim ihtiyacı çatışır"}],5:[{n:1,t:"Çok İyi",c:"Özgürlük uyumu"},{n:3,t:"Çok İyi",c:"Macera & yaratıcılık"},{n:7,t:"İyi",c:"Zihinsel uyum"},{n:8,t:"İyi",c:"Güç dengesi"},{n:2,t:"Zor",c:"Güvenlik ihtiyacı çatışır"}],6:[{n:2,t:"Çok İyi",c:"Derin şefkat"},{n:6,t:"Çok İyi",c:"Koşulsuz sevgi"},{n:9,t:"Çok İyi",c:"Evrensel uyum"},{n:3,t:"İyi",c:"Neşe & sevgi"},{n:5,t:"Orta",c:"Özgürlük ihtiyacı zorlayabilir"}],7:[{n:4,t:"Çok İyi",c:"İstikrar & derinlik"},{n:7,t:"Çok İyi",c:"Spiritüel uyum"},{n:9,t:"İyi",c:"Evrensel bağlantı"},{n:5,t:"İyi",c:"Zihinsel uyarım"},{n:1,t:"Orta",c:"Bağımsızlık çatışabilir"}],8:[{n:1,t:"Çok İyi",c:"İki güç odağı"},{n:4,t:"İyi",c:"Sağlam zemin"},{n:6,t:"Orta",c:"Denge kurulabilir"},{n:8,t:"Çok İyi",c:"Güç dengesi"},{n:7,t:"İyi",c:"Stratejik uyum"}],9:[{n:3,t:"Çok İyi",c:"Yaratıcı & evrensel"},{n:6,t:"Çok İyi",c:"Koşulsuz sevgi"},{n:2,t:"Çok İyi",c:"Derin anlayış"},{n:9,t:"Orta",c:"İki evrensel ruh — yoğun olabilir"},{n:5,t:"İyi",c:"Özgürlük & anlam"}]};
 
@@ -1392,15 +1378,15 @@ function runAnalysis(){
     document.getElementById('d-ifade').textContent=DESCS[ifade]?.i||'';
     setPbar('p-ifade',(ifade/11)*100);
 
-    // Libido
-    const lib=LIBIDO[kader]||LIBIDO[9];
+    // Tutku
+    const lib=TUTKU_DATA[kader]||LIBIDO[9];
     document.getElementById('libido-row').innerHTML=`
-      <div class="lib-item"><div class="lib-val">${lib.score}</div><div class="lib-label">Libido Skoru</div></div>
+      <div class="lib-item"><div class="lib-val">${lib.score}</div><div class="lib-label">Tutku Skoru</div></div>
       <div class="lib-item"><div class="lib-val">${lib.tutku}</div><div class="lib-label">Tutku</div></div>
       <div class="lib-item"><div class="lib-val">${lib.yakinlik}</div><div class="lib-label">Yakınlık</div></div>`;
     document.getElementById('t-cinsel').textContent=lib.profil;
     document.getElementById('d-cinsel').textContent=lib.desc;
-    document.getElementById('d-libido').textContent='Sayıların cinsel enerji haritası kader sayına göre hesaplanmıştır.';
+    document.getElementById('d-libido').textContent='Sayıların aşk enerjisi haritası kader sayına göre hesaplanmıştır.';
     setPbar('p-cinsel',lib.score);
     setRing('ring-c','rn-c',lib.score,100);
 
@@ -1723,10 +1709,9 @@ function buildDailyCard(){
 
 buildDailyCard();
 </script>
+</script>
 
 <script>
-
-
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
     navigator.serviceWorker.register('/sw.js')
@@ -1736,9 +1721,19 @@ if('serviceWorker' in navigator){
 }
 </script>
 
-
-
-
+<!-- COOKIE -->
+<div class="ckb" id="ckb">
+  <div class="ckb-txt">🍪 Bu site çerezler kullanır. <a href="privacy.html">Gizlilik Politikası</a></div>
+  <div class="ckb-btns">
+    <button class="ckb-no" onclick="ckNo()">Reddet</button>
+    <button class="ckb-ok" onclick="ckOk()">✦ Kabul Et</button>
+  </div>
+</div>
+<script>
+!function(){if(!localStorage.getItem('ck')){setTimeout(function(){var e=document.getElementById('ckb');e&&e.classList.add('on');},1200);}}();
+function ckOk(){localStorage.setItem('ck','1');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)');}
+function ckNo(){localStorage.setItem('ck','0');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)');}
+</script>
 
 </body>
 </html>
