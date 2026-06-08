@@ -2,1092 +2,298 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name="theme-color" content="#D4A843">
 <title>Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla</title>
 <meta name="description" content="Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve aşk uyum skorunuzu ücretsiz hesaplayın. Pisagor numerolojisi ile 2026 enerjinizi keşfedin.">
-<meta name="keywords" content="numeroloji, kader sayısı, numeroloji hesaplama, doğum tarihi analizi, aşk uyumu, ruh güdüsü sayısı, kişilik sayısı, pisagor numeroloji, 2026 numeroloji, ücretsiz numeroloji">
-<meta name="robots" content="index, follow">
+<meta name="keywords" content="numeroloji, kader sayısı, numeroloji hesaplama, doğum tarihi analizi, aşk uyumu, ruh güdüsü sayısı, pisagor numeroloji, 2026 numeroloji">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.numerolojim.com.tr/">
-<meta property="og:title" content="Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla">
-<meta property="og:description" content="Doğum tarihinizle kader sayınızı ücretsiz hesaplayın. Pisagor numerolojisi ile 2026 enerjinizi keşfedin.">
+<meta property="og:title" content="Numeroloji Analizi 2026 | Kader Sayısı Hesapla">
+<meta property="og:description" content="Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu.">
 <meta property="og:url" content="https://www.numerolojim.com.tr/">
 <meta property="og:image" content="https://www.numerolojim.com.tr/og-image.jpg">
 <meta property="og:type" content="website">
 <link rel="manifest" href="/manifest.json">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu hesaplama."}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
-
-.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.ab{position:absolute;border-radius:50%;filter:blur(140px);opacity:.18;animation:drift 18s ease-in-out infinite alternate;}
-@keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,40px) scale(1.15);}}
-
-/* ============================================================
-   NUMEROLOJIM v3 — Aurora Night
-   Deep navy · electric coral · soft gold · luminous white
-   ============================================================ */
-:root {
-  /* Ana renkler */
-  --bg:        #0D0D1A;
-  --bg2:       #12122A;
-  --bg3:       #1A1A35;
-  --bg-card:   #14142B;
-  --bg-card2:  #1C1C38;
-
-  /* Metin */
-  --text:      #E8E6F0;
-  --text2:     #A09BB8;
-  --text3:     #6B6585;
-
-  /* Vurgu renkleri */
-  --gold:      #D4A843;
-  --gold2:     #F0C878;
-  --gold3:     #FBE9B0;
-  --coral:     #FF6B6B;
-  --coral2:    #FF8E8E;
-  --coral3:    #FFB3B3;
-  --violet:    #8B5CF6;
-  --violet2:   #A78BFA;
-  --teal:      #06B6D4;
-
-  /* Border & glow */
-  --border:    rgba(212,168,67,0.2);
-  --border2:   rgba(212,168,67,0.08);
-  --glow-gold: 0 0 40px rgba(212,168,67,0.15);
-  --glow-coral:0 0 40px rgba(255,107,107,0.15);
-  --glow-v:    0 0 40px rgba(139,92,246,0.15);
-
-  --r: 14px;
-  --ff-display: 'Cinzel', serif;
-  --ff-body:    'Montserrat', sans-serif;
+/* ── RESET & ROOT ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:#07071A;color:#F0EEF8;
+  font-family:'Montserrat',sans-serif;font-weight:300;
+  min-height:100vh;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--ff-body);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  min-height: 100vh;
+/* ── VARIABLES ── */
+:root{
+  --bg:#07071A;--bg2:#0D0D28;--card:#0F0F28;
+  --gold:#D4A843;--gold2:#F0C860;
+  --coral:#FF6B6B;--violet:#8B5CF6;
+  --text:#F0EEF8;--text2:#B8B4D0;--text3:#6B6890;
+  --border:rgba(212,168,67,.2);--border2:rgba(255,255,255,.06);
+  --ff:'Cinzel',serif;--r:14px;
+  --max:860px;
 }
 
-/* ── AURORA BACKGROUND ── */
-.aurora-wrap {
-  position: fixed; inset: 0;
-  pointer-events: none; z-index: 0;
-  overflow: hidden;
-}
-.aurora {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.18;
-  animation: auroraFloat var(--dur, 20s) ease-in-out var(--delay, 0s) infinite alternate;
-}
-.a1 { width: 700px; height: 400px; top: -10%; left: -10%; background: radial-gradient(ellipse, #6C3EF5, transparent 70%); --dur:22s; }
-.a2 { width: 500px; height: 500px; top: 20%; right: -15%; background: radial-gradient(ellipse, #FF6B6B, transparent 70%); --dur:18s; --delay:3s; }
-.a3 { width: 600px; height: 300px; bottom: 10%; left: 20%; background: radial-gradient(ellipse, #D4A843, transparent 70%); --dur:25s; --delay:6s; }
-.a4 { width: 400px; height: 400px; top: 50%; right: 30%; background: radial-gradient(ellipse, #06B6D4, transparent 70%); --dur:30s; --delay:2s; opacity:0.1; }
-
-@keyframes auroraFloat {
-  0%   { transform: translate(0,0) scale(1); }
-  33%  { transform: translate(60px,-40px) scale(1.15); }
-  66%  { transform: translate(-30px,50px) scale(0.9); }
-  100% { transform: translate(40px,20px) scale(1.05); }
-}
-
-/* ── PARTICLES ── */
-#particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
-.pt {
-  position: absolute; border-radius: 50%;
-  background: var(--gold2);
-  animation: ptFloat var(--d,8s) ease-in-out var(--dl,0s) infinite;
-}
-@keyframes ptFloat {
-  0%,100% { transform: translateY(0) scale(1); opacity: var(--op,0.3); }
-  50%      { transform: translateY(-30px) scale(1.4); opacity: 0; }
-}
+/* ── AURORA ── */
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.ab{position:absolute;border-radius:50%;filter:blur(140px);opacity:.14;animation:drift 20s ease-in-out infinite alternate}
+.ab:nth-child(1){width:60vw;height:40vh;background:#8B5CF6;top:-10vh;left:-10vw}
+.ab:nth-child(2){width:50vw;height:35vh;background:#D4A843;top:35%;right:-10vw;animation-delay:-7s}
+.ab:nth-child(3){width:45vw;height:35vh;background:#FF6B6B;bottom:-10vh;left:25%;animation-delay:-14s}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(3vw,2vh) scale(1.1)}}
 
 /* ── LAYOUT ── */
-.wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+.page{position:relative;z-index:1;width:100%;max-width:var(--max);margin:0 auto;padding:0 16px 60px}
 
 /* ── HEADER ── */
-header {
-  text-align: center;
-  padding: 64px 20px 48px;
-  position: relative; z-index: 2;
-  border-bottom: 1px solid var(--border2);
+header{text-align:center;padding:40px 16px 32px}
+.logo{
+  font-family:var(--ff);font-size:clamp(28px,7vw,52px);font-weight:900;
+  background:linear-gradient(135deg,#F0C860,#D4A843,#FF6B6B);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 24px rgba(212,168,67,.35));
+  display:block;margin-bottom:6px;
 }
-
-.logo-ring {
-  width: 72px; height: 72px;
-  margin: 0 auto 24px;
-  position: relative;
-  display: flex; align-items: center; justify-content: center;
-}
-.logo-ring-inner {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(212,168,67,0.15), rgba(139,92,246,0.15));
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px;
-  animation: logoPulse 4s ease-in-out infinite;
-}
-.logo-ring::before {
-  content: '';
-  position: absolute; inset: 0; border-radius: 50%;
-  border: 1px solid transparent;
-  border-top-color: var(--gold);
-  border-right-color: var(--coral);
-  animation: spin 6s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes logoPulse {
-  0%,100% { box-shadow: 0 0 20px rgba(212,168,67,0.2); }
-  50%      { box-shadow: 0 0 40px rgba(212,168,67,0.4), 0 0 60px rgba(255,107,107,0.15); }
-}
-
-header h1 {
-  font-family: var(--ff-display);
-  font-size: clamp(30px, 7vw, 58px);
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  background: linear-gradient(135deg, var(--gold3) 0%, var(--gold) 40%, var(--coral2) 70%, var(--violet2) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  margin-bottom: 12px;
-}
-.header-sub {
-  font-family: var(--ff-body);
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--text2);
-}
-.header-tagline {
-  font-family: var(--ff-body);
-  font-size: 16px; font-weight: 300; font-style: italic;
-  color: var(--text2); margin-top: 10px;
-}
-
-/* Güvenlik rozeti */
-.trust-badge {
-  display: inline-flex; align-items: center; gap: 10px;
-  margin-top: 20px;
-  background: rgba(6,182,212,0.08);
-  border: 1px solid rgba(6,182,212,0.2);
-  border-radius: 50px;
-  padding: 8px 18px;
-  font-size: 11px; font-weight: 500;
-  letter-spacing: 0.08em; color: var(--teal);
-}
-.trust-badge svg { flex-shrink: 0; }
-
-/* ── SECTION TITLES ── */
-.s-title {
-  font-family: var(--ff-display);
-  font-size: clamp(18px, 3.5vw, 28px);
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--gold2), var(--gold));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-align: center; letter-spacing: 0.04em;
-  margin-bottom: 8px;
-}
-.s-sub {
-  text-align: center; font-size: 14px; font-weight: 300;
-  color: var(--text2); max-width: 520px; margin: 0 auto 32px;
-  line-height: 1.7;
-}
-
-.divider {
-  display: flex; align-items: center; gap: 16px;
-  margin: 60px 0 44px;
-}
-.divider::before, .divider::after {
-  content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border2));
-}
-.divider::after { background: linear-gradient(90deg, var(--border2), transparent); }
-.divider-label {
-  font-family: var(--ff-display); font-size: 10px;
-  letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--gold); white-space: nowrap;
-}
+.logo-sub{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--text3)}
 
 /* ── FORM ── */
-.form-section { max-width: 700px; margin: 52px auto 0; }
-
-.form-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 48px 44px;
-  position: relative; overflow: hidden;
-  box-shadow: 0 0 60px rgba(212,168,67,0.15), 0 0 120px rgba(139,92,246,0.08), 0 24px 60px rgba(0,0,0,0.5);
+.form-wrap{max-width:520px;margin:0 auto 48px}
+.form-card{
+  background:linear-gradient(160deg,rgba(12,8,32,.98),rgba(18,14,44,.97));
+  border:1px solid var(--border);border-radius:20px;
+  padding:32px 28px;
+  box-shadow:0 0 60px rgba(212,168,67,.08),0 24px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(212,168,67,.08);
 }
-.form-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--violet), var(--gold), var(--coral));
+.fc-label{font-family:var(--ff);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:6px}
+.fc-sub{font-size:12px;color:var(--text3);text-align:center;margin-bottom:24px}
+.fgroup{margin-bottom:16px}
+.fgroup label{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500}
+.fgroup input,.fgroup select{
+  width:100%;background:rgba(255,255,255,.04);
+  border:1px solid rgba(212,168,67,.18);border-radius:10px;
+  padding:13px 16px;color:var(--text);
+  font-family:'Montserrat',sans-serif;font-size:14px;outline:none;
+  transition:border-color .3s,box-shadow .3s;
+  -webkit-appearance:none;
 }
-.form-card::after {
-  content: '';
-  position: absolute; top: -100px; right: -100px;
-  width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(139,92,246,0.06), transparent 70%);
-  pointer-events: none;
+.fgroup input:focus,.fgroup select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,67,.08)}
+.fgroup input::placeholder{color:var(--text3)}
+.fgroup select option{background:#0F0F28;color:var(--text)}
+.date-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.btn-main{
+  width:100%;padding:16px;margin-top:8px;
+  background:linear-gradient(135deg,#8B4A0A,#D4A843,#F0C860,#FF6B6B);
+  border:none;border-radius:12px;
+  color:#07071A;font-family:var(--ff);font-size:12px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  cursor:pointer;transition:all .3s;
+  box-shadow:0 8px 30px rgba(212,168,67,.3);
+  position:relative;overflow:hidden;
 }
-
-/* Form grup */
-.fgroup { margin-bottom: 24px; }
-.fgroup label {
-  display: flex; align-items: center; gap: 6px;
-  margin-bottom: 10px;
-  font-family: var(--ff-body); font-size: 11px;
-  font-weight: 600; letter-spacing: 0.25em;
-  text-transform: uppercase; color: var(--gold);
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(212,168,67,.45)}
+.btn-main:active{transform:translateY(0)}
+.rapor-link{
+  display:block;margin-top:12px;text-align:center;padding:13px;
+  background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);
+  border-radius:12px;color:#C4B0F0;
+  font-family:var(--ff);font-size:10px;font-weight:500;letter-spacing:.15em;
+  text-decoration:none;transition:all .3s;
 }
-.fgroup label .label-icon { font-size: 14px; }
-
-.fgroup input,
-.fgroup select {
-  width: 100%;
-  padding: 16px 20px;
-  background: rgba(255,255,255,0.04);
-  border: 1.5px solid rgba(212,168,67,0.2);
-  border-radius: 10px;
-  color: var(--text);
-  font-family: var(--ff-body);
-  font-size: 15px; font-weight: 400;
-  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
-  outline: none;
-  -webkit-appearance: none;
-}
-.fgroup input::placeholder { color: var(--text3); }
-.fgroup input:focus,
-.fgroup select:focus {
-  border-color: var(--gold);
-  background: rgba(212,168,67,0.06);
-  box-shadow: 0 0 0 4px rgba(212,168,67,0.08);
-}
-.fgroup select option { background: var(--bg3); color: var(--text); }
-
-.date-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.4fr;
-  gap: 10px;
-}
-@media (max-width: 480px) { .date-row { grid-template-columns: 1fr; } }
-
-/* CTA BUTTON */
-.btn-main {
-  width: 100%; margin-top: 8px;
-  padding: 20px;
-  background: linear-gradient(135deg, #6D1F00 0%, #D4A843 35%, #F0C860 65%, #FF6B6B 100%);
-  background-size: 200% 200%;
-  border: none; border-radius: 12px;
-  font-family: var(--ff-display);
-  font-size: 15px; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: #0D0D1A;
-  cursor: pointer;
-  position: relative; overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s, background-position 0.5s;
-  box-shadow: 0 8px 32px rgba(212,168,67,0.4), 0 2px 0 rgba(255,255,255,0.1) inset;
-  animation: btnBreath 3s ease-in-out infinite;
-}
-@keyframes btnBreath {
-  0%,100% { box-shadow: 0 8px 32px rgba(212,168,67,0.4); }
-  50%      { box-shadow: 0 8px 48px rgba(212,168,67,0.65), 0 0 80px rgba(255,107,107,0.2); }
-}
-.btn-main::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s;
-}
-.btn-main:hover::before { transform: translateX(100%); }
-.btn-main:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 48px rgba(212,168,67,0.6), 0 0 80px rgba(255,107,107,0.3);
-  background-position: right center;
-}
-.btn-main:active { transform: translateY(-1px); }
+.rapor-link:hover{background:rgba(139,92,246,.18);border-color:rgba(139,92,246,.5)}
 
 /* ── LOADER ── */
-#loader { display: none; text-align: center; padding: 56px 20px; }
-#loader.on { display: block; }
-.loader-orb {
-  width: 60px; height: 60px;
-  border-radius: 50%; margin: 0 auto 20px;
-  background: conic-gradient(var(--gold), var(--coral), var(--violet), var(--gold));
-  animation: orbSpin 1.2s linear infinite;
-  position: relative;
+#loader{display:none;text-align:center;padding:60px 20px}
+#loader.on{display:block}
+.loader-orb{
+  width:64px;height:64px;margin:0 auto 20px;border-radius:50%;
+  border:2px solid rgba(212,168,67,.15);border-top-color:var(--gold);
+  animation:spin 1s linear infinite;
 }
-.loader-orb::after {
-  content: '';
-  position: absolute; inset: 4px;
-  border-radius: 50%; background: var(--bg);
-}
-@keyframes orbSpin { to { transform: rotate(360deg); } }
-.loader-text {
-  font-family: var(--ff-display); font-size: 18px;
-  background: linear-gradient(135deg, var(--gold2), var(--coral2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: textPulse 1.8s ease-in-out infinite;
-}
-@keyframes textPulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-.loader-sub { font-size: 12px; color: var(--text3); margin-top: 6px; letter-spacing: 0.1em; }
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-text{font-family:var(--ff);font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:8px}
+.loader-sub{font-size:12px;color:var(--text3)}
 
 /* ── RESULTS ── */
-#results { display: none; margin-top: 52px; }
-#results.on { display: block; animation: fadeUp 0.8s ease both; }
-@keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+#results{display:none}
+#results.on{display:block;animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-.result-hero {
-  text-align: center; margin-bottom: 44px;
-  padding: 32px 20px;
-  background: linear-gradient(135deg, rgba(212,168,67,0.05), rgba(139,92,246,0.05));
-  border: 1px solid var(--border2);
-  border-radius: 16px;
-}
-.result-name {
-  font-family: var(--ff-display);
-  font-size: clamp(22px, 5vw, 38px);
-  font-weight: 900; letter-spacing: 0.04em;
-  background: linear-gradient(135deg, var(--gold3), var(--gold), var(--coral2));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.result-sub { font-size: 12px; color: var(--text2); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 6px; }
+.result-hero{text-align:center;margin-bottom:24px}
+.result-name{font-family:var(--ff);font-size:clamp(22px,5vw,36px);font-weight:700;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.result-sub{font-size:12px;color:var(--text3);margin-top:4px;letter-spacing:.1em}
 
-/* Share buttons */
-.share-row {
-  display: flex; gap: 10px; flex-wrap: wrap;
-  justify-content: center; margin: 0 0 40px;
-}
-.sbtn {
-  padding: 12px 22px; border-radius: 50px;
-  cursor: pointer; font-family: var(--ff-body);
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  display: flex; align-items: center; gap: 7px;
-  transition: all 0.25s; border: 1.5px solid;
-}
-.sbtn-gold { background: transparent; border-color: var(--gold); color: var(--gold); }
-.sbtn-gold:hover { background: rgba(212,168,67,0.1); transform: translateY(-2px); }
-.sbtn-coral { background: rgba(255,107,107,0.08); border-color: rgba(255,107,107,0.35); color: var(--coral2); }
-.sbtn-coral:hover { background: rgba(255,107,107,0.15); transform: translateY(-2px); }
-.sbtn-wa { background: rgba(37,211,102,0.07); border-color: rgba(37,211,102,0.25); color: #4ADE80; }
-.sbtn-wa:hover { background: rgba(37,211,102,0.14); transform: translateY(-2px); }
+.share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.sbtn{padding:10px 18px;border-radius:10px;font-family:var(--ff);font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s}
+.sbtn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A;box-shadow:0 4px 16px rgba(212,168,67,.3)}
+.sbtn-coral{background:rgba(255,107,107,.12);color:var(--coral);border:1px solid rgba(255,107,107,.25)}
+.sbtn-wa{background:rgba(37,211,102,.1);color:#25D366;border:1px solid rgba(37,211,102,.2)}
+.sbtn:hover{transform:translateY(-1px)}
 
-/* ── RESULT CARDS ── */
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-.grid1 { margin-bottom: 16px; }
-@media (max-width: 620px) { .grid2 { grid-template-columns: 1fr; } }
+/* ── CARDS ── */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.grid1{margin-bottom:14px}
+@media(max-width:560px){.grid2{grid-template-columns:1fr}}
 
-.rcard {
-  background: var(--bg-card);
-  border: 1px solid var(--border2);
-  border-radius: var(--r);
-  padding: 28px 26px;
-  position: relative; overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-  animation: fadeUp 0.6s ease both;
+.rcard{
+  background:linear-gradient(160deg,rgba(12,8,32,.97),rgba(18,14,44,.95));
+  border:1px solid var(--border2);border-radius:16px;padding:20px 18px;
+  transition:border-color .3s;
 }
-.rcard:hover {
-  transform: translateY(-4px);
-  border-color: var(--border);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.3), var(--glow-gold);
-}
-.rcard::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0.3;
-}
-.rcard.coral-accent::after { background: linear-gradient(90deg, transparent, var(--coral), transparent); opacity: 0.4; }
-.rcard.violet-accent::after { background: linear-gradient(90deg, transparent, var(--violet2), transparent); opacity: 0.4; }
+.rcard:hover{border-color:rgba(212,168,67,.15)}
+.rcard.coral-accent{border-color:rgba(255,107,107,.1)}
+.rcard.violet-accent{border-color:rgba(139,92,246,.1)}
+.card-eye{font-family:var(--ff);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.card-num{font-family:var(--ff);font-size:48px;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px}
+.card-title{font-family:var(--ff);font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px}
+.card-title.coral{color:var(--coral)}
+.card-body{font-size:12.5px;color:var(--text2);line-height:1.75}
+.pbar{height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:12px;overflow:hidden}
+.pbar-fill{height:100%;border-radius:2px;width:0;transition:width 1.2s ease}
+.pbar-fill.gold{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.pbar-fill.coral{background:linear-gradient(90deg,#FF6B6B,#FF9B9B)}
+.pbar-fill.mixed{background:linear-gradient(90deg,var(--violet),var(--coral))}
 
-.card-eye {
-  font-family: var(--ff-body); font-size: 9px;
-  font-weight: 600; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--text3);
-  margin-bottom: 8px;
-}
-.card-num {
-  font-family: var(--ff-display);
-  font-size: 64px; font-weight: 900; line-height: 1;
-  background: linear-gradient(135deg, var(--gold2), var(--gold));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text; margin-bottom: 4px;
-}
-.card-num.coral { background: linear-gradient(135deg, var(--coral2), var(--coral)); -webkit-background-clip:text; background-clip:text; }
-.card-num.violet { background: linear-gradient(135deg, var(--violet2), var(--violet)); -webkit-background-clip:text; background-clip:text; }
+.score-wrap{display:flex;align-items:flex-start;gap:14px;margin:10px 0}
+.score-ring{width:64px;height:64px;border-radius:50%;background:conic-gradient(var(--gold) 0deg,rgba(212,168,67,.08) 0deg);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 1s ease}
+.score-ring.coral-r{background:conic-gradient(var(--coral) 0deg,rgba(255,107,107,.08) 0deg)}
+.score-ring-num{font-family:var(--ff);font-size:16px;font-weight:700;color:var(--text)}
 
-.card-title {
-  font-family: var(--ff-display); font-size: 17px;
-  font-weight: 600; color: var(--text);
-  letter-spacing: 0.03em; margin-bottom: 12px;
-}
-.card-title.coral { color: var(--coral2); }
-.card-title.violet { color: var(--violet2); }
+.lib-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
+.lib-item{text-align:center;background:rgba(255,255,255,.03);border-radius:10px;padding:12px 8px}
+.lib-val{font-family:var(--ff);font-size:24px;font-weight:700;color:var(--coral)}
+.lib-label{font-size:10px;color:var(--text3);margin-top:4px;letter-spacing:.08em}
 
-/* Progress bar */
-.pbar { background: rgba(255,255,255,0.06); border-radius: 100px; height: 5px; margin: 10px 0 14px; overflow: hidden; }
-.pbar-fill { height: 100%; border-radius: 100px; transition: width 1.4s cubic-bezier(.4,0,.2,1); width: 0; }
-.pbar-fill.gold   { background: linear-gradient(90deg, var(--gold), var(--gold2)); }
-.pbar-fill.coral  { background: linear-gradient(90deg, var(--coral), var(--coral2)); }
-.pbar-fill.violet { background: linear-gradient(90deg, var(--violet), var(--violet2)); }
-.pbar-fill.mixed  { background: linear-gradient(90deg, var(--coral), var(--gold), var(--violet2)); }
+.compat-item{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:12px;color:var(--text2)}
+.compat-n{font-family:var(--ff);font-size:18px;font-weight:700;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.compat-n.g{background:rgba(74,222,128,.1);color:#4ade80}
+.compat-n.r{background:rgba(255,107,107,.1);color:var(--coral)}
 
-.card-body { font-size: 13.5px; color: var(--text2); line-height: 1.75; font-weight: 300; }
-.card-body strong { color: var(--text); font-weight: 500; }
+.zodiac-combo{display:flex;align-items:center;gap:12px;margin:10px 0}
+.z-icon{font-size:28px}
+.z-title{font-family:var(--ff);font-size:14px;color:var(--text);font-weight:600}
+.z-sub{font-size:11px;color:var(--text3);margin-top:2px}
 
-/* Tutku grid */
-.libido-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
-@media (max-width: 480px) { .libido-row { grid-template-columns: 1fr; } }
-.lib-item {
-  background: rgba(255,107,107,0.07);
-  border: 1px solid rgba(255,107,107,0.15);
-  border-radius: 10px; padding: 14px 12px; text-align: center;
-}
-.lib-val {
-  font-family: var(--ff-display); font-size: 32px;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--coral2), var(--coral));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.lib-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text3); margin-top: 4px; }
+/* ── DIVIDER ── */
+.divider{display:flex;align-items:center;gap:12px;margin:32px 0 20px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,67,.2),transparent)}
+.divider-label{font-family:var(--ff);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);white-space:nowrap;opacity:.8}
 
-/* Score ring */
-.score-wrap { display: flex; align-items: center; gap: 18px; margin: 12px 0; }
-.score-ring {
-  width: 76px; height: 76px; flex-shrink: 0;
-  border-radius: 50%;
-  background: conic-gradient(var(--gold) 0deg, rgba(212,168,67,0.08) 0deg);
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
-  transition: background 1.2s cubic-bezier(.4,0,.2,1);
+/* ── GÜNLÜK KART ── */
+.dc-wrap{max-width:640px;margin:0 auto}
+.dc-card{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,rgba(12,8,32,.98),rgba(20,14,46,.97));
+  border:1px solid rgba(212,168,67,.18);border-radius:20px;
+  box-shadow:0 24px 60px rgba(0,0,0,.4),inset 0 1px 0 rgba(212,168,67,.08);
 }
-.score-ring::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: var(--bg-card); }
-.score-ring-num { font-family: var(--ff-display); font-size: 20px; font-weight: 900; color: var(--gold); position: relative; z-index: 1; }
-.score-ring.coral-r { background: conic-gradient(var(--coral) 0deg, rgba(255,107,107,0.08) 0deg); }
-.score-ring.coral-r .score-ring-num { color: var(--coral2); }
+.dc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#D4A843 30%,#FF6B6B 60%,#8B5CF6 80%,transparent);opacity:.9;z-index:2}
+.dc-head{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid rgba(255,255,255,.04)}
+.dc-badge{font-family:var(--ff);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.18);border-radius:20px;padding:5px 13px}
+.dc-date{text-align:right}
+.dc-day{font-size:10px;color:var(--text3)}
+.dc-full{font-family:var(--ff);font-size:10px;color:var(--gold);opacity:.6;margin-top:2px}
+.dc-body{padding:22px 24px 18px;position:relative;z-index:1}
+.dc-hero{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.dc-ring{
+  flex-shrink:0;width:82px;height:82px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.dc-ring::before{content:'';position:absolute;inset:-2px;border-radius:50%;background:conic-gradient(#D4A843 0deg,#FF6B6B 120deg,#8B5CF6 240deg,#D4A843 360deg);animation:spin 6s linear infinite}
+.dc-ring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:rgba(12,8,32,.97)}
+.dc-num{font-family:var(--ff);font-size:38px;font-weight:900;line-height:1;position:relative;z-index:1;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.dc-info{flex:1;min-width:0}
+.dc-lbl{font-family:var(--ff);font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-bottom:6px}
+.dc-title{font-family:var(--ff);font-size:20px;font-weight:700;color:var(--text);line-height:1.2;margin-bottom:5px}
+.dc-sub{font-size:11px;color:var(--text3);line-height:1.6}
+.dc-msg{font-size:13px;color:var(--text2);line-height:1.8;font-style:italic;padding:12px 16px;background:rgba(255,255,255,.025);border-left:2px solid rgba(212,168,67,.3);border-radius:0 8px 8px 0;margin-bottom:14px}
+.dc-tags{display:flex;flex-wrap:wrap;gap:7px}
+.dc-tag{font-family:var(--ff);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text2);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:5px 12px}
+.dc-foot{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-top:1px solid rgba(255,255,255,.04);background:rgba(0,0,0,.15);gap:10px;flex-wrap:wrap}
+.dc-calc{font-family:monospace;font-size:11px;color:var(--text3)}
+.dc-btn{display:inline-block;padding:9px 18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A;font-family:var(--ff);font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;border-radius:8px;text-decoration:none;transition:all .2s}
+.dc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,168,67,.35)}
 
-/* Uyum listesi */
-.compat-list { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
-.compat-item {
-  display: flex; align-items: center; gap: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border2); border-radius: 8px;
-  padding: 10px 14px; font-size: 13px; color: var(--text2);
+/* ── HARF BUTONLARI ── */
+.harf-grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px}
+.hb{
+  display:inline-flex;flex-direction:column;align-items:center;gap:3px;
+  padding:10px 12px;min-width:50px;
+  background:rgba(var(--hc-rgb,.5),.07);
+  border:1px solid rgba(var(--hc-rgb,.5),.2);
+  border-radius:11px;text-decoration:none;transition:all .2s;
 }
-.compat-n { font-family: var(--ff-display); font-size: 20px; min-width: 28px; text-align: center; }
-.compat-n.g { color: var(--gold2); }
-.compat-n.r { color: var(--coral2); }
+.hb:hover{transform:translateY(-2px)}
+.hb span{font-family:var(--ff);font-size:18px;font-weight:700;color:var(--hc)}
+.hb small{font-size:9px;color:var(--text3)}
 
-/* Zodiac combo */
-.zodiac-combo { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
-.z-icon { font-size: 44px; line-height: 1; }
-.z-title { font-family: var(--ff-display); font-size: 20px; font-weight: 700; color: var(--gold2); }
-.z-sub { font-size: 11px; color: var(--text2); letter-spacing: 0.1em; margin-top: 3px; }
+/* ── FOOTER ── */
+footer{text-align:center;padding:20px 16px;border-top:1px solid var(--border2);font-size:11px;color:var(--text3)}
+footer a{color:var(--text3);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--gold)}
 
+/* ── COOKIE ── */
+.ckb{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(10,8,30,.97);border-top:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;backdrop-filter:blur(12px);box-shadow:0 -8px 32px rgba(0,0,0,.4);transform:translateY(110%);transition:transform .4s ease}
+.ckb.on{transform:translateY(0)}
+.ckb-txt{font-size:12px;color:var(--text3);flex:1;min-width:160px}
+.ckb-txt a{color:var(--gold);text-decoration:none}
+.ckb-btns{display:flex;gap:8px;flex-shrink:0}
+.ckb-ok{padding:8px 18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A;border:none;border-radius:8px;font-family:var(--ff);font-size:10px;font-weight:600;letter-spacing:.15em;cursor:pointer}
+.ckb-no{padding:8px 14px;background:transparent;color:var(--text3);border:1px solid var(--border2);border-radius:8px;font-size:11px;cursor:pointer}
+@media(max-width:400px){.ckb{flex-direction:column}.ckb-btns{width:100%}.ckb-ok,.ckb-no{flex:1;text-align:center}}
 
-/* ══════════════════════════════════════════
-   GÜNLÜK KART — Otomatik Tarih Hesaplama
-══════════════════════════════════════════ */
-const DAILY_DATA = {
-  1: {
-    title: "Öncü Ruh",
-    subtitle: "Bugün liderlik ve yeni başlangıçlar enerjisi hüküm sürüyor.",
-    message: "Bugün ilk adımı atmak için mükemmel bir gün. Ertelediğin o kararı bugün ver — evren seni destekliyor. Kendi yolunu kendin aç.",
-    tags: ["Başlat", "Karar ver", "Öncü ol"],
-    color: "#FF6B6B",
-    insta_tip: "Bugün bir şey başlat ve paylaş — 1 enerjisi harekete geçirir."
-  },
-  2: {
-    title: "Barış Elçisi",
-    subtitle: "Bugün uyum, diyalog ve köprü kurma enerjisi var.",
-    message: "Bugün konuşulmayan bir şeyi konuş. Kırık bir ilişkiyi onar. Dinlemek için kulak ver — bugün kelimeler değil, sessizlik konuşuyor.",
-    tags: ["Dinle", "Bağ kur", "Affet"],
-    color: "#93C5FD",
-    insta_tip: "Bugün birine teşekkür et — 2 enerjisi minnettarlıkla güçlenir."
-  },
-  3: {
-    title: "Yaratıcı Ruh",
-    subtitle: "Bugün yaratıcılık, ifade ve neşe enerjisi taşıyor.",
-    message: "Bugün içindeki sanatçıya izin ver. Yaz, çiz, müzik yap, dans et — ne olursa olsun. Kendini ifade ettiğinde dünya biraz daha güzelleşir.",
-    tags: ["Yarat", "İfade et", "Neşelen"],
-    color: "#FCD34D",
-    insta_tip: "Bugün bir şey yarat ve paylaş — 3 enerjisi görünür olmayı sever."
-  },
-  4: {
-    title: "Usta İnşaatçı",
-    subtitle: "Bugün disiplin, düzen ve sağlam temeller enerjisi var.",
-    message: "Bugün planlama günü. Kafandaki o projeyi kağıda dök, adımları belirle, harekete geç. Kalıcı şeyler sabırla inşa edilir.",
-    tags: ["Planla", "İnşa et", "Disiplinli ol"],
-    color: "#6EE7B7",
-    insta_tip: "Bugün tamamladığın bir şeyi paylaş — 4 enerjisi somut ilerlemeyi kutlar."
-  },
-  5: {
-    title: "Özgür Ruh",
-    subtitle: "Bugün değişim, macera ve özgürlük enerjisi hüküm sürüyor.",
-    message: "Bugün rutinden çık. Farklı bir yol dene, tanımadığın biriyle konuş, alışılmadık bir şey ye. Küçük değişimler büyük dönüşümlerin habercisidir.",
-    tags: ["Değiş", "Keşfet", "Özgür ol"],
-    color: "#FB923C",
-    insta_tip: "Bugün sürpriz bir şey yap ve paylaş — 5 enerjisi spontaneleri sever."
-  },
-  6: {
-    title: "Sevgi Öğretmeni",
-    subtitle: "Bugün sevgi, şefkat ve koruma enerjisi taşıyor.",
-    message: "Bugün sevdiklerine zaman ayır. Bir telefon aç, sarıl, 'seni seviyorum' de. Ve en önemlisi — bugün kendine de sevgiyle bak.",
-    tags: ["Sev", "Koru", "Şefkat göster"],
-    color: "#F9A8D4",
-    insta_tip: "Bugün sevdiğin birine bir mesaj at — 6 enerjisi bağları güçlendirir."
-  },
-  7: {
-    title: "Gizemli Bilge",
-    subtitle: "Bugün içe dönme, araştırma ve sezgi enerjisi var.",
-    message: "Bugün sessizliğe çekil. Bir kitap aç, meditasyon yap, doğada yürü. Cevaplar gürültüde değil, sessizlikte gelir. Sezgine güven.",
-    tags: ["Dinlen", "Araştır", "Sezgiyi dinle"],
-    color: "#A78BFA",
-    insta_tip: "Bugün düşündürücü bir soru sor takipçilerine — 7 enerjisi derinliği sever."
-  },
-  8: {
-    title: "Güç Odağı",
-    subtitle: "Bugün güç, başarı ve bolluk enerjisi hüküm sürüyor.",
-    message: "Bugün büyük kararlar için güçlü bir enerji var. İş görüşmesi, yatırım, önemli bir adım — bugün harekete geç. Evren bolluk enerjisi gönderiyor.",
-    tags: ["Güçlen", "Kazan", "Liderlik et"],
-    color: "#D4A843",
-    insta_tip: "Bugün bir başarını paylaş — 8 enerjisi görünür olmayı ve ilham vermeyi destekler."
-  },
-  9: {
-    title: "Evrensel Ruh",
-    subtitle: "Bugün tamamlanma, bırakma ve yeni başlangıç enerjisi var.",
-    message: "Bugün bir döngü kapanıyor. Bırakmak istediğini bırak — ilişki, alışkanlık, düşünce. Kapanan her kapı yeni bir başlangıca açılıyor. Affet, şükret, tamamla.",
-    tags: ["Tamamla", "Bırak", "Affet"],
-    color: "#818CF8",
-    insta_tip: "Bugün bir şeyi bıraktığını paylaş — 9 enerjisi dönüşümü kutlar."
-  },
-  11: {
-    title: "Işık Taşıyıcısı ✦",
-    subtitle: "Bugün master 11 enerjisi — sezgi ve ilham zirvede.",
-    message: "Bugün sezgin inanılmaz güçlü. İçinden gelen sese kulak ver — mantık değil, his rehber olsun. Bu nadir ve güçlü bir enerji günü.",
-    tags: ["Sezgi", "İlham al", "Işık taşı"],
-    color: "#F0C860",
-    insta_tip: "Bugün sezgisel bir içerik paylaş — 11 enerjisi ilham ve ışık taşır."
-  },
-  22: {
-    title: "Usta Mimar ✦",
-    subtitle: "Bugün master 22 enerjisi — büyük vizyonlar için güçlü gün.",
-    message: "Bugün büyük düşün. Küçük adımlar değil, büyük resim. Vizyonunu netleştir, planını kur. Master 22 enerjisi kalıcı eserler için gelir.",
-    tags: ["Büyük düşün", "Vizyon kur", "İnşa et"],
-    color: "#34D399",
-    insta_tip: "Bugün büyük bir hedefini paylaş — 22 enerjisi manifestasyonu güçlendirir."
-  }
-};
-
-const MONTHS_TR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
-const DAYS_TR = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
-
-function calcDailyNum(d, m, y) {
-  const digits = `${d}${m}${y}`.split('').map(Number);
-  const sum = digits.reduce((a,b)=>a+b,0);
-  const r1 = (n, keep=true) => {
-    if(keep&&(n===11||n===22||n===33))return n;
-    if(n<10)return n;
-    return r1(String(n).split('').reduce((a,d)=>a+parseInt(d),0),keep);
-  };
-  return { num: r1(sum), sum, digits };
-}
-
-function buildDailyCard() {
-  const now = new Date();
-  const d = now.getDate();
-  const m = now.getMonth() + 1;
-  const y = now.getFullYear();
-  const { num, sum, digits } = calcDailyNum(d, m, y);
-  const data = DAILY_DATA[num] || DAILY_DATA[9];
-
-  const dateStr = `${d} ${MONTHS_TR[m-1]} ${y}`;
-  const dayStr = DAYS_TR[now.getDay()];
-
-  // Hesaplama string
-  let calcStr = digits.join('+') + ' = ' + sum;
-  if(sum !== num) {
-    const d2 = String(sum).split('').map(Number);
-    calcStr += ' → ' + d2.join('+') + ' = <span>' + num + '</span>';
-  } else {
-    calcStr = calcStr.replace(String(sum), '<span>'+sum+'</span>');
-  }
-
-  const tagsHtml = data.tags.map(t=>`<span class="daily-tag">${t}</span>`).join('');
-
-  document.getElementById('dailyCard').innerHTML = `
-    <div class="daily-card">
-      <div class="daily-top">
-        <span class="daily-badge">✦ Bugünün Kartı</span>
-        <span class="daily-date">${dayStr}, ${dateStr}</span>
-      </div>
-      <div class="daily-main">
-        <div class="daily-num" style="background:linear-gradient(135deg,${data.color},${data.color}99);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${num}</div>
-        <div class="daily-info">
-          <div class="daily-title">${data.title}</div>
-          <div class="daily-subtitle">${data.subtitle}</div>
-        </div>
-      </div>
-      <div class="daily-message">"${data.message}"</div>
-      <div class="daily-tags">${tagsHtml}</div>
-      <div class="daily-actions">
-        <a href="rapor.html" class="daily-btn primary">✦ Detaylı Raporun</a>
-        <a href="rapor.html" class="daily-btn secondary">✦ Kişisel Raporun</a>
-      </div>
-      <div class="daily-calc">
-        Bugünün hesabı: ${calcStr} &nbsp;·&nbsp; <em style="color:var(--text3)">${data.insta_tip}</em>
-      </div>
-    </div>`;
-}
-
-buildDailyCard();
-
-const COVER_IMG = "https://i.ibb.co/Nvm8wck/1773419436654.png";
-
-function openBlogModal(i) {
-  const p = BLOG[i];
-  document.getElementById('modal-cat').textContent = p.cat;
-  document.getElementById('modal-title').textContent = p.title;
-  document.getElementById('modal-meta').textContent = p.meta;
-  document.getElementById('modal-content').innerHTML = p.content;
-  document.getElementById('blogModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeBlogModal() {
-  document.getElementById('blogModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeModal(e) {
-  if(e.target === document.getElementById('blogModal')) closeBlogModal();
-}
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeBlogModal(); });
-
-// İlk kart: featured (tam genişlik + kapak görsel)
-const featured = BLOG[0];
-document.getElementById('blog-featured').innerHTML = `
-  <div class="bcard" onclick="openBlogModal(0)" style="animation:fadeUp 0.5s ease 0.1s both">
-    <img class="bcard-cover" src="${COVER_IMG}" alt="${featured.title}" loading="lazy"/>
-    <div class="bcard-body">
-      <div class="bcat">${featured.cat}</div>
-      <h3>${featured.title}</h3>
-      <p>${featured.preview}</p>
-      <div class="bread">Devamını Oku →</div>
-    </div>
-  </div>`;
-
-// Kalan kartlar: 2x2 grid (kapak yok)
-document.getElementById('blog-grid').innerHTML = BLOG.slice(1).map((p,i)=>`
-  <div class="bcard" style="animation:fadeUp 0.6s ease ${(i+1)*0.08+0.1}s both" onclick="openBlogModal(${i+1})">
-    <div class="bcard-body">
-      <div class="bcat">${p.cat}</div>
-      <h3>${p.title}</h3>
-      <p>${p.preview}</p>
-      <div class="bread">Devamını Oku →</div>
-    </div>
-  </div>`).join('');
-
-/* ── PAYLAŞIM ── */
-function shareScore(){
-  const r=window._r;if(!r)return alert('Önce analiz yapın.');
-  const txt=`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Burç: ${r.zodiac}\nKader: ${r.kader} | Tutku: ${r.tutku}/100 | Tutku: ${r.passion}/100\nnumerolojim.com.tr`;
-  if(navigator.share)navigator.share({title:'Aşk Uyum Analizim',text:txt,url:'https://www.numerolojim.com.tr'});
-  else navigator.clipboard.writeText(txt).then(()=>alert('Panoya kopyalandı!'));
-}
-function shareWA(){
-  const r=window._r;if(!r)return;
-  window.open('https://wa.me/?text='+encodeURIComponent(`✦ Numeroloji Analizim ✦\nAd: ${r.name} | Kader: ${r.kader} | Tutku: ${r.tutku}/100\nnumerolojim.com.tr`),'_blank');
-}
-function downloadPDF(){
-  const r=window._r;if(!r)return;
-  const w=window.open('','_blank');
-  w.document.write(`<html><head><title>Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla</title>
-  <style>
-
-.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
-.ab{position:absolute;border-radius:50%;filter:blur(140px);opacity:.18;animation:drift 18s ease-in-out infinite alternate;}
-@keyframes drift{0%{transform:translate(0,0) scale(1);}100%{transform:translate(50px,40px) scale(1.15);}}
-body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:#111}
-  h1{color:#8B6914;border-bottom:2px solid #D4A843;padding-bottom:12px}
-  .row{display:flex;gap:16px;margin:16px 0;flex-wrap:wrap}
-  .box{border:1px solid #D4A843;border-radius:8px;padding:16px;flex:1;min-width:160px}
-  .n{font-size:38px;font-weight:bold;color:#8B6914;line-height:1}
-  .lbl{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:4px}
-  .red{color:#C0392B}footer{margin-top:40px;font-size:10px;color:#aaa;text-align:center}
-/* ── GÜNLÜK KART PREMIUM ── */
-.daily-wrap {
-  max-width: 680px; margin: 0 auto 8px;
-}
-.daily-card {
-  position: relative; overflow: hidden;
-  background: linear-gradient(135deg, rgba(10,8,30,0.97), rgba(18,12,40,0.95));
-  border: 1px solid rgba(212,168,67,0.2);
-  border-radius: 24px;
-  padding: 0;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 60px rgba(139,92,246,0.06), inset 0 1px 0 rgba(212,168,67,0.1);
-}
-.daily-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), var(--coral), var(--violet), transparent);
-  opacity: 0.8;
-}
-.daily-card::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at top right, rgba(139,92,246,0.08), transparent 60%),
-              radial-gradient(ellipse at bottom left, rgba(212,168,67,0.05), transparent 60%);
-  pointer-events: none;
-}
-
-/* Üst bilgi şeridi */
-.daily-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 28px 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.daily-badge {
-  font-family: var(--ff-display); font-size: 9px;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--gold); background: rgba(212,168,67,0.08);
-  border: 1px solid rgba(212,168,67,0.2);
-  border-radius: 20px; padding: 5px 14px;
-}
-.daily-date-info { text-align: right; }
-.daily-day { font-size: 11px; color: var(--text3); letter-spacing: 0.1em; }
-.daily-full-date { font-family: var(--ff-display); font-size: 10px; color: var(--gold); opacity: 0.7; margin-top: 2px; }
-
-/* Ana içerik */
-.daily-body { padding: 28px 32px; position: relative; z-index: 1; }
-
-/* Sayı + başlık */
-.daily-hero { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; }
-.daily-num-wrap {
-  flex-shrink: 0; width: 96px; height: 96px;
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  position: relative;
-}
-.daily-num-wrap::before {
-  content: '';
-  position: absolute; inset: -3px; border-radius: 50%;
-  background: conic-gradient(var(--gold), var(--coral), var(--violet), var(--gold));
-  animation: rotateRing 4s linear infinite;
-  z-index: -1;
-}
-.daily-num-wrap::after {
-  content: '';
-  position: absolute; inset: 2px; border-radius: 50%;
-  background: rgba(10,8,30,0.97); z-index: 0;
-}
-@keyframes rotateRing { to { transform: rotate(360deg); } }
-.daily-num {
-  font-family: var(--ff-display); font-size: 48px; font-weight: 900;
-  line-height: 1; position: relative; z-index: 1;
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.daily-text-wrap { flex: 1; }
-.daily-energy-label {
-  font-family: var(--ff-display); font-size: 9px; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 6px;
-}
-.daily-title {
-  font-family: var(--ff-display); font-size: 22px; font-weight: 700;
-  color: var(--text); line-height: 1.2; margin-bottom: 6px;
-}
-.daily-subtitle { font-size: 12px; color: var(--text3); line-height: 1.6; }
-
-/* Mesaj */
-.daily-message {
-  font-size: 14px; color: var(--text2); line-height: 1.85;
-  font-style: italic; padding: 16px 20px;
-  background: rgba(255,255,255,0.03);
-  border-left: 2px solid rgba(212,168,67,0.4);
-  border-radius: 0 10px 10px 0;
-  margin-bottom: 20px;
-}
-
-/* Etiketler */
-.daily-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.daily-tag {
-  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--text2);
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px; padding: 5px 14px;
-  transition: all 0.2s;
-}
-
-/* Alt bar */
-.daily-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 28px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  background: rgba(0,0,0,0.2);
-}
-.daily-calc {
-  font-size: 11px; color: var(--text3); font-family: monospace;
-  letter-spacing: 0.05em;
-}
-.daily-btn {
-  padding: 10px 20px; border-radius: 10px;
-  font-family: var(--ff-display); font-size: 10px;
-  font-weight: 600; letter-spacing: 0.18em;
-  text-transform: uppercase; cursor: pointer;
-  transition: all 0.2s; text-decoration: none;
-  display: inline-flex; align-items: center; gap: 6px;
-}
-.daily-btn.primary {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #0D0D1A; border: none;
-  box-shadow: 0 4px 16px rgba(212,168,67,0.3);
-}
-.daily-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.45); }
-
-@media (max-width: 560px) {
-  .daily-hero { gap: 16px; }
-  .daily-num-wrap { width: 72px; height: 72px; }
-  .daily-num { font-size: 36px; }
-  .daily-title { font-size: 18px; }
-  .daily-body { padding: 20px 18px; }
-  .daily-header, .daily-footer { padding: 14px 18px; }
-}
-
-
-/* ══════════════════════════════════════
-   GÜNLÜK KART — PREMIUM
-══════════════════════════════════════ */
-.daily-outer { max-width: 680px; margin: 0 auto 8px; }
-
-.daily-card {
-  position: relative; overflow: hidden;
-  background: linear-gradient(160deg, rgba(12,8,32,0.98) 0%, rgba(20,14,46,0.97) 100%);
-  border: 1px solid rgba(212,168,67,0.18);
-  border-radius: 24px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03), inset 0 1px 0 rgba(212,168,67,0.08);
-}
-/* Üst gradient şerit */
-.daily-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #D4A843 30%, #FF6B6B 60%, #8B5CF6 80%, transparent 100%);
-  opacity: 0.9; z-index: 2;
-}
-/* İç glow */
-.daily-card::after {
-  content: '';
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse at 80% 0%, rgba(139,92,246,0.07) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 100%, rgba(212,168,67,0.05) 0%, transparent 60%);
-}
-
-/* Üst bar */
-.dc-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 26px 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  position: relative; z-index: 1;
-}
-.dc-badge {
-  font-family: 'Cinzel', serif;
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 0.3em; text-transform: uppercase;
-  color: #D4A843;
-  background: rgba(212,168,67,0.07);
-  border: 1px solid rgba(212,168,67,0.18);
-  border-radius: 20px; padding: 5px 14px;
-}
-.dc-date { text-align: right; }
-.dc-day { font-size: 10px; color: #6B6890; letter-spacing: 0.1em; margin-bottom: 2px; }
-.dc-full { font-family: 'Cinzel', serif; font-size: 10px; color: #D4A843; opacity: 0.6; }
-
-/* Gövde */
-.dc-body {
-  padding: 24px 28px 20px;
-  position: relative; z-index: 1;
-}
-
-/* Sayı + başlık */
-.dc-hero { display: flex; align-items: center; gap: 22px; margin-bottom: 18px; }
-
-.dc-num-ring {
-  flex-shrink: 0;
-  width: 90px; height: 90px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
-}
-.dc-num-ring::before {
-  content: '';
-  position: absolute; inset: -2px; border-radius: 50%;
-  background: conic-gradient(#D4A843 0deg, #FF6B6B 120deg, #8B5CF6 240deg, #D4A843 360deg);
-  animation: spin-ring 6s linear infinite;
-}
-.dc-num-ring::after {
-  content: '';
-  position: absolute; inset: 3px; border-radius: 50%;
-  background: rgba(12,8,32,0.97);
-}
-@keyframes spin-ring { to { transform: rotate(360deg); } }
-
-.dc-num {
-  font-family: 'Cinzel', serif;
-  font-size: 44px; font-weight: 900; line-height: 1;
-  position: relative; z-index: 1;
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-
-.dc-info { flex: 1; }
-.dc-energy-lbl {
-  font-family: 'Cinzel', serif;
-  font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
-  color: #D4A843; opacity: 0.6; margin-bottom: 7px;
-}
-.dc-title {
-  font-family: 'Cinzel', serif;
-  font-size: 22px; font-weight: 700;
-  color: #F0EEF8; line-height: 1.2; margin-bottom: 6px;
-  letter-spacing: 0.02em;
-}
-.dc-subtitle {
-  font-size: 12px; color: #6B6890; line-height: 1.6;
-  font-family: 'Montserrat', sans-serif; font-weight: 300;
-}
-
-/* Mesaj */
-.dc-message {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13.5px; color: #B8B4D0;
-  line-height: 1.85; font-style: italic; font-weight: 300;
-  padding: 14px 18px;
-  background: rgba(255,255,255,0.025);
-  border-left: 2px solid rgba(212,168,67,0.35);
-  border-radius: 0 10px 10px 0;
-  margin-bottom: 18px;
-}
-
-/* Etiketler */
-.dc-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0; }
-.dc-tag {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
-  color: #B8B4D0;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 20px; padding: 5px 13px;
-}
-
-/* Alt bar */
-.dc-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 26px;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  background: rgba(0,0,0,0.15);
-  position: relative; z-index: 1;
-  gap: 12px; flex-wrap: wrap;
-}
-.dc-calc {
-  font-family: monospace; font-size: 11px;
-  color: #6B6890; letter-spacing: 0.05em;
-  flex: 1;
-}
-.dc-btn {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 10px 20px; border-radius: 10px;
-  font-family: 'Cinzel', serif; font-size: 10px;
-  font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-  cursor: pointer; transition: all 0.2s;
-  text-decoration: none; border: none;
-  background: linear-gradient(135deg, #D4A843, #F0C860);
-  color: #0D0D1A;
-  box-shadow: 0 4px 16px rgba(212,168,67,0.25);
-}
-.dc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,168,67,0.4); }
-
-@media(max-width:560px) {
-  .dc-hero { gap: 14px; }
-  .dc-num-ring { width: 70px; height: 70px; }
-  .dc-num { font-size: 34px; }
-  .dc-title { font-size: 18px; }
-  .dc-body { padding: 18px 16px 16px; }
-  .dc-header, .dc-footer { padding: 13px 16px; }
-}
-
-
-
-
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(212,168,67,.3);border-radius:3px}
 </style>
 </head>
 <body>
 
-<div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
-<div id="particles"></div>
+<div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
+
+<div class="page">
 
 <header>
-  <div class="logo" style="font-size:clamp(28px,6vw,52px);background:linear-gradient(135deg,#F0C860,#D4A843,#FF6B6B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(212,168,67,0.4));">✦ NUMEROLOJİM</div>
+  <span class="logo">✦ NUMEROLOJİM</span>
   <div class="logo-sub">sayıların gizemi</div>
 </header>
 
-<main style="position:relative;z-index:2;">
-
 <!-- FORM -->
-<div class="form-section">
+<div class="form-wrap">
   <div class="form-card">
     <div class="fc-label">✦ Kişisel Numeroloji Analizin ✦</div>
     <div class="fc-sub">Doğum tarihin ve ismin sana ne anlatıyor?</div>
     <div class="fgroup">
-      <label><span class="label-icon">✦</span> Ad Soyad</label>
-      <input type="text" id="fn" placeholder="Örn: Ayşe Kaya" autocomplete="off"/>
+      <label>✦ Ad Soyad</label>
+      <input type="text" id="fn" placeholder="Örn: Ayşe Kaya" autocomplete="off">
     </div>
     <div class="fgroup">
-      <label><span class="label-icon">◈</span> Doğum Tarihi</label>
+      <label>◈ Doğum Tarihi</label>
       <div class="date-row">
-        <input type="number" id="bd" placeholder="Gün" min="1" max="31"/>
-        <input type="number" id="bm" placeholder="Ay" min="1" max="12"/>
-        <input type="number" id="by" placeholder="Yıl" min="1900" max="2010"/>
+        <input type="number" id="bd" placeholder="Gün" min="1" max="31">
+        <input type="number" id="bm" placeholder="Ay" min="1" max="12">
+        <input type="number" id="by" placeholder="Yıl" min="1900" max="2010">
       </div>
     </div>
     <div class="fgroup">
-      <label><span class="label-icon">☽</span> Burç (İsteğe Bağlı)</label>
+      <label>☽ Burç (İsteğe Bağlı)</label>
       <select id="zodiac">
         <option value="">— Burç Seç —</option>
-        <option value="koc">♈ Koç</option>
-        <option value="boga">♉ Boğa</option>
-        <option value="ikizler">♊ İkizler</option>
-        <option value="yengec">♋ Yengeç</option>
-        <option value="aslan">♌ Aslan</option>
-        <option value="basak">♍ Başak</option>
-        <option value="terazi">♎ Terazi</option>
-        <option value="akrep">♏ Akrep</option>
-        <option value="yay">♐ Yay</option>
-        <option value="oglak">♑ Oğlak</option>
-        <option value="kova">♒ Kova</option>
-        <option value="balik">♓ Balık</option>
+        <option value="koc">♈ Koç</option><option value="boga">♉ Boğa</option>
+        <option value="ikizler">♊ İkizler</option><option value="yengec">♋ Yengeç</option>
+        <option value="aslan">♌ Aslan</option><option value="basak">♍ Başak</option>
+        <option value="terazi">♎ Terazi</option><option value="akrep">♏ Akrep</option>
+        <option value="yay">♐ Yay</option><option value="oglak">♑ Oğlak</option>
+        <option value="kova">♒ Kova</option><option value="balik">♓ Balık</option>
       </select>
     </div>
     <button class="btn-main" onclick="runAnalysis()">✦ Analizimi Başlat ✦</button>
-    <a href="rapor.html" style="display:block;margin-top:14px;text-align:center;padding:14px 20px;background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(212,168,67,0.08));border:1px solid rgba(139,92,246,0.3);border-radius:12px;color:#C4B0F0;font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:0.12em;text-decoration:none;">
-      ✦ AI Destekli Kişisel Rapor Al →
-    </a>
+    <a href="rapor.html" class="rapor-link">✦ AI Destekli Detaylı Rapor Al →</a>
   </div>
 </div>
 
@@ -1106,65 +312,35 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   </div>
   <div class="share-row">
     <button class="sbtn sbtn-gold" onclick="shareResult()">✦ Paylaş</button>
-    <button class="sbtn sbtn-coral" onclick="downloadPDF()">⬇ PDF İndir</button>
+    <button class="sbtn sbtn-coral" onclick="downloadPDF()">⬇ PDF</button>
     <button class="sbtn sbtn-wa" onclick="shareWA()">WhatsApp</button>
   </div>
-
   <div class="grid2">
-    <div class="rcard s1">
-      <div class="card-eye">Kader Sayısı</div>
-      <div class="card-num" id="n-kader">—</div>
-      <div class="card-title" id="t-kader">—</div>
-      <div class="pbar"><div class="pbar-fill gold" id="p-kader"></div></div>
-      <div class="card-body" id="d-kader"></div>
-    </div>
-    <div class="rcard s2">
-      <div class="card-eye">Ruh Güdüsü Sayısı</div>
-      <div class="card-num" id="n-ruh">—</div>
-      <div class="card-title" id="t-ruh">—</div>
-      <div class="pbar"><div class="pbar-fill gold" id="p-ruh"></div></div>
-      <div class="card-body" id="d-ruh"></div>
-    </div>
+    <div class="rcard"><div class="card-eye">Kader Sayısı</div><div class="card-num" id="n-kader">—</div><div class="card-title" id="t-kader">—</div><div class="pbar"><div class="pbar-fill gold" id="p-kader"></div></div><div class="card-body" id="d-kader"></div></div>
+    <div class="rcard"><div class="card-eye">Ruh Güdüsü</div><div class="card-num" id="n-ruh">—</div><div class="card-title" id="t-ruh">—</div><div class="pbar"><div class="pbar-fill gold" id="p-ruh"></div></div><div class="card-body" id="d-ruh"></div></div>
+  </div>
+  <div class="grid2">
+    <div class="rcard"><div class="card-eye">Kişilik Sayısı</div><div class="card-num" id="n-kisilik">—</div><div class="card-title" id="t-kisilik">—</div><div class="pbar"><div class="pbar-fill gold" id="p-kisilik"></div></div><div class="card-body" id="d-kisilik"></div></div>
+    <div class="rcard"><div class="card-eye">İfade Sayısı</div><div class="card-num" id="n-ifade">—</div><div class="card-title" id="t-ifade">—</div><div class="pbar"><div class="pbar-fill gold" id="p-ifade"></div></div><div class="card-body" id="d-ifade"></div></div>
   </div>
 
-  <div class="grid2">
-    <div class="rcard s3">
-      <div class="card-eye">Kişilik Sayısı</div>
-      <div class="card-num" id="n-kisilik">—</div>
-      <div class="card-title" id="t-kisilik">—</div>
-      <div class="pbar"><div class="pbar-fill gold" id="p-kisilik"></div></div>
-      <div class="card-body" id="d-kisilik"></div>
-    </div>
-    <div class="rcard s4">
-      <div class="card-eye">İfade Sayısı</div>
-      <div class="card-num" id="n-ifade">—</div>
-      <div class="card-title" id="t-ifade">—</div>
-      <div class="pbar"><div class="pbar-fill gold" id="p-ifade"></div></div>
-      <div class="card-body" id="d-ifade"></div>
-    </div>
-  </div>
-
-  <div class="divider"><span class="divider-label">✦ Numeroloji ile Aşk & Uyum Analizi ✦</span></div>
+  <div class="divider"><span class="divider-label">✦ Aşk & Uyum Analizi ✦</span></div>
 
   <div class="grid1">
-    <div class="rcard coral-accent s1">
+    <div class="rcard coral-accent">
       <div class="card-eye">Tutku Potansiyeli & Enerji Skoru</div>
-      <div class="libido-row" id="libido-row"></div>
+      <div class="lib-row" id="lib-row"></div>
       <div class="card-body" id="d-libido"></div>
     </div>
   </div>
-
   <div class="grid2">
-    <div class="rcard coral-accent s2">
+    <div class="rcard coral-accent">
       <div class="card-eye">Aşk Karakteri Profili</div>
       <div class="card-title coral" id="t-cinsel">—</div>
-      <div class="score-wrap">
-        <div class="score-ring coral-r" id="ring-c"><span class="score-ring-num" id="rn-c">—</span></div>
-        <div class="card-body" id="d-cinsel"></div>
-      </div>
+      <div class="score-wrap"><div class="score-ring coral-r" id="ring-c"><span class="score-ring-num" id="rn-c">—</span></div><div class="card-body" id="d-cinsel"></div></div>
       <div class="pbar"><div class="pbar-fill coral" id="p-cinsel"></div></div>
     </div>
-    <div class="rcard coral-accent s3">
+    <div class="rcard coral-accent">
       <div class="card-eye">Partner Uyum Analizi</div>
       <div class="card-title coral" id="t-uyum">—</div>
       <div class="compat-list" id="compat-list"></div>
@@ -1174,24 +350,20 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
   <div class="divider"><span class="divider-label">✦ Burç × Numeroloji Sentezi ✦</span></div>
 
   <div class="grid1">
-    <div class="rcard violet-accent s1">
-      <div class="card-eye">Doğum Tarihine Göre Burç & Kader Analizi</div>
+    <div class="rcard violet-accent">
+      <div class="card-eye">Burç & Kader Analizi</div>
       <div class="zodiac-combo" id="zodiac-combo"></div>
       <div class="card-body" id="d-zodiac"></div>
     </div>
   </div>
-
   <div class="grid2">
-    <div class="rcard s2">
+    <div class="rcard">
       <div class="card-eye">Aşk Hayatındaki Güç Alanları</div>
       <div class="card-title" id="t-ask">—</div>
-      <div class="score-wrap">
-        <div class="score-ring" id="ring-a"><span class="score-ring-num" id="rn-a">—</span></div>
-        <div class="card-body" id="d-ask"></div>
-      </div>
+      <div class="score-wrap"><div class="score-ring" id="ring-a"><span class="score-ring-num" id="rn-a">—</span></div><div class="card-body" id="d-ask"></div></div>
       <div class="pbar"><div class="pbar-fill mixed" id="p-ask"></div></div>
     </div>
-    <div class="rcard s3">
+    <div class="rcard">
       <div class="card-eye">2026 Kişisel Yıl Enerjisi</div>
       <div class="card-num" id="n-yil">—</div>
       <div class="card-title" id="t-yil">—</div>
@@ -1199,60 +371,65 @@ body{font-family:Georgia,serif;padding:40px;max-width:700px;margin:0 auto;color:
     </div>
   </div>
 
-  <button class="sbtn sbtn-gold" onclick="reset()" style="display:block;margin:32px auto 0;padding:14px 32px;">← Yeni Analiz</button>
+  <div style="text-align:center;margin-top:28px">
+    <button class="sbtn sbtn-gold" onclick="reset()" style="padding:14px 32px">← Yeni Analiz</button>
+  </div>
 </div>
 
 <!-- GÜNLÜK KART -->
 <div class="divider"><span class="divider-label">✦ Bugünün Enerjisi ✦</span></div>
 <div id="dailyCard"></div>
 
-<!-- BLOG & HARF -->
+<!-- AKADEMİ -->
 <div class="divider"><span class="divider-label">✦ Numeroloji Akademisi ✦</span></div>
-<p style="text-align:center;font-size:13px;color:#6B6890;margin-bottom:20px;">Sayılar, aşk, kader ve enerji üzerine derinlemesine yazılar.</p>
-<div style="text-align:center;margin-bottom:24px;">
-  <a href="blog.html" style="display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:linear-gradient(135deg,rgba(212,168,67,0.1),rgba(139,92,246,0.08));border:1px solid rgba(212,168,67,0.3);border-radius:14px;color:#D4A843;font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;">
+<p style="text-align:center;font-size:13px;color:var(--text3);margin-bottom:20px">Sayılar, aşk, kader ve enerji üzerine derinlemesine yazılar.</p>
+<div style="text-align:center;margin-bottom:24px">
+  <a href="blog.html" style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:rgba(212,168,67,.08);border:1px solid var(--border);border-radius:12px;color:var(--gold);font-family:var(--ff);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:all .3s" onmouseover="this.style.background='rgba(212,168,67,.16)'" onmouseout="this.style.background='rgba(212,168,67,.08)'">
     ✦ Tüm Blog Yazılarını Oku →
   </a>
 </div>
 
-<p style="text-align:center;font-family:'Cinzel',serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4A843;opacity:0.7;margin-bottom:14px;">✦ Harf Enerjisi Serisi ✦</p>
-<p style="text-align:center;font-size:12px;color:#6B6890;margin-bottom:18px;">İsmindeki harflerin numerolojik anlamını keşfet</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:48px;">
-  <a href="harf-a.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#D4A843;">A</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-b.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(147,197,253,0.07);border:1px solid rgba(147,197,253,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#93C5FD;">B</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
-  <a href="harf-c.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">C</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-c2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">Ç</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-d.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">D</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
-  <a href="harf-e.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FB923C;">E</span><span style="font-size:9px;color:#6B6890;">= 5</span></a>
-  <a href="harf-f.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,168,212,0.07);border:1px solid rgba(249,168,212,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F9A8D4;">F</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
-  <a href="harf-g.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">G</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-g2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#7C3AED;">Ğ</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-h.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(240,200,96,0.07);border:1px solid rgba(240,200,96,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F0C860;">H</span><span style="font-size:9px;color:#6B6890;">= 8</span></a>
-  <a href="harf-i.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#818CF8;">I/İ</span><span style="font-size:9px;color:#6B6890;">= 9</span></a>
-  <a href="harf-j.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#EF4444;">J</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-k.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(147,197,253,0.07);border:1px solid rgba(147,197,253,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#93C5FD;">K</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
-  <a href="harf-l.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">L</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-m.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">M</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
-  <a href="harf-n.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(251,146,60,0.07);border:1px solid rgba(251,146,60,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FB923C;">N</span><span style="font-size:9px;color:#6B6890;">= 5</span></a>
-  <a href="harf-o.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,168,212,0.07);border:1px solid rgba(249,168,212,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F9A8D4;">O</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
-  <a href="harf-o2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(253,164,175,0.07);border:1px solid rgba(253,164,175,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FDA4AF;">Ö</span><span style="font-size:9px;color:#6B6890;">= 6</span></a>
-  <a href="harf-p.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">P</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-r.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(129,140,248,0.07);border:1px solid rgba(129,140,248,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#818CF8;">R</span><span style="font-size:9px;color:#6B6890;">= 9</span></a>
-  <a href="harf-s.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(239,68,68,0.07);border:1px solid rgba(239,68,68,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#EF4444;">S</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-s2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#F97316;">Ş</span><span style="font-size:9px;color:#6B6890;">= 1</span></a>
-  <a href="harf-t.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#60A5FA;">T</span><span style="font-size:9px;color:#6B6890;">= 2</span></a>
-  <a href="harf-u.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(252,211,77,0.07);border:1px solid rgba(252,211,77,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#FCD34D;">U</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-u2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">Ü</span><span style="font-size:9px;color:#6B6890;">= 3</span></a>
-  <a href="harf-v.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(110,231,183,0.07);border:1px solid rgba(110,231,183,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#6EE7B7;">V</span><span style="font-size:9px;color:#6B6890;">= 4</span></a>
-  <a href="harf-y.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(167,139,250,0.07);border:1px solid rgba(167,139,250,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#A78BFA;">Y</span><span style="font-size:9px;color:#6B6890;">= 7</span></a>
-  <a href="harf-z.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:12px 14px;background:rgba(212,168,67,0.07);border:1px solid rgba(212,168,67,0.2);border-radius:12px;text-decoration:none;min-width:54px;transition:all 0.2s;"><span style="font-family:'Cinzel',serif;font-size:19px;font-weight:700;color:#D4A843;">Z</span><span style="font-size:9px;color:#6B6890;">= 8</span></a>
+<p style="text-align:center;font-family:var(--ff);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-bottom:12px">✦ Harf Enerjisi Serisi ✦</p>
+<p style="text-align:center;font-size:12px;color:var(--text3);margin-bottom:16px">İsmindeki harflerin numerolojik anlamını keşfet</p>
+<div class="harf-grid">
+<a href="harf-a.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#D4A843">A</span><small style="font-size:9px;color:#6B6890">=1</small></a>
+<a href="harf-b.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(147,197,253,.07);border:1px solid rgba(147,197,253,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#93C5FD">B</span><small style="font-size:9px;color:#6B6890">=2</small></a>
+<a href="harf-c.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(252,211,77,.07);border:1px solid rgba(252,211,77,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FCD34D">C</span><small style="font-size:9px;color:#6B6890">=3</small></a>
+<a href="harf-c2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(252,211,77,.07);border:1px solid rgba(252,211,77,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FCD34D">Ç</span><small style="font-size:9px;color:#6B6890">=3</small></a>
+<a href="harf-d.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(110,231,183,.07);border:1px solid rgba(110,231,183,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#6EE7B7">D</span><small style="font-size:9px;color:#6B6890">=4</small></a>
+<a href="harf-e.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FB923C">E</span><small style="font-size:9px;color:#6B6890">=5</small></a>
+<a href="harf-f.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(249,168,212,.07);border:1px solid rgba(249,168,212,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#F9A8D4">F</span><small style="font-size:9px;color:#6B6890">=6</small></a>
+<a href="harf-g.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#A78BFA">G</span><small style="font-size:9px;color:#6B6890">=7</small></a>
+<a href="harf-g2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#7C3AED">Ğ</span><small style="font-size:9px;color:#6B6890">=7</small></a>
+<a href="harf-h.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(240,200,96,.07);border:1px solid rgba(240,200,96,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#F0C860">H</span><small style="font-size:9px;color:#6B6890">=8</small></a>
+<a href="harf-i.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(129,140,248,.07);border:1px solid rgba(129,140,248,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#818CF8">I/İ</span><small style="font-size:9px;color:#6B6890">=9</small></a>
+<a href="harf-j.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#EF4444">J</span><small style="font-size:9px;color:#6B6890">=1</small></a>
+<a href="harf-k.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(147,197,253,.07);border:1px solid rgba(147,197,253,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#93C5FD">K</span><small style="font-size:9px;color:#6B6890">=2</small></a>
+<a href="harf-l.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(252,211,77,.07);border:1px solid rgba(252,211,77,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FCD34D">L</span><small style="font-size:9px;color:#6B6890">=3</small></a>
+<a href="harf-m.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(110,231,183,.07);border:1px solid rgba(110,231,183,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#6EE7B7">M</span><small style="font-size:9px;color:#6B6890">=4</small></a>
+<a href="harf-n.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FB923C">N</span><small style="font-size:9px;color:#6B6890">=5</small></a>
+<a href="harf-o.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(249,168,212,.07);border:1px solid rgba(249,168,212,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#F9A8D4">O</span><small style="font-size:9px;color:#6B6890">=6</small></a>
+<a href="harf-o2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(253,164,175,.07);border:1px solid rgba(253,164,175,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FDA4AF">Ö</span><small style="font-size:9px;color:#6B6890">=6</small></a>
+<a href="harf-p.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#A78BFA">P</span><small style="font-size:9px;color:#6B6890">=7</small></a>
+<a href="harf-r.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(129,140,248,.07);border:1px solid rgba(129,140,248,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#818CF8">R</span><small style="font-size:9px;color:#6B6890">=9</small></a>
+<a href="harf-s.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#EF4444">S</span><small style="font-size:9px;color:#6B6890">=1</small></a>
+<a href="harf-s2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#F97316">Ş</span><small style="font-size:9px;color:#6B6890">=1</small></a>
+<a href="harf-t.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(96,165,250,.07);border:1px solid rgba(96,165,250,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#60A5FA">T</span><small style="font-size:9px;color:#6B6890">=2</small></a>
+<a href="harf-u.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(252,211,77,.07);border:1px solid rgba(252,211,77,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#FCD34D">U</span><small style="font-size:9px;color:#6B6890">=3</small></a>
+<a href="harf-u2.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#A78BFA">Ü</span><small style="font-size:9px;color:#6B6890">=3</small></a>
+<a href="harf-v.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(110,231,183,.07);border:1px solid rgba(110,231,183,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#6EE7B7">V</span><small style="font-size:9px;color:#6B6890">=4</small></a>
+<a href="harf-y.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(167,139,250,.07);border:1px solid rgba(167,139,250,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#A78BFA">Y</span><small style="font-size:9px;color:#6B6890">=7</small></a>
+<a href="harf-z.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#D4A843">Z</span><small style="font-size:9px;color:#6B6890">=8</small></a>
 </div>
 
-<footer style="text-align:center;padding:20px;font-size:11px;color:#6B6890;border-top:1px solid rgba(255,255,255,0.05);">
-  <p>© 2026 Numerolojim.com.tr · <a href="privacy.html" style="color:#6B6890;">Gizlilik Politikası</a> · <a href="numeroloji-nedir.html" style="color:#6B6890;">Numeroloji Nedir?</a></p>
+<footer>
+  <p>© 2026 Numerolojim.com.tr &nbsp;·&nbsp;
+  <a href="privacy.html">Gizlilik Politikası</a> &nbsp;·&nbsp;
+  <a href="numeroloji-nedir.html">Numeroloji Nedir?</a> &nbsp;·&nbsp;
+  <a href="blog.html">Blog</a></p>
 </footer>
 
-</main>
+</div><!-- /page -->
 
 <script>
 const LV={a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:1,k:2,l:3,m:4,n:5,o:6,p:7,q:8,r:9,s:1,t:2,u:3,v:4,w:5,x:6,y:7,z:8,ç:3,ğ:7,ı:9,ö:6,ş:1,ü:3};
@@ -1297,7 +474,7 @@ const DESCS={
   33:{k:"Master 33: Usta Öğretmen. Koşulsuz sevgi ve evrensel şifa enerjisi.",r:"En derin arzun: şifa vermek, öğretmek ve dönüştürmek.",kisilik:"Dış dünyaya yansıttığın imaj: şifa verici, öğretici, sevgi dolu.",i:"İfaden şifalayıcı — kelimelerinde iyileştirici bir güç var."}
 };
 
-const TUTKU_DATA={1:{score:78,tutku:82,yakinlik:71,profil:"Lider & Özgür",desc:"İlişkide de lidersin. Spontane, tutkulu ve bağımsız bir enerji taşırsın."},2:{score:72,tutku:68,yakinlik:85,profil:"Derin & Hassas",desc:"Güven olmadan açılmazsın. Yavaş yanar ama bir kez tutuştu mu söndürmek imkânsız."},3:{score:85,tutku:88,yakinlik:79,profil:"Yaratıcı & Ateşli",desc:"Sürprizlere bayılırsın, rutin söndürür. Oyuncu, yaratıcı ve eğlenceli bir enerji."},4:{score:65,tutku:62,yakinlik:78,profil:"Güvenli & Derin",desc:"Güven kurulmadan açılmazsın. Ama kurulduğunda — son derece sadık ve derin."},5:{score:92,tutku:95,yakinlik:74,profil:"Sınır Tanımaz",desc:"En yüksek fiziksel enerji. Çeşitlilik ve macera zorunluluk. Özgürlük her şeyden önce."},6:{score:76,tutku:72,yakinlik:88,profil:"Koşulsuz Veren",desc:"Vermek almaktan önce gelir. Partner memnuniyeti her şey. Şefkatli ve besleyici."},7:{score:68,tutku:65,yakinlik:80,profil:"Zihin Önce Tutuşur",desc:"Entelektüel bağ olmadan duygusal yakınlık boş kalır. Gizemli ve derinlikli."},8:{score:88,tutku:91,yakinlik:77,profil:"Yoğun & Sahiplenici",desc:"Güçlü, yoğun ve sahiplenici. Eşit güçte partner ister. Tutkusu sonsuz."},9:{score:80,tutku:78,yakinlik:90,profil:"Koşulsuz Aşık",desc:"İlişkiyi spiritüel deneyim gibi yaşar. Tam teslimiyet ve koşulsuz sevgi."},11:{score:83,tutku:80,yakinlik:88,profil:"Sezgisel Mistik",desc:"Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin ve spiritüel bir enerji."},22:{score:86,tutku:84,yakinlik:82,profil:"Dönüştürücü",desc:"Sıradan bir ilişki tatmin etmez. Dönüştürücü ve kalıcı bir bağ arar."},33:{score:79,tutku:76,yakinlik:92,profil:"Koşulsuz Sevgi",desc:"İlişkiyi ibadet gibi yaşar. Koşulsuz sevgi ve tam teslimiyet."}};
+const TUTKU_DATA={1:{score:78,tutku:82,yakinlik:71,profil:"Lider & Özgür",desc:"İlişkide de lidersin. Spontane, tutkulu ve bağımsız bir enerji taşırsın. Rutin seni söndürür."},2:{score:72,tutku:68,yakinlik:85,profil:"Derin & Hassas",desc:"Güven olmadan açılmazsın. Yavaş yanar ama bir kez tutuştu mu söndürmek imkânsız."},3:{score:85,tutku:88,yakinlik:79,profil:"Yaratıcı & Ateşli",desc:"Sürprizlere bayılırsın, rutin söndürür. Oyuncu, yaratıcı ve eğlenceli bir enerji."},4:{score:65,tutku:62,yakinlik:78,profil:"Güvenli & Derin",desc:"Güven kurulmadan açılmazsın. Ama kurulduğunda — son derece sadık ve derin."},5:{score:92,tutku:95,yakinlik:74,profil:"Sınır Tanımaz",desc:"En yüksek fiziksel enerji. Çeşitlilik ve macera zorunluluk. Özgürlük her şeyden önce."},6:{score:76,tutku:72,yakinlik:88,profil:"Koşulsuz Veren",desc:"Vermek almaktan önce gelir. Partner memnuniyeti her şey. Şefkatli ve besleyici."},7:{score:68,tutku:65,yakinlik:80,profil:"Zihin Önce Tutuşur",desc:"Entelektüel bağ olmadan duygusal yakınlık boş kalır. Gizemli ve derinlikli."},8:{score:88,tutku:91,yakinlik:77,profil:"Yoğun & Sahiplenici",desc:"Güçlü, yoğun ve sahiplenici. Eşit güçte partner ister. Tutkusu sonsuz."},9:{score:80,tutku:78,yakinlik:90,profil:"Koşulsuz Aşık",desc:"İlişkiyi spiritüel deneyim gibi yaşar. Tam teslimiyet ve koşulsuz sevgi."},11:{score:83,tutku:80,yakinlik:88,profil:"Sezgisel Mistik",desc:"Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin ve spiritüel bir enerji."},22:{score:86,tutku:84,yakinlik:82,profil:"Dönüştürücü",desc:"Sıradan bir ilişki tatmin etmez. Dönüştürücü ve kalıcı bir bağ arar."},33:{score:79,tutku:76,yakinlik:92,profil:"Koşulsuz Sevgi",desc:"İlişkiyi ibadet gibi yaşar. Koşulsuz sevgi ve tam teslimiyet."}};
 
 const COMPAT={1:[{n:1,t:"Orta",c:"İki lider — çatışmalı ama dinamik"},{n:2,t:"İyi",c:"2'nin dengesi seni yumuşatır"},{n:3,t:"İyi",c:"Yaratıcı uyum"},{n:5,t:"Çok İyi",c:"Özgürlük uyumu"},{n:9,t:"İyi",c:"Evrensel sevgi seni açar"}],2:[{n:2,t:"Çok İyi",c:"Derin anlayış"},{n:6,t:"Çok İyi",c:"Şefkat uyumu"},{n:9,t:"Çok İyi",c:"Koşulsuz sevgi"},{n:4,t:"İyi",c:"Güvenilirlik uyumu"},{n:5,t:"Zor",c:"Özgürlük ihtiyacı zorlayabilir"}],3:[{n:1,t:"İyi",c:"Dinamik enerji"},{n:3,t:"Çok İyi",c:"Çift yaratıcılık"},{n:5,t:"Çok İyi",c:"Özgürlük & macera"},{n:9,t:"Çok İyi",c:"Evrensel uyum"},{n:4,t:"Zor",c:"Katılık yaratıcılığı boğar"}],4:[{n:2,t:"İyi",c:"Duygusal denge"},{n:4,t:"Çok İyi",c:"Güçlü istikrar"},{n:7,t:"Çok İyi",c:"Derin uyum"},{n:8,t:"İyi",c:"Karşılıklı güç"},{n:5,t:"Zor",c:"Değişim ihtiyacı çatışır"}],5:[{n:1,t:"Çok İyi",c:"Özgürlük uyumu"},{n:3,t:"Çok İyi",c:"Macera & yaratıcılık"},{n:7,t:"İyi",c:"Zihinsel uyum"},{n:8,t:"İyi",c:"Güç dengesi"},{n:2,t:"Zor",c:"Güvenlik ihtiyacı çatışır"}],6:[{n:2,t:"Çok İyi",c:"Derin şefkat"},{n:6,t:"Çok İyi",c:"Koşulsuz sevgi"},{n:9,t:"Çok İyi",c:"Evrensel uyum"},{n:3,t:"İyi",c:"Neşe & sevgi"},{n:5,t:"Orta",c:"Özgürlük ihtiyacı zorlayabilir"}],7:[{n:4,t:"Çok İyi",c:"İstikrar & derinlik"},{n:7,t:"Çok İyi",c:"Spiritüel uyum"},{n:9,t:"İyi",c:"Evrensel bağlantı"},{n:5,t:"İyi",c:"Zihinsel uyarım"},{n:1,t:"Orta",c:"Bağımsızlık çatışabilir"}],8:[{n:1,t:"Çok İyi",c:"İki güç odağı"},{n:4,t:"İyi",c:"Sağlam zemin"},{n:6,t:"Orta",c:"Denge kurulabilir"},{n:8,t:"Çok İyi",c:"Güç dengesi"},{n:7,t:"İyi",c:"Stratejik uyum"}],9:[{n:3,t:"Çok İyi",c:"Yaratıcı & evrensel"},{n:6,t:"Çok İyi",c:"Koşulsuz sevgi"},{n:2,t:"Çok İyi",c:"Derin anlayış"},{n:9,t:"Orta",c:"İki evrensel ruh — yoğun olabilir"},{n:5,t:"İyi",c:"Özgürlük & anlam"}]};
 
@@ -1378,7 +555,7 @@ function runAnalysis(){
     document.getElementById('d-ifade').textContent=DESCS[ifade]?.i||'';
     setPbar('p-ifade',(ifade/11)*100);
 
-    // Tutku
+    // Libido
     const lib=TUTKU_DATA[kader]||LIBIDO[9];
     document.getElementById('libido-row').innerHTML=`
       <div class="lib-item"><div class="lib-val">${lib.score}</div><div class="lib-label">Tutku Skoru</div></div>
@@ -1714,9 +891,7 @@ buildDailyCard();
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>{
-    navigator.serviceWorker.register('/sw.js')
-      .then(r=>console.log('SW:',r.scope))
-      .catch(e=>console.log('SW hata:',e));
+    navigator.serviceWorker.register('/sw.js').catch(()=>{});
   });
 }
 </script>
@@ -1730,9 +905,9 @@ if('serviceWorker' in navigator){
   </div>
 </div>
 <script>
-!function(){if(!localStorage.getItem('ck')){setTimeout(function(){var e=document.getElementById('ckb');e&&e.classList.add('on');},1200);}}();
-function ckOk(){localStorage.setItem('ck','1');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)');}
-function ckNo(){localStorage.setItem('ck','0');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)');}
+!function(){if(!localStorage.getItem('ck')){setTimeout(function(){var e=document.getElementById('ckb');e&&e.classList.add('on')},1200)}}();
+function ckOk(){localStorage.setItem('ck','1');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)')}
+function ckNo(){localStorage.setItem('ck','0');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)')}
 </script>
 
 </body>
