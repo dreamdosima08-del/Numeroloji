@@ -47,4 +47,20 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/melek-sayilari-anlami.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/angel-numbers-meaning.html"/>
   </url>
+  <url>
+    <loc>https://www.numerolojim.com.tr/en/master-numbers-11-22-33.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/master-sayilar-11-22-33.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/master-numbers-11-22-33.html"/>
+  </url>
+  <url>
+    <loc>https://www.numerolojim.com.tr/en/soulmate-numerology.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/ruh-esi-numeroloji.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/soulmate-numerology.html"/>
+  </url>
 </urlset>
