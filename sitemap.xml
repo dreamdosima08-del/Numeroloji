@@ -63,4 +63,12 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/ruh-esi-numeroloji.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/soulmate-numerology.html"/>
   </url>
+  <url>
+    <loc>https://www.numerolojim.com.tr/en/</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/"/>
+  </url>
 </urlset>
