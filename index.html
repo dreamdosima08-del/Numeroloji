@@ -17,6 +17,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name="theme-color" content="#D4A843">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
 <title>Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla</title>
 <meta name="description" content="Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve aşk uyum skorunuzu ücretsiz hesaplayın. Pisagor numerolojisi ile 2026 enerjinizi keşfedin.">
 <meta name="keywords" content="numeroloji, kader sayısı, numeroloji hesaplama, doğum tarihi analizi, aşk uyumu, ruh güdüsü sayısı, pisagor numeroloji, 2026 numeroloji">
@@ -271,12 +276,33 @@ footer a:hover{color:var(--gold)}
 .lang-switch{position:fixed;top:14px;right:14px;z-index:100;display:inline-flex;gap:2px;background:rgba(10,8,30,.8);border:1px solid var(--border2);border-radius:20px;padding:3px;backdrop-filter:blur(8px)}
 .lang-switch a{padding:5px 13px;border-radius:18px;font-family:var(--ff);font-size:10px;letter-spacing:.1em;text-decoration:none;color:var(--text3);transition:all .2s}
 .lang-switch a.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A}
+
+.hero-card{background:linear-gradient(160deg,rgba(20,16,46,.98),rgba(28,20,58,.96))!important;border-color:rgba(212,168,67,.25)!important;box-shadow:0 0 50px rgba(212,168,67,.1)}
+.hero-num-row{display:flex;align-items:center;gap:18px;margin-bottom:14px}
+.card-num.big{font-size:64px}
+.hero-num-info{flex:1}
+.guc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.guc-tag{font-family:var(--ff);font-size:9px;letter-spacing:.08em;color:var(--gold2);background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.25);border-radius:16px;padding:4px 12px}
+.ozet-box{font-size:13.5px;color:var(--text);line-height:1.85;font-style:italic;padding:14px 18px;background:rgba(212,168,67,.05);border-left:2px solid var(--gold);border-radius:0 10px 10px 0;margin:14px 0}
+.luck-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.luck-item{flex:1;min-width:90px;text-align:center;background:rgba(255,255,255,.03);border:1px solid var(--border2);border-radius:10px;padding:10px 8px}
+.luck-icon{font-size:18px;margin-bottom:4px}
+.luck-label{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-bottom:3px}
+.luck-val{font-family:var(--ff);font-size:12px;color:var(--gold2);font-weight:600}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu.","inLanguage":"tr"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","logo":"https://www.numerolojim.com.tr/icons/icon-512x512.png"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Numeroloji nedir?","acceptedAnswer":{"@type":"Answer","text":"Numeroloji, sayıların kişilik, kader ve yaşam olayları üzerindeki etkisini inceleyen kadim bir sistemdir. Doğum tarihi ve isimden hesaplanan sayılarla kişinin temel karakteri ve yaşam amacı yorumlanır."}},
+{"@type":"Question","name":"Kader sayısı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Kader sayısı, doğum tarihindeki tüm rakamların toplanıp tek haneye indirgenmesiyle bulunur. Örneğin 15.03.1990 için 1+5+0+3+1+9+9+0=28, 2+8=10, 1+0=1 olur."}},
+{"@type":"Question","name":"Numeroloji analizi ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Numerolojim.com.tr üzerinde kader sayısı, ruh güdüsü, kişilik ve aşk uyumu analizleri tamamen ücretsizdir."}},
+{"@type":"Question","name":"Master sayılar (11, 22, 33) nedir?","acceptedAnswer":{"@type":"Answer","text":"Master sayılar, numerolojide tek haneye indirgenmeyen özel sayılardır. 11 sezgiyi, 22 büyük inşa gücünü, 33 ise koşulsuz sevgi ve öğretmenliği temsil eder."}}
+]}
 </script>
 </head>
 <body>
@@ -346,8 +372,22 @@ footer a:hover{color:var(--gold)}
     <button class="sbtn sbtn-coral" onclick="downloadPDF()">⬇ PDF</button>
     <button class="sbtn sbtn-wa" onclick="shareWA()">WhatsApp</button>
   </div>
+  <div class="grid1">
+    <div class="rcard hero-card"><div class="card-eye">✦ Kader Sayısı — Yaşam Yolun</div>
+      <div class="hero-num-row">
+        <div class="card-num big" id="n-kader">—</div>
+        <div class="hero-num-info">
+          <div class="card-title" id="t-kader">—</div>
+          <div class="guc-tags" id="guc-kader"></div>
+        </div>
+      </div>
+      <div class="card-body" id="d-kader"></div>
+      <div class="ozet-box" id="ozet-kader"></div>
+      <div class="luck-row" id="luck-kader"></div>
+      <div class="pbar"><div class="pbar-fill gold" id="p-kader"></div></div>
+    </div>
+  </div>
   <div class="grid2">
-    <div class="rcard"><div class="card-eye">Kader Sayısı</div><div class="card-num" id="n-kader">—</div><div class="card-title" id="t-kader">—</div><div class="pbar"><div class="pbar-fill gold" id="p-kader"></div></div><div class="card-body" id="d-kader"></div></div>
     <div class="rcard"><div class="card-eye">Ruh Güdüsü</div><div class="card-num" id="n-ruh">—</div><div class="card-title" id="t-ruh">—</div><div class="pbar"><div class="pbar-fill gold" id="p-ruh"></div></div><div class="card-body" id="d-ruh"></div></div>
   </div>
   <div class="grid2">
@@ -459,6 +499,28 @@ footer a:hover{color:var(--gold)}
 <a href="harf-z.html" style="display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:10px 12px;min-width:50px;background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.22);border-radius:11px;text-decoration:none;transition:transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><span style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#D4A843">Z</span><small style="font-size:9px;color:#6B6890">=8</small></a>
 </div>
 
+
+<!-- SSS / FAQ -->
+<div class="divider"><span class="divider-label">✦ Sık Sorulan Sorular ✦</span></div>
+<div style="max-width:720px;margin:0 auto 40px">
+  <div style="background:linear-gradient(160deg,rgba(15,15,40,.9),rgba(18,18,46,.85));border:1px solid var(--border2);border-radius:14px;padding:22px 24px;margin-bottom:12px">
+    <h2 style="font-family:var(--ff);font-size:15px;color:var(--gold2);margin-bottom:8px">Numeroloji nedir?</h2>
+    <p style="font-size:13px;color:var(--text2);line-height:1.7;margin:0">Numeroloji, sayıların kişilik, kader ve yaşam olayları üzerindeki etkisini inceleyen kadim bir sistemdir. Doğum tarihi ve isimden hesaplanan sayılarla kişinin temel karakteri ve yaşam amacı yorumlanır.</p>
+  </div>
+  <div style="background:linear-gradient(160deg,rgba(15,15,40,.9),rgba(18,18,46,.85));border:1px solid var(--border2);border-radius:14px;padding:22px 24px;margin-bottom:12px">
+    <h2 style="font-family:var(--ff);font-size:15px;color:var(--gold2);margin-bottom:8px">Kader sayısı nasıl hesaplanır?</h2>
+    <p style="font-size:13px;color:var(--text2);line-height:1.7;margin:0">Kader sayısı, doğum tarihindeki tüm rakamların toplanıp tek haneye indirgenmesiyle bulunur. Örneğin 15.03.1990 için 1+5+0+3+1+9+9+0=28, 2+8=10, 1+0=1 olur. Kader sayısı 1'dir.</p>
+  </div>
+  <div style="background:linear-gradient(160deg,rgba(15,15,40,.9),rgba(18,18,46,.85));border:1px solid var(--border2);border-radius:14px;padding:22px 24px;margin-bottom:12px">
+    <h2 style="font-family:var(--ff);font-size:15px;color:var(--gold2);margin-bottom:8px">Numeroloji analizi ücretsiz mi?</h2>
+    <p style="font-size:13px;color:var(--text2);line-height:1.7;margin:0">Evet. Numerolojim.com.tr üzerinde kader sayısı, ruh güdüsü, kişilik ve aşk uyumu analizleri tamamen ücretsizdir. İsminizi ve doğum tarihinizi girmeniz yeterli; sonuçlar anında hesaplanır.</p>
+  </div>
+  <div style="background:linear-gradient(160deg,rgba(15,15,40,.9),rgba(18,18,46,.85));border:1px solid var(--border2);border-radius:14px;padding:22px 24px">
+    <h2 style="font-family:var(--ff);font-size:15px;color:var(--gold2);margin-bottom:8px">Master sayılar (11, 22, 33) nedir?</h2>
+    <p style="font-size:13px;color:var(--text2);line-height:1.7;margin:0">Master sayılar, numerolojide tek haneye indirgenmeyen özel sayılardır. 11 sezgiyi, 22 büyük inşa gücünü, 33 ise koşulsuz sevgi ve öğretmenliği temsil eder. Olağanüstü potansiyel taşırlar.</p>
+  </div>
+</div>
+
 <footer>
   <p>© 2026 Numerolojim.com.tr &nbsp;·&nbsp;
   <a href="privacy.html">Gizlilik Politikası</a> &nbsp;·&nbsp;
@@ -509,6 +571,21 @@ const DESCS={
   11:{k:"Master 11: Işık Taşıyıcısı. Sezgin ve spiritüel farkındalığın olağanüstü.",r:"En derin arzun: ilham vermek ve ışık taşımak.",kisilik:"Dış dünyaya yansıttığın imaj: özel, gizemli, ilham verici.",i:"İfaden sezgisel ve derin — söylenmeyeni söylersin."},
   22:{k:"Master 22: Usta Mimar. Büyük hayaller kurarsın ve gerçeğe dönüştürürsün.",r:"En derin arzun: kalıcı eserler bırakmak ve büyük inşa etmek.",kisilik:"Dış dünyaya yansıttığın imaj: güçlü, vizyon sahibi, kalıcı.",i:"İfaden güçlü ve yapıcı — söylediklerin gerçeğe dönüşür."},
   33:{k:"Master 33: Usta Öğretmen. Koşulsuz sevgi ve evrensel şifa enerjisi.",r:"En derin arzun: şifa vermek, öğretmek ve dönüştürmek.",kisilik:"Dış dünyaya yansıttığın imaj: şifa verici, öğretici, sevgi dolu.",i:"İfaden şifalayıcı — kelimelerinde iyileştirici bir güç var."}
+};
+
+const META={
+  1:{guc:["Lider","Cesur","Bağımsız"],renk:"Kırmızı",element:"Ateş",gun:"Pazar",ozet:"Sen bir başlatıcısın. Kalabalıkta öne çıkar, yol açarsın. Bağımsızlığın en değerli hazinen."},
+  2:{guc:["Diplomat","Sezgisel","Şefkatli"],renk:"Turuncu",element:"Su",gun:"Pazartesi",ozet:"Sen bir köprüsün. İnsanları birbirine bağlar, huzuru getirirsin. Detaylardaki incelik senin gücün."},
+  3:{guc:["Yaratıcı","Neşeli","İfade gücü"],renk:"Sarı",element:"Hava",gun:"Perşembe",ozet:"Sen bir ışıltısın. Girdiğin ortamı renklendirir, ilham verirsin. Yaratıcılığın hayatının pusulası."},
+  4:{guc:["Güvenilir","Disiplinli","Sağlam"],renk:"Yeşil",element:"Toprak",gun:"Pazar",ozet:"Sen bir temelsin. Sağlam, güvenilir ve kararlısın. İnşa ettiğin her şey kalıcıdır."},
+  5:{guc:["Özgür","Maceracı","Dinamik"],renk:"Mavi",element:"Hava",gun:"Çarşamba",ozet:"Sen bir rüzgarsın. Değişim ve özgürlük senin doğan. Sınırlar seni durduramaz, ufuk seni çağırır."},
+  6:{guc:["Sevecen","Sorumlu","Uyumlu"],renk:"Pembe",element:"Toprak",gun:"Cuma",ozet:"Sen bir sığınaksın. Sevgi ve şefkat senden taşar. İnsanlar yanında huzur ve güven bulur."},
+  7:{guc:["Bilge","Analitik","Derin"],renk:"Mor",element:"Su",gun:"Pazartesi",ozet:"Sen bir bilgesin. Yüzeyin altını merak eder, gerçeği ararsın. Sezgilerin nadiren yanılır."},
+  8:{guc:["Güçlü","Stratejik","Başarılı"],renk:"Lacivert",element:"Toprak",gun:"Cumartesi",ozet:"Sen bir güç odağısın. Büyük resmi görür, hedefe kilitlenirsin. Bolluk ve başarı senin doğal alanın."},
+  9:{guc:["Şefkatli","Bilge","Evrensel"],renk:"Altın",element:"Ateş",gun:"Salı",ozet:"Sen bir okyanussun. Herkesi anlar, kucaklarsın. Evrensel sevgi senin en derin doğan."},
+  11:{guc:["Sezgisel","İlham verici","Vizyoner"],renk:"Gümüş",element:"Hava",gun:"Pazartesi",ozet:"Sen bir ışık taşıyıcısısın. Master 11 — sezgin sıradanın çok ötesinde. Başkalarına yol gösterirsin."},
+  22:{guc:["Vizyoner","Kurucu","Güçlü"],renk:"Platin",element:"Toprak",gun:"Cumartesi",ozet:"Sen bir usta mimarsın. Master 22 — hayalleri gerçeğe dönüştürme gücün olağanüstü."},
+  33:{guc:["Şifacı","Öğretmen","Sevgi dolu"],renk:"Beyaz",element:"Su",gun:"Cuma",ozet:"Sen bir usta öğretmensin. Master 33 — koşulsuz sevgi ve şifa enerjisi taşırsın. Çok nadir bir ruh."}
 };
 
 const TUTKU_DATA={1:{score:78,tutku:82,yakinlik:71,profil:"Lider & Özgür",desc:"İlişkide de lidersin. Spontane, tutkulu ve bağımsız bir enerji taşırsın. Rutin seni söndürür."},2:{score:72,tutku:68,yakinlik:85,profil:"Derin & Hassas",desc:"Güven olmadan açılmazsın. Yavaş yanar ama bir kez tutuştu mu söndürmek imkânsız."},3:{score:85,tutku:88,yakinlik:79,profil:"Yaratıcı & Ateşli",desc:"Sürprizlere bayılırsın, rutin söndürür. Oyuncu, yaratıcı ve eğlenceli bir enerji."},4:{score:65,tutku:62,yakinlik:78,profil:"Güvenli & Derin",desc:"Güven kurulmadan açılmazsın. Ama kurulduğunda — son derece sadık ve derin."},5:{score:92,tutku:95,yakinlik:74,profil:"Sınır Tanımaz",desc:"En yüksek fiziksel enerji. Çeşitlilik ve macera zorunluluk. Özgürlük her şeyden önce."},6:{score:76,tutku:72,yakinlik:88,profil:"Koşulsuz Veren",desc:"Vermek almaktan önce gelir. Partner memnuniyeti her şey. Şefkatli ve besleyici."},7:{score:68,tutku:65,yakinlik:80,profil:"Zihin Önce Tutuşur",desc:"Entelektüel bağ olmadan duygusal yakınlık boş kalır. Gizemli ve derinlikli."},8:{score:88,tutku:91,yakinlik:77,profil:"Yoğun & Sahiplenici",desc:"Güçlü, yoğun ve sahiplenici. Eşit güçte partner ister. Tutkusu sonsuz."},9:{score:80,tutku:78,yakinlik:90,profil:"Koşulsuz Aşık",desc:"İlişkiyi spiritüel deneyim gibi yaşar. Tam teslimiyet ve koşulsuz sevgi."},11:{score:83,tutku:80,yakinlik:88,profil:"Sezgisel Mistik",desc:"Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin ve spiritüel bir enerji."},22:{score:86,tutku:84,yakinlik:82,profil:"Dönüştürücü",desc:"Sıradan bir ilişki tatmin etmez. Dönüştürücü ve kalıcı bir bağ arar."},33:{score:79,tutku:76,yakinlik:92,profil:"Koşulsuz Sevgi",desc:"İlişkiyi ibadet gibi yaşar. Koşulsuz sevgi ve tam teslimiyet."}};
@@ -572,6 +649,16 @@ function runAnalysis(){
     document.getElementById('n-kader').textContent=kader;
     document.getElementById('t-kader').textContent=TITLES[kader]||'';
     document.getElementById('d-kader').textContent=DESCS[kader]?.k||'';
+    // Zengin META
+    const mk=META[kader];
+    if(mk){
+      document.getElementById('guc-kader').innerHTML=mk.guc.map(g=>'<span class="guc-tag">'+g+'</span>').join('');
+      document.getElementById('ozet-kader').textContent=mk.ozet;
+      document.getElementById('luck-kader').innerHTML=
+        '<div class="luck-item"><div class="luck-icon">🎨</div><div class="luck-label">Şanslı Renk</div><div class="luck-val">'+mk.renk+'</div></div>'+
+        '<div class="luck-item"><div class="luck-icon">🔥</div><div class="luck-label">Element</div><div class="luck-val">'+mk.element+'</div></div>'+
+        '<div class="luck-item"><div class="luck-icon">📅</div><div class="luck-label">Şanslı Gün</div><div class="luck-val">'+mk.gun+'</div></div>';
+    }
     setPbar('p-kader',(kader/11)*100);
 
     // Ruh
@@ -661,10 +748,7 @@ function downloadPDF(){
   const w=window.open('','_blank');
   if(!w){alert('Lütfen pop-up izni verin.');return;}
   let h='<'+'!DOCTYPE html><html lang=tr><he'+'ad><meta charset=UTF-8><title>Numeroloji Raporu</title>';
-  h+='<style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#222;padding:20px}h1{color:#8B4A0A;font-size:22px}.b{display:inline-block;border:1px solid #ddd;border-radius:8px;padding:16px;margin:8px;text-align:center;min-width:110px}.l{font-size:11px;color:#888;text-transform:uppercase}.n{font-size:32px;font-weight:bold;color:#8B4A0A}.f{margin-top:30px;font-size:10px;color:#aaa}.lang-switch{position:fixed;top:14px;right:14px;z-index:100;display:inline-flex;gap:2px;background:rgba(10,8,30,.8);border:1px solid var(--border2);border-radius:20px;padding:3px;backdrop-filter:blur(8px)}
-.lang-switch a{padding:5px 13px;border-radius:18px;font-family:var(--ff);font-size:10px;letter-spacing:.1em;text-decoration:none;color:var(--text3);transition:all .2s}
-.lang-switch a.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A}
-</style></he'+'ad><bo'+'dy>';
+  h+='<style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#222;padding:20px}h1{color:#8B4A0A;font-size:22px}.b{display:inline-block;border:1px solid #ddd;border-radius:8px;padding:16px;margin:8px;text-align:center;min-width:110px}.l{font-size:11px;color:#888;text-transform:uppercase}.n{font-size:32px;font-weight:bold;color:#8B4A0A}.f{margin-top:30px;font-size:10px;color:#aaa}</style>';
   h+='<h1>'+r.fn+' — Numeroloji Raporu</h1>';
   h+='<div class=b><div class=l>Kader</div><div class=n>'+r.kader+'</div></div>';
   h+='<div class=b><div class=l>Ruh Gudusu</div><div class=n>'+r.ruh+'</div></div>';
