@@ -289,6 +289,17 @@ footer a:hover{color:var(--gold)}
 .luck-icon{font-size:18px;margin-bottom:4px}
 .luck-label{font-size:8px;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-bottom:3px}
 .luck-val{font-family:var(--ff);font-size:12px;color:var(--gold2);font-weight:600}
+
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+@media(max-width:560px){.detail-grid{grid-template-columns:1fr}}
+.detail-item{background:rgba(255,255,255,.03);border:1px solid var(--border2);border-radius:12px;padding:14px 16px}
+.detail-head{display:flex;align-items:center;gap:8px;font-family:var(--ff);font-size:11px;letter-spacing:.1em;color:var(--gold2);margin-bottom:8px}
+.detail-head .di{font-size:15px}
+.detail-text{font-size:12.5px;color:var(--text2);line-height:1.7}
+.zayif-box{background:rgba(255,107,107,.04);border:1px solid rgba(255,107,107,.12);border-radius:12px;padding:12px 16px;margin-top:6px}
+.zayif-head{font-family:var(--ff);font-size:10px;letter-spacing:.1em;color:var(--coral);margin-bottom:8px;opacity:.85}
+.zayif-tags{display:flex;flex-wrap:wrap;gap:6px}
+.zayif-tag{font-size:11px;color:var(--text2);background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.15);border-radius:14px;padding:3px 11px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu.","inLanguage":"tr"}
@@ -381,9 +392,10 @@ footer a:hover{color:var(--gold)}
           <div class="guc-tags" id="guc-kader"></div>
         </div>
       </div>
-      <div class="card-body" id="d-kader"></div>
       <div class="ozet-box" id="ozet-kader"></div>
       <div class="luck-row" id="luck-kader"></div>
+      <div class="detail-grid" id="detail-kader"></div>
+      <div class="zayif-box" id="zayif-kader"></div>
       <div class="pbar"><div class="pbar-fill gold" id="p-kader"></div></div>
     </div>
   </div>
@@ -574,18 +586,77 @@ const DESCS={
 };
 
 const META={
-  1:{guc:["Lider","Cesur","Bağımsız"],renk:"Kırmızı",element:"Ateş",gun:"Pazar",ozet:"Sen bir başlatıcısın. Kalabalıkta öne çıkar, yol açarsın. Bağımsızlığın en değerli hazinen."},
-  2:{guc:["Diplomat","Sezgisel","Şefkatli"],renk:"Turuncu",element:"Su",gun:"Pazartesi",ozet:"Sen bir köprüsün. İnsanları birbirine bağlar, huzuru getirirsin. Detaylardaki incelik senin gücün."},
-  3:{guc:["Yaratıcı","Neşeli","İfade gücü"],renk:"Sarı",element:"Hava",gun:"Perşembe",ozet:"Sen bir ışıltısın. Girdiğin ortamı renklendirir, ilham verirsin. Yaratıcılığın hayatının pusulası."},
-  4:{guc:["Güvenilir","Disiplinli","Sağlam"],renk:"Yeşil",element:"Toprak",gun:"Pazar",ozet:"Sen bir temelsin. Sağlam, güvenilir ve kararlısın. İnşa ettiğin her şey kalıcıdır."},
-  5:{guc:["Özgür","Maceracı","Dinamik"],renk:"Mavi",element:"Hava",gun:"Çarşamba",ozet:"Sen bir rüzgarsın. Değişim ve özgürlük senin doğan. Sınırlar seni durduramaz, ufuk seni çağırır."},
-  6:{guc:["Sevecen","Sorumlu","Uyumlu"],renk:"Pembe",element:"Toprak",gun:"Cuma",ozet:"Sen bir sığınaksın. Sevgi ve şefkat senden taşar. İnsanlar yanında huzur ve güven bulur."},
-  7:{guc:["Bilge","Analitik","Derin"],renk:"Mor",element:"Su",gun:"Pazartesi",ozet:"Sen bir bilgesin. Yüzeyin altını merak eder, gerçeği ararsın. Sezgilerin nadiren yanılır."},
-  8:{guc:["Güçlü","Stratejik","Başarılı"],renk:"Lacivert",element:"Toprak",gun:"Cumartesi",ozet:"Sen bir güç odağısın. Büyük resmi görür, hedefe kilitlenirsin. Bolluk ve başarı senin doğal alanın."},
-  9:{guc:["Şefkatli","Bilge","Evrensel"],renk:"Altın",element:"Ateş",gun:"Salı",ozet:"Sen bir okyanussun. Herkesi anlar, kucaklarsın. Evrensel sevgi senin en derin doğan."},
-  11:{guc:["Sezgisel","İlham verici","Vizyoner"],renk:"Gümüş",element:"Hava",gun:"Pazartesi",ozet:"Sen bir ışık taşıyıcısısın. Master 11 — sezgin sıradanın çok ötesinde. Başkalarına yol gösterirsin."},
-  22:{guc:["Vizyoner","Kurucu","Güçlü"],renk:"Platin",element:"Toprak",gun:"Cumartesi",ozet:"Sen bir usta mimarsın. Master 22 — hayalleri gerçeğe dönüştürme gücün olağanüstü."},
-  33:{guc:["Şifacı","Öğretmen","Sevgi dolu"],renk:"Beyaz",element:"Su",gun:"Cuma",ozet:"Sen bir usta öğretmensin. Master 33 — koşulsuz sevgi ve şifa enerjisi taşırsın. Çok nadir bir ruh."}
+1:{guc:["Lider","Cesur","Bağımsız","Öncü"],zayif:["İnatçı","Sabırsız","Baskın olabilir"],renk:"Kırmızı",element:"Ateş",gun:"Pazar",
+ozet:"Sen doğuştan bir lidersin. 1 sayısı, başlangıçların ve öncülüğün enerjisidir — tıpkı bir sayı dizisinin ilk adımı gibi, sen de yeni yolları açan kişisin. İçinde durmak bilmeyen bir hırs, bir 'ben yaparım' sesi taşırsın.",
+kariyer:"Girişimcilik, yöneticilik, kendi işini kurmak senin doğal alanın. Emir almaktan hoşlanmaz, kendi kararlarını vermek istersin. En parlak olduğun yer: zirvede, sorumluluğun sende olduğu pozisyonlar.",
+ask:"İlişkide de lidersin — tutkulu, koruyucu ve sadık. Ama partnerinin de kendi alanına saygı duymasını beklersin. Sana eşit durabilen, güçlü bir partner seni mutlu eder.",
+finans:"Para senin için özgürlük aracı. Cesur yatırımlar yapar, risk almaktan korkmazsın. Bağımsızlığını koruduğun sürece finansal olarak başarılısın."},
+
+2:{guc:["Diplomat","Sezgisel","Şefkatli","Uyumlu"],zayif:["Aşırı hassas","Kararsız","Çekingen"],renk:"Turuncu",element:"Su",gun:"Pazartesi",
+ozet:"Sen bir köprüsün. 2 sayısı denge, uyum ve ortaklık enerjisidir. İnsanların arasındaki görünmez bağları hisseder, huzuru ve barışı getirirsin. Kaba güçle değil, incelikle kazanırsın.",
+kariyer:"Diplomasi, danışmanlık, psikoloji, sanat ve ekip çalışması gerektiren işler sana göre. Arka planda çalışıp uyumu sağlamakta ustasın. Tek başına değil, birlikte parlarsın.",
+ask:"İlişki senin hayatının merkezi. Derin, sadık ve fedakar bir partnersin. Güven olmadan açılmazsın ama bir kez bağlandığında, sevgin koşulsuzdur. Romantizm ve incelik senin dilin.",
+finans:"Finansal kararlarda temkinli ve paylaşımcısın. Ani riskler yerine güvenli, ortak yatırımları tercih edersin. Bir partnerle veya ekiple para yönetmekte iyisin."},
+
+3:{guc:["Yaratıcı","Neşeli","İfade gücü","Sosyal"],zayif:["Dağınık","Yüzeysel olabilir","Odaklanma zorluğu"],renk:"Sarı",element:"Hava",gun:"Perşembe",
+ozet:"Sen bir ışıltısın. 3 sayısı yaratıcılığın, neşenin ve ifadenin enerjisidir. Girdiğin ortamı renklendirir, kelimelerinle ve gülüşünle insanları etkilersin. İçinde sönmeyen bir çocuk ruhu var.",
+kariyer:"Sanat, yazarlık, oyunculuk, tasarım, sosyal medya, iletişim — kendini ifade edebileceğin her alan. Rutin işler seni boğar. Yaratıcılığını kullanabildiğin sürece sınır tanımazsın.",
+ask:"İlişkide eğlenceli, romantik ve sürpriz doludur. Partnerini güldürmeyi, hayata renk katmayı seversin. Ama derinlik de ararsın — sadece yüzeysel değil, ruhunu anlayan biri istersin.",
+finans:"Para gelir gider, sen keyfine bakarsın. Bazen savurgan olabilirsin. Ama yaratıcı yeteneklerin sayesinde kazanma kapın hep açıktır. Bütçe disiplini sana iyi gelir."},
+
+4:{guc:["Güvenilir","Disiplinli","Sağlam","Çalışkan"],zayif:["Katı","Fazla ciddi","Değişime kapalı"],renk:"Yeşil",element:"Toprak",gun:"Pazar",
+ozet:"Sen bir temelsin. 4 sayısı düzen, sağlamlık ve emeğin enerjisidir. Hayallere değil, ellerinle inşa ettiğin gerçeklere güvenirsin. Söz verdiğinde tutar, başladığın işi bitirirsin.",
+kariyer:"Mühendislik, mimarlık, finans, hukuk, yönetim — sistemli ve sabır gerektiren her alan. Detaylara hakimsin, kaosu düzene çevirirsin. Güvenilirliğin en büyük sermayene.",
+ask:"İlişkide sadık, güvenilir ve koruyucusun. Gösterişli romantizmden çok, istikrar ve güven sunarsın. Bir kez bağlandığında ömür boyu yanındasın. Güven senin aşk dilin.",
+finans:"Finansal olarak en güvenli sayılardan birisin. Tasarruf eder, planlı harcar, geleceği düşünürsün. Aceleci yatırımlardan kaçınır, sağlam zemine basarsın. Mülk ve uzun vadeli birikim sana göre."},
+
+5:{guc:["Özgür","Maceracı","Dinamik","Çok yönlü"],zayif:["Tutarsız","Sabırsız","Bağlanma korkusu"],renk:"Mavi",element:"Hava",gun:"Çarşamba",
+ozet:"Sen bir rüzgarsın. 5 sayısı özgürlüğün, değişimin ve maceranın enerjisidir. Bir yere ait olmaktan çok, deneyimlemek istersin. Hayat senin için keşfedilecek koca bir dünya.",
+kariyer:"Seyahat, gazetecilik, pazarlama, satış, girişimcilik — hareket ve çeşitlilik içeren işler. Masaya çakılı kalmak seni öldürür. Değişen, seni heyecanlandıran ortamlarda parlarsın.",
+ask:"İlişkide tutkulu ve heyecanlısın ama özgürlüğüne düşkünsün. Sana nefes aldıran, seninle macera paylaşan bir partner istersin. Rutin ve kıskançlık seni kaçırır; güven ve özgürlük tutar.",
+finans:"Para senin için deneyim aracı. Kazanırsın, harcarsın, yine kazanırsın. Finansal istikrar için biraz disiplin şart ama çok yönlülüğün sayesinde gelir kaynakların hep çeşitlidir."},
+
+6:{guc:["Sevecen","Sorumlu","Uyumlu","Koruyucu"],zayif:["Fazla fedakar","Kontrolcü olabilir","Kaygılı"],renk:"Pembe",element:"Toprak",gun:"Cuma",
+ozet:"Sen bir sığınaksın. 6 sayısı sevginin, sorumluluğun ve şefkatin enerjisidir. İnsanlar yanında huzur bulur çünkü sen doğal bir koruyucu, bir şifacısın. Vermek senin için almaktan daha değerli.",
+kariyer:"Sağlık, eğitim, danışmanlık, aşçılık, iç mimari — insanlara hizmet eden ve güzellik yaratan işler. Sorumluluk almaktan kaçmaz, etrafındakini düşünürsün. İyileştirme yeteneğin var.",
+ask:"İlişki senin için kutsal. Sadık, fedakar ve derinden sevensin. Yuvanı korur, partnerini el üstünde tutarsın. Ama bazen kendini unutacak kadar verirsin — dengeyi bulman önemli.",
+finans:"Parayı sevdiklerin için kullanırsın. Aile, ev, güvenlik senin önceliğin. Cömertsin ama savurgan değilsin. Finansal güvenliği, sevdiklerini koruma içgüdüsüyle sağlarsın."},
+
+7:{guc:["Bilge","Analitik","Sezgisel","Derin"],zayif:["İçine kapanık","Şüpheci","Mesafeli"],renk:"Mor",element:"Su",gun:"Pazartesi",
+ozet:"Sen bir bilgesin. 7 sayısı bilgeliğin, sezginin ve içsel arayışın enerjisidir. Yüzeydeki cevaplarla yetinmez, her şeyin ardındaki gerçeği ararsın. Yalnızlık senin için bir kayıp değil, bir hazinedir.",
+kariyer:"Araştırma, bilim, felsefe, psikoloji, spiritüel alanlar, analiz gerektiren her iş. Derin düşünür, kalabalıkların göremediğini görürsün. Uzmanlaşmak, bir konunun derinine inmek sana göre.",
+ask:"İlişkide derin ve seçicisin. Herkesle değil, ruhunu anlayan biriyle bağ kurarsın. Yüzeysel ilişkiler seni tatmin etmez. Entelektüel ve ruhsal bağ, fiziksel çekimden önce gelir senin için.",
+finans:"Para senin önceliğin değil ama bilgeliğin sayesinde akıllı kararlar alırsın. Gösteriş için harcamaz, değer verdiğin şeylere yatırım yaparsın. Az ama öz, senin finansal felsefen."},
+
+8:{guc:["Güçlü","Stratejik","Başarılı","Kararlı"],zayif:["İş bağımlısı","Kontrolcü","Maddi odaklı olabilir"],renk:"Lacivert",element:"Toprak",gun:"Cumartesi",
+ozet:"Sen bir güç odağısın. 8 sayısı gücün, başarının ve bolluğun enerjisidir. Büyük resmi görür, hedefe kilitlenir ve elde edersin. İçinde dünyayı yönetebilecek bir komutan ruhu var.",
+kariyer:"İş dünyası, yöneticilik, finans, gayrimenkul, hukuk, büyük ölçekli projeler. Otorite ve sorumluluk senin doğal alanın. Para kazanma ve yönetme konusunda doğal bir yeteneğin var.",
+ask:"İlişkide güçlü ve sahiplenicisin. Sana denk, güçlü bir partner ararsın. Sevgini açıkça göstermekte zorlanabilirsin ama koruyucu ve sağlayıcısın. Başarını paylaşacağın biri seni tamamlar.",
+finans:"Finansın ustası sensin. Para kazanmak, yönetmek ve büyütmek senin doğanda var. Maddi başarı senin için güç ve özgürlük demek. Bolluk seni bulur, çünkü sen onu hak ettiğini bilirsin."},
+
+9:{guc:["Şefkatli","Bilge","Evrensel","İdealist"],zayif:["Fazla idealist","Duygusal","Geçmişe takılma"],renk:"Altın",element:"Ateş",gun:"Salı",
+ozet:"Sen bir okyanussun. 9 sayısı tamamlanmanın, evrensel sevginin ve bilgeliğin enerjisidir. Tüm sayıların özelliklerini taşırsın — bu yüzden herkesi anlar, herkesi kucaklarsın. Ruhun derin ve kadim.",
+kariyer:"İnsani yardım, sanat, öğretmenlik, danışmanlık, liderlik — dünyaya bir şeyler katma arzun ağır basar. Sadece para için değil, anlam için çalışırsın. İlham veren bir liderlik tarzın var.",
+ask:"İlişkide derin, romantik ve fedakarsın. Sevginin sınırlarını bilmezsin. Ama bazen geçmişe takılır, idealize edersin. Seni bütünüyle anlayan, ruhsal bir bağ kurabileceğin biri seni mutlu eder.",
+finans:"Para senin için araç, amaç değil. Cömertsin, hatta fazla. Kazandığını paylaşmaktan mutlu olursun. Finansal başarın genellikle başkalarına fayda sağladığın işlerden gelir."},
+
+11:{guc:["Sezgisel","İlham verici","Vizyoner","Ruhsal"],zayif:["Aşırı hassas","Gergin","Kendinden şüphe"],renk:"Gümüş",element:"Hava",gun:"Pazartesi",
+ozet:"Sen bir ışık taşıyıcısısın. 11 — numerolojinin ilk master sayısı. Sezgilerin sıradan insanların çok ötesinde; adeta görünmeyeni görür, söylenmeyeni duyarsın. İçinde hem büyük bir potansiyel hem de büyük bir gerilim taşırsın.",
+kariyer:"İlham veren her alan: spiritüel rehberlik, sanat, yazarlık, motivasyon, psikoloji, öğretmenlik. Başkalarına yol gösterme, onları aydınlatma misyonun var. Sıradan işler seni tatmin etmez.",
+ask:"İlişkide derin, ruhsal ve yoğunsun. Partnerinle sadece fiziksel değil, ruhsal bir bağ ararsın. Hassasiyetin hem en güzel yanın hem de en kırılgan noktan. Seni anlayan biri hazinendir.",
+finans:"Para senin önceliğin değil, misyonun önemli. Ama ilham verme yeteneğin, doğru kullanıldığında bolluğu da getirir. Sezgilerine güvendiğinde finansal kararların isabetli olur."},
+
+22:{guc:["Vizyoner","Kurucu","Güçlü","Pratik"],zayif:["Aşırı baskı hisseder","Mükemmeliyetçi","Kendini zorlar"],renk:"Platin",element:"Toprak",gun:"Cumartesi",
+ozet:"Sen bir usta mimarsın. 22 — numerolojinin en güçlü master sayısı, 'Usta İnşaatçı'. 11'in vizyonunu alır, 4'ün pratik gücüyle birleştirir ve hayalleri gerçeğe dönüştürürsün. Dünyada iz bırakmak için doğdun.",
+kariyer:"Büyük ölçekli projeler, kurumlar, hareketler kurmak. Mimarlık, mühendislik, iş dünyası, sosyal girişimcilik. Vizyonunu somut yapılara dönüştürme gücün olağanüstü. Kalıcı eserler bırakırsın.",
+ask:"İlişkide sadık ve koruyucusun ama büyük hedeflerin bazen aşkı geri plana atabilir. Vizyonunu paylaşan, seni destekleyen bir partner seni tamamlar. Birlikte büyük şeyler inşa edebileceğin biri.",
+finans:"Finansal olarak büyük düşünür, büyük inşa edersin. Para senin için vizyonunu gerçekleştirme aracı. Doğru kullanıldığında muazzam bir bolluk yaratma kapasiten var."},
+
+33:{guc:["Şifacı","Öğretmen","Sevgi dolu","Fedakar"],zayif:["Kendini feda eder","Aşırı sorumluluk","Yük taşır"],renk:"Beyaz",element:"Su",gun:"Cuma",
+ozet:"Sen bir usta öğretmensin. 33 — en nadir ve en yüksek master sayı, 'Usta Öğretmen'. Koşulsuz sevgi ve evrensel şifa enerjisi taşırsın. Çok az insanın ulaşabildiği bir titreşim seninle. Dünyaya hizmet için buradasın.",
+kariyer:"Şifacılık, öğretmenlik, spiritüel rehberlik, insani hizmet. Bireysel egonu aşıp tüm insanlığa hizmet etme misyonun var. Dokunduğun her hayatı iyileştirme gücün var.",
+ask:"İlişkide koşulsuz sevensin — neredeyse kutsal bir şefkatle. Ama kendini unutacak kadar verme eğilimin var. Seni anlayan, sana da bakan, dengeli bir partner senin için şart.",
+finans:"Para senin için hizmet aracı. Maddi kaygıların ötesinde, anlam ararsın. Cömertliğin sınırsız. Finansal bolluk, genellikle insanlara dokunduğun işlerden, beklemediğin anda gelir."}
 };
 
 const TUTKU_DATA={1:{score:78,tutku:82,yakinlik:71,profil:"Lider & Özgür",desc:"İlişkide de lidersin. Spontane, tutkulu ve bağımsız bir enerji taşırsın. Rutin seni söndürür."},2:{score:72,tutku:68,yakinlik:85,profil:"Derin & Hassas",desc:"Güven olmadan açılmazsın. Yavaş yanar ama bir kez tutuştu mu söndürmek imkânsız."},3:{score:85,tutku:88,yakinlik:79,profil:"Yaratıcı & Ateşli",desc:"Sürprizlere bayılırsın, rutin söndürür. Oyuncu, yaratıcı ve eğlenceli bir enerji."},4:{score:65,tutku:62,yakinlik:78,profil:"Güvenli & Derin",desc:"Güven kurulmadan açılmazsın. Ama kurulduğunda — son derece sadık ve derin."},5:{score:92,tutku:95,yakinlik:74,profil:"Sınır Tanımaz",desc:"En yüksek fiziksel enerji. Çeşitlilik ve macera zorunluluk. Özgürlük her şeyden önce."},6:{score:76,tutku:72,yakinlik:88,profil:"Koşulsuz Veren",desc:"Vermek almaktan önce gelir. Partner memnuniyeti her şey. Şefkatli ve besleyici."},7:{score:68,tutku:65,yakinlik:80,profil:"Zihin Önce Tutuşur",desc:"Entelektüel bağ olmadan duygusal yakınlık boş kalır. Gizemli ve derinlikli."},8:{score:88,tutku:91,yakinlik:77,profil:"Yoğun & Sahiplenici",desc:"Güçlü, yoğun ve sahiplenici. Eşit güçte partner ister. Tutkusu sonsuz."},9:{score:80,tutku:78,yakinlik:90,profil:"Koşulsuz Aşık",desc:"İlişkiyi spiritüel deneyim gibi yaşar. Tam teslimiyet ve koşulsuz sevgi."},11:{score:83,tutku:80,yakinlik:88,profil:"Sezgisel Mistik",desc:"Partnerinin ihtiyaçlarını söylenmeden hisseder. Derin ve spiritüel bir enerji."},22:{score:86,tutku:84,yakinlik:82,profil:"Dönüştürücü",desc:"Sıradan bir ilişki tatmin etmez. Dönüştürücü ve kalıcı bir bağ arar."},33:{score:79,tutku:76,yakinlik:92,profil:"Koşulsuz Sevgi",desc:"İlişkiyi ibadet gibi yaşar. Koşulsuz sevgi ve tam teslimiyet."}};
@@ -658,6 +729,13 @@ function runAnalysis(){
         '<div class="luck-item"><div class="luck-icon">🎨</div><div class="luck-label">Şanslı Renk</div><div class="luck-val">'+mk.renk+'</div></div>'+
         '<div class="luck-item"><div class="luck-icon">🔥</div><div class="luck-label">Element</div><div class="luck-val">'+mk.element+'</div></div>'+
         '<div class="luck-item"><div class="luck-icon">📅</div><div class="luck-label">Şanslı Gün</div><div class="luck-val">'+mk.gun+'</div></div>';
+      document.getElementById('detail-kader').innerHTML=
+        '<div class="detail-item"><div class="detail-head"><span class="di">💼</span> Kariyer & Yetenekler</div><div class="detail-text">'+mk.kariyer+'</div></div>'+
+        '<div class="detail-item"><div class="detail-head"><span class="di">💗</span> Aşk & İlişkiler</div><div class="detail-text">'+mk.ask+'</div></div>'+
+        '<div class="detail-item"><div class="detail-head"><span class="di">💰</span> Finansal Yaklaşım</div><div class="detail-text">'+mk.finans+'</div></div>'+
+        '<div class="detail-item"><div class="detail-head"><span class="di">⚡</span> Güçlü Yanların</div><div class="detail-text">'+mk.guc.join(' · ')+'</div></div>';
+      document.getElementById('zayif-kader').innerHTML=
+        '<div class="zayif-head">⚠ Dikkat Etmen Gereken Yönler</div><div class="zayif-tags">'+mk.zayif.map(z=>'<span class="zayif-tag">'+z+'</span>').join('')+'</div>';
     }
     setPbar('p-kader',(kader/11)*100);
 
@@ -687,7 +765,12 @@ function runAnalysis(){
       <div class="lib-item"><div class="lib-val">${lib.yakinlik}</div><div class="lib-label">Yakınlık</div></div>`;
     document.getElementById('t-cinsel').textContent=lib.profil;
     document.getElementById('d-cinsel').textContent=lib.desc;
-    document.getElementById('d-libido').textContent='Sayıların aşk enerjisi haritası kader sayına göre hesaplanmıştır.';
+    document.getElementById('d-libido').textContent='Aşk enerjin, kader sayının titreşimine göre hesaplandı. Aşağıda tutku, yakınlık ve genel uyum potansiyelin yer alıyor.';
+    // Tutku & yakınlık skorları
+    document.getElementById('lib-row').innerHTML=
+      '<div class="lib-item"><div class="lib-val">'+lib.score+'</div><div class="lib-label">Genel Uyum</div></div>'+
+      '<div class="lib-item"><div class="lib-val">'+lib.tutku+'</div><div class="lib-label">Tutku Enerjisi</div></div>'+
+      '<div class="lib-item"><div class="lib-val">'+lib.yakinlik+'</div><div class="lib-label">Yakınlık & Bağ</div></div>';
     setPbar('p-cinsel',lib.score);
     setRing('ring-c','rn-c',lib.score,100);
 
