@@ -757,12 +757,8 @@ function runAnalysis(){
     document.getElementById('d-ifade').textContent=DESCS[ifade]?.i||'';
     setPbar('p-ifade',(ifade/11)*100);
 
-    // Libido
-    const lib=TUTKU_DATA[kader]||LIBIDO[9];
-    document.getElementById('libido-row').innerHTML=`
-      <div class="lib-item"><div class="lib-val">${lib.score}</div><div class="lib-label">Tutku Skoru</div></div>
-      <div class="lib-item"><div class="lib-val">${lib.tutku}</div><div class="lib-label">Tutku</div></div>
-      <div class="lib-item"><div class="lib-val">${lib.yakinlik}</div><div class="lib-label">Yakınlık</div></div>`;
+    // Ask enerjisi (Tutku)
+    const lib=TUTKU_DATA[kader]||TUTKU_DATA[9];
     document.getElementById('t-cinsel').textContent=lib.profil;
     document.getElementById('d-cinsel').textContent=lib.desc;
     document.getElementById('d-libido').textContent='Aşk enerjin, kader sayının titreşimine göre hesaplandı. Aşağıda tutku, yakınlık ve genel uyum potansiyelin yer alıyor.';
