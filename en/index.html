@@ -710,7 +710,6 @@ function runAnalysis(){
     // Kader
     document.getElementById('n-kader').textContent=kader;
     document.getElementById('t-kader').textContent=TITLES[kader]||'';
-    document.getElementById('d-kader')&&(document.getElementById('d-kader').textContent='');
     const mk=META[kader];
     if(mk){
       document.getElementById('guc-kader').innerHTML=mk.guc.map(g=>'<span class="guc-tag">'+g+'</span>').join('');
@@ -747,12 +746,8 @@ function runAnalysis(){
     document.getElementById('d-ifade').textContent=DESCS[ifade]?.i||'';
     setPbar('p-ifade',(ifade/11)*100);
 
-    // Libido
-    const lib=TUTKU_DATA[kader]||LIBIDO[9];
-    document.getElementById('libido-row').innerHTML=`
-      <div class="lib-item"><div class="lib-val">${lib.score}</div><div class="lib-label">Tutku Skoru</div></div>
-      <div class="lib-item"><div class="lib-val">${lib.tutku}</div><div class="lib-label">Tutku</div></div>
-      <div class="lib-item"><div class="lib-val">${lib.yakinlik}</div><div class="lib-label">Intimacy</div></div>`;
+    // Love energy (Passion)
+    const lib=TUTKU_DATA[kader]||TUTKU_DATA[9];
     document.getElementById('t-cinsel').textContent=lib.profil;
     document.getElementById('d-cinsel').textContent=lib.desc;
     document.getElementById('d-libido').textContent='Your love energy is calculated based on your life path number vibration. Below are your passion, intimacy and overall compatibility potential.';
@@ -841,6 +836,7 @@ function reset(){
 /* ── PARTİKELLER ── */
 (function(){
   const c=document.getElementById('particles');
+  if(!c)return;
   for(let i=0;i<80;i++){
     const p=document.createElement('div');p.className='pt';
     const sz=Math.random()*2+1;
