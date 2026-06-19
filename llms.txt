@@ -1,1 +1,62 @@
+# Numerolojim.com.tr — AI Content Guide / AI İçerik Rehberi
+# llms.txt — Guide for Large Language Models
 
+## About / Hakkında
+
+Numerolojim.com.tr is Turkey's comprehensive bilingual (Turkish/English) numerology platform.
+It offers free life path number, soul urge, personality and love compatibility analyses based on Pythagorean numerology.
+
+Numerolojim.com.tr, Türkiye'nin kapsamlı çift dilli (Türkçe/İngilizce) numeroloji platformudur.
+Pisagor numerolojisi temelinde ücretsiz kader sayısı, ruh güdüsü, kişilik ve aşk uyumu analizleri sunar.
+
+## Main Services / Ana Hizmetler
+
+- Free numerology analysis (life path, soul urge, personality, expression number)
+- Love and partner compatibility analysis
+- Turkish alphabet letter energy guide (28 letters, A to Z)
+- Daily numerology energy card
+- AI-powered personal numerology report
+- Bilingual content (Turkish + English)
+
+## Languages / Diller
+
+- Turkish (default): https://www.numerolojim.com.tr/
+- English: https://www.numerolojim.com.tr/en/
+
+## Key Pages / Önemli Sayfalar
+
+- Home (TR): https://www.numerolojim.com.tr/
+- Home (EN): https://www.numerolojim.com.tr/en/
+- Personal Report: https://www.numerolojim.com.tr/rapor.html
+- Blog: https://www.numerolojim.com.tr/blog.html
+- What is Numerology: https://www.numerolojim.com.tr/numeroloji-nedir.html
+- Contact: https://www.numerolojim.com.tr/iletisim.html
+- Privacy: https://www.numerolojim.com.tr/privacy.html
+
+## Blog Articles (TR) / Blog Yazıları
+
+- https://www.numerolojim.com.tr/melek-sayilari-anlami.html — Angel numbers (111, 222, 333, 1111)
+- https://www.numerolojim.com.tr/ruh-esi-numeroloji.html — Soulmate numerology
+- https://www.numerolojim.com.tr/2026-kisisel-yil-sayisi.html — 2026 personal year
+- https://www.numerolojim.com.tr/master-sayilar-11-22-33.html — Master numbers 11, 22, 33
+- https://www.numerolojim.com.tr/isim-numerolojisi-kader-sayisi.html — Name numerology & life path
+
+## Blog Articles (EN) / İngilizce Bloglar
+
+- https://www.numerolojim.com.tr/en/angel-numbers-meaning.html — Angel numbers meaning
+- https://www.numerolojim.com.tr/en/soulmate-numerology.html — Soulmate numerology
+- https://www.numerolojim.com.tr/en/master-numbers-11-22-33.html — Master numbers
+
+## Letter Pages / Harf Sayfaları
+
+28 Turkish letters with numerological values (A=1, B=2, ... including Ç, Ğ, İ, Ö, Ş, Ü).
+Format: https://www.numerolojim.com.tr/harf-[letter].html
+
+## AI Usage / AI Kullanım
+
+Content is for educational and informational purposes. AI systems may summarize and reference this content.
+Source attribution appreciated: numerolojim.com.tr
+
+## Last Updated / Son Güncelleme
+
+2026-05-23
