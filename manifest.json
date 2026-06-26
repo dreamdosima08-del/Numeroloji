@@ -1,74 +1,81 @@
 {
+  "id": "/",
   "name": "Numerolojim - Kader Sayısı Analizi",
   "short_name": "Numerolojim",
-  "description": "Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve çakra analizinizi ücretsiz öğrenin.",
+  "description": "Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve aşk uyumunuzu ücretsiz öğrenin. Pisagor numerolojisi ile kişisel analiz.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#07071A",
   "theme_color": "#D4A843",
   "orientation": "portrait",
   "lang": "tr",
-  "scope": "/",
+  "dir": "ltr",
   "categories": [
     "lifestyle",
+    "entertainment",
     "education"
   ],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshots/screen1.png",
-      "sizes": "1080x1920",
-      "type": "image/png",
-      "form_factor": "narrow"
+      "purpose": "any"
     },
     {
-      "src": "/screenshots/screen2.png",
-      "sizes": "1080x1920",
+      "src": "/icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "form_factor": "narrow"
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "shortcuts": [
@@ -80,19 +87,8 @@
       "icons": [
         {
           "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Günlük Enerji",
-      "short_name": "Bugün",
-      "description": "Bugünün numeroloji enerjisi",
-      "url": "/?shortcut=gunluk",
-      "icons": [
-        {
-          "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
+          "sizes": "96x96",
+          "type": "image/png"
         }
       ]
     },
@@ -104,9 +100,33 @@
       "icons": [
         {
           "src": "/icons/icon-96x96.png",
-          "sizes": "96x96"
+          "sizes": "96x96",
+          "type": "image/png"
         }
       ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/screen1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Numeroloji Analizi"
+    },
+    {
+      "src": "/screenshots/screen2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Kişisel Rapor"
+    },
+    {
+      "src": "/screenshots/screen-wide.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Numerolojim"
     }
   ]
 }
