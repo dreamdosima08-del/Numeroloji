@@ -1,0 +1,4 @@
+# ads.txt — Numerolojim.com.tr
+# Google AdSense onayı sonrasında, pub-XXXXXXXXXXXXXXXX kısmını
+# kendi yayıncı kimliğinizle değiştirin.
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
