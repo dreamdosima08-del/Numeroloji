@@ -300,6 +300,11 @@ footer a:hover{color:var(--gold)}
 .zayif-head{font-family:var(--ff);font-size:10px;letter-spacing:.1em;color:var(--coral);margin-bottom:8px;opacity:.85}
 .zayif-tags{display:flex;flex-wrap:wrap;gap:6px}
 .zayif-tag{font-size:11px;color:var(--text2);background:rgba(255,107,107,.07);border:1px solid rgba(255,107,107,.15);border-radius:14px;padding:3px 11px}
+
+.hero-h1{max-width:640px;margin:0 auto 24px;text-align:center;padding:0 16px}
+.hero-h1 h1{font-family:var(--ff);font-size:23px;line-height:1.35;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;font-weight:600}
+.hero-h1-sub{font-size:13.5px;color:var(--text2);line-height:1.75}
+@media(max-width:560px){.hero-h1 h1{font-size:19px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu.","inLanguage":"tr"}
@@ -330,6 +335,10 @@ footer a:hover{color:var(--gold)}
   <span class="logo">✦ NUMEROLOJİM</span>
   <div class="logo-sub">sayıların gizemi</div>
 </header>
+<div class="hero-h1">
+  <h1>Numeroloji Hesaplama: Kader Sayısı & Yaşam Yolu Analizi</h1>
+  <p class="hero-h1-sub">İsminden ve doğum tarihinden <strong>kader sayını</strong>, <strong>yaşam yolu sayını</strong>, ruh güdünü ve aşk uyumunu ücretsiz hesapla. Master sayılar (11, 22, 33) dahil kişisel numeroloji analizin 30 saniyede hazır.</p>
+</div>
 
 <!-- FORM -->
 <div class="form-wrap">
@@ -827,7 +836,7 @@ function downloadPDF(){
   if(!w){alert('Lütfen pop-up izni verin.');return;}
   let h='<'+'!DOCTYPE html><html lang=tr><he'+'ad><meta charset=UTF-8><title>Numeroloji Raporu</title>';
   h+='<style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;color:#222;padding:20px}h1{color:#8B4A0A;font-size:22px}.b{display:inline-block;border:1px solid #ddd;border-radius:8px;padding:16px;margin:8px;text-align:center;min-width:110px}.l{font-size:11px;color:#888;text-transform:uppercase}.n{font-size:32px;font-weight:bold;color:#8B4A0A}.f{margin-top:30px;font-size:10px;color:#aaa}</style>';
-  h+='<h1>'+r.fn+' — Numeroloji Raporu</h1>';
+  h+='<h2>'+r.fn+' — Numeroloji Raporu</h2>';
   h+='<div class=b><div class=l>Kader</div><div class=n>'+r.kader+'</div></div>';
   h+='<div class=b><div class=l>Ruh Gudusu</div><div class=n>'+r.ruh+'</div></div>';
   h+='<div class=b><div class=l>Kisilik</div><div class=n>'+r.kisilik+'</div></div>';
