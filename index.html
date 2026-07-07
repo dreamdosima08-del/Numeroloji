@@ -155,6 +155,7 @@ header{text-align:center;padding:40px 16px 32px}
 .sbtn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A;box-shadow:0 4px 16px rgba(212,168,67,.3)}
 .sbtn-coral{background:rgba(255,107,107,.12);color:var(--coral);border:1px solid rgba(255,107,107,.25)}
 .sbtn-wa{background:rgba(37,211,102,.1);color:#25D366;border:1px solid rgba(37,211,102,.2)}
+.sbtn-violet{background:linear-gradient(135deg,#8B5CF6,#A78BFA);color:#fff}
 .sbtn:hover{transform:translateY(-1px)}
 
 /* ── CARDS ── */
@@ -341,6 +342,7 @@ footer a:hover{color:var(--gold)}
 </div>
 
 <!-- FORM -->
+<div id="pDailyWrap"></div>
 <div class="form-wrap">
   <div class="form-card">
     <div class="fc-label">✦ Kişisel Numeroloji Analizin ✦</div>
@@ -389,6 +391,7 @@ footer a:hover{color:var(--gold)}
   </div>
   <div class="share-row">
     <button class="sbtn sbtn-gold" onclick="shareResult()">✦ Paylaş</button>
+    <button class="sbtn sbtn-violet" onclick="makeCard()">🖼 Kart Oluştur</button>
     <button class="sbtn sbtn-coral" onclick="downloadPDF()">⬇ PDF</button>
     <button class="sbtn sbtn-wa" onclick="shareWA()">WhatsApp</button>
   </div>
@@ -548,6 +551,19 @@ footer a:hover{color:var(--gold)}
   <p style="font-size:13px;color:var(--text2);margin-bottom:16px;">Her kader sayısının detaylı analizi — kişilik, aşk, kariyer ve uyum.</p>
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px;">
     <a href="/kader-sayisi-1.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 1</a><a href="/kader-sayisi-2.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 2</a><a href="/kader-sayisi-3.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 3</a><a href="/kader-sayisi-4.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 4</a><a href="/kader-sayisi-5.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 5</a><a href="/kader-sayisi-6.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 6</a><a href="/kader-sayisi-7.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 7</a><a href="/kader-sayisi-8.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 8</a><a href="/kader-sayisi-9.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 9</a><a href="/kader-sayisi-11.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 11</a><a href="/kader-sayisi-22.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 22</a><a href="/kader-sayisi-33.html" style="display:inline-block;padding:10px 18px;background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;color:var(--gold2);text-decoration:none;font-size:13px;margin:4px;">Kader Sayısı 33</a>
+  </div>
+</div>
+
+
+<!-- KART MODAL -->
+<div id="cardModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(5,5,20,.92);backdrop-filter:blur(8px);overflow-y:auto;padding:20px;">
+  <div style="max-width:400px;margin:20px auto;text-align:center;">
+    <canvas id="cardCanvas" width="1080" height="1920" style="width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(212,168,67,.3);"></canvas>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;">
+      <button onclick="downloadCard()" style="padding:14px 26px;background:linear-gradient(135deg,#D4A843,#F0C860);color:#07071A;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.1em;border:none;border-radius:10px;cursor:pointer;">⬇ İndir</button>
+      <button onclick="shareCard()" style="padding:14px 26px;background:linear-gradient(135deg,#8B5CF6,#A78BFA);color:#fff;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.1em;border:none;border-radius:10px;cursor:pointer;">✦ Paylaş</button>
+      <button onclick="document.getElementById('cardModal').style.display='none'" style="padding:14px 26px;background:rgba(255,255,255,.08);color:var(--text2);font-family:var(--ff);font-size:12px;border:1px solid var(--border2);border-radius:10px;cursor:pointer;">Kapat</button>
+    </div>
   </div>
 </div>
 
@@ -819,7 +835,7 @@ function runAnalysis(){
     document.getElementById('d-yil').textContent=yil_enerji(kisiselYil);
 
     window.scrollTo({top:0,behavior:'smooth'});
-    window._result={fn,kader,ruh,kisilik,ifade};
+    window._result={fn,kader,ruh,kisilik,ifade,title:TITLES[kader]||'',guc:(META[kader]||{}).guc||[],ozet:(META[kader]||{}).ozet||''};
   },1800);
 }
 
@@ -957,6 +973,211 @@ if('serviceWorker' in navigator){
 !function(){if(!localStorage.getItem('ck')){setTimeout(function(){var e=document.getElementById('ckb');e&&e.classList.add('on')},1200)}}();
 function ckOk(){localStorage.setItem('ck','1');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)')}
 function ckNo(){localStorage.setItem('ck','0');var e=document.getElementById('ckb');e&&(e.style.transform='translateY(110%)')}
+</script>
+
+<script>
+/* ── PAYLAŞILABILIR KART ── */
+function makeCard(){
+  var r=window._result;
+  if(!r){alert('Önce analiz yap!');return;}
+  var cv=document.getElementById('cardCanvas');
+  var x=cv.getContext('2d');
+  var W=1080,H=1920;
+  /* Arka plan gradient */
+  var g=x.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#0a0825');g.addColorStop(.5,'#141033');g.addColorStop(1,'#1a0f3d');
+  x.fillStyle=g;x.fillRect(0,0,W,H);
+  /* Yıldızlar */
+  for(var i=0;i<120;i++){
+    x.fillStyle='rgba(255,255,255,'+(Math.random()*.5+.1)+')';
+    var sz=Math.random()*2.5+.5;
+    x.beginPath();x.arc(Math.random()*W,Math.random()*H,sz,0,7);x.fill();
+  }
+  /* Altın çember */
+  x.strokeStyle='rgba(212,168,67,.4)';x.lineWidth=3;
+  x.beginPath();x.arc(W/2,560,300,0,7);x.stroke();
+  x.strokeStyle='rgba(212,168,67,.15)';x.lineWidth=1;
+  x.beginPath();x.arc(W/2,560,340,0,7);x.stroke();
+  /* Üst yazı */
+  x.textAlign='center';
+  x.fillStyle='#B8B4D0';x.font='300 34px Montserrat,sans-serif';
+  x.fillText('✦ KİŞİSEL NUMEROLOJİ ANALİZİ ✦',W/2,180);
+  /* Büyük sayı */
+  var grad=x.createLinearGradient(W/2-150,400,W/2+150,700);
+  grad.addColorStop(0,'#D4A843');grad.addColorStop(.5,'#F0C860');grad.addColorStop(1,'#FF6B6B');
+  x.fillStyle=grad;x.font='700 300px Cinzel,serif';
+  x.fillText(r.kader,W/2,670);
+  /* Başlık */
+  x.fillStyle='#F0C860';x.font='600 58px Cinzel,serif';
+  x.fillText(r.title||'',W/2,940);
+  /* Kader Sayısı etiketi */
+  x.fillStyle='#6B6890';x.font='400 30px Montserrat,sans-serif';
+  x.fillText('KADER SAYISI',W/2,1010);
+  /* İsim */
+  x.fillStyle='#F0EEF8';x.font='500 52px Montserrat,sans-serif';
+  x.fillText(r.fn||'',W/2,1130);
+  /* Güç etiketleri */
+  if(r.guc&&r.guc.length){
+    x.font='400 34px Montserrat,sans-serif';
+    x.fillStyle='#D4A843';
+    x.fillText(r.guc.join('  ·  '),W/2,1230);
+  }
+  /* Alt çizgi */
+  x.strokeStyle='rgba(212,168,67,.3)';x.lineWidth=2;
+  x.beginPath();x.moveTo(W/2-200,1320);x.lineTo(W/2+200,1320);x.stroke();
+  /* Özet (kısa, sarmalayarak) */
+  if(r.ozet){
+    x.fillStyle='#B8B4D0';x.font='italic 300 32px Montserrat,sans-serif';
+    var words=r.ozet.split(' ');var line='';var y=1410;var maxW=860;
+    for(var w=0;w<words.length&&y<1650;w++){
+      var test=line+words[w]+' ';
+      if(x.measureText(test).width>maxW){x.fillText(line.trim(),W/2,y);line=words[w]+' ';y+=48;}
+      else line=test;
+    }
+    if(y<1650&&line.trim())x.fillText(line.trim(),W/2,y);
+  }
+  /* Alt marka */
+  x.fillStyle='#D4A843';x.font='600 40px Cinzel,serif';
+  x.fillText('✦ numerolojim.com.tr',W/2,1790);
+  x.fillStyle='#6B6890';x.font='300 26px Montserrat,sans-serif';
+  x.fillText('Ücretsiz kader sayısı analizi',W/2,1845);
+  document.getElementById('cardModal').style.display='block';
+}
+function downloadCard(){
+  var cv=document.getElementById('cardCanvas');
+  var a=document.createElement('a');
+  a.download='numeroloji-kartim.png';
+  a.href=cv.toDataURL('image/png');
+  a.click();
+}
+function shareCard(){
+  var cv=document.getElementById('cardCanvas');
+  cv.toBlob(function(blob){
+    var file=new File([blob],'numeroloji-kartim.png',{type:'image/png'});
+    if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:'Numeroloji Analizim',text:'Kader sayımı öğrendim! Sen de dene: numerolojim.com.tr'});
+    }else{downloadCard();}
+  });
+}
+/* ── ALTIN KONFETİ ── */
+function goldConfetti(){
+  var cv=document.createElement('canvas');
+  cv.style.cssText='position:fixed;inset:0;z-index:150;pointer-events:none';
+  cv.width=innerWidth;cv.height=innerHeight;
+  document.body.appendChild(cv);
+  var x=cv.getContext('2d');
+  var parts=[];
+  var colors=['#D4A843','#F0C860','#FF6B6B','#8B5CF6','#FFFFFF'];
+  for(var i=0;i<80;i++){
+    parts.push({x:innerWidth/2,y:innerHeight*0.35,
+      vx:(Math.random()-.5)*14,vy:Math.random()*-12-4,
+      sz:Math.random()*7+3,c:colors[Math.floor(Math.random()*colors.length)],
+      rot:Math.random()*6,vr:(Math.random()-.5)*.3,life:1});
+  }
+  function tick(){
+    x.clearRect(0,0,cv.width,cv.height);
+    var alive=false;
+    for(var i=0;i<parts.length;i++){
+      var p=parts[i];
+      p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.rot+=p.vr;p.life-=.012;
+      if(p.life>0&&p.y<cv.height){
+        alive=true;
+        x.save();x.translate(p.x,p.y);x.rotate(p.rot);
+        x.globalAlpha=Math.max(p.life,0);
+        x.fillStyle=p.c;x.fillRect(-p.sz/2,-p.sz/2,p.sz,p.sz);
+        x.restore();
+      }
+    }
+    if(alive)requestAnimationFrame(tick);
+    else cv.remove();
+  }
+  tick();
+}
+/* Sonuç açılınca konfeti tetikle — mevcut runAnalysis'i sarmala */
+(function(){
+  var orig=window.runAnalysis;
+  if(typeof orig==='function'){
+    window.runAnalysis=function(){
+      orig.apply(this,arguments);
+      setTimeout(function(){
+        var res=document.getElementById('results');
+        if(res&&res.style.display!=='none')goldConfetti();
+      },2100);
+    };
+  }
+})();
+</script>
+
+<script>
+/* ── KİŞİSEL GÜNLÜK ENERJİ SİSTEMİ ── */
+var PDAY={
+1:{b:"Başlangıç Günü",t:"Bugün senin için yeni kapılar açılıyor. Ertelediğin o adımı atmak, yeni bir şeye başlamak için evren seninle. Cesur ol — bugün liderlik enerjin zirvede.",o:"Ben yeni başlangıçlar için hazırım. Gücüm içimde.",s:1,r:"Kırmızı"},
+2:{b:"Uyum Günü",t:"Bugün ilişkiler ve işbirliği ön planda. Birine kulak ver, bir köprü kur. Sezgilerin bugün çok güçlü — içinden gelen sese güven.",o:"Sabırla dinliyorum, sevgiyle bağ kuruyorum.",s:2,r:"Turuncu"},
+3:{b:"Yaratıcılık Günü",t:"Bugün ifade ve neşe günün. İçindeki sanatçıya izin ver — yaz, konuş, paylaş. Sosyal enerjin bugün insanları sana çekiyor.",o:"Yaratıcılığım özgürce akıyor. Işığımı paylaşıyorum.",s:3,r:"Sarı"},
+4:{b:"İnşa Günü",t:"Bugün düzen ve emek günü. Planını yap, temelini at. Bugün attığın sağlam adımlar, yarının kalıcı başarısı olacak.",o:"Adım adım, sabırla inşa ediyorum.",s:4,r:"Yeşil"},
+5:{b:"Değişim Günü",t:"Bugün rutini kır! Beklenmedik fırsatlar ve yeni deneyimler kapıda. Esnek ol, akışa güven — macera seni çağırıyor.",o:"Değişimi kucaklıyorum. Özgürlüğüm bana güç veriyor.",s:5,r:"Mavi"},
+6:{b:"Sevgi Günü",t:"Bugün kalbinin günü. Sevdiklerine zaman ayır, evine ve kendine şefkat göster. Bugün verdiğin sevgi, katlanarak sana dönecek.",o:"Sevgi veriyorum, sevgi alıyorum. Kalbim huzurlu.",s:6,r:"Pembe"},
+7:{b:"İçe Dönüş Günü",t:"Bugün sessizliğin ve bilgeliğin günü. Kalabalıktan biraz uzaklaş, kendi iç sesini dinle. Aradığın cevap dışarıda değil, içinde.",o:"Sessizlikte cevaplarımı buluyorum. Sezgime güveniyorum.",s:7,r:"Mor"},
+8:{b:"Güç Günü",t:"Bugün başarı ve bolluk enerjisi seninle. Büyük kararlar için güçlü bir gün — harekete geç, hedefine kilitlen. Evren cesaretini ödüllendiriyor.",o:"Bolluğu hak ediyorum. Gücümle hedeflerime ulaşıyorum.",s:8,r:"Lacivert"},
+9:{b:"Tamamlanma Günü",t:"Bugün bırakma ve tamamlama günü. Sana ağır gelen bir şeyi geride bırak. Her kapanan kapı, yarınki yeni başlangıcın habercisi.",o:"Geçmişi şükranla bırakıyorum. Yeniye alan açıyorum.",s:9,r:"Altın"}
+};
+function pdayCalc(bd,bm){
+  var n=new Date();
+  var sum=bd+bm+(n.getDate())+(n.getMonth()+1)+n.getFullYear();
+  while(sum>9){sum=String(sum).split('').reduce(function(a,b){return a+parseInt(b)},0);}
+  return sum;
+}
+function showPersonalDaily(){
+  try{
+    var d=JSON.parse(localStorage.getItem('nmj_user')||'null');
+    if(!d||!d.fn)return;
+    var pd=pdayCalc(d.bd,d.bm);
+    var info=PDAY[pd];
+    var firstName=d.fn.split(' ')[0];
+    var gunler=['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+    var aylar=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+    var n=new Date();
+    var tarih=n.getDate()+' '+aylar[n.getMonth()]+' '+gunler[n.getDay()];
+    document.getElementById('pDailyWrap').innerHTML=
+    '<div style="max-width:520px;margin:0 auto 34px;background:linear-gradient(160deg,rgba(20,16,46,.98),rgba(28,20,58,.96));border:1px solid rgba(212,168,67,.3);border-radius:18px;padding:26px 24px;text-align:center;box-shadow:0 0 40px rgba(212,168,67,.12);">'+
+      '<div style="font-family:var(--ff);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;">'+tarih+'</div>'+
+      '<div style="font-family:var(--ff);font-size:17px;color:var(--gold2);margin-bottom:14px;">✦ Merhaba '+firstName+' ✦</div>'+
+      '<div style="display:inline-flex;align-items:center;gap:14px;margin-bottom:14px;">'+
+        '<span style="font-family:var(--ff);font-size:46px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">'+pd+'</span>'+
+        '<span style="text-align:left;"><div style="font-family:var(--ff);font-size:14px;color:var(--gold);">'+info.b+'</div><div style="font-size:10px;color:var(--text3);letter-spacing:.1em;">KİŞİSEL GÜN SAYIN</div></span>'+
+      '</div>'+
+      '<p style="font-size:13.5px;color:var(--text2);line-height:1.8;margin-bottom:14px;">'+info.t+'</p>'+
+      '<div style="background:rgba(212,168,67,.06);border-left:2px solid var(--gold);border-radius:0 10px 10px 0;padding:12px 16px;margin-bottom:14px;text-align:left;">'+
+        '<div style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">✨ Günün Olumlaması</div>'+
+        '<div style="font-size:13px;color:var(--text);font-style:italic;line-height:1.6;">"'+info.o+'"</div>'+
+      '</div>'+
+      '<div style="display:flex;justify-content:center;gap:20px;font-size:12px;color:var(--text2);">'+
+        '<span>🔢 Şanslı Sayı: <strong style="color:var(--gold2);">'+info.s+'</strong></span>'+
+        '<span>🎨 Günün Rengi: <strong style="color:var(--gold2);">'+info.r+'</strong></span>'+
+      '</div>'+
+    '</div>';
+  }catch(e){}
+}
+/* Analiz yapılınca kullanıcıyı kaydet */
+(function(){
+  var orig=window.runAnalysis;
+  if(typeof orig==='function'){
+    window.runAnalysis=function(){
+      orig.apply(this,arguments);
+      try{
+        var fn=document.getElementById('fn').value.trim();
+        var bd=parseInt(document.getElementById('bd').value);
+        var bm=parseInt(document.getElementById('bm').value);
+        var by=parseInt(document.getElementById('by').value);
+        if(fn&&bd&&bm&&by){
+          localStorage.setItem('nmj_user',JSON.stringify({fn:fn,bd:bd,bm:bm,by:by}));
+        }
+      }catch(e){}
+    };
+  }
+})();
+/* Sayfa açılınca göster */
+showPersonalDaily();
 </script>
 
 </body>
