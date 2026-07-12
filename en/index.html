@@ -206,6 +206,22 @@ header{text-align:center;padding:40px 16px 32px}
 .dc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#D4A843 30%,#FF6B6B 60%,#8B5CF6 80%,transparent);opacity:.9;z-index:2}
 .dc-head{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid rgba(255,255,255,.04)}
 .dc-badge{font-family:var(--ff);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,67,.07);border:1px solid rgba(212,168,67,.18);border-radius:20px;padding:5px 13px}
+.dpc{max-width:640px;margin:0 auto;background:linear-gradient(160deg,rgba(20,16,46,.98),rgba(28,20,58,.96));border:1px solid rgba(212,168,67,.28);border-radius:20px;padding:28px 26px;box-shadow:0 0 50px rgba(212,168,67,.1);position:relative;overflow:hidden}
+.dpc::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:radial-gradient(circle,rgba(212,168,67,.12),transparent 70%);pointer-events:none}
+.dpc-date{font-family:var(--ff);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--text3);text-align:center;margin-bottom:4px}
+.dpc-eyebrow{font-family:var(--ff);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:18px}
+.dpc-hero{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px}
+.dpc-num{font-family:var(--ff);font-size:74px;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 20px rgba(212,168,67,.3))}
+.dpc-tt{text-align:left}
+.dpc-title{font-family:var(--ff);font-size:20px;color:var(--gold2);margin-bottom:3px}
+.dpc-sub{font-size:12px;color:var(--text2);line-height:1.5;max-width:280px}
+.dpc-msg{font-size:13.5px;color:var(--text);line-height:1.85;font-style:italic;padding:14px 18px;background:rgba(212,168,67,.05);border-left:2px solid var(--gold);border-radius:0 10px 10px 0;margin:16px 0}
+.dpc-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:18px}
+.dpc-tag{font-family:var(--ff);font-size:9px;letter-spacing:.08em;color:var(--gold2);background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.25);border-radius:16px;padding:4px 12px}
+.dpc-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--border2);padding-top:16px}
+.dpc-calc{font-size:11px;color:var(--text3);font-family:monospace}
+.dpc-btn{display:inline-block;padding:11px 24px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A;font-family:var(--ff);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:10px;text-decoration:none;box-shadow:0 4px 18px rgba(212,168,67,.3)}
+@media(max-width:560px){.dpc-hero{flex-direction:column;gap:8px;text-align:center}.dpc-tt{text-align:center}.dpc-foot{justify-content:center}}
 .dc-date{text-align:right}
 .dc-day{font-size:10px;color:var(--text3)}
 .dc-full{font-family:var(--ff);font-size:10px;color:var(--gold);opacity:.6;margin-top:2px}
@@ -898,34 +914,23 @@ function buildDailyCard(){
   if(sum!==num){const d2=String(sum).split('').map(Number);calcStr+=' → '+d2.join('+')+' = <span style="color:#A78BFA;font-weight:600">'+num+'</span>';}
   else{calcStr=calcStr.replace(String(sum),'<span style="color:#A78BFA;font-weight:600">'+sum+'</span>');}
   const tagsHtml=data.tags.map(t=>`<span class="dc-tag">${t}</span>`).join('');
+  const tagsP=data.tags.map(t=>`<span class="dpc-tag">${t}</span>`).join('');
   document.getElementById('dailyCard').innerHTML=`
-  <div class="daily-outer">
-    <div class="daily-card">
-      <div class="dc-header">
-        <span class="dc-badge">✦ Today's Energy</span>
-        <div class="dc-date">
-          <div class="dc-day">${dayStr}</div>
-          <div class="dc-full">${dateStr}</div>
-        </div>
+  <div class="dpc">
+    <div class="dpc-date">${dayStr} · ${dateStr}</div>
+    <div class="dpc-eyebrow">✦ Number of the Day ✦</div>
+    <div class="dpc-hero">
+      <div class="dpc-num">${num}</div>
+      <div class="dpc-tt">
+        <div class="dpc-title">${data.title}</div>
+        <div class="dpc-sub">${data.subtitle}</div>
       </div>
-      <div class="dc-body">
-        <div class="dc-hero">
-          <div class="dc-num-ring" style="background:${data.color}15;">
-            <div class="dc-num" style="background:linear-gradient(135deg,${data.color},${data.color}bb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">${num}</div>
-          </div>
-          <div class="dc-info">
-            <div class="dc-energy-lbl">✦ Number of the Day</div>
-            <div class="dc-title">${data.title}</div>
-            <div class="dc-subtitle">${data.subtitle}</div>
-          </div>
-        </div>
-        <div class="dc-message">${data.message}</div>
-        <div class="dc-tags">${tagsHtml}</div>
-      </div>
-      <div class="dc-footer">
-        <div class="dc-calc">${calcStr}</div>
-        <a href="../rapor.html" class="dc-btn">✦ Raporun →</a>
-      </div>
+    </div>
+    <div class="dpc-msg">${data.message}</div>
+    <div class="dpc-tags">${tagsP}</div>
+    <div class="dpc-foot">
+      <div class="dpc-calc">${calcStr}</div>
+      <a href="../rapor.html" class="dpc-btn">✦ Your Report →</a>
     </div>
   </div>`;
 }
