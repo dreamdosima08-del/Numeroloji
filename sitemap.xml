@@ -239,4 +239,12 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/kader-sayisi-33.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/life-path-number-33.html"/>
   </url>
+  <url>
+    <loc>https://www.numerolojim.com.tr/en/rapor.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/rapor.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/rapor.html"/>
+  </url>
 </urlset>
