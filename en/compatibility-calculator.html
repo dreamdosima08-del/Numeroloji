@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+<title>Compatibility Calculator | Free Numerology Love Match Test</title>
+<meta name="description" content="Get a free love compatibility analysis based on two people's names and birth dates. Life path number compatibility, relationship potential and detailed insights - results in 30 seconds.">
+<meta name="keywords" content="compatibility calculator, love compatibility test, numerology match, life path compatibility, couple compatibility test, relationship numerology">
+<link rel="canonical" href="https://www.numerolojim.com.tr/en/compatibility-calculator.html">
+<meta name="theme-color" content="#D4A843">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Compatibility Calculator | Numerology Love Test">
+<meta property="og:description" content="Free love compatibility analysis based on two birth dates.">
+<meta property="og:url" content="https://www.numerolojim.com.tr/en/compatibility-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/uyum-hesapla.html">
+<link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/compatibility-calculator.html">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5859270127915377" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does compatibility calculation work?","acceptedAnswer":{"@type":"Answer","text":"Life path numbers are calculated from both people birth dates, and these two numbers numerological compatibility is compared. The result shows the relationship potential strengths and challenges."}},{"@type":"Question","name":"Does life path compatibility show real love potential?","acceptedAnswer":{"@type":"Answer","text":"Life path compatibility is a guide, not a fixed destiny. Real compatibility comes from two people effort to understand and choose each other."}}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07071A;--bg2:#0D0D2B;--bg-card:#0F0F28;--border:rgba(212,168,67,0.25);--border2:rgba(255,255,255,0.06);--gold:#D4A843;--gold2:#F0C860;--coral:#FF6B6B;--violet:#8B5CF6;--text:#F0EEF8;--text2:#B8B4D0;--text3:#6B6890;--ff:'Cinzel',serif;--ffb:'Montserrat',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--ffb);line-height:1.7;overflow-x:hidden}
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.ab{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15}
+.ab:nth-child(1){width:400px;height:400px;background:var(--violet);top:-100px;left:-100px}
+.ab:nth-child(2){width:350px;height:350px;background:var(--coral);bottom:10%;right:-80px}
+.page{position:relative;z-index:1;max-width:600px;margin:0 auto;padding:0 18px 60px}
+nav{display:flex;align-items:center;gap:14px;padding:18px 0;font-size:13px}
+nav a{color:var(--gold2);text-decoration:none;font-family:var(--ff);letter-spacing:.1em}
+.hero{text-align:center;padding:20px 0 30px}
+h1{font-family:var(--ff);font-size:23px;line-height:1.35;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.hero-sub{font-size:13.5px;color:var(--text2);line-height:1.7}
+.form-card{background:linear-gradient(160deg,rgba(20,16,46,.98),rgba(28,20,58,.96));border:1px solid var(--border);border-radius:18px;padding:26px 22px;margin-bottom:24px}
+.person-block{margin-bottom:22px}
+.person-label{font-family:var(--ff);font-size:13px;letter-spacing:.1em;color:var(--gold2);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.p1-dot,.p2-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.p1-dot{background:var(--gold)}
+.p2-dot{background:var(--coral)}
+label{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:6px;margin-top:12px}
+input,select{width:100%;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-family:var(--ffb);font-size:14px}
+input:focus,select:focus{outline:none;border-color:var(--gold)}
+.date-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.btn-main{width:100%;padding:16px;margin-top:24px;background:linear-gradient(135deg,#8B4A0A,var(--gold),var(--gold2));color:#07071A;font-family:var(--ff);font-size:14px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border:none;border-radius:12px;cursor:pointer;box-shadow:0 8px 30px rgba(212,168,67,.35)}
+.err{display:none;background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.3);color:#FF9B9B;padding:10px 14px;border-radius:10px;font-size:12.5px;margin-top:12px}
+.err.show{display:block}
+#results{display:none}
+#results.show{display:block}
+.match-hero{text-align:center;background:linear-gradient(160deg,rgba(20,16,46,.98),rgba(28,20,58,.96));border:1px solid rgba(212,168,67,.3);border-radius:20px;padding:32px 24px;margin-bottom:20px;box-shadow:0 0 50px rgba(212,168,67,.12)}
+.match-names{font-family:var(--ff);font-size:16px;color:var(--text2);margin-bottom:6px}
+.match-names span{color:var(--gold2)}
+.match-nums{display:flex;align-items:center;justify-content:center;gap:16px;margin:18px 0}
+.match-n{font-family:var(--ff);font-size:52px;font-weight:700}
+.match-n.p1{color:var(--gold2)}
+.match-n.p2{color:var(--coral)}
+.match-plus{font-size:24px;color:var(--text3)}
+.match-score-ring{width:160px;height:160px;margin:20px auto;position:relative}
+.match-score-ring svg{transform:rotate(-90deg)}
+.match-score-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.match-score-num .n{font-family:var(--ff);font-size:40px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.match-score-num .l{font-size:9px;letter-spacing:.15em;color:var(--text3);text-transform:uppercase}
+.match-label{font-family:var(--ff);font-size:18px;color:var(--gold2);margin-bottom:8px}
+.section{background:var(--bg-card);border:1px solid var(--border2);border-radius:16px;padding:20px 20px;margin-bottom:14px}
+.section h2{font-family:var(--ff);font-size:15px;color:var(--gold2);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.section p{font-size:13px;color:var(--text2);line-height:1.75}
+.subscore-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:16px 0}
+.subscore{text-align:center;background:rgba(255,255,255,.03);border-radius:12px;padding:14px 8px}
+.subscore .v{font-family:var(--ff);font-size:24px;font-weight:700;color:var(--gold2)}
+.subscore .l{font-size:9px;color:var(--text3);margin-top:4px;letter-spacing:.06em}
+.tips-list{margin-top:10px}
+.tips-list li{font-size:12.5px;color:var(--text2);margin-bottom:8px;padding-left:18px;position:relative}
+.tips-list li::before{content:'✦';position:absolute;left:0;color:var(--gold)}
+.cta-box{background:linear-gradient(160deg,rgba(20,16,46,.98),rgba(28,20,58,.96));border:1px solid rgba(212,168,67,.3);border-radius:18px;padding:26px 22px;text-align:center;margin-top:20px}
+.cta-btn{display:inline-block;padding:14px 30px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#07071A;font-family:var(--ff);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:10px;text-decoration:none;margin-top:10px}
+.btn-reset{width:100%;padding:12px;background:rgba(255,255,255,.05);border:1px solid var(--border2);border-radius:10px;color:var(--text2);font-family:var(--ff);font-size:11px;letter-spacing:.1em;cursor:pointer;margin-bottom:20px}
+.related{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.related a{font-size:12px;color:var(--gold2);background:rgba(212,168,67,.08);border:1px solid var(--border2);border-radius:10px;padding:8px 14px;text-decoration:none}
+footer{text-align:center;padding:30px 0;color:var(--text3);font-size:12px;border-top:1px solid var(--border2);margin-top:20px}
+footer a{color:var(--gold2);text-decoration:none}
+.divider{text-align:center;position:relative;margin:30px 0 18px}
+.divider span{font-family:var(--ff);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);background:var(--bg);padding:0 16px;position:relative;z-index:1}
+.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border2)}
+.seo-text{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="aurora"><div class="ab"></div><div class="ab"></div></div>
+<div class="page">
+<nav>
+  <a href="../">✦ Numerolojim</a>
+  <a href="../en/">Home</a>
+  <a href="../en/">Free Analysis</a>
+</nav>
+
+<div class="hero">
+  <h1>💑 Compatibility Calculator</h1>
+  <p class="hero-sub">Free numerology compatibility analysis based on two names and birth dates. How do your life path numbers speak to each other?</p>
+</div>
+
+<div id="formCard" class="form-card">
+  <div class="person-block">
+    <div class="person-label"><span class="p1-dot"></span> First Person</div>
+    <label>Full Name</label>
+    <input type="text" id="p1Name" placeholder="e.g. John Smith">
+    <label>Birth Date</label>
+    <div class="date-row">
+      <input type="number" id="p1Day" placeholder="Day" min="1" max="31">
+      <input type="number" id="p1Month" placeholder="Month" min="1" max="12">
+      <input type="number" id="p1Year" placeholder="Year" min="1900" max="2020">
+    </div>
+  </div>
+  <div class="person-block">
+    <div class="person-label"><span class="p2-dot"></span> Second Person</div>
+    <label>Full Name</label>
+    <input type="text" id="p2Name" placeholder="e.g. Jane Doe">
+    <label>Birth Date</label>
+    <div class="date-row">
+      <input type="number" id="p2Day" placeholder="Day" min="1" max="31">
+      <input type="number" id="p2Month" placeholder="Month" min="1" max="12">
+      <input type="number" id="p2Year" placeholder="Year" min="1900" max="2020">
+    </div>
+  </div>
+  <div class="err" id="errBox"></div>
+  <button class="btn-main" onclick="calcMatch()">✦ Calculate Our Match ✦</button>
+</div>
+
+<div id="results">
+  <button class="btn-reset" onclick="resetMatch()">← New Calculation</button>
+  <div class="match-hero">
+    <div class="match-names"><span id="rP1Name"></span> & <span id="rP2Name"></span></div>
+    <div class="match-nums">
+      <div class="match-n p1" id="rP1Num">1</div>
+      <div class="match-plus">+</div>
+      <div class="match-n p2" id="rP2Num">1</div>
+    </div>
+    <div class="match-score-ring">
+      <svg width="160" height="160"><circle cx="80" cy="80" r="70" stroke="rgba(255,255,255,.06)" stroke-width="10" fill="none"/><circle id="scoreCircle" cx="80" cy="80" r="70" stroke="url(#grad)" stroke-width="10" fill="none" stroke-linecap="round"/><defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D4A843"/><stop offset="100%" stop-color="#FF6B6B"/></linearGradient></defs></svg>
+      <div class="match-score-num"><div class="n" id="scoreNum">--</div><div class="l">Match Score</div></div>
+    </div>
+    <div class="match-label" id="matchLabel"></div>
+    <p id="matchIntro" style="font-size:13px;color:var(--text2);"></p>
+  </div>
+
+  <div class="subscore-row">
+    <div class="subscore"><div class="v" id="scEmotional">--</div><div class="l">Emotional Match</div></div>
+    <div class="subscore"><div class="v" id="scPassion">--</div><div class="l">Passion Match</div></div>
+    <div class="subscore"><div class="v" id="scComm">--</div><div class="l">Communication Match</div></div>
+  </div>
+
+  <div class="section">
+    <h2>💗 Relationship Dynamic</h2>
+    <p id="dynamicText"></p>
+  </div>
+
+  <div class="section">
+    <h2>⚡ Your Strengths</h2>
+    <ul class="tips-list" id="strengthList"></ul>
+  </div>
+
+  <div class="section">
+    <h2>⚠ Areas to Watch</h2>
+    <ul class="tips-list" id="watchList"></ul>
+  </div>
+
+  <div class="section">
+    <h2>💡 Tips to Strengthen Your Bond</h2>
+    <ul class="tips-list" id="tipsList"></ul>
+  </div>
+
+  <div class="cta-box">
+    <p style="font-size:13px;color:var(--text2);">Discover your own life path number, soul urge and more for free.</p>
+    <a href="/" class="cta-btn">✦ Get My Full Analysis →</a>
+  </div>
+</div>
+
+<div class="divider"><span>✦ About Partner Compatibility ✦</span></div>
+<p class="seo-text">In numerology, partner compatibility is based on the vibrational relationship between two people's life path numbers. Your life path number is found by adding all the digits of your birth date down to a single digit. The compatibility between two life path numbers shows the relationship's potential strengths and challenges - but remember, real compatibility comes not from numbers, but from two people's effort to understand and choose each other.</p>
+
+<div class="related">
+  <a href="soulmate-numerology.html">Find Your Soulmate with Numerology</a>
+  <a href="life-path-number-1.html">Life Path Number 1</a>
+  <a href="life-path-number-7.html">Life Path Number 7</a>
+  <a href="../en/">Do Your Own Analysis</a>
+</div>
+
+<footer>
+  <p>© 2026 Numerolojim.com.tr · <a href="../privacy.html">Privacy</a> · <a href="../iletisim.html">Contact</a></p>
+</footer>
+</div>
+
+<script>
+function reduce(n){while(n>9&&n!==11&&n!==22&&n!==33){n=String(n).split('').reduce((a,b)=>a+parseInt(b),0);}return n;}
+function calcKader(d,m,y){return reduce(d+m+y);}
+
+const TITLES={1:"The Pioneer",2:"The Peacemaker",3:"The Creative",4:"The Master Builder",5:"The Free Spirit",6:"The Nurturer",7:"The Seeker",8:"The Powerhouse",9:"The Humanitarian",11:"The Light Bearer ✦",22:"The Master Architect ✦",33:"The Master Teacher ✦"};
+
+// Uyum matrisi — her sayı çifti için skor (0-100) ve yorum
+const MATCH_MATRIX={
+  "1-1":{s:68,l:"Powerful but Competitive",d:"Two leaders together - you both want to lead. This relationship can be dynamic and passionate, but you need to learn to share leadership.",str:["You are both independent and determined","You understand each other's ambition","You can be a strong team for shared goals"],watch:["Conflict over who decides","Ego battles","Lack of flexibility"]},
+  "1-2":{s:88,l:"Perfect Complement",d:"1's leadership is perfectly balanced by 2's harmony. One gives direction, the other beautifies the path. A classic yet powerful pairing.",str:["You balance each other","2's intuition strengthens 1's decisions","Mutual respect develops naturally"],watch:["1 may sometimes overlook 2's needs","2 may struggle to keep up with 1's pace"]},
+  "1-3":{s:82,l:"Joyful and Dynamic",d:"1's determination meets 3's creativity, creating an energetic relationship. Together you can be both productive and fun.",str:["High energy and motivation","You inspire each other","A vibrant couple in social settings"],watch:["3's scatteredness may frustrate 1's patience","Depth can sometimes stay on the surface"]},
+  "1-4":{s:60,l:"Opposite Poles",d:"1's spontaneity and 4's planning may clash at first. But with patience, you can complement each other's best qualities.",str:["4's stability gives 1 confidence","Together you can build solid foundations"],watch:["1 may get bored, 4 may feel insecure","Mismatch in pace of change"]},
+  "1-5":{s:90,l:"Adventurous Harmony",d:"Two free spirits! 1's leadership and 5's adventurousness feed each other. You can build a great life together without falling into routine.",str:["Limitless energy and excitement","You respect each other's freedom","Never boring"],watch:["You may both struggle with commitment","Risk of lacking stability"]},
+  "1-6":{s:75,l:"Protective Balance",d:"1's strength softens with 6's compassion. 6 offers you a warm home while you bring trust and excitement.",str:["6's compassion softens 1","Mutual protective instinct","Strong family-oriented bond"],watch:["1 may sometimes overlook 6's sacrifices"]},
+  "1-7":{s:65,l:"Mental Distance",d:"You're both independent but in different ways - 1 outward, 7 inward. Deep respect can develop but emotional closeness takes effort.",str:["You respect each other's space","Intellectual stimulation possible"],watch:["Emotional distance can form","Requires communication effort"]},
+  "1-8":{s:85,l:"Union of Power",d:"Two powerful personalities come together. Managed well, this is a magnificent partnership for success; managed poorly, a power struggle.",str:["Shared ambition and goals","You motivate each other","Powerful union both materially and emotionally"],watch:["You may both want to hold control","Competition can seep into the emotional sphere"]},
+  "1-9":{s:80,l:"Inspiring Bond",d:"1's drive to act meets 9's universal vision. Together you can achieve meaningful things.",str:["Shared ideals","9's wisdom deepens 1","An inspiring team"],watch:["1 may sometimes find 9's idealism impractical"]},
+  "2-2":{s:78,l:"Deep Understanding",d:"Two sensitive souls understand each other perfectly. Emotional depth and compassion form this relationship's foundation.",str:["Very high mutual empathy","Silent understanding is possible"],watch:["You may both stay indecisive","Tendency to avoid conflict"]},
+  "2-3":{s:72,l:"Sweet Harmony",d:"2's compassion creates a lovely balance with 3's joy. 3 adds color to your life, you add depth to theirs.",str:["3 makes you laugh, you calm them","Emotional and creative balance"],watch:["3's scatteredness may worry 2"]},
+  "2-4":{s:85,l:"Safe Harbor",d:"2's sensitivity aligns perfectly with 4's reliability. A stable, peaceful relationship potential.",str:["Mutual trust develops easily","Shared values: stability and loyalty"],watch:["You may both resist change"]},
+  "2-5":{s:55,l:"Challenging Balance",d:"2's need for security may strain against 5's desire for freedom. A bridge can be built with effort and understanding.",str:["5 brings you excitement"],watch:["Building trust may take time","Different needs must be balanced"]},
+  "2-6":{s:92,l:"Heart to Heart",d:"One of the most compatible pairings. Two compassionate souls create a deep, nourishing bond of love.",str:["Mutual care and compassion","Family and home-oriented harmony","High emotional security"],watch:["You may both over-sacrifice"]},
+  "2-7":{s:68,l:"Silent Depth",d:"7's introversion can form a special bond with 2's intuition, but open communication is essential.",str:["Deep, quiet understanding is possible"],watch:["7 may seem distant, and 2 may misread this"]},
+  "2-8":{s:70,l:"Supportive Strength",d:"2's support forms a great team with 8's ambition. 2 can be 8's soft spot.",str:["2 supports 8's success","Mutual respect"],watch:["8 may sometimes overlook 2's emotional needs"]},
+  "2-9":{s:90,l:"Universal Love",d:"Two compassionate souls form an unconditional bond of love. You understand each other deeply.",str:["High empathy and understanding","Shared humanitarian values"],watch:["You may both neglect yourselves"]},
+  "3-3":{s:80,l:"Explosion of Joy",d:"Two creative souls together - fun is guaranteed but depth may take effort.",str:["Never boring","Shared creative projects"],watch:["You may both be scattered","Sharing responsibility can be hard"]},
+  "3-4":{s:58,l:"Creative vs Orderly",d:"3's spontaneity may sometimes clash with 4's order. Patience and compromise can create a nice balance.",str:["4 turns 3's dreams into reality"],watch:["Different lifestyles may clash"]},
+  "3-5":{s:88,l:"Free and Creative",d:"3's creativity and 5's adventurousness create amazing energy together. You celebrate life together.",str:["Limitless fun and energy","You never bore each other"],watch:["Stability and depth may be neglected"]},
+  "3-6":{s:80,l:"Warm and Creative",d:"3's joy and 6's compassion can create a lovely family atmosphere.",str:["6 grounds you, you bring them joy"],watch:["6 may sometimes tire of 3's irresponsibility"]},
+  "3-7":{s:62,l:"Interesting Contrast",d:"3's outward nature and 7's inward nature can be interesting yet challenging.",str:["You each offer the other a different world"],watch:["Your communication styles are very different"]},
+  "3-8":{s:65,l:"Creative vs Serious",d:"3's lightness may struggle to balance with 8's seriousness, but can also be complementary.",str:["8's ambition can guide 3"],watch:["8 may find 3 irresponsible"]},
+  "3-9":{s:85,l:"Inspiration and Joy",d:"3's creativity forms a meaningful and joyful bond with 9's universal outlook.",str:["Shared idealism and creativity"],watch:["9 may sometimes find 3 superficial"]},
+  "4-4":{s:82,l:"Solid Foundations",d:"Two reliable souls - a perfect foundation for a stable, long-lasting relationship.",str:["Shared values and goals","Trust is easily built"],watch:["You may both drift from flexibility"]},
+  "4-5":{s:50,l:"Challenging Match",d:"4's order may frequently clash with 5's freedom. Mutual flexibility is essential.",str:["5 can open 4 up to new experiences"],watch:["Fundamental lifestyle differences"]},
+  "4-6":{s:88,l:"Home and Family Harmony",d:"4's stability builds a strong family home with 6's compassion.",str:["Shared priority: a secure home","Mutual sense of responsibility"],watch:["You may both be too serious"]},
+  "4-7":{s:85,l:"Deep Trust",d:"4's practicality forms a quiet but strong bond with 7's wisdom.",str:["Deep mutual respect","High loyalty and trust"],watch:["Emotional expression may be lacking"]},
+  "4-8":{s:70,l:"Hardworking Team",d:"You're both hardworking and goal-oriented - together you can build great achievements.",str:["Shared discipline and determination"],watch:["Work-life balance may be neglected"]},
+  "4-9":{s:60,l:"Practical vs Idealist",d:"4's concreteness may sometimes disagree with 9's idealism.",str:["9 can broaden 4's horizons"],watch:["Different priorities need balancing"]},
+  "5-5":{s:75,l:"Double Freedom",d:"Two free spirits - excitement guaranteed, but stability requires mutual effort.",str:["Limitless adventure and discovery"],watch:["You may both struggle to commit"]},
+  "5-6":{s:65,l:"Freedom vs Security",d:"5's freedom may strain against 6's need for security, but balance is possible.",str:["6 offers 5 a warm home"],watch:["Different needs must be discussed openly"]},
+  "5-7":{s:78,l:"Curious Minds",d:"5's adventure turns into an interesting journey of discovery with 7's depth.",str:["Shared curiosity and desire to explore"],watch:["7 may sometimes tire of 5's pace"]},
+  "5-8":{s:72,l:"Dynamic Power",d:"5's energy can form a strong team with 8's ambition.",str:["You chase big goals together"],watch:["Disagreement over control may arise"]},
+  "5-9":{s:80,l:"Free and Meaningful",d:"5's freedom turns into a meaningful adventure with 9's vision.",str:["Shared idealism and freedom"],watch:["9 may sometimes find 5 superficial"]},
+  "6-6":{s:85,l:"Haven of Compassion",d:"Two compassionate souls - a warm, protective relationship. Family becomes the heart of this bond.",str:["Mutual care and love"],watch:["You may both neglect yourselves"]},
+  "6-7":{s:70,l:"Compassion and Wisdom",d:"6's warmth forms a special bond with 7's depth.",str:["6 brings 7 out of solitude"],watch:["7's distance may hurt 6"]},
+  "6-8":{s:75,l:"Support and Strength",d:"6's support creates a nice balance with 8's drive for success.",str:["6 becomes 8's soft spot"],watch:["8's intense work may leave 6 feeling alone"]},
+  "6-9":{s:90,l:"Love and Service",d:"Two self-sacrificing souls - a strong bond built on unconditional love and shared humanitarian values.",str:["High empathy and compassion"],watch:["You may both over-sacrifice"]},
+  "7-7":{s:80,l:"Silent Agreement",d:"Two deep souls - you can understand each other without words.",str:["Deep intellectual and spiritual bond"],watch:["You may both withdraw inward, communication effort is needed"]},
+  "7-8":{s:68,l:"Wisdom and Power",d:"7's depth can form a complementary relationship with 8's practicality.",str:["8 can bring 7's ideas to life"],watch:["Different priorities may take time"]},
+  "7-9":{s:82,l:"Spiritual Bond",d:"7's wisdom forms a deep spiritual bond with 9's universal love.",str:["Shared spiritual interest","Deep mutual understanding"],watch:["Disagreements may arise over practical matters"]},
+  "8-8":{s:78,l:"Partnership of Power",d:"Two strong, ambitious souls - can build great achievements together, but competition risk exists.",str:["Shared goals and ambition"],watch:["You may both be unwilling to give up control"]},
+  "8-9":{s:72,l:"Power and Meaning",d:"8's focus on success creates an interesting balance with 9's search for meaning.",str:["9 adds meaning to 8's success"],watch:["Different motivations should be discussed openly"]},
+  "9-9":{s:85,l:"Universal Union",d:"Two idealistic souls - you form a meaningful, deep and compassionate bond.",str:["Shared values and vision"],watch:["You may both drift from realism"]}
+};
+// Master sayılar için genel yüksek uyum (11,22,33 -> temel sayıya indirger karşılaştırma)
+function baseNum(n){if(n===11)return 2;if(n===22)return 4;if(n===33)return 6;return n;}
+function getMatchKey(a,b){
+  const x=baseNum(a),y=baseNum(b);
+  const lo=Math.min(x,y),hi=Math.max(x,y);
+  return `${lo}-${hi}`;
+}
+
+function calcMatch(){
+  const p1n=document.getElementById('p1Name').value.trim();
+  const p1d=parseInt(document.getElementById('p1Day').value);
+  const p1m=parseInt(document.getElementById('p1Month').value);
+  const p1y=parseInt(document.getElementById('p1Year').value);
+  const p2n=document.getElementById('p2Name').value.trim();
+  const p2d=parseInt(document.getElementById('p2Day').value);
+  const p2m=parseInt(document.getElementById('p2Month').value);
+  const p2y=parseInt(document.getElementById('p2Year').value);
+  const err=document.getElementById('errBox');
+  err.classList.remove('show');
+
+  if(!p1n||p1n.length<2||!p2n||p2n.length<2){err.textContent='Please enter both people\u2019s names.';err.classList.add('show');return;}
+  if(!p1d||p1d<1||p1d>31||!p1m||p1m<1||p1m>12||!p1y||p1y<1900||p1y>2020){err.textContent='Please enter a valid birth date for the first person.';err.classList.add('show');return;}
+  if(!p2d||p2d<1||p2d>31||!p2m||p2m<1||p2m>12||!p2y||p2y<1900||p2y>2020){err.textContent='Please enter a valid birth date for the second person.';err.classList.add('show');return;}
+
+  const k1=calcKader(p1d,p1m,p1y);
+  const k2=calcKader(p2d,p2m,p2y);
+  const key=getMatchKey(k1,k2);
+  const m=MATCH_MATRIX[key]||{s:70,l:"An Interesting Match",d:"This combination carries its own unique dynamic. With open communication and mutual understanding, you can build a beautiful bond.",str:["Your differences can complement each other"],watch:["Open communication is essential"]};
+
+  document.getElementById('rP1Name').textContent=p1n.split(' ')[0];
+  document.getElementById('rP2Name').textContent=p2n.split(' ')[0];
+  document.getElementById('rP1Num').textContent=k1;
+  document.getElementById('rP2Num').textContent=k2;
+  document.getElementById('scoreNum').textContent=m.s+'%';
+  document.getElementById('matchLabel').textContent='✦ '+m.l+' ✦';
+  document.getElementById('matchIntro').textContent=p1n.split(' ')[0]+' ('+k1+' - '+(TITLES[k1]||'')+') and '+p2n.split(' ')[0]+' ('+k2+' - '+(TITLES[k2]||'')+') - numerological compatibility:';
+  document.getElementById('dynamicText').textContent=m.d;
+
+  // Ring animasyonu
+  const circle=document.getElementById('scoreCircle');
+  const circumference=2*Math.PI*70;
+  circle.style.strokeDasharray=circumference;
+  circle.style.strokeDashoffset=circumference;
+  circle.style.transition='stroke-dashoffset 1.2s ease';
+  setTimeout(()=>{circle.style.strokeDashoffset=circumference-(m.s/100)*circumference;},100);
+
+  // Alt skorlar (ana skordan türetilmiş varyasyonlar)
+  const emo=Math.min(99,Math.max(30,m.s+(Math.abs(k1-k2)%2===0?5:-5)));
+  const pas=Math.min(99,Math.max(30,m.s+((k1+k2)%7)-3));
+  const com=Math.min(99,Math.max(30,m.s-((k1*k2)%9)+4));
+  document.getElementById('scEmotional').textContent=emo+'%';
+  document.getElementById('scPassion').textContent=pas+'%';
+  document.getElementById('scComm').textContent=com+'%';
+
+  document.getElementById('strengthList').innerHTML=m.str.map(s=>'<li>'+s+'</li>').join('');
+  document.getElementById('watchList').innerHTML=m.watch.map(s=>'<li>'+s+'</li>').join('');
+
+  const tips=[
+    'Have a weekly "check-in" conversation - openly share how you feel.',
+    'See your differences as complementary, not as threats.',
+    'Learn each other\u2019s love language and act accordingly.',
+    'In disagreements, ask "how do we solve this" instead of "who is right".'
+  ];
+  document.getElementById('tipsList').innerHTML=tips.map(s=>'<li>'+s+'</li>').join('');
+
+  document.getElementById('formCard').style.display='none';
+  document.getElementById('results').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function resetMatch(){
+  document.getElementById('results').classList.remove('show');
+  document.getElementById('formCard').style.display='block';
+  document.getElementById('errBox').classList.remove('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
