@@ -1,44 +1,32 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<script>
-(function(){
-  try{
-    var lang=(navigator.language||navigator.userLanguage||'').toLowerCase();
-    var redirected=sessionStorage.getItem('lang_redirect');
-    if(!redirected && lang.indexOf('tr')!==0 && location.pathname==='/'){
-      sessionStorage.setItem('lang_redirect','1');
-      location.href='/en/';
-    }
-  }catch(e){}
-})();
-</script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
-<meta name="theme-color" content="#D4A843">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<title>Numeroloji Analizi 2026 | Kader Sayısı & Uyum Hesapla</title>
-<meta name="description" content="Doğum tarihinizle kader sayınızı, ruh güdüsünüzü ve aşk uyum skorunuzu ücretsiz hesaplayın. Pisagor numerolojisi ile 2026 enerjinizi keşfedin.">
-<meta name="keywords" content="numeroloji, kader sayısı, numeroloji hesaplama, doğum tarihi analizi, aşk uyumu, ruh güdüsü sayısı, pisagor numeroloji, 2026 numeroloji">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Numeroloji Hesaplama: Ücretsiz Kader Sayısı ve İsim Analizi</title>
+<meta name="description" content="İsminden ve doğum tarihinden kader sayını, ruh güdünü, kişilik sayını ve aşk uyumunu ücretsiz hesapla. Pisagor numerolojisi, master sayılar dahil.">
 <link rel="canonical" href="https://www.numerolojim.com.tr/">
 <link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/">
 <link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/">
 <link rel="alternate" hreflang="x-default" href="https://www.numerolojim.com.tr/">
-
-<meta property="og:title" content="Numeroloji Analizi 2026 | Kader Sayısı Hesapla">
-<meta property="og:description" content="Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu.">
-<meta property="og:url" content="https://www.numerolojim.com.tr/">
-<meta property="og:image" content="https://www.numerolojim.com.tr/og-image.jpg">
-<meta property="og:type" content="website">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#171332">
+<meta name="google-adsense-account" content="ca-pub-5859270127915377">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Numerolojim">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Numeroloji Hesaplama: Ücretsiz Kader Sayısı ve İsim Analizi">
+<meta property="og:description" content="İsminden ve doğum tarihinden kader sayını, ruh güdünü, kişilik sayını ve aşk uyumunu ücretsiz hesapla. Pisagor numerolojisi, master sayılar dahil.">
+<meta property="og:url" content="https://www.numerolojim.com.tr/">
+<meta property="og:image" content="https://www.numerolojim.com.tr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bodoni-moda-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=2">
 <style>
 /* ── RESET & ROOT ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -46,7 +34,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;width:100%;overflow-x:
 *{max-width:100%}
 body{
   background:#07071A;color:#F0EEF8;
-  font-family:'Montserrat',sans-serif;font-weight:300;
+  font-family:var(--sans);font-weight:300;
   min-height:100vh;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
@@ -58,7 +46,7 @@ body{
   --coral:#FF6B6B;--violet:#8B5CF6;
   --text:#F0EEF8;--text2:#B8B4D0;--text3:#6B6890;
   --border:rgba(212,168,67,.2);--border2:rgba(255,255,255,.06);
-  --ff:'Cinzel',serif;--r:14px;
+  --ff:var(--display);--r:14px;
   --max:860px;
 }
 
@@ -100,7 +88,7 @@ header{text-align:center;padding:40px 16px 32px}
   width:100%;background:rgba(255,255,255,.04);
   border:1px solid rgba(212,168,67,.18);border-radius:10px;
   padding:13px 16px;color:var(--text);
-  font-family:'Montserrat',sans-serif;font-size:14px;outline:none;
+  font-family:var(--sans);font-size:14px;outline:none;
   transition:border-color .3s,box-shadow .3s;
   -webkit-appearance:none;
 }
@@ -323,37 +311,49 @@ footer a:hover{color:var(--gold)}
 .hero-h1-sub{font-size:13.5px;color:var(--text2);line-height:1.75}
 @media(max-width:560px){.hero-h1 h1{font-size:19px}}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Ücretsiz numeroloji analizi — kader sayısı, ruh güdüsü ve aşk uyumu.","inLanguage":"tr"}
+<style>
+/* Yeni tasarım sistemi: eski araç stillerinin renk ve yazı tiplerini eşler */
+:root{--bg:var(--night);--bg2:var(--night-2);--bg3:var(--night-3);--card:var(--night-2);--bg-card:var(--night-2);
+--gold:var(--brass);--gold2:var(--brass-2);--coral:var(--rose);--text:var(--paper);--text2:var(--mist);--text3:var(--dim);
+--border:rgba(221,180,90,.28);--border2:var(--line);--ff:var(--display);--ff-d:var(--display);--ffb:var(--sans);--ff-b:var(--sans)}
+body{font-family:var(--sans)!important;background:var(--night)!important;font-weight:400!important}
+.aurora,.particles,.page-star{display:none!important}
+.site-head,.site-foot{text-align:left}
+.site-head .in,.site-foot .in{text-align:left}
+.site-foot h2{font-size:1.1rem!important;background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--paper)!important;font-family:var(--display)!important;letter-spacing:-.01em!important;text-transform:none!important;margin:0 0 .6rem!important}
+.site-nav{display:flex!important;padding:0!important}
+.site-nav a{font-family:var(--sans)!important;letter-spacing:0!important;color:var(--mist)!important}
+.site-nav a[aria-current],.site-nav a:hover{color:var(--paper)!important}
+.seo{max-width:var(--measure);margin:0 auto;padding:1rem 1.25rem 2rem;text-align:left}
+.seo h2{font-family:var(--display)!important;font-size:clamp(1.5rem,4vw,1.9rem)!important;color:var(--paper)!important;background:none!important;-webkit-text-fill-color:currentColor!important;letter-spacing:-.01em!important;text-transform:none!important;margin:2.2em 0 .6em!important;text-align:left!important;border:0!important;padding:0!important}
+.seo h3{font-family:var(--display)!important;font-size:1.25rem!important;color:var(--paper)!important;margin:1.6em 0 .4em!important}
+.seo p,.seo li{font-size:1.0625rem!important;color:#E7E1F2!important;line-height:1.7!important}
+.seo .faq summary{color:var(--paper)}
+h1,.hero-h1 h1{-webkit-text-fill-color:currentColor!important;background:none!important;color:var(--paper)!important;font-family:var(--display)!important;letter-spacing:-.01em!important;text-transform:none!important;font-size:clamp(1.9rem,6vw,2.8rem)!important;line-height:1.15!important;font-weight:600!important;margin:.6em 0 .4em!important}
+body *{letter-spacing:normal!important}
+main [class*=label],main [class*=lbl],main [class*=eye],main .fc-label,main .card-eye,main button,main .btn-main,main [class*=-btn],main [class*=cat],main [class*=tag]{text-transform:none!important}
+.btn-main{background:var(--brass)!important;color:var(--night)!important;box-shadow:none!important;font-family:var(--sans)!important;font-weight:600!important;font-size:1.05rem!important}
+.btn-main:hover{background:var(--brass-2)!important;transform:none!important}
+.hero-h1-sub,.hero-sub{font-size:1.05rem!important;line-height:1.65!important}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.numerolojim.com.tr/#org","name":"Numerolojim","url":"https://www.numerolojim.com.tr/","logo":{"@type":"ImageObject","url":"https://www.numerolojim.com.tr/icon-512x512.png"}},{"@type":"WebSite","@id":"https://www.numerolojim.com.tr/#site","url":"https://www.numerolojim.com.tr/","name":"Numerolojim","inLanguage":"tr","publisher":{"@id":"https://www.numerolojim.com.tr/#org"}},{"@type":"WebApplication","name":"Numeroloji Hesaplama","url":"https://www.numerolojim.com.tr/","description":"İsminden ve doğum tarihinden kader sayını, ruh güdünü, kişilik sayını ve aşk uyumunu ücretsiz hesapla. Pisagor numerolojisi, master sayılar dahil.","inLanguage":"tr","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Numeroloji analizi nasıl yapılır?","acceptedAnswer":{"@type":"Answer","text":"Adını soyadını ve doğum tarihini yazıp analizi başlatman yeterli. Araç doğum tarihinden kader sayını, isminin harflerinden ifade, ruh güdüsü ve kişilik sayılarını Pisagor tablosuna göre hesaplar ve her birini yorumlar."}},{"@type":"Question","name":"Kader sayısı ile isim sayısı arasındaki fark ne?","acceptedAnswer":{"@type":"Answer","text":"Kader sayısı doğum tarihinden gelir ve ömür boyu değişmez; hayatının ana temasını anlatır. İsimden hesaplanan sayılar ise yeteneklerini (ifade), iç arzularını (ruh güdüsü) ve dışarıya nasıl göründüğünü (kişilik) gösterir."}},{"@type":"Question","name":"Bilgilerim kaydediliyor mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Hesaplamalar tamamen tarayıcında yapılır; adın ve doğum tarihin sunucuya gönderilmez ya da saklanmaz."}},{"@type":"Question","name":"Türkçe harfler nasıl hesaplanıyor?","acceptedAnswer":{"@type":"Answer","text":"Ç, Ğ, Ö, Ş ve Ü harfleri kök harfleriyle (C, G, O, S, U) aynı değeri alır; I ve İ 9 değerindedir. Tablonun tamamını harflerin anlamı sayfasında görebilirsin."}}]}]}</script>
+<script>
+(function(){var app=/NumerolojimApp/.test(navigator.userAgent);if(app)document.documentElement.className+=" in-app";
+window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});gtag("js",new Date());gtag("config","G-WR0943XX1B",{app_webview:app?"yes":"no"});
+var g=document.createElement("script");g.async=1;g.src="https://www.googletagmanager.com/gtag/js?id=G-WR0943XX1B";document.head.appendChild(g);
+if(!app){var a=document.createElement("script");a.async=1;a.crossOrigin="anonymous";a.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5859270127915377";document.head.appendChild(a);}})();
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","logo":"https://www.numerolojim.com.tr/icons/icon-512x512.png"}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Numeroloji nedir?","acceptedAnswer":{"@type":"Answer","text":"Numeroloji, sayıların kişilik, kader ve yaşam olayları üzerindeki etkisini inceleyen kadim bir sistemdir. Doğum tarihi ve isimden hesaplanan sayılarla kişinin temel karakteri ve yaşam amacı yorumlanır."}},
-{"@type":"Question","name":"Kader sayısı nasıl hesaplanır?","acceptedAnswer":{"@type":"Answer","text":"Kader sayısı, doğum tarihindeki tüm rakamların toplanıp tek haneye indirgenmesiyle bulunur. Örneğin 15.03.1990 için 1+5+0+3+1+9+9+0=28, 2+8=10, 1+0=1 olur."}},
-{"@type":"Question","name":"Numeroloji analizi ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Numerolojim.com.tr üzerinde kader sayısı, ruh güdüsü, kişilik ve aşk uyumu analizleri tamamen ücretsizdir."}},
-{"@type":"Question","name":"Master sayılar (11, 22, 33) nedir?","acceptedAnswer":{"@type":"Answer","text":"Master sayılar, numerolojide tek haneye indirgenmeyen özel sayılardır. 11 sezgiyi, 22 büyük inşa gücünü, 33 ise koşulsuz sevgi ve öğretmenliği temsil eder."}}
-]}
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5859270127915377"
-     crossorigin="anonymous"></script>
-</head>
-<body>
-
-<div class="lang-switch">
-  <a href="/" class="active">TR</a>
-  <a href="/en/">EN</a>
-</div>
-<div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
-
+<script src="/assets/site.js?v=2" defer></script>
+</head><body>
+<a class="skip" href="#main">İçeriğe geç</a>
+<div class="site-head" role="banner"><div class="in">
+<a class="brand" href="/">Numerolojim<b aria-hidden="true">·</b></a>
+<div class="site-nav" role="navigation" aria-label="Ana menü"><a href="/" aria-current="page">Hesapla</a><a href="/kader-sayilari.html">Kader sayıları</a><a href="/isim-harfleri-numeroloji-anlami.html">Harfler</a><a href="/uyum-hesapla.html">Uyum</a><a href="/blog.html">Blog</a><a class="lang" href="/en/" hreflang="en" lang="en">EN</a></div>
+</div></div>
+<main id="main">
 <div class="page">
 
-<header>
-  <span class="logo">✦ NUMEROLOJİM</span>
-  <div class="logo-sub">sayıların gizemi</div>
-</header>
+
 <div class="hero-h1">
   <h1>Numeroloji Hesaplama: Kader Sayısı & Yaşam Yolu Analizi</h1>
   <p class="hero-h1-sub">İsminden ve doğum tarihinden <strong>kader sayını</strong>, <strong>yaşam yolu sayını</strong>, ruh güdünü ve aşk uyumunu ücretsiz hesapla. Master sayılar (11, 22, 33) dahil kişisel numeroloji analizin 30 saniyede hazır.</p>
@@ -374,7 +374,7 @@ footer a:hover{color:var(--gold)}
       <div class="date-row">
         <input type="number" id="bd" placeholder="Gün" min="1" max="31">
         <input type="number" id="bm" placeholder="Ay" min="1" max="12">
-        <input type="number" id="by" placeholder="Yıl" min="1900" max="2010">
+        <input type="number" id="by" placeholder="Yıl" min="1900" max="2026">
       </div>
     </div>
     <div class="fgroup">
@@ -390,7 +390,7 @@ footer a:hover{color:var(--gold)}
       </select>
     </div>
     <button class="btn-main" onclick="runAnalysis()">✦ Analizimi Başlat ✦</button>
-    <a href="rapor.html" class="rapor-link">✦ AI Destekli Detaylı Rapor Al →</a>
+    <a href="rapor.html" class="rapor-link">Detaylı kişisel raporunu al</a>
   </div>
 </div>
 
@@ -586,12 +586,7 @@ footer a:hover{color:var(--gold)}
   </div>
 </div>
 
-<footer>
-  <p>© 2026 Numerolojim.com.tr &nbsp;·&nbsp;
-  <a href="privacy.html">Gizlilik Politikası</a> &nbsp;·&nbsp;
-  <a href="numeroloji-nedir.html">Numeroloji Nedir?</a> &nbsp;·&nbsp;
-  <a href="blog.html">Blog</a> · <a href="iletisim.html">İletişim</a></p>
-</footer>
+
 
 </div><!-- /page -->
 
@@ -613,7 +608,7 @@ function calcKader(d,m,y){
 
 function calcName(name,filter='all'){
   let t=0;
-  for(const c of name.toLowerCase().replace(/\s/g,'')){
+  for(const c of name.toLocaleLowerCase('tr').replace(/\s/g,'')){
     if(filter==='v'&&!isVow(c))continue;
     if(filter==='c'&&isVow(c))continue;
     t+=LV[c]||0;
@@ -750,7 +745,7 @@ function runAnalysis(){
   const by=parseInt(document.getElementById('by').value);
 
   if(!fn||fn.length<2){alert('Lütfen adınızı girin.');return;}
-  if(!bd||bd<1||bd>31||!bm||bm<1||bm>12||!by||by<1900||by>2010){alert('Geçerli bir doğum tarihi girin.');return;}
+  if(!bd||bd<1||bd>31||!bm||bm<1||bm>12||!by||by<1900||by>new Date().getFullYear()){alert('Geçerli bir doğum tarihi girin.');return;}
 
   document.getElementById('loader').classList.add('on');
   document.getElementById('results').classList.remove('on');
@@ -1187,6 +1182,41 @@ function showPersonalDaily(){
 /* Sayfa açılınca göster */
 showPersonalDaily();
 </script>
+<section class="seo prose">
 
+<h2>Numeroloji hesaplama nasıl çalışır?</h2>
+<p>Numeroloji, harflere ve rakamlara sayısal değerler vererek kişiliğe dair sembolik bir harita çıkarır. Bu sitedeki analiz Pisagor sistemini kullanır ve dört temel sayıyı hesaplar:</p>
+<ul>
+<li><strong>Kader sayısı:</strong> Doğum tarihindeki tüm rakamların toplamıdır. 15.05.1990 için 1+5+0+5+1+9+9+0 = 30, 3+0 = 3. Ayrıntılar için <a href="/kader-sayilari.html">kader sayısı rehberine</a> bak.</li>
+<li><strong>İfade sayısı:</strong> Adındaki ve soyadındaki bütün harflerin toplamı; doğal yeteneklerini anlatır.</li>
+<li><strong>Ruh güdüsü:</strong> Sadece sesli harflerin toplamı; içten içe neyi istediğini gösterir.</li>
+<li><strong>Kişilik sayısı:</strong> Sessiz harflerin toplamı; insanların seni ilk bakışta nasıl gördüğünü yansıtır.</li>
+</ul>
+<p>Ara toplam 11, 22 ya da 33 çıkarsa indirgeme yapılmaz; bunlar <a href="/master-sayilar-11-22-33.html">master sayılardır</a>. İki kişinin sayılarını karşılaştırmak için <a href="/uyum-hesapla.html">uyum hesaplama</a> aracını, isminin her harfini tek tek incelemek için <a href="/isim-harfleri-numeroloji-anlami.html">harflerin anlamı</a> sayfasını kullanabilirsin.</p>
+<figure class="pyth"><figcaption>Türk alfabesine uyarlanmış Pisagor tablosu. Bir harfe dokunarak anlamını oku.</figcaption><table aria-label="Pisagor harf-sayı tablosu"><thead><tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th></tr></thead><tbody><tr><td><a href="/harf-a.html">A</a></td><td><a href="/harf-b.html">B</a></td><td><a href="/harf-c.html">C</a></td><td><a href="/harf-d.html">D</a></td><td><a href="/harf-e.html">E</a></td><td><a href="/harf-f.html">F</a></td><td><a href="/harf-g.html">G</a></td><td><a href="/harf-h.html">H</a></td><td><a href="/harf-i.html">I</a></td></tr><tr><td><a href="/harf-j.html">J</a></td><td><a href="/harf-k.html">K</a></td><td><a href="/harf-c2.html">Ç</a></td><td><a href="/harf-m.html">M</a></td><td><a href="/harf-n.html">N</a></td><td><a href="/harf-o.html">O</a></td><td><a href="/harf-g2.html">Ğ</a></td><td><a href="/harf-z.html">Z</a></td><td><a href="/harf-i.html">İ</a></td></tr><tr><td><a href="/harf-s.html">S</a></td><td><a href="/harf-t.html">T</a></td><td><a href="/harf-l.html">L</a></td><td><a href="/harf-v.html">V</a></td><td></td><td><a href="/harf-o2.html">Ö</a></td><td><a href="/harf-p.html">P</a></td><td></td><td><a href="/harf-r.html">R</a></td></tr><tr><td><a href="/harf-s2.html">Ş</a></td><td></td><td><a href="/harf-u.html">U</a></td><td></td><td></td><td></td><td><a href="/harf-y.html">Y</a></td><td></td><td></td></tr><tr><td></td><td></td><td><a href="/harf-u2.html">Ü</a></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></figure>
+<h2>Sık sorulan sorular</h2><div class="faq"><details><summary>Numeroloji analizi nasıl yapılır?</summary><div><p>Adını soyadını ve doğum tarihini yazıp analizi başlatman yeterli. Araç doğum tarihinden kader sayını, isminin harflerinden ifade, ruh güdüsü ve kişilik sayılarını Pisagor tablosuna göre hesaplar ve her birini yorumlar.</p></div></details><details><summary>Kader sayısı ile isim sayısı arasındaki fark ne?</summary><div><p>Kader sayısı doğum tarihinden gelir ve ömür boyu değişmez; hayatının ana temasını anlatır. İsimden hesaplanan sayılar ise yeteneklerini (ifade), iç arzularını (ruh güdüsü) ve dışarıya nasıl göründüğünü (kişilik) gösterir.</p></div></details><details><summary>Bilgilerim kaydediliyor mu?</summary><div><p>Hayır. Hesaplamalar tamamen tarayıcında yapılır; adın ve doğum tarihin sunucuya gönderilmez ya da saklanmaz.</p></div></details><details><summary>Türkçe harfler nasıl hesaplanıyor?</summary><div><p>Ç, Ğ, Ö, Ş ve Ü harfleri kök harfleriyle (C, G, O, S, U) aynı değeri alır; I ve İ 9 değerindedir. Tablonun tamamını harflerin anlamı sayfasında görebilirsin.</p></div></details></div>
+
+</section>
+</main>
+<div class="site-foot" role="contentinfo"><div class="in">
+<section><h2>Kader sayıları</h2><div class="num-row"><a href="/kader-sayisi-1.html">1</a><a href="/kader-sayisi-2.html">2</a><a href="/kader-sayisi-3.html">3</a><a href="/kader-sayisi-4.html">4</a><a href="/kader-sayisi-5.html">5</a><a href="/kader-sayisi-6.html">6</a><a href="/kader-sayisi-7.html">7</a><a href="/kader-sayisi-8.html">8</a><a href="/kader-sayisi-9.html">9</a><a href="/kader-sayisi-11.html">11</a><a href="/kader-sayisi-22.html">22</a><a href="/kader-sayisi-33.html">33</a></div></section>
+<section><h2>Harflerin anlamı</h2><div class="num-row"><a href="/harf-a.html">A</a><a href="/harf-b.html">B</a><a href="/harf-c.html">C</a><a href="/harf-c2.html">Ç</a><a href="/harf-d.html">D</a><a href="/harf-e.html">E</a><a href="/harf-f.html">F</a><a href="/harf-g.html">G</a><a href="/harf-g2.html">Ğ</a><a href="/harf-h.html">H</a><a href="/harf-i.html">I/İ</a><a href="/harf-j.html">J</a><a href="/harf-k.html">K</a><a href="/harf-l.html">L</a><a href="/harf-m.html">M</a><a href="/harf-n.html">N</a><a href="/harf-o.html">O</a><a href="/harf-o2.html">Ö</a><a href="/harf-p.html">P</a><a href="/harf-r.html">R</a><a href="/harf-s.html">S</a><a href="/harf-s2.html">Ş</a><a href="/harf-t.html">T</a><a href="/harf-u.html">U</a><a href="/harf-u2.html">Ü</a><a href="/harf-v.html">V</a><a href="/harf-y.html">Y</a><a href="/harf-z.html">Z</a></div></section>
+<section><h2>Rehberler</h2><ul>
+<li><a href="/numeroloji-nedir.html">Numeroloji nedir?</a></li>
+<li><a href="/numeroloji-hesaplama-nasil-yapilir.html">Numeroloji hesaplama nasıl yapılır?</a></li>
+<li><a href="/master-sayilar-11-22-33.html">Master sayılar 11, 22, 33</a></li>
+<li><a href="/melek-sayilari-anlami.html">Melek sayıları</a></li>
+<li><a href="/2026-kisisel-yil-sayisi.html">2026 kişisel yıl sayısı</a></li>
+</ul></section>
+<section><h2>Araçlar</h2><ul>
+<li><a href="/">Ücretsiz numeroloji analizi</a></li>
+<li><a href="/uyum-hesapla.html">İsim ve doğum tarihi uyumu</a></li>
+<li><a href="/rapor.html">Kişisel numeroloji raporu</a></li>
+<li><a href="/blog.html">Tüm yazılar</a></li>
+</ul></section>
+<div class="legal">
+<p>Numeroloji, sayıların sembolik anlamlarına dayanan bir kendini tanıma geleneğidir; bilimsel bir yöntem değildir. Buradaki yorumları eğlence ve kendini keşif amacıyla oku, sağlık, para ya da hukuk kararlarını bunlara dayandırma.</p>
+<p>© 2026 Numerolojim · <a href="/hakkimizda.html">Hakkımızda</a> · <a href="/iletisim.html">İletişim</a> · <a href="/privacy.html">Gizlilik politikası</a></p>
+</div></div></div>
 </body>
 </html>

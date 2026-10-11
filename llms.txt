@@ -1,62 +1,107 @@
-# Numerolojim.com.tr — AI Content Guide / AI İçerik Rehberi
-# llms.txt — Guide for Large Language Models
+# Numerolojim
 
-## About / Hakkında
+> Numerolojim (numerolojim.com.tr) Türkçe ve İngilizce, ücretsiz bir numeroloji sitesidir. Pisagor sistemine dayalı kader sayısı (yaşam yolu sayısı), isim harflerinin anlamı, melek sayıları ve sayı uyumu üzerine rehberler ile tarayıcıda çalışan hesaplama araçları sunar.
 
-Numerolojim.com.tr is Turkey's comprehensive bilingual (Turkish/English) numerology platform.
-It offers free life path number, soul urge, personality and love compatibility analyses based on Pythagorean numerology.
+Hesaplama yöntemi: Kader sayısı, doğum tarihindeki tüm rakamların toplanıp 11, 22 ve 33 korunarak tek haneye indirilmesiyle bulunur (ör. 15.05.1990 → 1+5+0+5+1+9+9+0 = 30 → 3). Harf değerleri Türk alfabesine uyarlanmış Pisagor tablosundan gelir: A J S Ş = 1, B K T = 2, C Ç L U Ü = 3, D M V = 4, E N = 5, F O Ö = 6, G Ğ P Y = 7, H Z = 8, I İ R = 9.
 
-Numerolojim.com.tr, Türkiye'nin kapsamlı çift dilli (Türkçe/İngilizce) numeroloji platformudur.
-Pisagor numerolojisi temelinde ücretsiz kader sayısı, ruh güdüsü, kişilik ve aşk uyumu analizleri sunar.
+Not: Numeroloji sembolik bir gelenektir, bilimsel bir yöntem değildir; içerikler kendini tanıma ve eğlence amaçlıdır.
 
-## Main Services / Ana Hizmetler
+## Araçlar
 
-- Free numerology analysis (life path, soul urge, personality, expression number)
-- Love and partner compatibility analysis
-- Turkish alphabet letter energy guide (28 letters, A to Z)
-- Daily numerology energy card
-- AI-powered personal numerology report
-- Bilingual content (Turkish + English)
+- [Numerology Compatibility Calculator: Life Path Match](https://www.numerolojim.com.tr/en/compatibility-calculator.html): Compare two people's life path numbers and get a free numerology compatibility score, with strengths, challenges and a relationship reading.
+- [Free Numerology Calculator: Life Path & Name Reading](https://www.numerolojim.com.tr/en/): Calculate your life path number, expression, soul urge and personality numbers from your name and date of birth. Free Pythagorean numerology reading.
+- [Free Personal Numerology Report 2026](https://www.numerolojim.com.tr/en/rapor.html): Enter your name and date of birth for a free personal numerology report: life path, soul urge, personality and expression numbers plus your 2026 month by month.
+- [Numeroloji Hesaplama: Ücretsiz Kader Sayısı ve İsim Analizi](https://www.numerolojim.com.tr/): İsminden ve doğum tarihinden kader sayını, ruh güdünü, kişilik sayını ve aşk uyumunu ücretsiz hesapla. Pisagor numerolojisi, master sayılar dahil.
+- [Ücretsiz Kişisel Numeroloji Raporu 2026](https://www.numerolojim.com.tr/rapor.html): Adını ve doğum tarihini gir; kader sayısı, ruh güdüsü, kişilik ve ifade sayısı ile 2026'nın ay ay enerjisini içeren ücretsiz kişisel numeroloji raporunu al.
+- [Numeroloji Uyum Hesaplama: İki Kişinin Kader Sayısı Uyumu](https://www.numerolojim.com.tr/uyum-hesapla.html): İki kişinin doğum tarihinden kader sayılarını hesapla ve numerolojik aşk uyumunu ücretsiz öğren. Uyum skoru, güçlü yanlar ve ilişki yorumu.
 
-## Languages / Diller
+## Kader sayıları (TR)
 
-- Turkish (default): https://www.numerolojim.com.tr/
-- English: https://www.numerolojim.com.tr/en/
+- [Kader Sayısı Nedir, Nasıl Hesaplanır? 1–33 Anlamları](https://www.numerolojim.com.tr/kader-sayilari.html): Kader sayısı (yaşam yolu sayısı) nedir ve doğum tarihinden nasıl hesaplanır? Adım adım örnek, ücretsiz hesaplayıcı ve 1'den 33'e tüm kader sayılarının anlamı.
+- [Kader Sayısı 1 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-1.html): Kader sayısı 1 olanlar lider, cesur ve bağımsızdır. 1 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri, zayıf yönleri ve uyumlu sayıları.
+- [Kader Sayısı 11 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-11.html): Kader sayısı 11 olanlar sezgili, ilham veren ve vizyonerdir. Master sayı 11'in kişilik özellikleri, aşk hayatı, kariyeri ve zorlukları.
+- [Kader Sayısı 2 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-2.html): Kader sayısı 2 olanlar sezgili, uyumlu ve diplomatiktir. 2 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri, zayıf yönleri ve uyumlu sayıları.
+- [Kader Sayısı 22 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-22.html): Kader sayısı 22 olanlar usta inşaatçıdır: vizyoner ve pratik. Master sayı 22'nin kişilik özellikleri, aşk hayatı, kariyeri ve zorlukları.
+- [Kader Sayısı 3 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-3.html): Kader sayısı 3 olanlar yaratıcı, neşeli ve sosyaldir. 3 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri, zayıf yönleri ve uyumlu sayıları.
+- [Kader Sayısı 33 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-33.html): Kader sayısı 33 olanlar usta öğretmendir: şefkatli ve iyileştirici. Master sayı 33'ün kişilik özellikleri, aşk hayatı ve kariyeri.
+- [Kader Sayısı 4 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-4.html): Kader sayısı 4 olanlar güvenilir, disiplinli ve çalışkandır. 4 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri ve uyumlu sayıları.
+- [Kader Sayısı 5 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-5.html): Kader sayısı 5 olanlar özgür ruhlu, meraklı ve maceracıdır. 5 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri ve uyumlu sayıları.
+- [Kader Sayısı 6 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-6.html): Kader sayısı 6 olanlar sevgi dolu, koruyucu ve sorumludur. 6 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri ve uyumlu sayıları.
+- [Kader Sayısı 7 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-7.html): Kader sayısı 7 olanlar derin düşünen, sezgili ve analitiktir. 7 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri ve uyumlu sayıları.
+- [Kader Sayısı 8 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-8.html): Kader sayısı 8 olanlar hırslı, güçlü ve stratejiktir. 8 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri, parası ve uyumlu sayıları.
+- [Kader Sayısı 9 Olanlar: Kişilik, Aşk, Kariyer | Numeroloji](https://www.numerolojim.com.tr/kader-sayisi-9.html): Kader sayısı 9 olanlar şefkatli, bilge ve idealisttir. 9 kader sayısının kişilik özellikleri, aşk hayatı, kariyeri, zayıf yönleri ve uyumlu sayıları.
 
-## Key Pages / Önemli Sayfalar
+## Harflerin anlamı (TR)
 
-- Home (TR): https://www.numerolojim.com.tr/
-- Home (EN): https://www.numerolojim.com.tr/en/
-- Personal Report: https://www.numerolojim.com.tr/rapor.html
-- Blog: https://www.numerolojim.com.tr/blog.html
-- What is Numerology: https://www.numerolojim.com.tr/numeroloji-nedir.html
-- Contact: https://www.numerolojim.com.tr/iletisim.html
-- Privacy: https://www.numerolojim.com.tr/privacy.html
+- [A Harfinin Anlamı ve Enerjisi: İsminde A Olanlar](https://www.numerolojim.com.tr/harf-a.html): Numerolojide A harfinin değeri 1: liderlik ve güç enerjisi. İsminde A olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [B Harfinin Anlamı ve Enerjisi: İsminde B Olanlar](https://www.numerolojim.com.tr/harf-b.html): Numerolojide B harfinin değeri 2: sezgi ve mücadele enerjisi. İsminde B olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [C Harfinin Anlamı ve Enerjisi: İsminde C Olanlar](https://www.numerolojim.com.tr/harf-c.html): Numerolojide C harfinin değeri 3: yaratıcılık ve sanat enerjisi. İsminde C olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Ç Harfinin Anlamı ve Enerjisi: İsminde Ç Olanlar](https://www.numerolojim.com.tr/harf-c2.html): Numerolojide Ç harfinin değeri 3: yaratıcılık ve çoğaltma enerjisi. İsminde Ç olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [D Harfinin Anlamı ve Enerjisi: İsminde D Olanlar](https://www.numerolojim.com.tr/harf-d.html): Numerolojide D harfinin değeri 4: denge ve güvenilirlik enerjisi. İsminde D olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [E Harfinin Anlamı ve Enerjisi: İsminde E Olanlar](https://www.numerolojim.com.tr/harf-e.html): Numerolojide E harfinin değeri 5: özgürlük ve iletişim enerjisi. İsminde E olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [F Harfinin Anlamı ve Enerjisi: İsminde F Olanlar](https://www.numerolojim.com.tr/harf-f.html): Numerolojide F harfinin değeri 6: sevgi ve sorumluluk enerjisi. İsminde F olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [G Harfinin Anlamı ve Enerjisi: İsminde G Olanlar](https://www.numerolojim.com.tr/harf-g.html): Numerolojide G harfinin değeri 7: gizem ve analiz enerjisi. İsminde G olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Ğ Harfinin Anlamı ve Enerjisi: İsminde Ğ Olanlar](https://www.numerolojim.com.tr/harf-g2.html): Numerolojide Ğ harfinin değeri 7: sessiz bilgelik ve derinlik enerjisi. İsminde Ğ olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [H Harfinin Anlamı ve Enerjisi: İsminde H Olanlar](https://www.numerolojim.com.tr/harf-h.html): Numerolojide H harfinin değeri 8: güç ve liderlik enerjisi. İsminde H olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [I ve İ Harfinin Anlamı ve Enerjisi: İsminde I/İ Olanlar](https://www.numerolojim.com.tr/harf-i.html): Numerolojide I ve İ harfinin değeri 9: duyarlılık ve evrensel sevgi enerjisi. İsminde I/İ olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [J Harfinin Anlamı ve Enerjisi: İsminde J Olanlar](https://www.numerolojim.com.tr/harf-j.html): Numerolojide J harfinin değeri 1: liderlik ve öncülük enerjisi. İsminde J olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [K Harfinin Anlamı ve Enerjisi: İsminde K Olanlar](https://www.numerolojim.com.tr/harf-k.html): Numerolojide K harfinin değeri 2: sezgi ve denge enerjisi. İsminde K olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [L Harfinin Anlamı ve Enerjisi: İsminde L Olanlar](https://www.numerolojim.com.tr/harf-l.html): Numerolojide L harfinin değeri 3: neşe ve ifade enerjisi. İsminde L olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [M Harfinin Anlamı ve Enerjisi: İsminde M Olanlar](https://www.numerolojim.com.tr/harf-m.html): Numerolojide M harfinin değeri 4: disiplin ve kararlılık enerjisi. İsminde M olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [N Harfinin Anlamı ve Enerjisi: İsminde N Olanlar](https://www.numerolojim.com.tr/harf-n.html): Numerolojide N harfinin değeri 5: özgürlük ve değişim enerjisi. İsminde N olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [O Harfinin Anlamı ve Enerjisi: İsminde O Olanlar](https://www.numerolojim.com.tr/harf-o.html): Numerolojide O harfinin değeri 6: sevgi ve koruma enerjisi. İsminde O olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Ö Harfinin Anlamı ve Enerjisi: İsminde Ö Olanlar](https://www.numerolojim.com.tr/harf-o2.html): Numerolojide Ö harfinin değeri 6: derin sevgi ve güzellik enerjisi. İsminde Ö olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [P Harfinin Anlamı ve Enerjisi: İsminde P Olanlar](https://www.numerolojim.com.tr/harf-p.html): Numerolojide P harfinin değeri 7: bilgelik ve gizem enerjisi. İsminde P olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [R Harfinin Anlamı ve Enerjisi: İsminde R Olanlar](https://www.numerolojim.com.tr/harf-r.html): Numerolojide R harfinin değeri 9: evrensel sevgi ve bilgelik enerjisi. İsminde R olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [S Harfinin Anlamı ve Enerjisi: İsminde S Olanlar](https://www.numerolojim.com.tr/harf-s.html): Numerolojide S harfinin değeri 1: güç ve öncülük enerjisi. İsminde S olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Ş Harfinin Anlamı ve Enerjisi: İsminde Ş Olanlar](https://www.numerolojim.com.tr/harf-s2.html): Numerolojide Ş harfinin değeri 1: cesaret ve dönüşüm enerjisi. İsminde Ş olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [T Harfinin Anlamı ve Enerjisi: İsminde T Olanlar](https://www.numerolojim.com.tr/harf-t.html): Numerolojide T harfinin değeri 2: sadakat ve derinlik enerjisi. İsminde T olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [U Harfinin Anlamı ve Enerjisi: İsminde U Olanlar](https://www.numerolojim.com.tr/harf-u.html): Numerolojide U harfinin değeri 3: yaratıcılık ve neşe enerjisi. İsminde U olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Ü Harfinin Anlamı ve Enerjisi: İsminde Ü Olanlar](https://www.numerolojim.com.tr/harf-u2.html): Numerolojide Ü harfinin değeri 3: içsel yaratıcılık ve derinlik enerjisi. İsminde Ü olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [V Harfinin Anlamı ve Enerjisi: İsminde V Olanlar](https://www.numerolojim.com.tr/harf-v.html): Numerolojide V harfinin değeri 4: zafer ve kararlılık enerjisi. İsminde V olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Y Harfinin Anlamı ve Enerjisi: İsminde Y Olanlar](https://www.numerolojim.com.tr/harf-y.html): Numerolojide Y harfinin değeri 7: arayış ve spiritüel bilgelik enerjisi. İsminde Y olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
+- [Z Harfinin Anlamı ve Enerjisi: İsminde Z Olanlar](https://www.numerolojim.com.tr/harf-z.html): Numerolojide Z harfinin değeri 8: güç ve otorite enerjisi. İsminde Z olanların kişiliği, aşk hayatı, kariyeri ve şanslı rengi.
 
-## Blog Articles (TR) / Blog Yazıları
+## Rehberler ve yazılar (TR)
 
-- https://www.numerolojim.com.tr/melek-sayilari-anlami.html — Angel numbers (111, 222, 333, 1111)
-- https://www.numerolojim.com.tr/ruh-esi-numeroloji.html — Soulmate numerology
-- https://www.numerolojim.com.tr/2026-kisisel-yil-sayisi.html — 2026 personal year
-- https://www.numerolojim.com.tr/master-sayilar-11-22-33.html — Master numbers 11, 22, 33
-- https://www.numerolojim.com.tr/isim-numerolojisi-kader-sayisi.html — Name numerology & life path
+- [12:12 Anlamı Nedir? Bu Melek Sayısını Sık Görmenin Sebebi](https://www.numerolojim.com.tr/1212-melek-sayisi-anlami.html): Saatte sürekli 12:12 mi görüyorsun? TikTok'ta viral olan bu melek sayısının numerolojik anlamı, ruhsal uyanışla bağlantısı ve sana ne mesaj verdiğini keşfet.
+- [2026 Evrensel Yıl 1: Numerolojide Yeni Döngü Başlıyor](https://www.numerolojim.com.tr/2026-evrensel-yil-1-numeroloji.html): 2026 numerolojide Evrensel Yıl 1: dokuz yıllık yeni bir döngünün başlangıcı. Bu yılın enerjisi ve kişisel yıl sayına göre 2026'da seni neler bekliyor?
+- [2026 Kişisel Yıl Sayısı Hesaplama ve Yorumları](https://www.numerolojim.com.tr/2026-kisisel-yil-sayisi.html): 2026 senin için nasıl bir yıl olacak? Kişisel yıl sayını hesapla, 1-9 döngüsünde hangi enerjide olduğunu öğren ve yılı bilinçli planla. Ücretsiz rehber.
+- [Numeroloji Blog: Kader Sayısı, Harfler ve Melek Sayıları](https://www.numerolojim.com.tr/blog.html): Numeroloji rehberleri ve yazıları: kader sayısı hesaplama, isim harflerinin anlamı, melek sayıları, master sayılar, ruh eşi uyumu ve 2026 yıl enerjisi.
+- [Hakkımızda | Numerolojim](https://www.numerolojim.com.tr/hakkimizda.html): Numerolojim nedir, içerikler nasıl hazırlanır ve hesaplamalar hangi yönteme dayanır? Sitenin amacı, kullandığımız Pisagor sistemi ve iletişim bilgileri.
+- [İletişim | Numerolojim](https://www.numerolojim.com.tr/iletisim.html): Numerolojim ile iletişime geç: soru, öneri, hata bildirimi ya da iş birliği için e-posta adresimiz ve iletişim formu.
+- [İsim Harflerinin Anlamı: Numerolojide Harf Sayıları Tablosu](https://www.numerolojim.com.tr/isim-harfleri-numeroloji-anlami.html): İsmindeki her harfin bir sayısal değeri ve enerjisi var. Türkçe harf-sayı tablosu, baş harfin anlamı ve tüm harflerin numerolojik yorumları.
+- [İsim Numerolojisi ve Kader Sayısı Hesaplama 2026 | Tam Rehber](https://www.numerolojim.com.tr/isim-numerolojisi-kader-sayisi.html): İsmin ve doğum tarihin sana ne anlatıyor? Kader sayısı, ruh güdüsü ve kişilik sayısını nasıl hesaplayacağını ve ne anlama geldiğini bu rehberde öğren.
+- [Master Sayılar 11, 22, 33 | Numerolojinin En Güçlü Sayıları](https://www.numerolojim.com.tr/master-sayilar-11-22-33.html): Kader sayın 11, 22 veya 33 mü çıktı? Master sayılar olağanüstü bir potansiyel ve sorumluluk taşır. Bu üstat sayıların gizemini ve anlamını keşfet.
+- [Melek Sayıları ve Anlamları 2026 | 111, 222, 333, 1111 Ne Demek?](https://www.numerolojim.com.tr/melek-sayilari-anlami.html): Sürekli 11:11, 222 veya 333 mü görüyorsun? Melek sayılarının anlamını, neden tekrar tekrar karşına çıktığını ve sana verdiği mesajı bu rehberde keşfet.
+- [Numeroloji Hesaplama Nasıl Yapılır? 2026 Adım Adım Rehber](https://www.numerolojim.com.tr/numeroloji-hesaplama-nasil-yapilir.html): Kader sayısı, ruh güdüsü, kişilik ve ifade sayısını elle nasıl hesaplarsın? Pisagor numerolojisine göre adım adım hesaplama rehberi ve örneklerle anlatım.
+- [Numeroloji Nedir? Tarihten Günümüze Kapsamlı Rehber](https://www.numerolojim.com.tr/numeroloji-nedir.html): Numeroloji nedir, nasıl ortaya çıktı, Pisagor ve Ebced sistemleri nasıl çalışır? Kader sayısı, ruh güdüsü ve isim sayılarıyla numerolojiye giriş rehberi.
+- [Gizlilik Politikası | Numerolojim](https://www.numerolojim.com.tr/privacy.html): Numerolojim gizlilik politikası: toplanan veriler, çerezler, Google Analytics ve AdSense kullanımı, KVKK kapsamındaki hakların ve iletişim bilgileri.
+- [Ruh Eşi Numerolojisi 2026 | Doğum Tarihinden Ruh Eşini Bulmak](https://www.numerolojim.com.tr/ruh-esi-numeroloji.html): Ruh eşini numeroloji ile bulmak mümkün mü? Doğum tarihi ve isim uyumuyla karmik bağını, ruh eşi sayını ve hangi sayılarla uyumlu olduğunu keşfet.
 
-## Blog Articles (EN) / İngilizce Bloglar
+## Life path numbers (EN)
 
-- https://www.numerolojim.com.tr/en/angel-numbers-meaning.html — Angel numbers meaning
-- https://www.numerolojim.com.tr/en/soulmate-numerology.html — Soulmate numerology
-- https://www.numerolojim.com.tr/en/master-numbers-11-22-33.html — Master numbers
+- [Life Path Number 1: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-1.html): Life path number 1 people are leader, brave and independent. Personality traits, love life, career and challenges of life path 1. Free numerology reading.
+- [Life Path Number 11: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-11.html): Life path number 11 people are intuitive, inspiring and visionary. Personality traits, love life, career and challenges of life path 11. Free numerology.
+- [Life Path Number 2: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-2.html): Life path number 2 people are diplomat, intuitive and compassionate. Personality traits, love life, career and challenges of life path 2. Free numerology.
+- [Life Path Number 22: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-22.html): Life path number 22 people are visionary, builder and powerful. Personality traits, love life, career and challenges of life path 22. Free numerology reading.
+- [Life Path Number 3: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-3.html): Life path number 3 people are creative, joyful and expressive. Personality traits, love life, career and challenges of life path 3. Free numerology reading.
+- [Life Path Number 33: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-33.html): Life path number 33 people are healer, teacher and loving. Personality traits, love life, career and challenges of life path 33. Free numerology reading.
+- [Life Path Number 4: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-4.html): Life path number 4 people are reliable, disciplined and solid. Personality traits, love life, career and challenges of life path 4. Free numerology reading.
+- [Life Path Number 5: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-5.html): Life path number 5 people are free, adventurous and dynamic. Personality traits, love life, career and challenges of life path 5. Free numerology reading.
+- [Life Path Number 6: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-6.html): Life path number 6 people are loving, responsible and harmonious. Personality traits, love life, career and challenges of life path 6. Free numerology reading.
+- [Life Path Number 7: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-7.html): Life path number 7 people are wise, analytical and intuitive. Personality traits, love life, career and challenges of life path 7. Free numerology reading.
+- [Life Path Number 8: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-8.html): Life path number 8 people are powerful, strategic and successful. Personality traits, love life, career and challenges of life path 8. Free numerology reading.
+- [Life Path Number 9: Meaning, Love & Career | Numerology](https://www.numerolojim.com.tr/en/life-path-number-9.html): Life path number 9 people are compassionate, wise and universal. Personality traits, love life, career and challenges of life path 9. Free numerology reading.
 
-## Letter Pages / Harf Sayfaları
+## Guides (EN)
 
-28 Turkish letters with numerological values (A=1, B=2, ... including Ç, Ğ, İ, Ö, Ş, Ü).
-Format: https://www.numerolojim.com.tr/harf-[letter].html
-
-## AI Usage / AI Kullanım
-
-Content is for educational and informational purposes. AI systems may summarize and reference this content.
-Source attribution appreciated: numerolojim.com.tr
-
-## Last Updated / Son Güncelleme
-
-2026-05-23
+- [12:12 Meaning: Why You Keep Seeing This Angel Number in 2026](https://www.numerolojim.com.tr/en/1212-angel-number-meaning.html): What does 12:12 mean? The numerology of the 1212 angel number, why you keep seeing it, and what it can say about love, timing and your next step.
+- [2026 Universal Year 1: What It Means in Numerology](https://www.numerolojim.com.tr/en/2026-universal-year-1-numerology.html): 2026 is a Universal Year 1 in numerology: the start of a new nine-year cycle. What this energy means and how it combines with your personal year number.
+- [Angel Numbers Meaning 2026 | 111, 222, 333, 1111 Explained](https://www.numerolojim.com.tr/en/angel-numbers-meaning.html): Keep seeing 11:11, 222, or 333? Discover what angel numbers mean, why they keep appearing, and the message they carry for your life in this complete guide.
+- [Numerology Articles: Life Path, Angel Numbers & Names](https://www.numerolojim.com.tr/en/blog.html): Numerology guides in English: how to calculate your life path number, what your name letters mean, angel numbers, master numbers and soulmate compatibility.
+- [How to Calculate Numerology: Step-by-Step Guide 2026](https://www.numerolojim.com.tr/en/how-to-calculate-numerology.html): How to calculate your life path, soul urge, personality and expression numbers by hand: a step-by-step numerology guide with real examples.
+- [Master Numbers 11, 22 and 33: Meaning in Numerology](https://www.numerolojim.com.tr/en/master-numbers-11-22-33.html): Is your life path number 11, 22, or 33? Master numbers carry extraordinary potential and responsibility. Discover the meaning and power of these master numbers.
+- [Soulmate Numerology 2026 | Find Your Soulmate by Birth Date](https://www.numerolojim.com.tr/en/soulmate-numerology.html): Can you find your soulmate with numerology? Discover your karmic bond, soulmate number, and which numbers you're compatible with through birth date and name.
+- [What Is a Life Path Number? Complete Guide to All 11 Numbers](https://www.numerolojim.com.tr/en/what-is-a-life-path-number.html): What is a life path number and how do you calculate it? A clear guide to all life path numbers 1–9 and master numbers 11, 22 and 33, with a free calculator.
+- [What Do the Letters in Your Name Mean? Name Numerology Guide 2026](https://www.numerolojim.com.tr/en/what-your-name-letters-mean.html): What do the letters in your name mean in numerology? Each letter's number on the Pythagorean chart and how to read the energy of your first initial.

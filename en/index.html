@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
-<meta name="theme-color" content="#D4A843">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<title>Numerology Analysis 2026 | Calculate Your Life Path Number & Compatibility</title>
-<meta name="description" content="Calculate your life path number, soul urge and love compatibility score for free with your birth date. Discover your 2026 energy with Pythagorean numerology.">
-<meta name="keywords" content="numerology, life path number, numerology calculator, birth date analysis, love compatibility, soul urge number, pythagorean numerology, 2026 numerology, free numerology reading">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Numerology Calculator: Life Path &amp; Name Reading</title>
+<meta name="description" content="Calculate your life path number, expression, soul urge and personality numbers from your name and date of birth. Free Pythagorean numerology reading.">
 <link rel="canonical" href="https://www.numerolojim.com.tr/en/">
 <link rel="alternate" hreflang="tr" href="https://www.numerolojim.com.tr/">
 <link rel="alternate" hreflang="en" href="https://www.numerolojim.com.tr/en/">
 <link rel="alternate" hreflang="x-default" href="https://www.numerolojim.com.tr/">
-
-<meta property="og:title" content="Numeroloji Analizi 2026 | Life Path Number Hesapla">
-<meta property="og:description" content="Free numerology analysis — life path number, soul urge and love compatibility.">
-<meta property="og:url" content="https://www.numerolojim.com.tr/en/">
-<meta property="og:image" content="https://www.numerolojim.com.tr/og-image.jpg">
-<meta property="og:type" content="website">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#171332">
+<meta name="google-adsense-account" content="ca-pub-5859270127915377">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Numerolojim">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Free Numerology Calculator: Life Path &amp; Name Reading">
+<meta property="og:description" content="Calculate your life path number, expression, soul urge and personality numbers from your name and date of birth. Free Pythagorean numerology reading.">
+<meta property="og:url" content="https://www.numerolojim.com.tr/en/">
+<meta property="og:image" content="https://www.numerolojim.com.tr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/assets/fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bodoni-moda-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=2">
 <style>
 /* ── RESET & ROOT ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -34,7 +34,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;width:100%;overflow-x:
 *{max-width:100%}
 body{
   background:#07071A;color:#F0EEF8;
-  font-family:'Montserrat',sans-serif;font-weight:300;
+  font-family:var(--sans);font-weight:300;
   min-height:100vh;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
@@ -46,7 +46,7 @@ body{
   --coral:#FF6B6B;--violet:#8B5CF6;
   --text:#F0EEF8;--text2:#B8B4D0;--text3:#6B6890;
   --border:rgba(212,168,67,.2);--border2:rgba(255,255,255,.06);
-  --ff:'Cinzel',serif;--r:14px;
+  --ff:var(--display);--r:14px;
   --max:860px;
 }
 
@@ -88,7 +88,7 @@ header{text-align:center;padding:40px 16px 32px}
   width:100%;background:rgba(255,255,255,.04);
   border:1px solid rgba(212,168,67,.18);border-radius:10px;
   padding:13px 16px;color:var(--text);
-  font-family:'Montserrat',sans-serif;font-size:14px;outline:none;
+  font-family:var(--sans);font-size:14px;outline:none;
   transition:border-color .3s,box-shadow .3s;
   -webkit-appearance:none;
 }
@@ -309,37 +309,49 @@ footer a:hover{color:var(--gold)}
 .lib-val{font-family:var(--ff);font-size:24px;font-weight:700;color:var(--coral)}
 .lib-label{font-size:10px;color:var(--text3);margin-top:4px;letter-spacing:.08em}
 </style>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","description":"Free numerology analysis — life path number, soul urge and love compatibility.","inLanguage":"tr"}
+<style>
+/* Yeni tasarım sistemi: eski araç stillerinin renk ve yazı tiplerini eşler */
+:root{--bg:var(--night);--bg2:var(--night-2);--bg3:var(--night-3);--card:var(--night-2);--bg-card:var(--night-2);
+--gold:var(--brass);--gold2:var(--brass-2);--coral:var(--rose);--text:var(--paper);--text2:var(--mist);--text3:var(--dim);
+--border:rgba(221,180,90,.28);--border2:var(--line);--ff:var(--display);--ff-d:var(--display);--ffb:var(--sans);--ff-b:var(--sans)}
+body{font-family:var(--sans)!important;background:var(--night)!important;font-weight:400!important}
+.aurora,.particles,.page-star{display:none!important}
+.site-head,.site-foot{text-align:left}
+.site-head .in,.site-foot .in{text-align:left}
+.site-foot h2{font-size:1.1rem!important;background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--paper)!important;font-family:var(--display)!important;letter-spacing:-.01em!important;text-transform:none!important;margin:0 0 .6rem!important}
+.site-nav{display:flex!important;padding:0!important}
+.site-nav a{font-family:var(--sans)!important;letter-spacing:0!important;color:var(--mist)!important}
+.site-nav a[aria-current],.site-nav a:hover{color:var(--paper)!important}
+.seo{max-width:var(--measure);margin:0 auto;padding:1rem 1.25rem 2rem;text-align:left}
+.seo h2{font-family:var(--display)!important;font-size:clamp(1.5rem,4vw,1.9rem)!important;color:var(--paper)!important;background:none!important;-webkit-text-fill-color:currentColor!important;letter-spacing:-.01em!important;text-transform:none!important;margin:2.2em 0 .6em!important;text-align:left!important;border:0!important;padding:0!important}
+.seo h3{font-family:var(--display)!important;font-size:1.25rem!important;color:var(--paper)!important;margin:1.6em 0 .4em!important}
+.seo p,.seo li{font-size:1.0625rem!important;color:#E7E1F2!important;line-height:1.7!important}
+.seo .faq summary{color:var(--paper)}
+h1,.hero-h1 h1{-webkit-text-fill-color:currentColor!important;background:none!important;color:var(--paper)!important;font-family:var(--display)!important;letter-spacing:-.01em!important;text-transform:none!important;font-size:clamp(1.9rem,6vw,2.8rem)!important;line-height:1.15!important;font-weight:600!important;margin:.6em 0 .4em!important}
+body *{letter-spacing:normal!important}
+main [class*=label],main [class*=lbl],main [class*=eye],main .fc-label,main .card-eye,main button,main .btn-main,main [class*=-btn],main [class*=cat],main [class*=tag]{text-transform:none!important}
+.btn-main{background:var(--brass)!important;color:var(--night)!important;box-shadow:none!important;font-family:var(--sans)!important;font-weight:600!important;font-size:1.05rem!important}
+.btn-main:hover{background:var(--brass-2)!important;transform:none!important}
+.hero-h1-sub,.hero-sub{font-size:1.05rem!important;line-height:1.65!important}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.numerolojim.com.tr/#org","name":"Numerolojim","url":"https://www.numerolojim.com.tr/","logo":{"@type":"ImageObject","url":"https://www.numerolojim.com.tr/icon-512x512.png"}},{"@type":"WebApplication","name":"Numerology Calculator","url":"https://www.numerolojim.com.tr/en/","description":"Calculate your life path number, expression, soul urge and personality numbers from your name and date of birth. Free Pythagorean numerology reading.","inLanguage":"en","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the numerology calculator work?","acceptedAnswer":{"@type":"Answer","text":"Enter your full name and date of birth. The calculator adds the digits of your birth date for your life path number and converts the letters of your name with the Pythagorean chart to find your expression, soul urge and personality numbers."}},{"@type":"Question","name":"Is my data stored?","acceptedAnswer":{"@type":"Answer","text":"No. Everything is calculated in your browser; your name and birth date are never sent to a server or saved."}},{"@type":"Question","name":"What are master numbers?","acceptedAnswer":{"@type":"Answer","text":"11, 22 and 33 are not reduced to a single digit when they appear as a total. They are read as intensified versions of 2, 4 and 6."}}]}]}</script>
+<script>
+(function(){var app=/NumerolojimApp/.test(navigator.userAgent);if(app)document.documentElement.className+=" in-app";
+window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied",region:["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IS","IE","IT","LV","LI","LT","LU","MT","NL","NO","PL","PT","RO","SK","SI","ES","SE","GB","CH"]});gtag("js",new Date());gtag("config","G-WR0943XX1B",{app_webview:app?"yes":"no"});
+var g=document.createElement("script");g.async=1;g.src="https://www.googletagmanager.com/gtag/js?id=G-WR0943XX1B";document.head.appendChild(g);
+if(!app){var a=document.createElement("script");a.async=1;a.crossOrigin="anonymous";a.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5859270127915377";document.head.appendChild(a);}})();
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Numerolojim.com.tr","url":"https://www.numerolojim.com.tr","logo":"https://www.numerolojim.com.tr/icons/icon-512x512.png"}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What is numerology?","acceptedAnswer":{"@type":"Answer","text":"Numerology is an ancient system that studies the influence of numbers on personality, destiny and life events. Numbers calculated from your birth date and name reveal your core character and life purpose."}},
-{"@type":"Question","name":"How is the life path number calculated?","acceptedAnswer":{"@type":"Answer","text":"The life path number is found by adding all digits of your birth date and reducing to a single digit. For example, 03/15/1990 gives 0+3+1+5+1+9+9+0=28, 2+8=10, 1+0=1."}},
-{"@type":"Question","name":"Is the numerology analysis free?","acceptedAnswer":{"@type":"Answer","text":"Yes. On Numerolojim.com.tr, life path number, soul urge, personality and love compatibility analyses are completely free."}},
-{"@type":"Question","name":"What are master numbers (11, 22, 33)?","acceptedAnswer":{"@type":"Answer","text":"Master numbers are special numbers in numerology that are not reduced to a single digit. 11 represents intuition, 22 the power of great building, and 33 unconditional love and teaching."}}
-]}
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5859270127915377"
-     crossorigin="anonymous"></script>
-</head>
-<body>
-
-<div class="lang-switch">
-  <a href="/">TR</a>
-  <a href="/en/" class="active">EN</a>
-</div>
-<div class="aurora"><div class="ab"></div><div class="ab"></div><div class="ab"></div></div>
-
+<script src="/assets/site.js?v=2" defer></script>
+</head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="site-head" role="banner"><div class="in">
+<a class="brand" href="/en/">Numerolojim<b aria-hidden="true">·</b></a>
+<div class="site-nav" role="navigation" aria-label="Main menu"><a href="/en/" aria-current="page">Calculator</a><a href="/en/what-is-a-life-path-number.html">Life path numbers</a><a href="/en/compatibility-calculator.html">Compatibility</a><a href="/en/blog.html">Articles</a><a class="lang" href="/" hreflang="tr" lang="tr">TR</a></div>
+</div></div>
+<main id="main">
 <div class="page">
 
-<header>
-  <span class="logo">✦ NUMEROLOJİM</span>
-  <div class="logo-sub">the mystery of numbers</div>
-</header>
+
 
 <!-- FORM -->
 <div id="pDailyWrap"></div>
@@ -356,7 +368,7 @@ footer a:hover{color:var(--gold)}
       <div class="date-row">
         <input type="number" id="bd" placeholder="Day" min="1" max="31">
         <input type="number" id="bm" placeholder="Month" min="1" max="12">
-        <input type="number" id="by" placeholder="Year" min="1900" max="2010">
+        <input type="number" id="by" placeholder="Year" min="1900" max="2026">
       </div>
     </div>
     <div class="fgroup">
@@ -372,7 +384,7 @@ footer a:hover{color:var(--gold)}
       </select>
     </div>
     <button class="btn-main" onclick="runAnalysis()">✦ Start My Analysis ✦</button>
-    <a href="rapor.html" class="rapor-link">✦ Get AI-Powered Detailed Report →</a>
+    <a href="rapor.html" class="rapor-link">Get your detailed personal report</a>
   </div>
 </div>
 
@@ -573,12 +585,7 @@ footer a:hover{color:var(--gold)}
   </div>
 </div>
 
-<footer>
-  <p>© 2026 Numerolojim.com.tr &nbsp;·&nbsp;
-  <a href="../privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-  <a href="../numeroloji-nedir.html">Numeroloji Nedir?</a> &nbsp;·&nbsp;
-  <a href="../blog.html">Blog</a> · <a href="../iletisim.html">Contact</a></p>
-</footer>
+
 
 </div><!-- /page -->
 
@@ -737,7 +744,7 @@ function runAnalysis(){
   const by=parseInt(document.getElementById('by').value);
 
   if(!fn||fn.length<2){alert('Lütfen adınızı girin.');return;}
-  if(!bd||bd<1||bd>31||!bm||bm<1||bm>12||!by||by<1900||by>2010){alert('Please enter a valid birth date.');return;}
+  if(!bd||bd<1||bd>31||!bm||bm<1||bm>12||!by||by<1900||by>new Date().getFullYear()){alert('Please enter a valid birth date.');return;}
 
   document.getElementById('loader').classList.add('on');
   document.getElementById('results').classList.remove('on');
@@ -1156,6 +1163,40 @@ function showPersonalDaily(){
 })();
 showPersonalDaily();
 </script>
+<section class="seo prose">
 
+<h2>How the numerology calculator works</h2>
+<p>This free reading uses the Pythagorean system and calculates four core numbers:</p>
+<ul>
+<li><strong>Life path number:</strong> the sum of every digit in your birth date. For 15 May 1990: 1+5+0+5+1+9+9+0 = 30, 3+0 = 3. Read the <a href="/en/what-is-a-life-path-number.html">life path guide</a> for all numbers.</li>
+<li><strong>Expression number:</strong> all the letters of your full name; your natural talents.</li>
+<li><strong>Soul urge number:</strong> the vowels only; what you want deep down.</li>
+<li><strong>Personality number:</strong> the consonants; how others see you at first.</li>
+</ul>
+<p>To compare two people, try the <a href="/en/compatibility-calculator.html">compatibility calculator</a>.</p>
+<figure class="pyth"><figcaption>The Pythagorean letter-number chart.</figcaption><table aria-label="Pythagorean letter-number chart"><thead><tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th></tr></thead><tbody><tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td></tr><tr><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td><td>Q</td><td>R</td></tr><tr><td>S</td><td>T</td><td>U</td><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td><td></td></tr></tbody></table></figure>
+<h2>Frequently asked questions</h2><div class="faq"><details><summary>How does the numerology calculator work?</summary><div><p>Enter your full name and date of birth. The calculator adds the digits of your birth date for your life path number and converts the letters of your name with the Pythagorean chart to find your expression, soul urge and personality numbers.</p></div></details><details><summary>Is my data stored?</summary><div><p>No. Everything is calculated in your browser; your name and birth date are never sent to a server or saved.</p></div></details><details><summary>What are master numbers?</summary><div><p>11, 22 and 33 are not reduced to a single digit when they appear as a total. They are read as intensified versions of 2, 4 and 6.</p></div></details></div>
+
+</section>
+</main>
+<div class="site-foot" role="contentinfo"><div class="in">
+<section><h2>Life path numbers</h2><div class="num-row"><a href="/en/life-path-number-1.html">1</a><a href="/en/life-path-number-2.html">2</a><a href="/en/life-path-number-3.html">3</a><a href="/en/life-path-number-4.html">4</a><a href="/en/life-path-number-5.html">5</a><a href="/en/life-path-number-6.html">6</a><a href="/en/life-path-number-7.html">7</a><a href="/en/life-path-number-8.html">8</a><a href="/en/life-path-number-9.html">9</a><a href="/en/life-path-number-11.html">11</a><a href="/en/life-path-number-22.html">22</a><a href="/en/life-path-number-33.html">33</a></div></section>
+<section><h2>Guides</h2><ul>
+<li><a href="/en/what-is-a-life-path-number.html">What is a life path number?</a></li>
+<li><a href="/en/how-to-calculate-numerology.html">How to calculate numerology</a></li>
+<li><a href="/en/master-numbers-11-22-33.html">Master numbers 11, 22, 33</a></li>
+<li><a href="/en/angel-numbers-meaning.html">Angel numbers</a></li>
+<li><a href="/en/what-your-name-letters-mean.html">What your name letters mean</a></li>
+</ul></section>
+<section><h2>Tools</h2><ul>
+<li><a href="/en/">Free numerology reading</a></li>
+<li><a href="/en/compatibility-calculator.html">Compatibility calculator</a></li>
+<li><a href="/en/rapor.html">Personal numerology report</a></li>
+<li><a href="/en/blog.html">All articles</a></li>
+</ul></section>
+<div class="legal">
+<p>Numerology is a symbolic tradition for self-reflection, not a science. Read these interpretations for fun and self-discovery, and don't base health, money or legal decisions on them.</p>
+<p>© 2026 Numerolojim · <a href="/iletisim.html">Contact</a> · <a href="/privacy.html">Privacy policy</a> · <a href="/">Türkçe</a></p>
+</div></div></div>
 </body>
 </html>
