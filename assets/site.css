@@ -247,3 +247,7 @@ html.in-app .site-head .lang{display:none}
 /* Ana sayfa logosu */
 .home-logo{display:block;width:112px;height:112px;margin:1.25rem auto 0}
 @media (max-width:640px){.brand img{width:34px;height:34px}.brand{font-size:1.25rem}}
+/* Yol çubuğu tek satırda kalır; uzun başlık üç noktayla kısalır */
+.page .crumbs ol{flex-wrap:nowrap}
+.crumbs li{white-space:nowrap}
+.crumbs li:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
