@@ -327,3 +327,12 @@ html.in-app .site-head .lang{display:none}
 .ck-table td:first-child{white-space:nowrap}
 .ck-table .sw{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.4rem;vertical-align:middle}
 @media (max-width:30rem){.ck-bar{grid-template-columns:7.6rem 1fr 1.4rem;font-size:.9rem}.ck-sim small{margin-left:0;width:100%}}
+.ck-nums{list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.3rem}
+.ck-nums li{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap;background:var(--night);border:1px solid var(--line);border-radius:8px;padding:.35rem .7rem;font-size:.95rem}
+.ck-nums b{font-family:var(--display);font-size:1.25rem;color:var(--ck,var(--brass));min-width:1rem}
+.ck-nums .h{font-weight:600}
+.ck-nums span:not(.h){color:var(--mist)}
+.ck-nums em{margin-left:auto;font-style:normal;font-size:.85rem;color:var(--sage)}
+.ck-nums li.off{opacity:.6}
+.ck-nums li.off em{color:var(--dim)}
+.prose .ck-nums{padding:0;margin-left:0}.prose .ck-nums li{margin:0}

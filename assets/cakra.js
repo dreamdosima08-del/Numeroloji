@@ -16,9 +16,16 @@
   /* ---------- çekirdek hesap ---------- */
   function letters(name){return lower(name).replace(/i̇/g,"i").split("").filter(function(c){return C&&C.LV[c]})}
   function profile(name){
-    var v=[0,0,0,0,0,0,0], by=[[],[],[],[],[],[],[]];
-    letters(name).forEach(function(ch){var id=C.NUM2CAKRA[C.LV[ch]];v[id-1]++;by[id-1].push(ch)});
-    return {v:v,by:by,total:v.reduce(function(a,b){return a+b},0)};
+    var v=[0,0,0,0,0,0,0], by=[[],[],[],[],[],[],[]], num={};
+    letters(name).forEach(function(ch){var n=C.LV[ch],id=C.NUM2CAKRA[n];v[id-1]++;by[id-1].push(ch);num[n]=(num[n]||0)+1});
+    return {v:v,by:by,num:num,total:v.reduce(function(a,b){return a+b},0)};
+  }
+  function numsHtml(id,p){
+    var ns=Object.keys(C.NUM2CAKRA).filter(function(n){return C.NUM2CAKRA[n]===id}).sort();
+    return '<ul class="ck-nums">'+ns.map(function(n){
+      var k=p&&p.num[n]||0, s=C.SAYI[n];
+      return '<li'+(p?(k?' class="on"':' class="off"'):'')+'><b>'+n+'</b><span class="h">'+esc(s.h.split(" ").join(", "))+'</span><span>'+esc(s.a)+'</span>'+(p?'<em>'+(k?k+' harf':'yok')+'</em>':'')+'</li>';
+    }).join("")+'</ul>';
   }
   function state(n){return n===0?"eksik":n>=3?"guclu":"dengeli"}
   var STATE_LABEL={eksik:"Eksik",dengeli:"Dengeli",guclu:"Güçlü · gölge riski"};
@@ -45,7 +52,7 @@
     else txt='<p class="ck-miss">'+esc(c.eksik)+'</p>';
     return '<article class="ck-card st-'+st+'" style="--ck:'+c.renk+'">'+
       '<header><span class="dot"></span><h3>'+(i+1)+'. '+esc(c.ad)+' <small>'+esc(c.sk)+'</small></h3><span class="badge">'+STATE_LABEL[st]+'</span></header>'+
-      '<p class="ck-meta">'+esc(c.alan)+' · Harfler: '+esc(c.harfler)+(n?' · İsminde: <b>'+chipLetters(p.by[i])+'</b> ('+n+')':' · İsminde yok')+'</p>'+
+      '<p class="ck-meta">'+esc(c.alan)+(n?' · İsminde: <b>'+chipLetters(p.by[i])+'</b> ('+n+')':' · İsminde yok')+'</p>'+numsHtml(c.id,p)+
       '<ul class="ck-traits">'+c.guc.map(function(g){return"<li>"+esc(g)+"</li>"}).join("")+'</ul>'+txt+'</article>';
   }
   function similar(p){
