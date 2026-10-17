@@ -1,7 +1,7 @@
 /* Numerolojim service worker v2
    Önce ağ: sayfalar her zaman sunucudan güncel gelir, bağlantı yoksa çevrimdışı sayfası gösterilir.
    v1'in önbelleğe aldığı eski sayfalar etkinleştirme sırasında silinir. */
-const CACHE = 'numerolojim-v3';
+const CACHE = 'numerolojim-v4';
 const OFFLINE = '/offline.html';
 
 self.addEventListener('install', e => {

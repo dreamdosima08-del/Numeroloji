@@ -251,3 +251,79 @@ html.in-app .site-head .lang{display:none}
 .page .crumbs ol{flex-wrap:nowrap}
 .crumbs li{white-space:nowrap}
 .crumbs li:last-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+
+/* ---- Çakra, bebek ismi, melek terminali, ünlüler, araçlar ---- */
+.ck-summary{background:var(--night-2);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.2rem 1rem;margin:1.2rem 0}
+.ck-kicker{margin:0;color:var(--mist);font-size:.95rem;letter-spacing:.04em;text-transform:uppercase}
+.ck-top{font-family:var(--display);font-size:1.45rem;line-height:1.3;margin:.3rem 0 1rem}
+.ck-top b{color:var(--ck,var(--brass))}
+.ck-top span{color:var(--mist);font-size:1rem;font-family:var(--sans)}
+.ck-bars{display:grid;gap:.45rem;margin:.4rem 0}
+.ck-bar{display:grid;grid-template-columns:9.5rem 1fr 1.6rem;align-items:center;gap:.6rem;font-size:.98rem}
+.ck-bar .tr{height:.7rem;background:rgba(255,255,255,.08);border-radius:1rem;overflow:hidden}
+.ck-bar .tr i{display:block;height:100%;border-radius:1rem}
+.ck-bar b{text-align:right;font-variant-numeric:tabular-nums}
+.ck-bar.st-eksik .nm{color:var(--dim)}
+.ck-bars.compact .ck-bar{grid-template-columns:8rem 1fr 1.4rem;font-size:.9rem}
+.ck-quick{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0 0;font-size:.95rem}
+.ck-quick span{border:1px solid var(--line);border-radius:2rem;padding:.15rem .7rem;color:var(--mist)}
+.ck-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.ck-card-out{margin-top:1rem;text-align:center}
+.ck-card-out img{width:min(100%,20rem);height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.ck-card-out .ck-actions{justify-content:center}
+.ck-sim{margin:1.2rem 0}
+.ck-sim h3{margin:0 0 .5rem}
+.ck-sim ul{list-style:none;padding:0;margin:0;display:grid;gap:.5rem}
+.ck-sim a{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;padding:.6rem .9rem;border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:var(--paper)}
+.ck-sim a:hover{border-color:var(--brass)}
+.ck-sim a b{font-family:var(--display);font-size:1.5rem;color:var(--brass);min-width:3.6rem}
+.ck-sim small{color:var(--mist);margin-left:auto}
+.ck-sim .sub,.bb-card .sub{color:var(--dim);font-size:.9rem}
+.ck-grid,.bb-grid{display:grid;gap:1rem;margin:1rem 0}
+.ck-card,.bb-card{background:var(--night-2);border:1px solid var(--line);border-left:4px solid var(--ck,var(--line));border-radius:var(--r);padding:1rem 1.1rem}
+.ck-card header{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.ck-card .dot{width:.85rem;height:.85rem;border-radius:50%;background:var(--ck);flex:none}
+.ck-card h3{margin:0;font-size:1.2rem;flex:1}
+.ck-card h3 small{color:var(--dim);font-family:var(--sans);font-size:.85rem;font-weight:400}
+.badge{font-size:.82rem;font-weight:600;border-radius:2rem;padding:.15rem .65rem;background:var(--night-3);color:var(--mist)}
+.st-guclu .badge{background:rgba(238,147,147,.15);color:var(--rose)}
+.st-dengeli .badge{background:rgba(158,211,180,.14);color:var(--sage)}
+.st-eksik .badge{background:rgba(140,132,179,.15);color:var(--mist)}
+.ck-meta{color:var(--mist);font-size:.95rem;margin:.4rem 0}
+.ck-meta b{color:var(--paper)}
+.ck-traits{margin:.5rem 0;padding-left:1.2rem}
+.ck-traits li{margin:.15rem 0}
+.ck-traits li::marker{color:var(--ck,var(--brass))}
+.ck-card p,.bb-card p{margin:.5rem 0}
+.ck-shadow{background:rgba(238,147,147,.08);border-left:3px solid var(--rose);padding:.55rem .8rem;border-radius:6px}
+.ck-shadow strong{color:var(--rose)}
+.ck-miss{color:var(--mist)}
+.ck-h{margin-top:2rem}
+.bb-card{border-left-color:var(--line)}
+.bb-card.best{border-left-color:var(--brass)}
+.bb-card h3{margin:0 0 .2rem}
+.bb-best{font-family:var(--display);font-size:1.25rem}
+.bb-best b{color:var(--brass)}
+.bb-sug span{display:inline-block;margin:.2rem .35rem .2rem 0;padding:.15rem .7rem;border:1px solid var(--brass);border-radius:2rem;color:var(--brass-2)}
+.bb-card .ok{color:var(--sage)}
+.calc select{font:inherit;color:var(--paper);background:var(--night);border:1px solid var(--line);border-radius:8px;padding:.6rem .7rem;min-height:2.9rem}
+.melek-term input{font-family:var(--display);font-size:1.6rem;letter-spacing:.12em;text-align:center}
+.melek-res{text-align:center;background:var(--night);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem}
+.melek-num{font-family:var(--display);font-size:3.2rem;line-height:1;color:var(--brass);margin:0;letter-spacing:.08em}
+.melek-b{font-weight:600;margin:.6rem 0 .2rem;color:var(--brass-2)}
+.melek-m{font-size:1.15rem;margin:.3rem 0 1rem}
+.melek-chips a{min-width:3.4rem}
+.celeb-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));margin:1.2rem 0}
+.celeb{background:var(--night-2);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.1rem;scroll-margin-top:5rem}
+.celeb:target{border-color:var(--brass);box-shadow:0 0 0 2px rgba(221,180,90,.3)}
+.celeb h2{font-size:1.3rem;margin:0}
+.celeb p{margin:.35rem 0;font-size:.98rem}
+.celeb .ck-meta a{color:var(--brass-2)}
+.tool-grid{list-style:none;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));margin:1.2rem 0}
+.tool-grid a{display:block;height:100%;background:var(--night-2);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem;text-decoration:none;color:var(--paper)}
+.tool-grid a:hover{border-color:var(--brass)}
+.tool-grid b{display:block;font-family:var(--display);font-size:1.2rem;color:var(--brass-2);margin-bottom:.3rem}
+.tool-grid span{color:var(--mist);font-size:.98rem}
+.ck-table td:first-child{white-space:nowrap}
+.ck-table .sw{display:inline-block;width:.7rem;height:.7rem;border-radius:50%;margin-right:.4rem;vertical-align:middle}
+@media (max-width:30rem){.ck-bar{grid-template-columns:7.6rem 1fr 1.4rem;font-size:.9rem}.ck-sim small{margin-left:0;width:100%}}
