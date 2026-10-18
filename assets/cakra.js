@@ -84,7 +84,7 @@
         '<div class="ck-grid">'+C.CAKRALAR.map(function(c,i){return cardHtml(c,i,p)}).join("")+'</div>';
       out.querySelector("[data-card]").addEventListener("click",function(){makeCard(nm,p,out.querySelector(".ck-card-out"),this)});
       out.scrollIntoView({behavior:"smooth",block:"start"});
-      track("cakra_analiz",{top:tc.ad,missing:miss.length,strong:strong.length});
+      window.nmjDone&&nmjDone("cakra");track("cakra_analiz",{top:tc.ad,missing:miss.length,strong:strong.length});
     });
   }
 
@@ -205,7 +205,7 @@
           return'<article class="bb-card'+(r===best&&rows.length>1?" best":"")+'"><h3>'+esc(r.full)+'</h3><p class="ck-meta">Denge puanı: <b>'+r.sc+'/14</b> · Eksik çakra: <b>'+r.miss+'</b></p>'+bars(r.p.v,true)+adv+'</article>';
         }).join("")+'</div>';
       out.scrollIntoView({behavior:"smooth",block:"start"});
-      track("bebek_ismi",{adet:rows.length});
+      window.nmjDone&&nmjDone("bebek");track("bebek_ismi",{adet:rows.length});
     });
   }
 

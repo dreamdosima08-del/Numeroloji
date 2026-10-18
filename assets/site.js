@@ -39,6 +39,7 @@
         '<div class="res"><b>'+n+'</b><a class="btn" href="'+kaderUrl(n)+'">'+
         (EN?("Read life path "+n):("Kader sayısı "+n+" yorumunu oku"))+'</a></div>';
       try{window.gtag&&gtag("event","mini_calc",{type:"date",result:n})}catch(err){}
+      window.nmjDone("kader");
     });
   }
 
@@ -81,7 +82,22 @@
     });
   }
 
+  /* Uygulama köprüsü: analiz bitince Android uygulamasına haber verir
+     (uygulama geçiş reklamını buna göre seyrek gösterir). Tarayıcıda hiçbir şey yapmaz. */
+  window.nmjDone=function(kind){
+    try{if(window.NumerolojimApp&&window.NumerolojimApp.postMessage)window.NumerolojimApp.postMessage(String(kind||"analiz"))}catch(e){}
+  };
+  function wrapTools(){
+    ["runAnalysis","calcMatch","generate"].forEach(function(n){
+      var f=window[n];
+      if(typeof f!=="function"||f._nmj)return;
+      var w=function(){var r=f.apply(this,arguments);window.nmjDone(n);return r};
+      w._nmj=1;window[n]=w;
+    });
+  }
+
   function init(){
+    wrapTools();
     doc.querySelectorAll("form[data-calc=date]").forEach(bindDate);
     doc.querySelectorAll("form[data-calc=name]").forEach(bindName);
     bindShare();
