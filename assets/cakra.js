@@ -6,6 +6,7 @@
   "use strict";
   var doc=document, C=window.CAKRA, M=window.MELEK;
   var inApp=/\bin-app\b/.test(doc.documentElement.className);
+  var yeniUyg=(function(){var m=navigator.userAgent.match(/NumerolojimApp\/(\d+)\.(\d+)/);return !!(m&&(+m[1])*100+(+m[2])>=102&&window.NumerolojimApp);})();
 
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
   function lower(s){try{return s.toLocaleLowerCase("tr")}catch(e){return s.toLowerCase()}}
@@ -145,8 +146,10 @@
       var url=cv.toDataURL("image/png");
       box.hidden=false;
       box.innerHTML='<img src="'+url+'" width="1080" height="1920" alt="'+esc(nm)+' için çakra hikâye kartı">'+
-        (inApp?'<p class="sub">Kartı kaydetmek için ekran görüntüsü al ya da görsele uzun bas.</p>':
+        (yeniUyg?'<div class="ck-actions"><button class="btn" type="button" data-uyg>Kaydet / paylaş</button></div>':inApp?'<p class="sub">Kartı kaydetmek için ekran görüntüsü al ya da görsele uzun bas.</p>':
         '<div class="ck-actions"><button class="btn" type="button" data-sh>Paylaş</button><a class="btn ghost" download="numerolojim-cakra.png" href="'+url+'">İndir</a></div><p class="sub">Instagram ya da TikTok hikâyende paylaşabilirsin.</p>');
+      var ub=box.querySelector("[data-uyg]");
+      if(ub)ub.addEventListener("click",function(){try{window.NumerolojimApp.postMessage(JSON.stringify({t:"kaydet",ad:"numerolojim-cakra.png",mime:"image/png",veri:url.split(",")[1]}))}catch(e){}track("cakra_kart_paylas");});
       var sh=box.querySelector("[data-sh]");
       if(sh)sh.addEventListener("click",function(){
         cv.toBlob(function(b){

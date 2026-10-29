@@ -475,3 +475,4 @@ a.nc:hover{border-color:var(--brass)}
 }
 @media (max-width:360px){.tile b{font-size:.78rem}.tile .d{font-size:.66rem}.tiles{gap:.4rem}}
 .calc input,.calc select{height:3rem;box-sizing:border-box}
+.rp-not{color:var(--mist);font-size:.82rem}

@@ -18,7 +18,7 @@
     }).join(" ");
   }
   function ilkAd(s) { return baslikHarf(String(s || "").trim().split(/\s+/)[0] || ""); }
-  function track(ad, p) { try { window.gtag && gtag("event", ad, p || {}); } catch (e) {} try { window.nmjDone && window.nmjDone(ad); } catch (e) {} }
+  function track(ad, p) { try { window.gtag && gtag("event", ad, p || {}); } catch (e) {} if (!/^rapor_/.test(ad)) { try { window.nmjDone && window.nmjDone(ad); } catch (e) {} } }
   function paras(a) { return (a || []).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join(""); }
   function liste(a, cls) { return a && a.length ? '<ul class="' + (cls || "rs-list") + '">' + a.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>" : ""; }
   function oturumOku() { try { var v = JSON.parse(sessionStorage.getItem(KEY) || "null"); return v && typeof v === "object" ? v : null; } catch (e) { return null; } }
@@ -291,7 +291,8 @@
     var ad = baslikHarf(p.isim), simdi = new Date(), K = T.kader[p.kader.sayi], skor = N.alanSkorlari(p);
     var h = '<div class="rp-kapak"><p class="rs-kicker">Kişisel numeroloji raporu</p><h2>' + esc(ad) + "</h2><p>" + p.g + " " + AYLAR[p.a - 1] + " " + p.y + " · Rapor tarihi: " + simdi.getDate() + " " + AYLAR[simdi.getMonth()] + " " + simdi.getFullYear() + "</p>" +
       '<div class="nc-row">' + sayiRozet(p.kader.sayi, "Kader (yaşam yolu)", K.ad, "/kader-sayisi-" + p.kader.sayi + ".html") + sayiRozet(p.ifade.sayi, "İfade", T.isimAd[p.ifade.sayi]) + sayiRozet(p.ruh.sayi, "Ruh güdüsü", T.isimAd[p.ruh.sayi]) + sayiRozet(p.kisilik.sayi, "Kişilik", T.isimAd[p.kisilik.sayi]) + sayiRozet(p.dogumGunu.sayi, "Doğum günü") + sayiRozet(p.olgunluk.sayi, "Olgunluk") + sayiRozet(p.kisiselYil, simdi.getFullYear() + " kişisel yıl", T.yil[p.kisiselYil].tema) + "</div>" +
-      '<p class="no-print rp-act"><button class="btn" type="button" data-yazdir>PDF olarak kaydet / yazdır</button></p></div>';
+      '<p class="no-print rp-act">' + (UYG.yeni ? '<button class="btn" type="button" data-kart>Raporumu görsel olarak kaydet</button><br><small class="rp-not">Kısa bir reklam izledikten sonra rapor kartın hazırlanır.</small>'
+        : UYG.var ? "" : '<button class="btn" type="button" data-yazdir>PDF olarak kaydet / yazdır</button> <button class="btn ghost" type="button" data-kart>Rapor kartımı indir</button>') + "</p></div>";
     var ic = [["yol", "1. Yaşam yolu (kader) sayısı"], ["ifade", "2. İfade sayısı"], ["ruh", "3. Ruh güdüsü sayısı"], ["kisilik", "4. Kişilik sayısı"], ["dg", "5. Doğum günü sayısı"], ["olg", "6. Olgunluk sayısı"], ["borc", "7. Karmik borç"], ["ders", "8. Karmik dersler"], ["yil", "9. Kişisel yıl"], ["ay", "10. 12 aylık yorum"], ["zirve", "11. Zirve döngüleri"], ["sinav", "12. Sınav sayıları"], ["mx", "13. Numeroloji matrisi"], ["harf", "14. İsim ve harfler"], ["skor", "15. Yaşam alanları skor tablosu"], ["unlu", "16. Aynı sayıyı taşıyan ünlüler"], ["sonuc", "17. Sonuç"]];
     h += '<nav class="rp-ic no-print"><h3>İçindekiler</h3><ol>' + ic.map(function (x) { return '<li><a href="#rp-' + x[0] + '">' + x[1].replace(/^\d+\. /, "") + "</a></li>"; }).join("") + "</ol></nav>";
     h += kart(ic[0][1] + ": " + p.kader.sayi + " · " + esc(K.ad), '<p class="lead">' + esc(K.ozet) + "</p>" + K.uzun + '<p class="rs-step">' + p.kader.rakamlar.join(" + ") + " = " + zincirYaz(p.kader.zincir) + '</p><p><a href="/kader-sayisi-' + p.kader.sayi + '.html">Kader sayısı ' + p.kader.sayi + " için tam yorumu oku (aşk, kariyer, uyumlu sayılar) →</a></p>", "", "rp-yol");
@@ -325,10 +326,80 @@
     h += kart(ic[16][1], liste(sonuc) + '<p class="note">Bu rapor Pisagor numerolojisine göre hesaplanmıştır. Numeroloji sembolik bir kendini tanıma aracıdır; sağlık, para ve hukuk kararlarını bu yorumlara dayandırma.</p>', "", "rp-sonuc");
     out.innerHTML = h;
     var b = out.querySelector("[data-yazdir]");
-    if (b) b.addEventListener("click", function () {
-      if (/\bin-app\b/.test(doc.documentElement.className)) { alert("Uygulama içinde yazdırma desteklenmiyor. Raporu kaydetmek için ekran görüntüsü alabilir ya da sitemizi tarayıcıda açabilirsin."); return; }
-      window.print();
+    if (b) b.addEventListener("click", function () { window.print(); });
+    try { doc.fonts && doc.fonts.load('650 84px "Fraunces"'); doc.fonts && doc.fonts.load('400 38px "Literata"'); } catch (e) {}
+    var kb = out.querySelector("[data-kart]");
+    if (kb) kb.addEventListener("click", function () {
+      if (UYG.yeni) { bekleyenKart = p; uygulamayaGonder({ t: "odul", k: "rapor" }); track("rapor_odul_istek"); }
+      else kartKaydet(raporKarti(p), "numerolojim-rapor.png", kb);
     });
+  }
+
+  /* ---------- uygulama köprüsü ve rapor kartı ---------- */
+  var UYG = (function () {
+    var m = navigator.userAgent.match(/NumerolojimApp\/(\d+)\.(\d+)/);
+    var v = m ? (+m[1]) * 100 + (+m[2]) : 0;
+    return { var: !!m, yeni: v >= 102 };
+  })();
+  var bekleyenKart = null;
+  function uygulamayaGonder(o) { try { window.NumerolojimApp && window.NumerolojimApp.postMessage(JSON.stringify(o)); } catch (e) {} }
+  window.nmjOdulVerildi = function (k) {
+    if (k === "rapor" && bekleyenKart) { kartKaydet(raporKarti(bekleyenKart), "numerolojim-rapor.png"); track("rapor_odul_verildi"); }
+  };
+  function kartKaydet(cv, ad, btn) {
+    if (UYG.yeni) { uygulamayaGonder({ t: "kaydet", ad: ad, mime: "image/png", veri: cv.toDataURL("image/png").split(",")[1] }); return; }
+    cv.toBlob(function (bl) {
+      try {
+        var f = new File([bl], ad, { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [f] })) { navigator.share({ files: [f], title: "Numeroloji kartım" }).catch(function () {}); return; }
+      } catch (e) {}
+      var a = doc.createElement("a"); a.href = URL.createObjectURL(bl); a.download = ad; doc.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+    }, "image/png");
+    track("rapor_kart_indir");
+  }
+  function yuvarlak(x, a, b, w, h, r) { x.beginPath(); x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); }
+  function raporKarti(p) {
+    var W = 1080, H = 1920, cv = doc.createElement("canvas"); cv.width = W; cv.height = H;
+    var x = cv.getContext("2d"), simdi = new Date(), skor = N.alanSkorlari(p);
+    var g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#120F2A"); g.addColorStop(.6, "#1B1738"); g.addColorStop(1, "#2A1F55");
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    var rg = x.createRadialGradient(W / 2, 420, 30, W / 2, 420, 600); rg.addColorStop(0, "rgba(221,180,90,.25)"); rg.addColorStop(1, "rgba(0,0,0,0)"); x.fillStyle = rg; x.fillRect(0, 0, W, H);
+    var seed = 11; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    for (var s = 0; s < 80; s++) { x.fillStyle = "rgba(241,236,246," + (0.12 + rnd() * .45) + ")"; x.beginPath(); x.arc(rnd() * W, rnd() * H, rnd() * 2 + .4, 0, 7); x.fill(); }
+    x.textAlign = "center";
+    x.fillStyle = "#BDB5DC"; x.font = '600 34px "Albert Sans",sans-serif'; x.fillText("NUMEROLOJİM · KİŞİSEL NUMEROLOJİ KARTI", W / 2, 150);
+    x.fillStyle = "#F1CF7E"; x.font = '650 84px "Fraunces","Literata",Georgia,serif';
+    var ad = baslikHarf(p.isim); if (x.measureText(ad).width > 940) x.font = '650 64px "Fraunces","Literata",Georgia,serif';
+    x.fillText(ad, W / 2, 270);
+    x.fillStyle = "#BDB5DC"; x.font = '400 36px "Albert Sans",sans-serif'; x.fillText(p.g + " " + AYLAR[p.a - 1] + " " + p.y, W / 2, 330);
+    var kutular = [["Kader", p.kader.sayi, T.kader[p.kader.sayi].ad], ["İfade", p.ifade.sayi, T.isimAd[p.ifade.sayi]], ["Ruh güdüsü", p.ruh.sayi, T.isimAd[p.ruh.sayi]],
+                   ["Kişilik", p.kisilik.sayi, T.isimAd[p.kisilik.sayi]], ["Doğum günü", p.dogumGunu.sayi, T.isimAd[p.dogumGunu.sayi]], ["Olgunluk", p.olgunluk.sayi, T.isimAd[p.olgunluk.sayi]]];
+    kutular.forEach(function (k, i) {
+      var c = i % 3, r = Math.floor(i / 3), bx = 70 + c * 320, by = 400 + r * 300;
+      x.fillStyle = "rgba(255,255,255,.06)"; yuvarlak(x, bx, by, 300, 270, 28); x.fill();
+      x.strokeStyle = "rgba(221,180,90,.45)"; x.lineWidth = 2; yuvarlak(x, bx, by, 300, 270, 28); x.stroke();
+      x.fillStyle = "#BDB5DC"; x.font = '600 30px "Albert Sans",sans-serif'; x.fillText(k[0], bx + 150, by + 55);
+      x.fillStyle = "#DDB45A"; x.font = '650 110px "Fraunces","Literata",Georgia,serif'; x.fillText(String(k[1]), bx + 150, by + 175);
+      x.fillStyle = "#F1ECF6"; x.font = '400 28px "Albert Sans",sans-serif'; x.fillText(k[2] || "", bx + 150, by + 230);
+    });
+    var Y = T.yil[p.kisiselYil];
+    x.fillStyle = "rgba(221,180,90,.12)"; yuvarlak(x, 70, 1020, 940, 150, 28); x.fill();
+    x.fillStyle = "#F1CF7E"; x.font = '600 34px "Albert Sans",sans-serif'; x.fillText(simdi.getFullYear() + " KİŞİSEL YILIN: " + p.kisiselYil, W / 2, 1080);
+    x.fillStyle = "#F1ECF6"; x.font = '400 38px "Literata",Georgia,serif'; x.fillText(Y.tema, W / 2, 1135);
+    x.textAlign = "left";
+    Object.keys(skor).forEach(function (k, i) {
+      var yy = 1250 + i * 72;
+      x.fillStyle = "#F1ECF6"; x.font = '600 32px "Albert Sans",sans-serif'; x.fillText(N.ALAN_AD[k], 90, yy + 12);
+      x.fillStyle = "rgba(255,255,255,.1)"; yuvarlak(x, 420, yy - 14, 480, 28, 14); x.fill();
+      var gr = x.createLinearGradient(420, 0, 900, 0); gr.addColorStop(0, "#DDB45A"); gr.addColorStop(1, "#F1CF7E");
+      x.fillStyle = gr; yuvarlak(x, 420, yy - 14, Math.max(28, 480 * skor[k] / 100), 28, 14); x.fill();
+      x.fillStyle = "#F1ECF6"; x.textAlign = "right"; x.fillText(String(skor[k]), 990, yy + 12); x.textAlign = "left";
+    });
+    x.textAlign = "center";
+    x.fillStyle = "#DDB45A"; x.font = '600 40px "Albert Sans",sans-serif'; x.fillText("Sen de ücretsiz hesapla:", W / 2, H - 150);
+    x.fillStyle = "#F1ECF6"; x.font = '600 50px "Literata",Georgia,serif'; x.fillText("numerolojim.com.tr", W / 2, H - 88);
+    return cv;
   }
 
   /* ---------- ana sayfa profil özeti ---------- */
