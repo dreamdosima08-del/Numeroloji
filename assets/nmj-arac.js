@@ -146,6 +146,7 @@
     var h = '<div class="rs-head"><p class="rs-kicker">' + p.g + " " + AYLAR[p.a - 1] + " doğumlular için kişisel yıl</p>" +
       '<div class="nc-row">' + sayiRozet(N.kisiselYil(p.g, p.a, y), y + " kişisel yıl", T.yil[N.kisiselYil(p.g, p.a, y)].tema) + sayiRozet(N.kisiselYil(p.g, p.a, y + 1), (y + 1) + " kişisel yıl", T.yil[N.kisiselYil(p.g, p.a, y + 1)].tema) + sayiRozet(N.kisiselAy(p.g, p.a, y, simdi.getMonth() + 1), "Bu ayın sayısı", AYLAR[simdi.getMonth()]) + "</div></div>";
     h += yilKart(p, y, simdi) + yilKart(p, y + 1, simdi);
+    h += '<p class="note"><b>Bir hatırlatma:</b> Bu yorumlar kehanet değil, yılın sembolik temasıdır. Nasip ve takdir Allah\'ındır; Allah\'ın izniyle hayırlı bir yıl olsun.</p>';
     h += '<p class="note"><b>Döngünün neresindesin?</b> Kişisel yıllar 1\'den 9\'a giden dokuz yıllık bir döngü oluşturur. ' + y + " yılı senin için döngünün " + N.kisiselYil(p.g, p.a, y) + ". yılı.</p>";
     h += sonrakiAraclar(["gunluk", "donguler", "rapor"]);
     out.innerHTML = h;
@@ -216,6 +217,7 @@
       h += kart(x.no + ". dönem · " + yasAraligi(x) + (x.no === p.donem ? ' <span class="tag-on">şu an</span>' : ""),
         "<h4>Zirve sayısı " + x.zirve + "</h4><p>" + esc(T.zirve[x.zirve]) + "</p><h4>Sınav sayısı " + x.sinav + "</h4><p>" + esc(T.sinav[x.sinav]) + "</p>", x.no === p.donem ? "on-card" : "");
     });
+    h += '<p class="note">Zirve ve sınav sayıları bir kehanet değil, hayatın farklı dönemlerine dair sembolik temalardır. Her şey Allah\'ın takdirindedir; bu yorumları kendini tanımak için oku.</p>';
     h += kart("Hayat boyu ana sınavın: " + p.donguler.anaSinav, "<p>Üçüncü sınav sayısı numerolojide 'ana sınav' kabul edilir; hayatın boyunca farklı biçimlerde karşına çıkan temel dersi anlatır.</p><p>" + esc(T.sinav[p.donguler.anaSinav]) + "</p>");
     h += sonrakiAraclar(["yil", "matris", "rapor"]);
     out.innerHTML = h;
