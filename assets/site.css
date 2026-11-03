@@ -476,3 +476,18 @@ a.nc:hover{border-color:var(--brass)}
 @media (max-width:360px){.tile b{font-size:.78rem}.tile .d{font-size:.66rem}.tiles{gap:.4rem}}
 .calc input,.calc select{height:3rem;box-sizing:border-box}
 .rp-not{color:var(--mist);font-size:.82rem}
+.hizli{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.1rem 0 1.6rem}
+.hizli .btn{margin:0}
+.warn-txt{color:var(--mist)}
+.tk-grid{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));margin:1.2rem 0}
+.tk-ay{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:var(--night-2)}
+.tk-ay.bu{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass) inset}
+.tk-ay header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.tk-ad{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mist)}
+.tk-n{font-family:var(--didone);font-size:2.1rem;line-height:1;color:var(--brass-2)}
+.tk-ay h3{margin:.2rem 0 .5rem;font-size:1.15rem}
+.tk-ay p{margin:.35rem 0;font-size:.95rem}
+.tk-gun{list-style:none;padding:0;margin:.6rem 0 0;font-size:.88rem;border-top:1px solid var(--line);padding-top:.5rem}
+.tk-gun li{margin:.2rem 0}
+@media print{.tk-ay{break-inside:avoid;background:none}.tk-grid{grid-template-columns:1fr 1fr}}
+.prose .tool-grid,.prose .tk-gun{padding-left:0}

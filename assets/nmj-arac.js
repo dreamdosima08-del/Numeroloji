@@ -148,7 +148,7 @@
     h += yilKart(p, y, simdi) + yilKart(p, y + 1, simdi);
     h += '<p class="note"><b>Bir hatırlatma:</b> Bu yorumlar kehanet değil, yılın sembolik temasıdır. Nasip ve takdir Allah\'ındır; Allah\'ın izniyle hayırlı bir yıl olsun.</p>';
     h += '<p class="note"><b>Döngünün neresindesin?</b> Kişisel yıllar 1\'den 9\'a giden dokuz yıllık bir döngü oluşturur. ' + y + " yılı senin için döngünün " + N.kisiselYil(p.g, p.a, y) + ". yılı.</p>";
-    h += sonrakiAraclar(["gunluk", "donguler", "rapor"]);
+    h += sonrakiAraclar(["takvim", "gunluk", "rapor"]);
     out.innerHTML = h;
   }
 
@@ -262,6 +262,7 @@
       h += kart("Senin kader sayınla uyumu", "<p>Kader sayın " + k + " ile bu numaranın sayısı " + r.sayi + " arasındaki numerolojik uyum:</p>" + bar("Uyum", pu) + "<p>" + esc(T.uyum[N.ciftKey(k, r.sayi)].d) + "</p>");
     }
     h += '<p class="note">Apartman dairesinde kapı numaranı (ör. 12/4 için 4 ya da 12+4), müstakil evde bina numaranı kullan. Harf içeren numaralarda harfler de Pisagor değerleriyle hesaba katılır.</p>';
+    h += sonrakiAraclar(["kader", "uyum", "takvim"]);
     out.innerHTML = h; goster(out); track("numara_analizi", { tur: tur });
   }
 
@@ -283,9 +284,74 @@
       h += kart(esc(d.ad) + ": " + d.a + " ve " + d.b + " (%" + d.puan + ")", "<p>" + esc(T.uyumBoyut[d.id]) + "</p><p>" + esc(C.d) + "</p>");
     });
     h += '<p class="note">Uyum yüzdesi beş boyutun ağırlıklı ortalamasıdır: yaşam yolu %30, kalp %25, iletişim %20, günlük yaşam %15, bu yılın ritmi %10. Düşük bir puan "olmaz" demek değildir; farkındalıkla dengelenecek alanları gösterir.</p>';
-    h += sonrakiAraclar(["isim", "rapor", "cakra"]);
+    h += sonrakiAraclar(["arkadas", "ortak", "rapor"]);
     out.innerHTML = h; goster(out); track("uyum", { puan: U.genel });
     oturumYaz({ isim: v1.isim, g: v1.g, a: v1.a, y: v1.y });
+  }
+
+  /* ---------- 10b) ARKADAŞLIK VE İŞ ORTAKLIĞI UYUMU (ek modül, aynı uyum tablosu) ---------- */
+  function bantYorum(mod, puan) { var b = T.bant[mod]; return puan >= 85 ? b[0] : puan >= 70 ? b[1] : b[2]; }
+  function rolNo(n) { var t = N.taban(n); return t > 9 ? N.tek(t) : t; }
+  function ortaklikAnalizi(f, out, mod) {
+    var v1 = { isim: f.querySelector("[name=isim]").value.trim(), g: +f.querySelector("[name=g]").value, a: +f.querySelector("[name=a]").value, y: +f.querySelector("[name=y]").value };
+    var v2 = { isim: f.querySelector("[name=isim2]").value.trim(), g: +f.querySelector("[name=g2]").value, a: +f.querySelector("[name=a2]").value, y: +f.querySelector("[name=y2]").value };
+    var m = tarihHata(v1) || (tarihHata(v2) ? "İkinci kişinin doğum tarihi: " + tarihHata(v2) : "");
+    if (m) return hata(out, m);
+    if (!N.harfler(v1.isim).length || !N.harfler(v2.isim).length) return hata(out, "İki kişinin de adını yaz; isim, uyumun beş boyutundan üçünü belirler.");
+    var A = N.profil(v1.isim, v1.g, v1.a, v1.y), B = N.profil(v2.isim, v2.g, v2.a, v2.y), U = N.uyumMod(A, B, mod);
+    var a1 = ilkAd(v1.isim), a2 = ilkAd(v2.isim), R = mod === "is" ? T.ortak : T.arkadas, ra = R[rolNo(A.kader.sayi)], rb = R[rolNo(B.kader.sayi)];
+    var etiket = U.genel >= 85 ? "Çok güçlü uyum" : U.genel >= 75 ? "Güçlü uyum" : U.genel >= 65 ? "İyi uyum, emekle güçlenir" : "Farklı ritimler, öğretici bir uyum";
+    var h = '<div class="rs-head"><p class="rs-kicker">' + (mod === "is" ? "İş ortaklığı uyumu · " : "Arkadaşlık uyumu · ") + esc(a1) + " & " + esc(a2) + '</p><div class="uy-genel"><b>%' + U.genel + "</b><span>" + etiket + "</span></div>" +
+      U.boyutlar.map(function (d) { return bar(d.ad, d.puan, d.a + " ve " + d.b); }).join("") + "</div>";
+    function rolKart(ad, n, r) {
+      return "<div><h4>" + esc(ad) + " · kader " + n + ": " + esc(r.rol) + "</h4><p>" + esc(r.katki) + "</p>" + (r.alan ? "<p><strong>Doğal alanı:</strong> " + esc(r.alan) + "</p>" : "") + '<p class="warn-txt"><strong>Dikkat:</strong> ' + esc(r.dikkat) + "</p></div>";
+    }
+    h += kart(mod === "is" ? "Ortaklıktaki rolleriniz" : "Arkadaşlıktaki rolleriniz", '<div class="two">' + rolKart(a1, A.kader.sayi, ra) + rolKart(a2, B.kader.sayi, rb) + "</div>");
+    if (mod === "is") {
+      var sa = N.alanSkorlari(A), sb = N.alanSkorlari(B);
+      var alanlar = [["liderlik", "Strateji ve son karar"], ["finans", "Finans ve bütçe"], ["sosyal", "Müşteri, satış ve tanıtım"], ["kariyer", "Operasyon ve iş takibi"]];
+      var satir = alanlar.map(function (x) {
+        var fa = sa[x[0]] - sb[x[0]], kim = Math.abs(fa) <= 3 ? "İkiniz de yatkınsınız; birlikte yürütün" : fa > 0 ? esc(a1) + " daha yatkın" : esc(a2) + " daha yatkın";
+        return "<tr><th>" + x[1] + "</th><td>" + kim + "</td></tr>";
+      }).join("");
+      h += kart("Görev dağılımı önerisi", '<p>Yaşam alanı skorlarınıza göre kimin hangi işe daha yatkın olduğu:</p><div class="table-scroll"><table class="kz"><tbody>' + satir + "</tbody></table></div><p>Bu bir öneridir; yetki ve pay dağılımını mutlaka yazılı bir ortaklık sözleşmesiyle belirleyin.</p>");
+    } else {
+      var akt = []; [ra, rb].forEach(function (r) { r.aktivite.slice(0, 2).forEach(function (x) { if (akt.indexOf(x) < 0) akt.push(x); }); });
+      h += kart("Birlikte yapabilecekleriniz", "<p>İkinizin sayılarına göre arkadaşlığınızı besleyecek fikirler:</p>" + liste(akt, "ok"));
+    }
+    U.boyutlar.forEach(function (d) {
+      h += kart(esc(d.ad) + ": " + d.a + " ve " + d.b + " (%" + d.puan + ")", "<p>" + esc(T.boyutMod[mod][d.id]) + "</p><p>" + esc(bantYorum(mod, d.puan)) + "</p>");
+    });
+    h += '<p class="note">Uyum yüzdesi aşk uyumu testiyle aynı sayı tablosundan hesaplanır; yalnızca boyutların ağırlığı ' + (mod === "is" ? "iş ortaklığına" : "arkadaşlığa") + ' göre değişir. Numeroloji bir kehanet aracı değildir; ' + (mod === "is" ? "yatırım ve ortaklık kararlarını hukuki ve mali danışmanlıkla birlikte ver. Hayırlısı neyse Allah onu nasip etsin." : "gerçek bir dostluğu sayılar değil, emek ve sadakat belirler.") + "</p>";
+    h += sonrakiAraclar(mod === "is" ? ["arkadas", "uyum", "rapor"] : ["ortak", "uyum", "rapor"]);
+    out.innerHTML = h; goster(out); track(mod === "is" ? "is_uyumu" : "arkadas_uyumu", { puan: U.genel });
+    oturumYaz({ isim: v1.isim, g: v1.g, a: v1.a, y: v1.y });
+  }
+
+  /* ---------- 10c) KİŞİSEL NUMEROLOJİ TAKVİMİ (ek modül) ---------- */
+  function takvimAnalizi(f, out, otomatik) {
+    var v = formVeri(f), m = tarihHata(v);
+    if (m) { if (!otomatik) hata(out, m); return; }
+    var sec = f.querySelector("[name=ty]"), yil = sec ? +sec.value : new Date().getFullYear();
+    var K = N.takvim(v.g, v.a, yil), simdi = new Date(), ad = v.isim && N.harfler(v.isim).length ? ilkAd(v.isim) : "";
+    var Y = T.yil[K.kisiselYil];
+    var h = '<div class="rs-head"><p class="rs-kicker">' + (ad ? esc(ad) + " · " : "") + yil + " kişisel numeroloji takvimi</p>" +
+      '<div class="nc-row">' + sayiRozet(K.kisiselYil, yil + " kişisel yılın", Y.tema, "/kisisel-yil-hesaplama.html#sonuc") + "</div>" +
+      '<p class="lead">' + esc(Y.genel || Y.ozet || "") + "</p></div>";
+    h += '<div class="tk-grid">' + K.aylar.map(function (a) {
+      var D = T.ayDetay[a.sayi], bu = yil === simdi.getFullYear() && a.ay === simdi.getMonth() + 1;
+      var gunler = T.takvimGun.map(function (x) { var g = a.gunler[x[0]] || []; return g.length ? "<li><b>" + esc(x[1]) + ":</b> " + g.join(", ") + "</li>" : ""; }).join("");
+      return '<section class="tk-ay' + (bu ? " bu" : "") + '"><header><span class="tk-ad">' + AYLAR[a.ay - 1] + (bu ? " · bu ay" : "") + '</span><b class="tk-n">' + a.sayi + "</b></header>" +
+        "<h3>" + esc(D.baslik) + "</h3><p><strong>Odak:</strong> " + esc(D.odak) + "</p><p><strong>Öneri:</strong> " + esc(D.oneri) + '</p><p class="warn-txt"><strong>Dikkat:</strong> ' + esc(D.dikkat) + "</p>" +
+        '<ul class="tk-gun">' + gunler + "</ul></section>";
+    }).join("") + "</div>";
+    h += '<p class="note">Takvimdeki sayılar kişisel ay ve kişisel gün hesabından gelir: kişisel yıl + ay, sonra + gün, tek haneye indirgenir. Bu bir kehanet değil, zamanı planlamak için sembolik bir rehberdir. Hayırlı işlerin hayırlı vakti Allah\'ın takdirindedir; niyetini hayra bağla, Allah\'ın izniyle kolaylık bulursun.</p>';
+    h += '<p class="no-print"><button class="btn ghost" type="button" data-yazdir>Takvimi yazdır / PDF</button></p>';
+    h += sonrakiAraclar(["yil", "gunluk", "rapor"]);
+    out.innerHTML = h; out.hidden = false;
+    var yb = out.querySelector("[data-yazdir]"); if (yb) yb.addEventListener("click", function () { window.print(); });
+    if (!otomatik) { goster(out); track("arac_takvim", { yil: yil }); }
+    oturumYaz(v);
   }
 
   /* ---------- 11) TAM RAPOR ---------- */
@@ -326,6 +392,7 @@
       simdi.getFullYear() + " senin için " + Y.tema.toLocaleLowerCase("tr") + ". " + Y.tavsiye
     ];
     h += kart(ic[16][1], liste(sonuc) + '<p class="note">Bu rapor Pisagor numerolojisine göre hesaplanmıştır. Numeroloji sembolik bir kendini tanıma aracıdır; sağlık, para ve hukuk kararlarını bu yorumlara dayandırma.</p>', "", "rp-sonuc");
+    h += sonrakiAraclar(["takvim", "uyum", "cakra"]);
     out.innerHTML = h;
     var b = out.querySelector("[data-yazdir]");
     if (b) b.addEventListener("click", function () { window.print(); });
@@ -433,10 +500,11 @@
     cakra: ["/cakra-analizi.html", "Çakra haritası"], uyum: ["/uyum-hesapla.html", "Aşk uyumu"], yil: ["/kisisel-yil-hesaplama.html", "Kişisel yıl"],
     gunluk: ["/gunluk-numeroloji.html", "Bugünün enerjisi"], matris: ["/numeroloji-matrisi.html", "Numeroloji matrisi"], karmik: ["/karmik-borc-hesaplama.html", "Karmik borç"],
     donguler: ["/yasam-donguleri.html", "Yaşam döngüleri"], degisim: ["/isim-degisikligi-analizi.html", "İsim değişikliği"], bebek: ["/bebek-ismi-analizi.html", "Bebek ismi"],
-    numara: ["/ev-numarasi-numerolojisi.html", "Ev ve telefon numarası"], rapor: ["/rapor.html", "Tam rapor"]
+    numara: ["/ev-numarasi-numerolojisi.html", "Ev ve telefon numarası"], rapor: ["/rapor.html", "Tam rapor"],
+    arkadas: ["/arkadaslik-uyumu.html", "Arkadaşlık uyumu"], ortak: ["/is-ortakligi-uyumu.html", "İş ortaklığı uyumu"], takvim: ["/numeroloji-takvimi.html", "Yıllık takvim"]
   };
   function sonrakiAraclar(ks) {
-    return '<div class="sonraki no-print"><p>Bilgilerin hazır, tek dokunuşla devam et:</p>' + ks.map(function (k) { return '<a class="btn ghost" href="' + ARAC[k][0] + '#sonuc">' + ARAC[k][1] + " →</a>"; }).join("") + "</div>";
+    return '<div class="sonraki no-print"><p>Bilgilerin hazır, tek dokunuşla devam et:</p>' + ks.map(function (k) { var hz = /^(uyum|arkadas|ortak|numara|degisim|bebek)$/.test(k) ? "" : "#sonuc"; return '<a class="btn ghost" href="' + ARAC[k][0] + hz + '">' + ARAC[k][1] + " →</a>"; }).join("") + "</div>";
   }
 
   /* ---------- bağlama ---------- */
@@ -451,6 +519,15 @@
     if (tur === "uyum") { formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); uyumAnalizi(f, out); }); return; }
     if (tur === "degisim") { formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); isimDegisikligi(f, out); }); return; }
     if (tur === "numara") { f.addEventListener("submit", function (e) { e.preventDefault(); numaraAnalizi(f, out); }); return; }
+    if (tur === "arkadas" || tur === "ortak") { var md = tur === "ortak" ? "is" : "arkadas"; formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); ortaklikAnalizi(f, out, md); }); return; }
+    if (tur === "takvim") {
+      formDoldur(f);
+      var ty = f.querySelector("[name=ty]"), bugun = new Date();
+      if (ty) ty.value = String(bugun.getMonth() >= 10 ? bugun.getFullYear() + 1 : bugun.getFullYear());
+      f.addEventListener("submit", function (e) { e.preventDefault(); takvimAnalizi(f, out, false); });
+      if (location.hash === "#sonuc" && !tarihHata(formVeri(f))) { takvimAnalizi(f, out, true); setTimeout(function () { goster(out); }, 60); }
+      return;
+    }
     var I = ISLE[tur]; if (!I) return;
     function calis(otomatik) {
       var v = formVeri(f), m = "";

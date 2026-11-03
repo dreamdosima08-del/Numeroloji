@@ -212,6 +212,41 @@
     return { boyutlar: boyut, genel: ag ? Math.round(top / ag) : null };
   }
 
+  /* Arkadaşlık ve iş ortaklığı uyumu (ek modül). Aşk uyumuyla aynı çift puan tablosunu kullanır;
+     yalnızca boyutların adı ve ağırlığı farklıdır. uyum() fonksiyonu değişmedi. */
+  function uyumMod(A, B, mod) {
+    var boyut = mod === "is" ? [
+      { id: "yol", ad: "Vizyon ve hedef", ag: 30, a: A.kader && A.kader.sayi, b: B.kader && B.kader.sayi },
+      { id: "iletisim", ad: "İletişim ve müzakere", ag: 25, a: A.ifade && A.ifade.sayi, b: B.ifade && B.ifade.sayi },
+      { id: "tarz", ad: "Çalışma tarzı", ag: 20, a: A.kisilik && A.kisilik.sayi, b: B.kisilik && B.kisilik.sayi },
+      { id: "yetenek", ad: "Yeteneklerin uyumu", ag: 15, a: A.dogumGunu && A.dogumGunu.sayi, b: B.dogumGunu && B.dogumGunu.sayi },
+      { id: "ritim", ad: "Bu yılın ritmi", ag: 10, a: A.kisiselYil, b: B.kisiselYil }
+    ] : [
+      { id: "yol", ad: "Hayata bakış", ag: 30, a: A.kader && A.kader.sayi, b: B.kader && B.kader.sayi },
+      { id: "iletisim", ad: "Sohbet ve iletişim", ag: 25, a: A.ifade && A.ifade.sayi, b: B.ifade && B.ifade.sayi },
+      { id: "tarz", ad: "Birlikte vakit geçirme", ag: 20, a: A.kisilik && A.kisilik.sayi, b: B.kisilik && B.kisilik.sayi },
+      { id: "destek", ad: "Duygusal destek", ag: 15, a: A.ruh && A.ruh.sayi, b: B.ruh && B.ruh.sayi },
+      { id: "ritim", ad: "Bu yılın ritmi", ag: 10, a: A.kisiselYil, b: B.kisiselYil }
+    ];
+    var top = 0, ag = 0;
+    boyut.forEach(function (d) { d.puan = ciftPuan(d.a, d.b); if (d.puan !== null) { top += d.puan * d.ag; ag += d.ag; } d.key = d.puan === null ? null : ciftKey(d.a, d.b); });
+    return { mod: mod === "is" ? "is" : "arkadas", boyutlar: boyut, genel: ag ? Math.round(top / ag) : null };
+  }
+
+  /* Kişisel numeroloji takvimi (ek modül): 12 ayın kişisel ay sayısı ve her ayın kişisel gün sayıları */
+  function takvim(g, a, yil) {
+    var aylar = [];
+    for (var ay = 1; ay <= 12; ay++) {
+      var son = new Date(yil, ay, 0).getDate(), gunler = {};
+      for (var gun = 1; gun <= son; gun++) {
+        var n = kisiselGun(g, a, new Date(yil, ay - 1, gun));
+        (gunler[n] = gunler[n] || []).push(gun);
+      }
+      aylar.push({ ay: ay, sayi: kisiselAy(g, a, yil, ay), gunSayisi: son, gunler: gunler });
+    }
+    return { yil: yil, kisiselYil: kisiselYil(g, a, yil), aylar: aylar };
+  }
+
   /* Ev, telefon, plaka gibi numaraların sayısı (harfler de değerlendirilir) */
   function numara(metin) {
     var s = kucult(metin), top = 0, parca = [];
@@ -260,6 +295,7 @@
     kader: kader, dogumGunu: dogumGunu, yogunluk: yogunluk, karmikDersler: karmikDersler, gizliTutku: gizliTutku,
     matris: matris, donguler: donguler, simdikiDonem: simdikiDonem,
     kisiselYil: kisiselYil, kisiselAy: kisiselAy, kisiselGun: kisiselGun, evrenselYil: evrenselYil, evrenselGun: evrenselGun,
-    ciftKey: ciftKey, ciftPuan: ciftPuan, profil: profil, uyum: uyum, numara: numara, alanSkorlari: alanSkorlari
+    ciftKey: ciftKey, ciftPuan: ciftPuan, profil: profil, uyum: uyum, numara: numara, alanSkorlari: alanSkorlari,
+    uyumMod: uyumMod, takvim: takvim
   };
 });
