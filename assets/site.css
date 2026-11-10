@@ -536,3 +536,22 @@ a.nc:hover{border-color:var(--brass)}
   .aa-oyunlar b{font-size:.86rem}.aa-oyunlar small{font-size:.72rem}
 }
 @media (prefers-reduced-motion:reduce){.ao-nokta{animation:none}.aa-oyunlar a{transition:none}}
+
+/* Ana sayfa üstü · Numeroloji Arenası davet şeridi (aşağıdaki bölüme kaydırır) */
+.arena-davet{display:inline-flex;align-items:center;gap:.7rem;margin:.9rem auto 0;padding:.5rem .6rem .5rem .55rem;border-radius:99px;text-decoration:none;color:var(--paper);
+  background:linear-gradient(100deg,rgba(124,92,214,.35),rgba(36,29,79,.85) 45%,rgba(221,180,90,.22));border:1px solid rgba(241,207,126,.55);
+  box-shadow:0 0 0 1px rgba(241,207,126,.08) inset,0 8px 28px -10px rgba(221,180,90,.55);position:relative;overflow:hidden;max-width:100%}
+.arena-davet::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,243,210,.22) 45%,transparent 60%);transform:translateX(-120%);animation:adParilti 4.5s ease-in-out infinite}
+.arena-davet:hover,.arena-davet:focus-visible{border-color:#F1CF7E;box-shadow:0 0 0 1px rgba(241,207,126,.25) inset,0 10px 32px -8px rgba(221,180,90,.7)}
+.ad-ikon{flex:none;display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(241,207,126,.5),rgba(221,180,90,.12) 70%);box-shadow:0 0 0 1px rgba(241,207,126,.6),0 0 18px -2px rgba(221,180,90,.7)}
+.ad-ikon svg{width:1.3rem;height:1.3rem;fill:none;stroke:#F1CF7E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ad-tx{display:flex;flex-direction:column;text-align:left;line-height:1.2;min-width:0}
+.ad-tx b{font-family:"Fraunces",var(--display);font-weight:600;font-size:1.02rem;color:transparent;background:linear-gradient(180deg,#FFF3D2,#F1CF7E 60%,#D9AE55);-webkit-background-clip:text;background-clip:text}
+.ad-tx small{font-size:.72rem;color:var(--mist);letter-spacing:.01em}
+.ad-ok{flex:none;display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:rgba(241,207,126,.14);position:relative}
+.ad-ok svg{position:absolute;width:1.1rem;height:1.1rem;fill:none;stroke:#F1CF7E;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;animation:adOk 1.6s ease-in-out infinite}
+.ad-ok svg+svg{animation-delay:.8s;opacity:0}
+@keyframes adOk{0%{transform:translateY(-6px);opacity:0}35%{opacity:1}70%{opacity:1}100%{transform:translateY(7px);opacity:0}}
+@keyframes adParilti{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.arena-ana{scroll-margin-top:5rem}
+@media (prefers-reduced-motion:reduce){.arena-davet::after,.ad-ok svg{animation:none}.ad-ok svg{opacity:1;transform:none}.ad-ok svg+svg{display:none}}
