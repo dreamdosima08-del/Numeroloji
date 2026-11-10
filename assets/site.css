@@ -555,3 +555,22 @@ a.nc:hover{border-color:var(--brass)}
 @keyframes adParilti{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
 .arena-ana{scroll-margin-top:5rem}
 @media (prefers-reduced-motion:reduce){.arena-davet::after,.ad-ok svg{animation:none}.ad-ok svg{opacity:1;transform:none}.ad-ok svg+svg{display:none}}
+
+/* "Uygulamayı indir" bildirimi (yalnızca Android web) */
+.uyg-bildirim{position:fixed;z-index:80;left:.6rem;right:.6rem;top:calc(.6rem + env(safe-area-inset-top));margin:0 auto;max-width:30rem;
+  display:flex;align-items:center;gap:.7rem;padding:.65rem .6rem .65rem .7rem;border-radius:16px;color:var(--paper);
+  background:linear-gradient(110deg,rgba(124,92,214,.55),rgba(30,24,64,.97) 40%,rgba(30,24,64,.97) 70%,rgba(221,180,90,.3));
+  border:1px solid rgba(241,207,126,.55);box-shadow:0 18px 44px -12px rgba(0,0,0,.65),0 0 0 1px rgba(241,207,126,.08) inset,0 0 30px -8px rgba(221,180,90,.5);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transform:translateY(calc(-100% - 1.5rem));opacity:0;
+  transition:transform .55s cubic-bezier(.2,.9,.25,1.15),opacity .35s}
+.uyg-bildirim.acik{transform:none;opacity:1}
+.uyg-bildirim::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,transparent,#F1CF7E,#B9A3FF,transparent)}
+.ub-logo{flex:none;width:44px;height:44px;border-radius:12px;box-shadow:0 0 0 1px rgba(241,207,126,.5),0 0 16px -4px rgba(221,180,90,.7)}
+.ub-tx{display:flex;flex-direction:column;min-width:0;line-height:1.25}
+.ub-tx b{font-family:"Fraunces",var(--display);font-weight:600;font-size:1rem;color:transparent;background:linear-gradient(180deg,#FFF3D2,#F1CF7E 60%,#D9AE55);-webkit-background-clip:text;background-clip:text}
+.ub-tx span{font-size:.74rem;color:var(--mist)}
+.ub-tx .ub-yildiz{font-size:.62rem;letter-spacing:.12em;color:#F1CF7E;margin-top:.1rem}
+.ub-indir{flex:none;margin-left:auto;padding:.55rem 1rem;border-radius:99px;font-weight:700;font-size:.9rem;text-decoration:none;color:#1B1738;
+  background:linear-gradient(180deg,#F6DB95,#DDB45A);box-shadow:0 6px 16px -6px rgba(221,180,90,.8)}
+.ub-kapat{flex:none;width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(255,255,255,.06);color:var(--mist);font-size:1.3rem;line-height:1;cursor:pointer}
+@media (prefers-reduced-motion:reduce){.uyg-bildirim{transition:opacity .2s}}
