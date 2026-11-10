@@ -48,8 +48,11 @@
   function enIyi() {
     var d = D.oku();
     [].forEach.call(doc.querySelectorAll("[data-en-iyi]"), function (e) {
-      var o = d.oyunlar[e.getAttribute("data-en-iyi")];
-      e.textContent = o && o.enIyi ? "En iyi puanın: " + o.enIyi : "";
+      var k = e.getAttribute("data-en-iyi"), o = d.oyunlar[k];
+      if (k === "cark") e.textContent = d.cark.tarih === P.bugun() ? "Bugünün sayısı: " + d.cark.sayi + (d.cark.yapildi ? " · görev tamam" : "") : "Bugün henüz çevrilmedi";
+      else if (k === "arena") e.textContent = d.hafta.enIyi && d.hafta.kod ? "Haftalık en iyin: " + d.hafta.enIyi : "";
+      else if (k === "sir") e.textContent = Object.keys(d.kartlar).length ? Object.keys(d.kartlar).length + "/12 kart" : "";
+      else e.textContent = o && o.enIyi ? "En iyi puanın: " + o.enIyi : "";
     });
   }
   ciz(); enIyi();

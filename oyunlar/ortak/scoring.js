@@ -24,7 +24,13 @@
     seri3:      { ad: "Üç Gün Üst Üste", aciklama: "Üç gün art arda oyun oynadın.", ikon: "③" },
     seri7:      { ad: "Haftalık Ritim", aciklama: "Yedi gün art arda oyun oynadın.", ikon: "⑦" },
     gorevci:    { ad: "Görev Avcısı", aciklama: "Bir günün bütün görevlerini tamamladın.", ikon: "☑" },
-    usta:       { ad: "Numeroloji Ustası", aciklama: "En yüksek seviyeye ulaştın.", ikon: "♛" }
+    usta:       { ad: "Numeroloji Ustası", aciklama: "En yüksek seviyeye ulaştın.", ikon: "♛" },
+    keskin_goz: { ad: "Keskin Göz", aciklama: "Sayı Avcısı'nda tek turda 400 puanı geçtin.", ikon: "◉" },
+    uyumcu:     { ad: "Uyum Uzmanı", aciklama: "Uyum Laboratuvarı'nda 8 tahminden en az 7'sini bildin.", ikon: "∞" },
+    koleksiyon: { ad: "Sayı Koleksiyoncusu", aciklama: "Sayıların Sırrı'nda 12 bilgi kartının hepsini topladın.", ikon: "▦" },
+    carkci:     { ad: "Günün Yolcusu", aciklama: "Günün çarkını ilk kez çevirdin.", ikon: "✺" },
+    iyilik:     { ad: "Küçük Adımlar", aciklama: "Çarktan çıkan günlük görevi tamamladın.", ikon: "♡" },
+    sampiyon:   { ad: "Haftanın Savaşçısı", aciklama: "Haftalık Arena'da 10 sorudan en az 8'ini bildin.", ikon: "⚑" }
   };
   /* Yaşam yolu mühürleri: Kendini Keşfet'i bitirince sayına göre kazanılır */
   var MUHUR = { 1: "Öncünün Mührü", 2: "Barışın Mührü", 3: "İlhamın Mührü", 4: "Temelin Mührü", 5: "Rüzgârın Mührü",

@@ -98,5 +98,21 @@
     return api;
   }
 
-  w.NMJOyun.motor = { kur: kur, el: el, say: say, bildirim: bildirim };
+  /* Ortak küçük yardımcılar */
+  var UYG = /NumerolojimApp\/(\d+)\.(\d+)/.exec(navigator.userAgent);
+  function olay(ad, p) { try { w.gtag && w.gtag("event", ad, p || {}); } catch (e) {} }
+  function waLink(metin) { return "https://wa.me/?text=" + encodeURIComponent(metin); }
+  function karistir(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  /* WhatsApp paylaşım bağlantısı: uygulamada yeni sekme açılmaz, sistem WhatsApp'ı açar */
+  function waDugme(metin, onclick) {
+    return el("a", { class: "btn ghost", href: waLink(metin), rel: "noopener", target: UYG ? null : "_blank", onclick: onclick }, "WhatsApp'ta paylaş");
+  }
+  /* Başlangıç ekranındaki "Oyuna başla" düğmesini bağlar */
+  function basla(fn) {
+    var b = doc.getElementById("oyun-basla-btn"), bas = doc.getElementById("oyun-basla"), kok = doc.getElementById("oyun");
+    function go() { if (bas) bas.hidden = true; if (kok) kok.hidden = false; var c = doc.getElementById("oyun-cubuk"); if (c) c.hidden = false; fn(kok); }
+    if (b) b.addEventListener("click", go); else go();
+  }
+
+  w.NMJOyun.motor = { kur: kur, el: el, say: say, bildirim: bildirim, olay: olay, waLink: waLink, waDugme: waDugme, karistir: karistir, basla: basla, uyg: !!UYG };
 })(window, document);

@@ -88,3 +88,59 @@
 .oy-son-dugmeler{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line)}
 @media(max-width:26rem){.oy-semboller{gap:.45rem}.oy-sembol small{display:none}.oy-tarih{grid-template-columns:1fr 1.4fr 1.2fr}}
 @media (prefers-reduced-motion:reduce){.oy-asama.giris{animation:none}.oy-secenek,.oy-sembol{transition:none}}
+
+/* Ortak: istatistik ızgarası (3 sütun) ve azalan süre çubuğu */
+.oy-istat.uc{grid-template-columns:repeat(3,1fr);margin:.8rem 0 1rem}
+@media(max-width:26rem){.oy-istat.uc{grid-template-columns:1fr 1fr}}
+.oy-ray.az i{background:linear-gradient(90deg,#EE9393,#F5A65B);box-shadow:0 0 12px rgba(238,147,147,.5)}
+.oy-secenek small{color:var(--mist);font-weight:400}
+
+/* Sayı Avcısı */
+.av-ust{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:.6rem;text-align:center}
+.av-ust>div{padding:.45rem;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.av-ust span{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mist)}
+.av-ust b{font-family:"Fraunces",var(--display);font-size:1.5rem;color:var(--brass-2);font-variant-numeric:tabular-nums}
+.av-ray{margin-bottom:.9rem}
+.av-hedef{font-size:1.08rem;text-align:center;margin:0 0 .9rem}
+.av-hedef b{display:inline-grid;place-items:center;width:2.3rem;height:2.3rem;margin:0 .25rem;border-radius:50%;font-family:"Fraunces",var(--display);font-size:1.35rem;color:var(--night);background:radial-gradient(circle at 35% 30%,#FFF1C8,var(--brass));vertical-align:middle;box-shadow:0 0 16px rgba(221,180,90,.5)}
+.av-izgara{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem}
+@media(min-width:40rem){.av-izgara{grid-template-columns:repeat(4,1fr)}}
+.av-hucre{font:inherit;font-family:"Fraunces",var(--display);font-size:1.45rem;font-variant-numeric:tabular-nums;color:var(--paper);min-height:3.6rem;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.05);cursor:pointer;transition:transform .12s,background .2s,border-color .2s;touch-action:manipulation}
+.av-hucre:active{transform:scale(.95)}
+.av-hucre.dogru{background:rgba(158,211,180,.2);border-color:var(--sage);color:#DFF5E8}
+.av-hucre.yanlis{animation:avSars .35s;border-color:var(--rose)}
+@keyframes avSars{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.av-ipucu{min-height:1.4em;text-align:center;color:var(--mist);font-size:.92rem;margin:.8rem 0 0;font-variant-numeric:tabular-nums}
+
+/* Uyum Laboratuvarı */
+.ul-cift{display:flex;align-items:center;justify-content:center;gap:1rem;margin:.6rem 0 1.2rem}
+.ul-sayi{display:flex;flex-direction:column;align-items:center;gap:.35rem;min-width:6.5rem}
+.ul-sayi b{display:grid;place-items:center;width:5rem;height:5rem;border-radius:50%;font-family:"Fraunces",var(--display);font-size:2.4rem;color:var(--brass-2);border:2px solid rgba(241,207,126,.7);box-shadow:0 0 30px rgba(221,180,90,.3),inset 0 0 24px rgba(124,92,214,.35)}
+.ul-sayi span{font-size:.85rem;color:var(--mist);text-align:center}
+.ul-arti{font-style:normal;font-size:1.8rem;color:#F29BB8}
+.ul-etiket{font-family:"Fraunces",var(--display);font-size:1.15rem;margin:.3rem 0}
+
+/* Sayıların Sırrı */
+.ss-soru{font-size:clamp(1.25rem,4.5vw,1.6rem)!important}
+.ss-koleksiyon{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.5rem 0}
+@media(min-width:40rem){.ss-koleksiyon{grid-template-columns:repeat(6,1fr)}}
+.ss-kart{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;min-height:5.2rem;padding:.4rem;border-radius:12px;border:1px dashed var(--line);background:rgba(0,0,0,.15);color:var(--dim);text-decoration:none;text-align:center}
+.ss-kart b{font-family:"Fraunces",var(--display);font-size:1.6rem}
+.ss-kart span{font-size:.68rem;line-height:1.2}
+.ss-kart.acik{border-style:solid;border-color:rgba(221,180,90,.55);background:linear-gradient(160deg,rgba(221,180,90,.16),rgba(124,92,214,.14));color:var(--paper)}
+.ss-kart.acik b{color:var(--brass-2)}
+.ss-kart.yeni{box-shadow:0 0 0 2px var(--brass-2),0 0 20px rgba(221,180,90,.45)}
+
+/* Şans Çarkı */
+.sc-alan{text-align:center}
+.sc-tekerlek{width:min(19rem,80vw);margin:.4rem auto 1rem}
+.sc-cark{width:100%;height:auto;filter:drop-shadow(0 10px 30px rgba(0,0,0,.4)) drop-shadow(0 0 24px rgba(221,180,90,.25))}
+.sc-cevir{margin:0 auto}
+.sc-sonuc{text-align:left;max-width:34rem;margin:0 auto}
+.sc-tema{font-size:1.15rem;text-align:center}
+.sc-tema b{font-family:"Fraunces",var(--display);font-size:1.6rem;color:var(--brass-2)}
+.sc-gorev{padding:1rem 1.1rem;border-left:3px solid var(--brass);background:rgba(221,180,90,.07);border-radius:0 12px 12px 0;font-size:1.05rem}
+
+/* Haftalık Arena */
+.ha-sayac{margin:-.2rem 0 1rem;height:.45rem}
+.ha-bilgi{color:var(--brass-2);font-size:.92rem;margin:0 0 1rem}
