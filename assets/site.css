@@ -574,3 +574,13 @@ a.nc:hover{border-color:var(--brass)}
   background:linear-gradient(180deg,#F6DB95,#DDB45A);box-shadow:0 6px 16px -6px rgba(221,180,90,.8)}
 .ub-kapat{flex:none;width:2rem;height:2rem;border:0;border-radius:50%;background:rgba(255,255,255,.06);color:var(--mist);font-size:1.3rem;line-height:1;cursor:pointer}
 @media (prefers-reduced-motion:reduce){.uyg-bildirim{transition:opacity .2s}}
+
+/* Ruh eşi hesaplama */
+.re-ipucu{font-size:.88rem;color:var(--mist);margin:.2rem 0 .4rem}
+.calc legend small{font-weight:400;color:var(--mist);font-size:.85em}
+.re-sayilar{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:.8rem 0}
+.re-sayi{display:flex;flex-direction:column;align-items:center;gap:.15rem;padding:.9rem .4rem;border-radius:14px;text-decoration:none;color:var(--paper);text-align:center;
+  background:linear-gradient(160deg,rgba(242,155,184,.16),rgba(124,92,214,.14));border:1px solid rgba(242,155,184,.45);box-shadow:0 8px 22px -14px rgba(242,155,184,.7)}
+.re-sayi b{font-family:"Fraunces",var(--display);font-size:2.2rem;line-height:1;color:var(--brass-2)}
+.re-sayi span{font-size:.82rem;font-weight:600}
+.re-sayi small{font-size:.75rem;color:var(--mist)}

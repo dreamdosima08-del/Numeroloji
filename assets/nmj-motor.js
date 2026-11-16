@@ -215,7 +215,13 @@
   /* Arkadaşlık ve iş ortaklığı uyumu (ek modül). Aşk uyumuyla aynı çift puan tablosunu kullanır;
      yalnızca boyutların adı ve ağırlığı farklıdır. uyum() fonksiyonu değişmedi. */
   function uyumMod(A, B, mod) {
-    var boyut = mod === "is" ? [
+    var boyut = mod === "ruh" ? [
+      { id: "ruh", ad: "Ruhların uyumu", ag: 35, a: A.ruh && A.ruh.sayi, b: B.ruh && B.ruh.sayi },
+      { id: "yol", ad: "Hayat yolu", ag: 25, a: A.kader && A.kader.sayi, b: B.kader && B.kader.sayi },
+      { id: "iletisim", ad: "Anlaşma ve iletişim", ag: 15, a: A.ifade && A.ifade.sayi, b: B.ifade && B.ifade.sayi },
+      { id: "yetenek", ad: "Birbirini tamamlama", ag: 15, a: A.dogumGunu && A.dogumGunu.sayi, b: B.dogumGunu && B.dogumGunu.sayi },
+      { id: "tarz", ad: "Dış dünyadaki uyum", ag: 10, a: A.kisilik && A.kisilik.sayi, b: B.kisilik && B.kisilik.sayi }
+    ] : mod === "is" ? [
       { id: "yol", ad: "Vizyon ve hedef", ag: 30, a: A.kader && A.kader.sayi, b: B.kader && B.kader.sayi },
       { id: "iletisim", ad: "İletişim ve müzakere", ag: 25, a: A.ifade && A.ifade.sayi, b: B.ifade && B.ifade.sayi },
       { id: "tarz", ad: "Çalışma tarzı", ag: 20, a: A.kisilik && A.kisilik.sayi, b: B.kisilik && B.kisilik.sayi },
@@ -230,7 +236,19 @@
     ];
     var top = 0, ag = 0;
     boyut.forEach(function (d) { d.puan = ciftPuan(d.a, d.b); if (d.puan !== null) { top += d.puan * d.ag; ag += d.ag; } d.key = d.puan === null ? null : ciftKey(d.a, d.b); });
-    return { mod: mod === "is" ? "is" : "arkadas", boyutlar: boyut, genel: ag ? Math.round(top / ag) : null };
+    return { mod: mod === "is" ? "is" : mod === "ruh" ? "ruh" : "arkadas", boyutlar: boyut, genel: ag ? Math.round(top / ag) : null };
+  }
+
+  /* Ruh eşi sayıları (ek modül): kişinin ruh güdüsü ve kader sayısıyla en uyumlu sayılar, uyum tablosundan */
+  function ruhEsiSayilari(P) {
+    var r = P.ruh && P.ruh.sayi, k = P.kader && P.kader.sayi, liste = [];
+    for (var n = 1; n <= 9; n++) {
+      var pr = r ? ciftPuan(r, n) : null, pk = k ? ciftPuan(k, n) : null;
+      var p = pr !== null && pk !== null ? Math.round(pr * 0.6 + pk * 0.4) : (pr !== null ? pr : pk);
+      if (p !== null) liste.push({ sayi: n, puan: p, ruhPuan: pr, kaderPuan: pk });
+    }
+    liste.sort(function (x, y) { return y.puan - x.puan || x.sayi - y.sayi; });
+    return liste;
   }
 
   /* Kişisel numeroloji takvimi (ek modül): 12 ayın kişisel ay sayısı ve her ayın kişisel gün sayıları */
@@ -296,6 +314,6 @@
     matris: matris, donguler: donguler, simdikiDonem: simdikiDonem,
     kisiselYil: kisiselYil, kisiselAy: kisiselAy, kisiselGun: kisiselGun, evrenselYil: evrenselYil, evrenselGun: evrenselGun,
     ciftKey: ciftKey, ciftPuan: ciftPuan, profil: profil, uyum: uyum, numara: numara, alanSkorlari: alanSkorlari,
-    uyumMod: uyumMod, takvim: takvim
+    uyumMod: uyumMod, takvim: takvim, ruhEsiSayilari: ruhEsiSayilari
   };
 });

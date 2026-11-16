@@ -289,6 +289,52 @@
     oturumYaz({ isim: v1.isim, g: v1.g, a: v1.a, y: v1.y });
   }
 
+  /* ---------- 10a) RUH EŞİ HESAPLAMA (ek modül): iki kişi → ruh eşi uyumu; tek kişi → ruh eşi sayıları ---------- */
+  function ruhEsiAnalizi(f, out) {
+    function deger(n) { var x = f.querySelector("[name=" + n + "]"); return x ? String(x.value).trim() : ""; }
+    var v1 = { isim: deger("isim"), g: +deger("g"), a: +deger("a"), y: +deger("y") };
+    var v2 = { isim: deger("isim2"), g: +deger("g2"), a: +deger("a2"), y: +deger("y2") };
+    var ikinci = !!(v2.isim || v2.g || v2.a || v2.y);
+    if (!N.harfler(v1.isim).length) return hata(out, "Adını yaz; ruh eşi okumasının en önemli boyutu isimdeki sesli harflerden (ruh güdüsü) gelir.");
+    var m = tarihHata(v1); if (m) return hata(out, m);
+    if (ikinci) {
+      if (!N.harfler(v2.isim).length) return hata(out, "İkinci kişinin adını da yaz ya da ikinci kişinin bütün alanlarını boş bırak.");
+      var m2 = tarihHata(v2); if (m2) return hata(out, "İkinci kişinin doğum tarihi: " + m2);
+    }
+    var A = N.profil(v1.isim, v1.g, v1.a, v1.y), a1 = ilkAd(v1.isim), h = "";
+    function ruhOzet(P) { var t = T.ruh[N.taban(P.ruh.sayi)] || T.ruh[P.ruh.sayi]; return t ? t.ozet : ""; }
+    if (!ikinci) {
+      var L = N.ruhEsiSayilari(A), ust = L.slice(0, 3), alt = L.slice(-2);
+      h += '<div class="rs-head"><p class="rs-kicker">' + esc(a1) + " için ruh eşi sayıları</p>" +
+        '<div class="nc-row">' + sayiRozet(A.ruh.sayi, "Ruh güdün", T.kader[A.ruh.sayi] ? T.kader[A.ruh.sayi].ad : "", null) + sayiRozet(A.kader.sayi, "Kader sayın", T.kader[A.kader.sayi] ? T.kader[A.kader.sayi].ad : "", "/kader-sayisi-" + A.kader.sayi + ".html") + "</div>" +
+        '<p class="lead">' + esc(ruhOzet(A)) + "</p></div>";
+      h += kart("Sana en uyumlu ruh eşi sayıları", "<p>Ruh güdün (" + A.ruh.sayi + ") ve kader sayınla (" + A.kader.sayi + ") en yüksek uyumu veren kader sayıları:</p>" +
+        '<div class="re-sayilar">' + ust.map(function (x) {
+          return '<a class="re-sayi" href="/kader-sayisi-' + x.sayi + '.html"><b>' + x.sayi + "</b><span>" + esc(T.kader[x.sayi].ad) + "</span><small>%" + x.puan + " uyum</small></a>";
+        }).join("") + "</div><p>Bu sayılara sahip biriyle içten içe aynı şeyleri isteme ihtimaliniz yüksektir. Karşındakinin kader sayısını bilmiyorsan aşağıdan ikinci kişiyi ekleyip tam ruh eşi uyumunuzu hesaplayabilirsin.</p>");
+      h += kart("Öğretici bağlar", "<p>En çok emek isteyen sayılar: " + alt.map(function (x) { return "<strong>" + x.sayi + "</strong> (" + esc(T.kader[x.sayi].ad) + ", %" + x.puan + ")"; }).join(" ve ") +
+        ". Bu sayılarla kurulan bağlar zorlayıcı olabilir ama numerolojide en çok büyüten ilişkiler de çoğu zaman bunlardır.</p>");
+      h += '<p class="note">Ruh eşi kavramı numerolojide semboliktir; sayılar kimi bulacağını ya da bir ilişkinin geleceğini söylemez. Hayırlı eşi Allah nasip eder.</p>';
+      h += '<p><button class="btn" type="button" data-ikinci>İkinci kişiyi ekle ve uyumumuzu hesapla</button></p>';
+      h += sonrakiAraclar(["uyum", "isim", "rapor"]);
+      out.innerHTML = h; goster(out); track("ruh_esi_tek", { ruh: A.ruh.sayi });
+      var b = out.querySelector("[data-ikinci]"); if (b) b.addEventListener("click", function () { var i = f.querySelector("[name=isim2]"); if (i) { i.scrollIntoView({ behavior: "smooth", block: "center" }); setTimeout(function () { i.focus(); }, 400); } });
+      oturumYaz(v1); return;
+    }
+    var B = N.profil(v2.isim, v2.g, v2.a, v2.y), U = N.uyumMod(A, B, "ruh"), a2 = ilkAd(v2.isim);
+    var etiket = U.genel >= 85 ? "Çok güçlü bir ruh bağı" : U.genel >= 75 ? "Güçlü ruh eşi uyumu" : U.genel >= 65 ? "Emekle derinleşen bir bağ" : "Öğretici, karmik bir bağ";
+    h += '<div class="rs-head"><p class="rs-kicker">Ruh eşi uyumu · ' + esc(a1) + " & " + esc(a2) + '</p><div class="uy-genel"><b>%' + U.genel + "</b><span>" + etiket + "</span></div>" +
+      U.boyutlar.map(function (d) { return bar(d.ad, d.puan, d.a + " ve " + d.b); }).join("") + "</div>";
+    h += kart("Ruh güdüleriniz", '<div class="two"><div><h4>' + esc(a1) + " · ruh güdüsü " + A.ruh.sayi + "</h4><p>" + esc(ruhOzet(A)) + "</p></div><div><h4>" + esc(a2) + " · ruh güdüsü " + B.ruh.sayi + "</h4><p>" + esc(ruhOzet(B)) + "</p></div></div>");
+    U.boyutlar.forEach(function (d) {
+      h += kart(esc(d.ad) + ": " + d.a + " ve " + d.b + " (%" + d.puan + ")", "<p>" + esc(T.boyutMod.ruh[d.id]) + "</p><p>" + esc(bantYorum("ruh", d.puan)) + "</p>");
+    });
+    h += '<p class="note">Ruh eşi uyumu, sitedeki aşk uyumu testiyle aynı sayı tablosundan hesaplanır; yalnızca ruh güdüsü (sesli harfler) daha ağır basar. Sayılar sembolik bir rehberdir, bir ilişkinin geleceğini söylemez. Hayırlısı neyse Allah onu nasip etsin.</p>';
+    h += sonrakiAraclar(["uyum", "arkadas", "rapor"]);
+    out.innerHTML = h; goster(out); track("ruh_esi", { puan: U.genel });
+    oturumYaz(v1);
+  }
+
   /* ---------- 10b) ARKADAŞLIK VE İŞ ORTAKLIĞI UYUMU (ek modül, aynı uyum tablosu) ---------- */
   function bantYorum(mod, puan) { var b = T.bant[mod]; return puan >= 85 ? b[0] : puan >= 70 ? b[1] : b[2]; }
   function rolNo(n) { var t = N.taban(n); return t > 9 ? N.tek(t) : t; }
@@ -501,10 +547,10 @@
     gunluk: ["/gunluk-numeroloji.html", "Bugünün enerjisi"], matris: ["/numeroloji-matrisi.html", "Numeroloji matrisi"], karmik: ["/karmik-borc-hesaplama.html", "Karmik borç"],
     donguler: ["/yasam-donguleri.html", "Yaşam döngüleri"], degisim: ["/isim-degisikligi-analizi.html", "İsim değişikliği"], bebek: ["/bebek-ismi-analizi.html", "Bebek ismi"],
     numara: ["/ev-numarasi-numerolojisi.html", "Ev ve telefon numarası"], rapor: ["/rapor.html", "Tam rapor"],
-    arkadas: ["/arkadaslik-uyumu.html", "Arkadaşlık uyumu"], ortak: ["/is-ortakligi-uyumu.html", "İş ortaklığı uyumu"], takvim: ["/numeroloji-takvimi.html", "Yıllık takvim"]
+    ruhesi: ["/ruh-esi-numeroloji.html", "Ruh eşi hesaplama"], arkadas: ["/arkadaslik-uyumu.html", "Arkadaşlık uyumu"], ortak: ["/is-ortakligi-uyumu.html", "İş ortaklığı uyumu"], takvim: ["/numeroloji-takvimi.html", "Yıllık takvim"]
   };
   function sonrakiAraclar(ks) {
-    return '<div class="sonraki no-print"><p>Bilgilerin hazır, tek dokunuşla devam et:</p>' + ks.map(function (k) { var hz = /^(uyum|arkadas|ortak|numara|degisim|bebek)$/.test(k) ? "" : "#sonuc"; return '<a class="btn ghost" href="' + ARAC[k][0] + hz + '">' + ARAC[k][1] + " →</a>"; }).join("") + "</div>";
+    return '<div class="sonraki no-print"><p>Bilgilerin hazır, tek dokunuşla devam et:</p>' + ks.map(function (k) { var hz = /^(uyum|arkadas|ortak|ruhesi|numara|degisim|bebek)$/.test(k) ? "" : "#sonuc"; return '<a class="btn ghost" href="' + ARAC[k][0] + hz + '">' + ARAC[k][1] + " →</a>"; }).join("") + "</div>";
   }
 
   /* ---------- bağlama ---------- */
@@ -519,6 +565,7 @@
     if (tur === "uyum") { formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); uyumAnalizi(f, out); }); return; }
     if (tur === "degisim") { formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); isimDegisikligi(f, out); }); return; }
     if (tur === "numara") { f.addEventListener("submit", function (e) { e.preventDefault(); numaraAnalizi(f, out); }); return; }
+    if (tur === "ruhesi") { formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); ruhEsiAnalizi(f, out); }); return; }
     if (tur === "arkadas" || tur === "ortak") { var md = tur === "ortak" ? "is" : "arkadas"; formDoldur(f); f.addEventListener("submit", function (e) { e.preventDefault(); ortaklikAnalizi(f, out, md); }); return; }
     if (tur === "takvim") {
       formDoldur(f);
